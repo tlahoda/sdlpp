@@ -23,18 +23,11 @@
 namespace sdl {
 namespace devices {
     /**
-     * @struct basic_JoystickButton, Base class for joystick buttons.
-     */
-    struct basic_JoystickButton {};
-
-    /**
      * @struct JoystickButton, Represents a joystick button.
-     *
-     * @tparam Index, The index of the joystick.
-     * @tparam Which, Which joystick button.
      */
-    template<int Index, int Which>
-    struct JoystickButton : public basic_JoystickButton {
+    struct JoystickButton {
+        explicit JoystickButton (int which) : which_ (which) {};
+
         /**
          * Determines if the SDL_Event structure is for this JoystickButton. 
          *
@@ -42,9 +35,12 @@ namespace devices {
          *
          * @return bool, true if the SDL_Event is for this JoystickButton, false otherwise.
          */
-        static bool equals (const SDL_Event* event) {
-            return event->jbutton.which == Index && event->jbutton.button == Which;
+        bool operator== (const SDL_Event* event) {
+            return event->jbutton.button == which_;
         };
+
+        private:
+            int which_;
     }; //Button
 }; //devices
 }; //sdl

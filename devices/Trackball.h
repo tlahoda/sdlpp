@@ -23,18 +23,11 @@
 namespace sdl {
 namespace devices {
     /**
-     * @struct basic_Trackball, Base class for joystick trackballs.
-     */
-    struct basic_Trackball {};
-
-    /**
      * @struct Trackball, Represents a joystick trackball.
-     *
-     * @tparam Index, The index of the joystick.
-     * @tparam Which, Which joystick Trackball.
      */
-    template<int Index, int Which>
-    struct Trackball : public basic_Trackball {
+    struct Trackball {
+        explicit Trackball (int which) : which_ (which) {};
+
         /**
          * Determines if the SDL_Event structure is for this Trackball. 
          *
@@ -42,9 +35,12 @@ namespace devices {
          *
          * @return bool, true if the SDL_Event is for this Trackball, false otherwise.
          */
-        static bool equals (const SDL_Event* event) {
-            return event->jball.which == Index && event->jball.ball == Which;
+        bool operator== (const SDL_Event* event) {
+            return event->jball.ball == which_;
         };
+
+        private:
+            int which_;
     }; //Trackball
 }; //devices
 }; //sdl

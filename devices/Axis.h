@@ -23,18 +23,11 @@
 namespace sdl {
 namespace devices {
     /**
-     * @struct basic_Axis, Base class for joystick axes.
-     */
-    struct basic_Axis {};
-
-    /**
      * @struct Axis, Represents a joystick axis.
-     *
-     * @tparam Index, The index of the joystick.
-     * @tparam Which, Which joystick axis.
      */
-    template<int Index, int Which>
-    struct Axis : public basic_Axis {
+    struct Axis {
+        explicit Axis (int which) : which_ (which) {};
+
         /**
          * Determines if the SDL_Event structure is for this Axis. 
          *
@@ -42,9 +35,12 @@ namespace devices {
          *
          * @return bool, true if the SDL_Event is for this Axis, false otherwise.
          */
-        static bool equals (const SDL_Event* event) {
-            return event->jaxis.which == Index && event->jaxis.axis == Which;
+        bool operator== (const SDL_Event* event) {
+            return event->jaxis.axis == which_;
         };
+
+        private:
+            int which_;
     };//Axis
 }; //devices
 }; //sdl

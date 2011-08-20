@@ -23,18 +23,11 @@
 namespace sdl {
 namespace devices {
     /**
-     * @struct basic_Hat, Base class for joystick hats.
-     */
-    struct basic_Hat {};
-
-    /**
      * @struct Hat, Represents a joystick hat.
-     *
-     * @tparam Index, The index of the joystick.
-     * @tparam Which, Which joystick Hat.
      */
-    template<int Index, int Which>
-    struct Hat : public basic_Hat {
+    struct Hat {
+        explicit Hat (int which) : which_ (which) {};
+
         /**
          * Determines if the SDL_Event structure is for this Hat. 
          *
@@ -42,9 +35,12 @@ namespace devices {
          *
          * @return bool, true if the SDL_Event is for this Hat, false otherwise.
          */
-        static bool equals (const SDL_Event* event) {
-            return event->jhat.which == Index && event->jhat.hat == Which;
+        bool operator== (const SDL_Event* event) {
+            return event->jhat.hat == which_;
         };
+
+        private:
+            int which_;
     }; //Hat
 }; //devices
 }; //sdl

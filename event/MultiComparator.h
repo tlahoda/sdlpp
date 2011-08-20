@@ -76,8 +76,7 @@ namespace event {
          * @return bool, True if any of the devices are correc tfor the SDL_Event structure.
          */
         static bool compare (const SDL_Event* event) {
-            Device device (T);
-            return (EventType == event->type && device == event) || MultiComparator<Device, EventType, Ts...>::compare (event);
+            return (EventType == event->type && Device::which (event) == T) || MultiComparator<Device, EventType, Ts...>::compare (event);
         };
     }; //MultiComparator
 }; //event

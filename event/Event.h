@@ -26,7 +26,6 @@
 
 namespace sdl {
 namespace event {
-    using namespace devices;
     using namespace misc;
 
     /**

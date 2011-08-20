@@ -294,6 +294,11 @@ namespace subsystem {
          */
         VideoBase () {};
 
+        /**
+         * Swaps the OpenGL frame buffers if double-buffering is supported.
+         *
+         * @return void.
+         */
         void swapBuffers () { SDL_GL_SwapBuffers (); };
 
         protected:

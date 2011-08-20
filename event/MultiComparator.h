@@ -27,17 +27,18 @@ namespace event {
     /**
      * @struct MultiComparator, Recurse through the Device list checking to see if the SDL_Event structure is correct for any of them.
      *
-     * @tparam EventTypeGetter, Gets the specific event type.
-     * @tparam Devices, The list of Devices.
+     * @tparam Device, The type of device being compared.
+     * @tparam EventType, The specific event type.
+     * @tparam Ids, The list of Devices ids.
      */
-    template<typename Device, int EventType, int... Ts>
+    template<typename Device, int EventType, int... Ids>
     struct MultiComparator {
         /**
          * Determines if the SDL_Event structure is correct for the devices.
          *
          * @param const SDL_Event* event, The SDL_Event structure to check.
          *
-         * @return bool, True if any of the devices are correc tfor the SDL_Event structure.
+         * @return bool, True if any of the devices are correct for the SDL_Event structure.
          */
         static bool compare (const SDL_Event* event) { return false; };
     }; //MultiComparator
@@ -45,7 +46,8 @@ namespace event {
     /**
      * @struct MultiComparator, The recursion's terminal specialization.
      *
-     * @tparam EventTypeGetter, Gets the specific event type.
+     * @tparam Device, The type of device being compared.
+     * @tparam EventType, The specific event type.
      */
     template<typename Device, int EventType>
     struct MultiComparator<Device, EventType> {
@@ -54,7 +56,7 @@ namespace event {
          *
          * @param const SDL_Event* event, The SDL_Event structure to check.
          *
-         * @return bool, True if any of the devices are correc tfor the SDL_Event structure.
+         * @return bool, True if any of the devices are correct for the SDL_Event structure.
          */
         static bool compare (const SDL_Event* event) { return false; };
     }; //MultiComparator
@@ -62,7 +64,8 @@ namespace event {
     /**
      * @struct MultiComparator, The main specialization that recurses through the Devices comparing them to the SDL_Event structure.
      *
-     * @tparam EventTypeGetter, Gets the specific event type from the Device.
+     * @tparam Device, The type of device being compared.
+     * @tparam EventType, The specific event type.
      * @tparam Device, The Device to check.
      * @tparam Devices, The list of Devices.
      */
@@ -73,7 +76,7 @@ namespace event {
          *
          * @param const SDL_Event* event, The SDL_Event structure to check.
          *
-         * @return bool, True if any of the devices are correc tfor the SDL_Event structure.
+         * @return bool, True if any of the devices are correct for the SDL_Event structure.
          */
         static bool compare (const SDL_Event* event) {
             return (EventType == event->type && Device::which (event) == T) || MultiComparator<Device, EventType, Ts...>::compare (event);

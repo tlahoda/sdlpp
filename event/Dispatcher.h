@@ -46,8 +46,7 @@ namespace event {
          * @param Listeners& listeners, the Listeners to which to add the Listener.
          * @param Handler& handler, the Handler from which to get the Listener's handle function.
          */
-        Adder (Listeners& listeners, Handler& handler) : listeners_ (listeners), handler_ (handler) {
-        };
+        Adder (Listeners& listeners, Handler& handler) : listeners_ (listeners), handler_ (handler) {};
 
         /**
          * Adds a listener for event to the Listeners.
@@ -83,8 +82,7 @@ namespace event {
             /**
              * Constructs a default Dispatcher.
              */
-            Dispatcher () : listeners_ () {
-            };
+            Dispatcher () : listeners_ () {};
 
             /**
              * Constructs a Dispatcher from a Handler.
@@ -94,9 +92,7 @@ namespace event {
              * @param Handler& handler, The handler form which to get the Listener's handle functions.
              */
             template<class Handler>
-            Dispatcher (Handler& handler) : listeners_ () {
-                add (handler);
-            };
+            Dispatcher (Handler& handler) : listeners_ () { add (handler); };
     
             /**
              * Adds a handler to the Dispatcher.

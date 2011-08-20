@@ -38,9 +38,7 @@ namespace event {
          *
          * @return bool, True if the SDL_Event is the correct event.
          */
-        static bool compare (const SDL_Event* event) {
-          return event->type == SDL_EVENT_TYPE;
-        };
+        static bool compare (const SDL_Event* event) { return event->type == SDL_EVENT_TYPE; };
     }; //SimpleComparator
 }; //event
 }; //sdl

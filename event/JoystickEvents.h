@@ -59,7 +59,7 @@ namespace event {
     /**
      * @struct JoystickAxisMotion, Represents a joystick axis motion event.
      *
-     * @tparam Axes, The axes that compse this joystick axis motion event.
+     * @tparam Axes, The axes that compose this joystick axis motion event.
      */
     template<int... Axes>
     struct JoystickAxisMotion : public Event<MultiComparator<Axis, SDL_JOYAXISMOTION, Axes...>, JoystickAxisBase> {
@@ -99,6 +99,8 @@ namespace event {
 
     /**
      * @struct JoystickTrackballMotion, Represents a joystick trackball motion event.
+     *
+     * @tparam Balls, The trackballs that compose this joystick trackball motion event.
      */
     template<int... Balls>
     struct JoystickTrackballMotion : public Event<MultiComparator<Trackball, SDL_JOYBALLMOTION, Balls...>, JoystickTrackballBase> {

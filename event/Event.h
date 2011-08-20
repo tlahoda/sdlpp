@@ -37,8 +37,7 @@ namespace event {
          *
          * @param const SDL_Event* event, The SDL_Event structure.
          */
-        EventBase (const SDL_Event* event) : event_ (event) {
-        };
+        EventBase (const SDL_Event* event) : event_ (event) {};
 
         protected:
             /**
@@ -62,9 +61,7 @@ namespace event {
          *
          * @return bool, True if the SDL_Event structure is correct, false otherwise.
          */
-        static bool is (const SDL_Event* event) { 
-            return Comparator::compare (event); 
-        };
+        static bool is (const SDL_Event* event) { return Comparator::compare (event); };
 
         /**
          * Constructs an event from a SDL_Event structure.

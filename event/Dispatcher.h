@@ -118,11 +118,11 @@ namespace event {
              *
              * @param const SDL_Event* event, The event to handle.
              *
-             * @returns bool, true if the event was handled, false otherwise
+             * @return void. 
              */
-            bool operator() (const SDL_Event* event) {
+            void operator() (const SDL_Event* event) {
                 Listeners::iterator cur = std::find (listeners_.begin (), listeners_.end (), event);
-                return (cur != listeners_.end ()) ? cur->operator() (event) : false;
+                if (cur != listeners_.end ()) cur->operator() (event);
             };
 
         private:

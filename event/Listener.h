@@ -53,9 +53,9 @@ namespace event {
              *
              * @param const SDL_Event* event, The event to handle.
              *
-             * @return bool, True if the event was handled, false otherwise.
+             * @return void.
              */
-            virtual bool operator() (const SDL_Event* event) = 0;
+            virtual void operator() (const SDL_Event* event) = 0;
     }; //basic_Listener
 
     /**
@@ -68,14 +68,14 @@ namespace event {
     class Listener : public basic_Listener {
         public:
             /**
-             * @typedef bool (Handler::*HandleFunc) (const EventType& event),
+             * @typedef void (Handler::*HandleFunc) (const EventType& event),
              *          The member function pointer to the Handler's handle function.
              *
              * @param const EventType& event, The event to handle.
              *
-             * @return bool, True if the event was handled, false otherwise.
+             * @return void.
              */
-            typedef bool (Handler::*HandleFunc) (const EventType& event);
+            typedef void (Handler::*HandleFunc) (const EventType& event);
 
             /**
              * Determines if a Listener equates to an SDL_Event.
@@ -109,10 +109,10 @@ namespace event {
              *
              * @param const SDL_Event& event, the event to handle.
              *
-             * @return bool, true if the event was handled, false otherwise.
+             * @return void.
              */
-            virtual bool operator() (const SDL_Event* event) {
-              return (h_.*func_) (EventType (event));
+            virtual void operator() (const SDL_Event* event) {
+              (h_.*func_) (EventType (event));
             };
 
         private:

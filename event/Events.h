@@ -23,7 +23,7 @@
 #include "sdlpp/event/KeyboardEvents.h"
 #include "sdlpp/event/JoystickEvents.h"
 #include "sdlpp/event/MouseEvents.h"
-#include "sdlpp/event/UserEvent.h"
+#include "sdlpp/event/UserDefined.h"
 #include "sdlpp/event/WindowEvents.h"
 
 #endif //SDL_EVENT_EVENTS_H

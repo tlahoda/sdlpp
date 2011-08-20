@@ -295,6 +295,8 @@ namespace subsystem {
          */
         VideoBase () {};
 
+        void swapBuffers () { SDL_GL_SwapBuffers (); };
+
         protected:
             /**
              * Returns the name of the Subsystem.

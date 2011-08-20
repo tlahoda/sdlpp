@@ -20,8 +20,6 @@
 #ifndef SDL_EVENT_KEYBOARDEVENTS_H
 #define SDL_EVENT_KEYBOARDEVENTS_H
 
-#include <boost/static_assert.hpp>
-
 #include <SDL.h>
 
 #include "sdlpp/devices/Key.h"
@@ -29,7 +27,6 @@
 #include "sdlpp/event/MultiComparator.h"
 #include "sdlpp/event/SimpleComparator.h"
 #include "sdlpp/event/Event.h"
-#include "sdlpp/misc/is_base_of_all.h"
 
 namespace sdl {
 namespace event {
@@ -67,24 +64,19 @@ namespace event {
      *
      * @tparam Keys, The keys that compose this key press event.
      */
-    template<typename... Keys>
-    struct KeyPress : public Event<MultiComparator<Pressed, Keys...>, KeyBase> {
-        /**
-         * Ensures all of the Keys inherit from basic_Key.
-         */
-        BOOST_STATIC_ASSERT ((is_base_of_all<basic_Key, Keys...>::value));
-        
+    template<int... Keys>
+    struct KeyPress : public Event<MultiComparator<Key, Pressed, Keys...>, KeyBase> {
         /**
          * Constructs a KeyPress event from a SDL_Event structure.
          *
          * @param const SDL_Event* event, The SDL_Event structure.
          */
-        explicit KeyPress (const SDL_Event* event = 0) : Event<MultiComparator<Pressed, Keys...>, KeyBase> (event) {};
+        explicit KeyPress (const SDL_Event* event = 0) : Event<MultiComparator<Key, Pressed, Keys...>, KeyBase> (event) {};
     }; //KeyPress
 
     /**
      * @typedef Event<SimpleComparator<SDL_KEYDOWN>, KeyBase> AnyKeyPress,
-     * Represents an any key press.
+     *          Represents an any key press.
      */
     typedef Event<SimpleComparator<SDL_KEYDOWN>, KeyBase> AnyKeyPress;
     
@@ -93,24 +85,19 @@ namespace event {
      *
      * @tparam Keys, The keys that compose this key release event.
      */
-    template<typename... Keys>
-    struct KeyRelease : public Event<MultiComparator<Released, Keys...>, KeyBase> {
-        /**
-         * Ensures all of the Keys inherit from basic_Key.
-         */
-        BOOST_STATIC_ASSERT ((is_base_of_all<basic_Key, Keys...>::value));
-        
+    template<int... Keys>
+    struct KeyRelease : public Event<MultiComparator<Key, Released, Keys...>, KeyBase> {
         /**
          * Constructs a KeyRelease from a SDL_Event structure.
          *
          * @param const SDL_Event* event, The SDL_Event structure.
          */
-        explicit KeyRelease (const SDL_Event* event = 0) : Event<MultiComparator<Released, Keys...>, KeyBase> (event) {};
+        explicit KeyRelease (const SDL_Event* event = 0) : Event<MultiComparator<Key, Released, Keys...>, KeyBase> (event) {};
     }; //KeyRelease
 
     /**
      * @typedef Event<SimpleComparator<SDL_KEYUP>, KeyBase> AnyKeyRelease,
-     * Represents an any key release event.
+     *          Represents an any key release event.
      */
     typedef Event<SimpleComparator<SDL_KEYUP>, KeyBase> AnyKeyRelease;
 }; //event

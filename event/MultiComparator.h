@@ -30,7 +30,7 @@ namespace event {
      * @tparam EventTypeGetter, Gets the specific event type.
      * @tparam Devices, The list of Devices.
      */
-    template<typename EventTypeGetter, typename... Devices>
+    template<typename Device, typename EventTypeGetter, int... Ts>
     struct MultiComparator {
         /**
          * Determines if the SDL_Event structure is correct for the devices.
@@ -47,8 +47,8 @@ namespace event {
      *
      * @tparam EventTypeGetter, Gets the specific event type.
      */
-    template<typename EventTypeGetter>
-    struct MultiComparator<EventTypeGetter> {
+    template<typename Device, typename EventTypeGetter>
+    struct MultiComparator<Device, EventTypeGetter> {
         /**
          * Determines if the SDL_Event structure is correct for the devices.
          *
@@ -66,8 +66,8 @@ namespace event {
      * @tparam Device, The Device to check.
      * @tparam Devices, The list of Devices.
      */
-    template<typename EventTypeGetter, typename Device, typename... Devices>
-    struct MultiComparator<EventTypeGetter, Device, Devices...> {
+    template<typename Device, typename EventTypeGetter, int T, int... Ts>
+    struct MultiComparator<Device, EventTypeGetter, T, Ts...> {
         /**
          * Determines if the SDL_Event structure is correct for the devices.
          *
@@ -76,8 +76,8 @@ namespace event {
          * @return bool, True if any of the devices are correc tfor the SDL_Event structure.
          */
         static bool compare (const SDL_Event* event) {
-            Device device;
-            return (EventTypeGetter::eventType (device) == event->type && Device::equals (event)) || MultiComparator<EventTypeGetter, Devices...>::compare (event);
+            Device device (T);
+            return (EventTypeGetter::eventType (device) == event->type && device == event) || MultiComparator<Device, EventTypeGetter, Ts...>::compare (event);
         };
     }; //MultiComparator
 }; //event

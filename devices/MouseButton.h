@@ -1,5 +1,5 @@
 /**
- * @file MouseButton.h, contains the basic_MouseButton and the MouseButton classes.
+ * @file MouseButton.h, contains the MouseButton class.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -25,17 +25,11 @@
 namespace sdl {
 namespace devices {
     /**
-     * @struct basic_MouseButton, Base class for mouse buttons.
-     */
-    struct basic_MouseButton {};
-
-    /**
      * @struct MouseButton, Represents a mouse button.
      *
      * @tparam Which, Which mouse button.
      */
-    template<int Which>
-    struct MouseButton : public basic_MouseButton {
+    struct MouseButton {
         /**
          * The SDL_Event type for MouseButton press.
          */
@@ -46,6 +40,8 @@ namespace devices {
          */
         BOOST_STATIC_CONSTANT (int, released = SDL_MOUSEBUTTONUP);
 
+        explicit MouseButton (int which) : which_ (which) {};
+
         /**
          * Determines if the SDL_Event structure is for this MouseButton. 
          *
@@ -53,9 +49,12 @@ namespace devices {
          *
          * @return bool, true if the SDL_Event is for this MouseButton, false otherwise.
          */
-        static bool equals (const SDL_Event* event) {
-            return event->button.button == Which;
+        bool operator== (const SDL_Event* event) {
+            return event->button.button == which_;
         };
+
+        private:
+            int which_;
     }; //Button
 }; //devices
 }; //sdl

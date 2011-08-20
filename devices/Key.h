@@ -1,5 +1,5 @@
 /**
- * @file Key.h, Contains the basic_Key and the Key classes.
+ * @file Key.h, Contains the Key class.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -25,17 +25,11 @@
 namespace sdl {
 namespace devices {
     /**
-     * @struct basic_Key, Base class for keys.
-     */
-    struct basic_Key {};
-
-    /**
      * @struct Key, Represents a key.
      *
      * @tparam Which, Which key.
      */
-    template<int Which>
-    struct Key : public basic_Key {
+    struct Key {
         /**
          * The SDL_Event type check for Key Press.
          */
@@ -46,6 +40,8 @@ namespace devices {
          */
         BOOST_STATIC_CONSTANT (int, released = SDL_KEYUP);
 
+        explicit Key (int which) : which_ (which) {};
+
         /**
          * Determines if the SDL_Event structure is for this Key. 
          *
@@ -53,9 +49,12 @@ namespace devices {
          *
          * @return bool, true if the SDL_Event is for this Key, false otherwise.
          */
-        static bool equals (const SDL_Event* event) {
-            return event->key.keysym.sym == Which;
+        bool operator== (const SDL_Event* event) {
+            return event->key.keysym.sym == which_;
         };
+
+        private:
+            int which_;
     }; //Key
 }; //devices
 }; //sdl

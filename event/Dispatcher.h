@@ -24,7 +24,6 @@
 
 #include <boost/ptr_container/ptr_vector.hpp>
 #include <boost/mpl/for_each.hpp>
-#include <boost/bind.hpp>
 
 #include "sdlpp/event/Listener.h"
 

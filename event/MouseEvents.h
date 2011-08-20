@@ -20,8 +20,6 @@
 #ifndef SDL_EVENT_MOUSEEVENTS_H
 #define SDL_EVENT_MOUSEEVENTS_H
 
-#include <boost/static_assert.hpp>
-
 #include <SDL.h>
 
 #include "sdlpp/devices/MouseButton.h"
@@ -29,7 +27,6 @@
 #include "sdlpp/event/MultiComparator.h"
 #include "sdlpp/event/SimpleComparator.h"
 #include "sdlpp/event/Event.h"
-#include "sdlpp/misc/is_base_of_all.h"
 
 namespace sdl {
 namespace event {
@@ -64,7 +61,7 @@ namespace event {
     
     /**
      * @typedef Event<SimpleComparator<SDL_MOUSEMOTION>, MouseMotionBase> MouseMotion,
-     * Represents a mouse motion event.
+     *          Represents a mouse motion event.
      */
     typedef Event<SimpleComparator<SDL_MOUSEMOTION>, MouseMotionBase> MouseMotion;
 
@@ -99,19 +96,14 @@ namespace event {
      *
      * @tparam Buttons, The buttons that compose this mouse button release event.
      */
-    template<typename... Buttons>
-    struct MouseButtonPress : public Event<MultiComparator<Pressed, Buttons...>, MouseButtonBase> {
-        /**
-         * Ensures all Buttons inherit from basic_MouseButton.
-         */
-        BOOST_STATIC_ASSERT ((is_base_of_all<basic_MouseButton, Buttons...>::value));
-        
+    template<int... Buttons>
+    struct MouseButtonPress : public Event<MultiComparator<MouseButton, Pressed, Buttons...>, MouseButtonBase> {
         /**
          * Constructs a MouseButtonPress from a SDL_Event structure.
          *
          * @param const SDL_Event* event, The SDL_Event structure.
          */
-        explicit MouseButtonPress (const SDL_Event* event = 0) : Event<MultiComparator<Pressed, Buttons...>, MouseButtonBase> (event) {};
+        explicit MouseButtonPress (const SDL_Event* event = 0) : Event<MultiComparator<MouseButton, Pressed, Buttons...>, MouseButtonBase> (event) {};
     }; //MouseButtonPress
 
     /**
@@ -119,19 +111,14 @@ namespace event {
      *
      * @tparam Buttons, The buttons that compose this mouse button release event.
      */
-    template<typename... Buttons>
-    struct MouseButtonRelease : public Event<MultiComparator<Released, Buttons...>, MouseButtonBase> {
-        /**
-         * Ensures all Buttons inherit from basic_MouseButton.
-         */
-        BOOST_STATIC_ASSERT ((is_base_of_all<basic_MouseButton, Buttons...>::value));
-        
+    template<int... Buttons>
+    struct MouseButtonRelease : public Event<MultiComparator<MouseButton, Released, Buttons...>, MouseButtonBase> {
         /**
          * Constructs a MouseButtonRelease from a SDL_Event structure.
          *
          * @param const SDL_Event* event, The SDL_Event structure.
          */
-        explicit MouseButtonRelease (const SDL_Event* event = 0) : Event<MultiComparator<Released, Buttons...>, MouseButtonBase> (event) {};
+        explicit MouseButtonRelease (const SDL_Event* event = 0) : Event<MultiComparator<MouseButton, Released, Buttons...>, MouseButtonBase> (event) {};
     }; //MouseButtonRelease
 }; //event
 }; //sdl

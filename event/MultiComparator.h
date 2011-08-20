@@ -77,7 +77,6 @@ namespace event {
          */
         static bool compare (const SDL_Event* event) {
             Device device (T);
-            //return (EventTypeGetter::eventType (device) == event->type && device == event) || MultiComparator<Device, EventTypeGetter, Ts...>::compare (event);
             return (EventType == event->type && device == event) || MultiComparator<Device, EventType, Ts...>::compare (event);
         };
     }; //MultiComparator

@@ -17,16 +17,19 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
-#ifndef SDL_EVENT_USEREVENT_H
-#define SDL_EVENT_USEREVENT_H
+#ifndef SDL_EVENT_USERDEFINED_H
+#define SDL_EVENT_USERDEFINED_H
 
 #include <SDL.h>
 
-#include "sdlpp/event/UserComparator.h"
+#include "sdlpp/devices/User.h"
+#include "sdlpp/event/MultiComparator.h"
 #include "sdlpp/event/Event.h"
 
 namespace sdl {
 namespace event {
+    using namespace devices;
+
     /**
      * @struct UserBase, Base for user events that exposes the SDL_UserEvent structure.
      */
@@ -54,21 +57,21 @@ namespace event {
     }; //UserBase
 
     /**
-     * @struct User, Represents a user event.
+     * @struct UserDefined, Represents a user event.
      *
      * @tparam Code, The specific user event code.
      */
-    template<int Code>
-    struct User : public Event<UserComparator<Code>, UserBase> {
+    template<int... Codes>
+    struct UserDefined : public Event<MultiComparator<User, SDL_USEREVENT, Codes...>, UserBase> {
         /**
-         * Constructs a UserEvent from a SDL_Event structure.
+         * Constructs a UserDefined from a SDL_Event structure.
          *
          * @param const SDL_Event* event, The SDL_Event structure.
          */
-        explicit User (const SDL_Event* event = 0) : Event<UserComparator<Code>, UserBase> (event) {};
-    }; //User
+        explicit UserDefined (const SDL_Event* event = 0) : Event<MultiComparator<User, SDL_USEREVENT, Codes...>, UserBase> (event) {};
+    }; //UserDefined
 }; //event
 }; //sdl
 
-#endif //SDL_EVENT_USEREVENT_H
+#endif //SDL_EVENT_USERDEFINED_H
 

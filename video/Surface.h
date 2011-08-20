@@ -20,7 +20,6 @@
 #ifndef SDL_VIDEO_SURFACE_H
 #define SDL_VIDEO_SURFACE_H
 
-#include <iostream>
 #include <string>
 #include <stdexcept>
 

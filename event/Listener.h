@@ -20,8 +20,6 @@
 #ifndef SDL_EVENT_LISTENER_H
 #define SDL_EVENT_LISTENER_H
 
-#include <iostream>
-
 #include <SDL.h>
 
 namespace sdl {

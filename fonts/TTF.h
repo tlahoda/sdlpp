@@ -20,7 +20,6 @@
 #ifndef SDL_SUBSYSTEM_TTF_H
 #define SDL_SUBSYSTEM_TTF_H
 
-#include <iostream>
 #include <stdexcept>
 
 #include <SDL_ttf.h>

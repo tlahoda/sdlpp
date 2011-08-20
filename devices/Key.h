@@ -20,8 +20,6 @@
 #ifndef SDL_DEVICES_KEY_H
 #define SDL_DEVICES_KEY_H
 
-#include <boost/mpl/aux_/config/static_constant.hpp>
-
 namespace sdl {
 namespace devices {
     /**
@@ -30,16 +28,6 @@ namespace devices {
      * @tparam Which, Which key.
      */
     struct Key {
-        /**
-         * The SDL_Event type check for Key Press.
-         */
-        BOOST_STATIC_CONSTANT (int, pressed = SDL_KEYDOWN);
-
-        /**
-         * The SDL_Event type check for Key release.
-         */
-        BOOST_STATIC_CONSTANT (int, released = SDL_KEYUP);
-
         explicit Key (int which) : which_ (which) {};
 
         /**

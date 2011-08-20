@@ -28,7 +28,6 @@
 #include "sdlpp/devices/Trackball.h"
 #include "sdlpp/devices/Hat.h"
 #include "sdlpp/devices/JoystickButton.h"
-#include "sdlpp/event/Helpers.h"
 #include "sdlpp/event/JoystickComparator.h"
 #include "sdlpp/event/Event.h"
 #include "sdlpp/misc/is_base_of_all.h"
@@ -70,7 +69,7 @@ namespace event {
      * @tparam Axes, The axes that compse this joystick axis motion event.
      */
     template<typename... Axes>
-    struct JoystickAxisMotion : public Event<JoystickComparator<Moved, Axes...>, JoystickAxisBase> {
+    struct JoystickAxisMotion : public Event<JoystickComparator<SDL_JOYAXISMOTION, Axes...>, JoystickAxisBase> {
         /**
          * Ensures all of the Axes inherit from basic_axis.
          */
@@ -81,7 +80,7 @@ namespace event {
          *
          * @param const SDL_Event* event, The SDL_Event structure.
          */
-        explicit JoystickAxisMotion (const SDL_Event* event) : Event<JoystickComparator<Moved, Axes...>, JoystickAxisBase> (event) {};
+        explicit JoystickAxisMotion (const SDL_Event* event) : Event<JoystickComparator<SDL_JOYAXISMOTION, Axes...>, JoystickAxisBase> (event) {};
     }; //JoystickAxisMotion
 
     /**
@@ -114,7 +113,7 @@ namespace event {
      * @struct JoystickTrackballMotion, Represents a joystick trackball motion event.
      */
     template<typename... Balls>
-    struct JoystickTrackballMotion : public Event<JoystickComparator<Moved, Balls...>, JoystickTrackballBase> {
+    struct JoystickTrackballMotion : public Event<JoystickComparator<SDL_JOYBALLMOTION, Balls...>, JoystickTrackballBase> {
         /**
          * Ensures all of the Balls inherit from basic_Trackball.
          */
@@ -125,7 +124,7 @@ namespace event {
          *
          * @param const SDL_Event* event, The SDL_Event structure.
          */
-        explicit JoystickTrackballMotion (const SDL_Event* event) : Event<JoystickComparator<Moved, Balls...>, JoystickTrackballBase> (event) {};
+        explicit JoystickTrackballMotion (const SDL_Event* event) : Event<JoystickComparator<SDL_JOYBALLMOTION, Balls...>, JoystickTrackballBase> (event) {};
     }; //JoystickTrackballMotion
 
     /**
@@ -160,7 +159,7 @@ namespace event {
      * @tparam Hats, The hats that compose this joystick hat motion event.
      */
     template<typename... Hats>
-    struct JoystickHatMotion : public Event<JoystickComparator<Moved, Hats...>, JoystickHatBase> {
+    struct JoystickHatMotion : public Event<JoystickComparator<SDL_JOYHATMOTION, Hats...>, JoystickHatBase> {
         /**
          * Ensures all of the Hats inherit from basic_Hat.
          */
@@ -171,7 +170,7 @@ namespace event {
          *
          * @param const SDL_Event* event, The SDL_Event structure.
          */
-        explicit JoystickHatMotion (const SDL_Event* event) : Event<JoystickComparator<Moved, Hats...>, JoystickHatBase> (event) {};
+        explicit JoystickHatMotion (const SDL_Event* event) : Event<JoystickComparator<SDL_JOYHATMOTION, Hats...>, JoystickHatBase> (event) {};
     }; //JoystickHatMotion
 
     /**
@@ -206,7 +205,7 @@ namespace event {
      * @tparam Buttons, The Buttons that compose this joystick button press event.
      */
     template<typename... Buttons>
-    struct JoystickButtonPress : public Event<JoystickComparator<Pressed, Buttons...>, JoystickButtonBase> {
+    struct JoystickButtonPress : public Event<JoystickComparator<SDL_JOYBUTTONDOWN, Buttons...>, JoystickButtonBase> {
         /**
          * Ensures that all of the Buttons inherit from basic_JoystickButton.
          */
@@ -217,7 +216,7 @@ namespace event {
          *
          * @param const SDL_Event* event, The SDL_Event structure.
          */
-        explicit JoystickButtonPress (const SDL_Event* event = 0) : Event<JoystickComparator<Pressed, Buttons...>, JoystickButtonBase> (event) {};
+        explicit JoystickButtonPress (const SDL_Event* event = 0) : Event<JoystickComparator<SDL_JOYBUTTONDOWN, Buttons...>, JoystickButtonBase> (event) {};
     }; //JoystickButtonPress
 
     /**
@@ -226,7 +225,7 @@ namespace event {
      * @tparam Buttons, The Buttons that compose this joystick button release event.
      */
     template<typename... Buttons>
-    struct JoystickButtonRelease : public Event<JoystickComparator<Released, Buttons...>, JoystickButtonBase> {
+    struct JoystickButtonRelease : public Event<JoystickComparator<SDL_JOYBUTTONUP, Buttons...>, JoystickButtonBase> {
         /**
          * Ensures all of the Buttons inherit from basic_JoystickButton.
          */
@@ -237,7 +236,7 @@ namespace event {
          *
          * @param const SDL_Event* event, The SDL_Event structure.
          */
-        explicit JoystickButtonRelease (const SDL_Event* event = 0) : Event<JoystickComparator<Released, Buttons...>, JoystickButtonBase> (event) {};
+        explicit JoystickButtonRelease (const SDL_Event* event = 0) : Event<JoystickComparator<SDL_JOYBUTTONUP, Buttons...>, JoystickButtonBase> (event) {};
     }; //JoystickButtonRelease
 }; //event
 }; //sdl

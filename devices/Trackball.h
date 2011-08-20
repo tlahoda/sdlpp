@@ -20,8 +20,6 @@
 #ifndef SDL_DEVICES_TRACKBALL_H
 #define SDL_DEVICES_TRACKBALL_H
 
-#include <boost/mpl/aux_/config/static_constant.hpp>
-
 namespace sdl {
 namespace devices {
     /**
@@ -37,11 +35,6 @@ namespace devices {
      */
     template<int Index, int Which>
     struct Trackball : public basic_Trackball {
-        /**
-         * The SDL_Event type for Trackball motion.
-         */
-        BOOST_STATIC_CONSTANT (int, motion = SDL_JOYBALLMOTION);
-
         /**
          * Determines if the SDL_Event structure is for this Trackball. 
          *

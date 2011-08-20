@@ -27,10 +27,10 @@ namespace event {
     /**
      * @struct JoystickComparator, Recurse through the Device list checking to see if the SDL_Event structure is correct for any of them.
      *
-     * @tparam EventTypeGetter, Gets the specific event type.
+     * @tparam EventType, Gets the specific event type.
      * @tparam Devices, The list of Devices.
      */
-    template<typename EventTypeGetter, int... Devices>
+    template<int EventType, int... Devices>
     struct JoystickComparator {
         /**
          * Determines if the SDL_Event structure is correct for the devices.
@@ -45,10 +45,10 @@ namespace event {
     /**
      * @struct JoystickComparator, The recursion's terminal specialization.
      *
-     * @tparam EventTypeGetter, Gets the specific event type.
+     * @tparam EventType, Gets the specific event type.
      */
-    template<typename EventTypeGetter>
-    struct JoystickComparator<EventTypeGetter> {
+    template<int EventType>
+    struct JoystickComparator<EventType> {
         /**
          * Determines if the SDL_Event structure is correct for the devices.
          *
@@ -62,12 +62,12 @@ namespace event {
     /**
      * @struct JoystickComparator, The main specialization that recurses through the Devices comparing them to the SDL_Event structure.
      *
-     * @tparam EventTypeGetter, Gets the specific event type from the Device.
+     * @tparam EventType, Gets the specific event type from the Device.
      * @tparam Device, The Device to check.
      * @tparam Devices, The list of Devices.
      */
-    template<typename EventTypeGetter, int Device, int... Devices>
-    struct JoystickComparator<EventTypeGetter, Device, Devices...> {
+    template<int EventType, int Device, int... Devices>
+    struct JoystickComparator<EventType, Device, Devices...> {
         /**
          * Determines if the SDL_Event structure is correct for the devices.
          *
@@ -77,7 +77,7 @@ namespace event {
          */
         static bool compare (const SDL_Event* event) {
             Device device;
-            return (EventTypeGetter::eventType (device) == event->type && Device::equals (event)) || JoystickComparator<EventTypeGetter, Devices...>::compare (event);
+            return (EventType::eventType (device) == event->type && Device::equals (event)) || JoystickComparator<EventType, Devices...>::compare (event);
         };
     }; //JoystickComparator
 }; //event

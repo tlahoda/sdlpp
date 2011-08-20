@@ -20,8 +20,6 @@
 #ifndef SDL_DEVICES_HAT_H
 #define SDL_DEVICES_HAT_H
 
-#include <boost/mpl/aux_/config/static_constant.hpp>
-
 namespace sdl {
 namespace devices {
     /**
@@ -37,11 +35,6 @@ namespace devices {
      */
     template<int Index, int Which>
     struct Hat : public basic_Hat {
-        /**
-         * The SDL_Event type check for Hat motion.
-         */
-        BOOST_STATIC_CONSTANT (int, motion = SDL_JOYHATMOTION);
-
         /**
          * Determines if the SDL_Event structure is for this Hat. 
          *

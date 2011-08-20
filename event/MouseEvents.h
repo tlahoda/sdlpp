@@ -23,7 +23,6 @@
 #include <SDL.h>
 
 #include "sdlpp/devices/MouseButton.h"
-#include "sdlpp/event/Helpers.h"
 #include "sdlpp/event/MultiComparator.h"
 #include "sdlpp/event/SimpleComparator.h"
 #include "sdlpp/event/Event.h"
@@ -97,13 +96,13 @@ namespace event {
      * @tparam Buttons, The buttons that compose this mouse button release event.
      */
     template<int... Buttons>
-    struct MouseButtonPress : public Event<MultiComparator<MouseButton, Pressed, Buttons...>, MouseButtonBase> {
+    struct MouseButtonPress : public Event<MultiComparator<MouseButton, SDL_MOUSEBUTTONDOWN, Buttons...>, MouseButtonBase> {
         /**
          * Constructs a MouseButtonPress from a SDL_Event structure.
          *
          * @param const SDL_Event* event, The SDL_Event structure.
          */
-        explicit MouseButtonPress (const SDL_Event* event = 0) : Event<MultiComparator<MouseButton, Pressed, Buttons...>, MouseButtonBase> (event) {};
+        explicit MouseButtonPress (const SDL_Event* event = 0) : Event<MultiComparator<MouseButton, SDL_MOUSEBUTTONDOWN, Buttons...>, MouseButtonBase> (event) {};
     }; //MouseButtonPress
 
     /**
@@ -112,13 +111,13 @@ namespace event {
      * @tparam Buttons, The buttons that compose this mouse button release event.
      */
     template<int... Buttons>
-    struct MouseButtonRelease : public Event<MultiComparator<MouseButton, Released, Buttons...>, MouseButtonBase> {
+    struct MouseButtonRelease : public Event<MultiComparator<MouseButton, SDL_MOUSEBUTTONUP, Buttons...>, MouseButtonBase> {
         /**
          * Constructs a MouseButtonRelease from a SDL_Event structure.
          *
          * @param const SDL_Event* event, The SDL_Event structure.
          */
-        explicit MouseButtonRelease (const SDL_Event* event = 0) : Event<MultiComparator<MouseButton, Released, Buttons...>, MouseButtonBase> (event) {};
+        explicit MouseButtonRelease (const SDL_Event* event = 0) : Event<MultiComparator<MouseButton, SDL_MOUSEBUTTONUP, Buttons...>, MouseButtonBase> (event) {};
     }; //MouseButtonRelease
 }; //event
 }; //sdl

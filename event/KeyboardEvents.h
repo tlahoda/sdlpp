@@ -23,7 +23,6 @@
 #include <SDL.h>
 
 #include "sdlpp/devices/Key.h"
-#include "sdlpp/event/Helpers.h"
 #include "sdlpp/event/MultiComparator.h"
 #include "sdlpp/event/SimpleComparator.h"
 #include "sdlpp/event/Event.h"
@@ -65,13 +64,13 @@ namespace event {
      * @tparam Keys, The keys that compose this key press event.
      */
     template<int... Keys>
-    struct KeyPress : public Event<MultiComparator<Key, Pressed, Keys...>, KeyBase> {
+    struct KeyPress : public Event<MultiComparator<Key, SDL_KEYDOWN, Keys...>, KeyBase> {
         /**
          * Constructs a KeyPress event from a SDL_Event structure.
          *
          * @param const SDL_Event* event, The SDL_Event structure.
          */
-        explicit KeyPress (const SDL_Event* event = 0) : Event<MultiComparator<Key, Pressed, Keys...>, KeyBase> (event) {};
+        explicit KeyPress (const SDL_Event* event = 0) : Event<MultiComparator<Key, SDL_KEYDOWN, Keys...>, KeyBase> (event) {};
     }; //KeyPress
 
     /**
@@ -86,13 +85,13 @@ namespace event {
      * @tparam Keys, The keys that compose this key release event.
      */
     template<int... Keys>
-    struct KeyRelease : public Event<MultiComparator<Key, Released, Keys...>, KeyBase> {
+    struct KeyRelease : public Event<MultiComparator<Key, SDL_KEYUP, Keys...>, KeyBase> {
         /**
          * Constructs a KeyRelease from a SDL_Event structure.
          *
          * @param const SDL_Event* event, The SDL_Event structure.
          */
-        explicit KeyRelease (const SDL_Event* event = 0) : Event<MultiComparator<Key, Released, Keys...>, KeyBase> (event) {};
+        explicit KeyRelease (const SDL_Event* event = 0) : Event<MultiComparator<Key, SDL_KEYUP, Keys...>, KeyBase> (event) {};
     }; //KeyRelease
 
     /**

@@ -20,8 +20,6 @@
 #ifndef SDL_DEVICES_JOYSTICKBUTTON_H
 #define SDL_DEVICES_JOYSTICKBUTTON_H
 
-#include <boost/mpl/aux_/config/static_constant.hpp>
-
 namespace sdl {
 namespace devices {
     /**
@@ -37,16 +35,6 @@ namespace devices {
      */
     template<int Index, int Which>
     struct JoystickButton : public basic_JoystickButton {
-        /**
-         * The SDL_Event type check for JoystickButton press.
-         */
-        BOOST_STATIC_CONSTANT (int, pressed = SDL_JOYBUTTONDOWN);
-
-        /**
-         * The SDL_Event type check for JoystickButton release.
-         */
-        BOOST_STATIC_CONSTANT (int, released = SDL_JOYBUTTONUP);
-
         /**
          * Determines if the SDL_Event structure is for this JoystickButton. 
          *

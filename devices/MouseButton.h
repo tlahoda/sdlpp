@@ -20,8 +20,6 @@
 #ifndef SDL_DEVICES_MOUSEBUTTON_H
 #define SDL_DEVICES_MOUSEBUTTON_H
 
-#include <boost/mpl/aux_/config/static_constant.hpp>
-
 namespace sdl {
 namespace devices {
     /**
@@ -30,16 +28,6 @@ namespace devices {
      * @tparam Which, Which mouse button.
      */
     struct MouseButton {
-        /**
-         * The SDL_Event type for MouseButton press.
-         */
-        BOOST_STATIC_CONSTANT (int, pressed = SDL_MOUSEBUTTONDOWN);
-
-        /**
-         * The SDL_Event type check for MouseButton release.
-         */
-        BOOST_STATIC_CONSTANT (int, released = SDL_MOUSEBUTTONUP);
-
         explicit MouseButton (int which) : which_ (which) {};
 
         /**

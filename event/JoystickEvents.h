@@ -20,21 +20,14 @@
 #ifndef SDL_EVENT_JOYSTICKEVENTS_H
 #define SDL_EVENT_JOYSTICKEVENTS_H
 
-#include <boost/static_assert.hpp>
-
 #include <SDL.h>
 
-#include "sdlpp/devices/Axis.h"
-#include "sdlpp/devices/Trackball.h"
-#include "sdlpp/devices/Hat.h"
-#include "sdlpp/devices/JoystickButton.h"
+#include "sdlpp/event/Components.h"
 #include "sdlpp/event/MultiComparator.h"
 #include "sdlpp/event/Event.h"
-#include "sdlpp/misc/is_base_of_all.h"
 
 namespace sdl {
 namespace event {
-    using namespace devices;
     using namespace misc;
 
     /**

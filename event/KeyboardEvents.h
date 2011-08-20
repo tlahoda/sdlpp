@@ -22,14 +22,13 @@
 
 #include <SDL.h>
 
-#include "sdlpp/devices/Key.h"
+#include "sdlpp/event/Components.h"
 #include "sdlpp/event/MultiComparator.h"
 #include "sdlpp/event/SimpleComparator.h"
 #include "sdlpp/event/Event.h"
 
 namespace sdl {
 namespace event {
-    using namespace devices;
     using namespace misc;
 
     /**

@@ -22,14 +22,12 @@
 
 #include <SDL.h>
 
-#include "sdlpp/devices/User.h"
+#include "sdlpp/event/Components.h"
 #include "sdlpp/event/MultiComparator.h"
 #include "sdlpp/event/Event.h"
 
 namespace sdl {
 namespace event {
-    using namespace devices;
-
     /**
      * @struct UserBase, Base for user events that exposes the SDL_UserEvent structure.
      */

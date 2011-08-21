@@ -34,41 +34,87 @@ namespace devices {
      */
     class Cursor {
         public:
+            Cursor () cursor_ (SDL_GetCursor ()) {};
+
             /**
              * Constructs a Cursor.
              *
              * @param Uint8 *data, The color of each Cursor pixel.
              * @param Uint8 *mask, The mask for each Cursor pixel.
              * @param const Rect& rect, A rectangle containing the height and width of the Cursor.
-             * @param const Coordinate& pos, The position of the upper-left corner of the Cursor.
-             *
+             * @param const Coordinate<int>& pos, The position of the upper-left corner of the Cursor.
              */
-            Cursor (Uint8 *data, Uint8 *mask, const Rect& rect, const Coordinate& pos)
+            Cursor (Uint8 *data, Uint8 *mask, const Rect& rect, const Coordinate<int>& pos)
                 : cursor_ (SDL_CreateCursor (data, mask, 
                                              rect.width (), rect.height (),
-                                             pos.x (), pos.y ())) {
-            };
+                                             pos.x (), pos.y ())) {};
 
             /**
              * Destroys a Cursor.
              */
-            ~Cursor () { 
-                SDL_FreeCursor (cursor_); 
-            };
+            ~Cursor () { SDL_FreeCursor (cursor_); };
 
             /**
              * Moves the Cursor to the specified position. 
              *
-             * @param const Coordinate& pos, The position to which to move the upper-left corner of the Cursor.
+             * @param const Coordinate<short>& pos, The position to which to move the upper-left corner of the Cursor.
              *
              * @return void.
              */
-            void move (const Coordinate& pos) {
-                SDL_Warp (pos.x (), pos.y ());
+            void move (const Coordinate<short>& pos) { SDL_Warp (pos.x (), pos.y ()); };
+
+            /**
+             * Shows the Cursor.
+             *
+             * @return bool, True if successful, false otherwise.
+             */
+            bool show () { return SDL_ShowCursor (SDL_ENABLE) == SDL_ENABLE; };
+
+            /**
+             * Hides the Cursor.
+             *
+             * @return bool, True if successful, false otherwise.
+             */
+            bool hide () { return SDL_ShowCursor (SDL_DISABLE) == SDL_DISABLE; };
+
+            /**
+             * Determines if the Cursor if visible or not.
+             *
+             * @return bool, True is Cursor is visible, false otherwise.
+             */
+            bool isVisible () { return SDL_ShowCursor (SDL_QUERY) == SDL_ENABLED; };
+
+            /**
+             * Toggles the visibility of the Cursor.
+             *
+             * @return bool, True if successful, false otherwise.
+             */
+            bool toggle () {
+                return isVisible () ? SDL_ShowCursor (SDL_DISABLE) == SDL_DISABLE : SDL_ShowCursor (SDL_ENABLE) == SDL_ENABLE;
             };
 
+            /**
+             * Activates the Cursor.
+             *
+             * @return void.
+             */
+            void activate () { SDL_SetCursor (cursor_); };
+
         private:
+            /**
+             * Copy constructs a Cursor.
+             *
+             * @param const Cursor& rhs, The Cursor to copy.
+             */
             Cursor (const Cursor& rhs);
+
+            /**
+             * The assignment operator.
+             *
+             * @param const Cursor& rhs, The Cursor from which to assign.
+             *
+             * @return Cursor&, A reference to this Cursor.
+             */
             Cursor& operator= (const Cursor& rhs);
 
             /*

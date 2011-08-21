@@ -35,6 +35,9 @@ namespace video {
     using namespace std;
     using namespace misc;
 
+    /**
+     * @class Surface, Representsa surface.
+     */
     class Surface {
         public:
             /**

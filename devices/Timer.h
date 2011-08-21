@@ -89,7 +89,7 @@ namespace devices {
 
         private:
             /**
-             * Adds a timer which will call Call back are the specified number of milliseconds has elapsed.
+             * Adds a timer which will call Callback are the specified number of milliseconds has elapsed.
              *
              * @param unsigned int interval, The number of milliseconds to delay.
              * @param Callback callback, The callback to call.

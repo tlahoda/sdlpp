@@ -58,54 +58,49 @@ namespace devices {
             /**
              * Destroy a Joystick.
              */
-            ~Joystick () { 
-                if (joystick_) SDL_JoystickClose (joystick_); 
-            };
+            ~Joystick () { if (joystick_) SDL_JoystickClose (joystick_); };
 
             /**
              * Gets the implementation dependent name of the joystick.
              *
              * @return std::string, The joystick's name.
              */
-            std::string name () { 
-                return SDL_JoystickName (SDL_JoystickIndex (joystick_)); 
-            };
+            std::string name () { return SDL_JoystickName (SDL_JoystickIndex (joystick_)); };
+
+            /**
+             * Returns the index of the joystick.
+             *
+             * @return int, The index of the joystick.
+             */
+            int index () { return index_; };
             
             /**
              * Gets the number of joystick axes.
              *
              * return int, The number of joystick axes.
              */
-            int numAxes () { 
-                return SDL_JoystickNumAxes (joystick_); 
-            };
+            int numAxes () { return SDL_JoystickNumAxes (joystick_); };
 
             /**
              * Gets the number og joystick buttons.
              *
              * return int, The number of joystick buttons.
              */
-            int numButtons () { 
-                return SDL_JoystickNumButtons (joystick_); 
-            };
+            int numButtons () { return SDL_JoystickNumButtons (joystick_); };
             
             /**
              * Gets the number of joystick hats.
              *
              * return int, The number of joystick hats.
              */
-            int numHats () { 
-                return SDL_JoystickNumHats (joystick_); 
-            };
+            int numHats () { return SDL_JoystickNumHats (joystick_); };
             
             /**
              * Gets the number of joystick trackballs.
              *
              * return int, The number of joystick trackballs.
              */
-            int numTrackballs () { 
-                return SDL_JoystickNumBalls (joystick_); 
-            };
+            int numTrackballs () { return SDL_JoystickNumBalls (joystick_); };
 
             /**
              * Returns the state of the given joystick axis.
@@ -164,7 +159,20 @@ namespace devices {
             };
 
         private:
+            /**
+             * Copy constructs a Joystick.
+             *
+             * @param const Joystick& rhs, The Joystick to copy.
+             */
             Joystick (const Joystick& rhs);
+
+            /**
+             * The assignment operator.
+             *
+             * @param const Joystick& rhs, The Joystick from which to assign.
+             *
+             * @return Joystick&, A reference to this Joystick.
+             */
             Joystick& operator= (const Joystick& rhs);
 
             /**
@@ -175,7 +183,7 @@ namespace devices {
              * @return SDL_Joystick*, The joystick's data structure.
              */
             SDL_Joystick* open (int index) {
-                if (!sdl::subsystem::Joystick::isOpen ()) sdl::subsystem::Joystick::instance ();
+                if (!subsystem::Joystick::isOpen ()) subsystem::Joystick::instance ();
 
                 if (SDL_JoystickOpened (index)) throw std::runtime_error ("");
 

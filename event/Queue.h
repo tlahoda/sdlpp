@@ -31,6 +31,15 @@ namespace event {
      */
     class Queue {
         public:
+            /**
+             * The type of the event filter function
+             *
+             * @param const SDL_Event* event, The event to filter.
+             *
+             * @return int, 1 to add the event to the queue, 0 to drop the event from the queue.
+             */
+            typedef int (*EventFilter) (const SDL_Event* event);
+
             /*
              * Provides access to the Queue.
              *
@@ -41,14 +50,64 @@ namespace event {
                 return instance_;
             };
 
+            /**
+             * Sets the event filter function.
+             *
+             * @param EventFilter filter, The pointer to the event filter function.
+             *
+             * @return void.
+             */
+            void SetFilter (EventFilter filter) { SDL_SetEventFilter (filter); };
+
+            /**
+             * Returns the pointer to the event filter function.
+             *
+             * @return EventFilter, The pointer to the event filter function.
+             */
+            EventFilter getFilter () { return SDL_GetEventFilter (); };
+
+            /**
+             * Returns the processing state of the specified event type.
+             *
+             * @param int type, The event type.
+             *
+             * @return int, The event state.
+             */
+            int getEventState (int type) { return SDL_EventState (type, SDL_QUERY); };
+
+            /*
+             * Ignores a specific event.
+             *
+             * @param int type, The type of the event to ignore.
+             *
+             * @return int, no idea.
+             */
+            int ignoreEvent (int type) { return SDL_EventState (type, SDL_IGNORE); };
+            
+            /**
+             * Disables a specific event.
+             *
+             * @param int type, The type of the event to disable.
+             *
+             * @return int, no idea.
+             */
+            int disableEvent (int type) { return SDL_EventState (type, SDL_DISABLE); };
+
+            /**
+             * Enables a specific event.
+             *
+             * @param int type, The type of the event to enable.
+             *
+             * @return int, no idea.
+             */
+            int enableEvent (int type) { return SDL_EventState (type, SDL_ENABLE); };
+
             /*
              * Determines whether or not the Queue is empty.
              *
              * @return bool, True if the queue is empty, false otherwise.
              */
-            bool empty () {
-                return !SDL_PollEvent (0);
-            };
+            bool empty () { return !SDL_PollEvent (0); };
 
             /*
              * Removes an event from the front of the Queue.
@@ -68,9 +127,7 @@ namespace event {
              *
              * @return bool, True if the event was pushed onto the Queue, false otherwise.
              */
-            bool push (SDL_Event& event) {
-                return SDL_PushEvent (&event);
-            };
+            bool push (SDL_Event& event) { return SDL_PushEvent (&event); };
 
             /*
              * Pumps the Queue.
@@ -97,8 +154,7 @@ namespace event {
             /*
              * Constructs a Queue.
              */
-            Queue () {
-            };
+            Queue () {};
 
             /*
              * Copy constructs a Queue.
@@ -110,11 +166,10 @@ namespace event {
             /*
              * Destroys a Queue.
              */
-            ~Queue () {
-            };
+            ~Queue () {};
 
             /*
-             * The Assignment Operator.
+             * The assignment operator.
              *
              * @param const Queue& rhs, The Queue from which to assign.
              *

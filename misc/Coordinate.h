@@ -24,40 +24,43 @@ namespace sdl {
 namespace misc {
     /**
      * @struct Coordinate, Represents a 2 dimensional coordinate.
+     *
+     * @tparam T, The type of the coordinate elements.
      */
+    template<typename T>
     struct Coordinate {
         /**
          * Constructs a Coordinate from a x and a y.
          *
-         * @param int x, The x coordinate.
-         * @param int y, The y coordinate.
+         * @param T x, The x coordinate.
+         * @param T y, The y coordinate.
          */
-        Coordinate (int x, int y) : x_ (x), y_ (y) {};
+        Coordinate (T x, T y) : x_ (x), y_ (y) {};
 
         /**
          * Returns the x coordinate.
          *
-         * @return int, The x coordinate.
+         * @return T, The x coordinate.
          */
-        int x () const { return x_; };
+        T x () const { return x_; };
 
         /**
          * Returns the y coordinate.
          *
-         * @return int, The y coordinate.
+         * @return T, The y coordinate.
          */
-        int y () const { return y_; };
+        T y () const { return y_; };
 
         private:
             /**
              * The x coordinate.
              */
-            int x_;
+            T x_;
 
             /**
              * The y coordinate.
              */
-            int y_;
+            T y_;
     }; //Coordinate
 }; //misc
 }; //sdl

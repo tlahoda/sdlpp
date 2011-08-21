@@ -150,6 +150,13 @@ namespace subsystem {
      * @struct CdRomBase, Base for the cd-rom subsystem.
      */
     struct CdRomBase {
+        /**
+         * The number of cd drives attached to the system.
+         *
+         * @return int, The number of cd drives.
+         */
+        int numDrives () { return SDL_CDNumDrives (); };
+
         protected:
             /**
              * Returns the name of the Subsystem.
@@ -216,6 +223,30 @@ namespace subsystem {
          * Returns the number of available joysticks.
          */
         int numJoysticks () { return SDL_NumJoysticks (); };
+
+        /**
+         * Enables joystick event polling.
+         * Warning: Calling this function may delete all events currently in the queue.
+         *
+         * @return bool, True if successful, false otherwise.
+         */
+        bool enableEvents () { return SDL_JoystickEventState (SDL_ENABLE) == SDL_ENABLE; };
+
+        /**
+         * Disables joystick event polling.
+         * Warning: Calling this function may delete all events currently in the queue.
+         *
+         * @return bool, True if successful, false otherwise.
+         */
+        bool disableEvents () { return SDL_JoystickEventState (SDL_IGNORE) == SDL_IGNORE; };
+
+        /**
+         * Determines if joystick event polling is enabled.
+         * Warning: Calling this function may delete all events currently in the queue.
+         *
+         * @return bool, True if enabled, false otherwise.
+         */
+        bool areEventsEnabled () { return SDL_JoystickEventState (SDL_QUERY) == SDL_ENABLE; };
 
         protected:
             /**

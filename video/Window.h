@@ -20,10 +20,12 @@
 #ifndef SDL_VIDEO_WINDOW_H
 #define SDL_VIDEO_WINDOW_H
 
+#include <stexcpt>
 #include <string>
 
 #include <SDL.h>
 
+#include "sdlpp/Sdl.h"
 #include "sdlpp/video/Surface.h"
 #include "sdlpp/video/Icon.h"
 
@@ -52,9 +54,7 @@ namespace video {
              *
              * @return string, The Window's caption.
              */
-            string caption () {
-                return caption_;
-            };
+            string caption () { return caption_; };
             
             /**
              * Sets the Window's caption.
@@ -72,11 +72,9 @@ namespace video {
             /**
              * Returns the window's icon.
              *
-             * @return Icon, The Window's icon.
+             * @return Icon&, The Window's icon.
              */
-            Icon icon () {
-                return icon_;
-            };
+            Icon& icon () { return icon_; };
             
             /**
              * Sets the Window's icon.
@@ -87,7 +85,7 @@ namespace video {
              */
             Window& icon (const Icon& icon) {
                 icon_ = icon;
-                SDL_WM_SetCaption (caption_.c_str (), icon.name ().c_str ());
+                SDL_WM_SetCaption (caption_.c_str (), icon_.name ().c_str ());
                 return *this;
             };
             
@@ -96,18 +94,28 @@ namespace video {
              *
              * @return bool, True if successful, false otherwise.
              */
-            bool minimize () {
-                return SDL_WM_IconifyWindow ();
-            };
+            bool minimize () { return SDL_WM_IconifyWindow (); };
 
             /**
              * Grabs the mouse and keyboard input.
              *
-             * @return int, The SDL_GrabMode.
+             * @return bool, True if successful, false otherwise.
              */
-            int grabInput () {
-                return SDL_WM_GrabInput (SDL_GRAB_QUERY);
-            };
+            bool grabInput () { return SDL_WM_GrabInput (SDL_GRAB_ON) == SDL_GRAB_ON; };
+
+            /**
+             * Releases the mouse and keyboard.
+             *
+             * @return bool, True if successful, false otherwise.
+             */
+            bool releaseInput () { return SDL_WM_GrabInput (SDL_GRAB_OFF) == SDL_GRAB_OFF; };
+
+            /**
+             * Determines if the input if grabbed.
+             *
+             * @return bool, True if grabbed, false otherwise.
+             */
+            bool inputGrabbed () { return SDL_WM_GrabInput (SDL_GRAB_QUERY) == SDL_GRAB_ON; };
 
             /**
              * Toggles fullscreen mode.
@@ -116,8 +124,22 @@ namespace video {
              *
              * @return bool, True if successful, false otherwise.
              */
-            bool fullScreen (const Surface& surface) {
-                return SDL_WM_ToggleFullScreen (surface.to_c ());
+            bool fullScreen (const Surface& surface) { return SDL_WM_ToggleFullScreen (surface.to_c ()); };
+
+            /**
+             * Gets the window manager specific information.
+             *
+             * @return SDL_SysWMinfo, The information.
+             */
+            SDL_SysWMinfo info () {
+                SDL_SysWMinfo i;
+                Sdl::instance ().compileVersion (&i.version);
+                int res = SDL_GetWMInfo (&i);
+                if (res == 0)
+                    throw runtime_error ("unimplemented");
+                else if (res == -1)
+                    throw runtime_error ("failed");
+                return i;
             };
 
         private:

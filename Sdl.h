@@ -25,6 +25,8 @@
 #include <SDL.h>
 
 namespace sdl {
+    using namespace std;
+
     /**
      * Represents the SDL system.
      */
@@ -39,7 +41,27 @@ namespace sdl {
                 static Sdl instance_;
                 return instance_;
             };
-            
+
+            /**
+             * Returns the compile-time version of the SDL library.
+             *
+             * @return SDL_version, The SDL_version structure.
+             */
+            SDL_version compileVersion () {
+                SDL_version version;
+                SDL_VERSION (&version);
+                return version;
+            };
+
+            /**
+             * Returns the runtime version of the SDL library.
+             *
+             * @return const SDL_version*, The SDL_version structure.
+             */
+            const SDL_version* linkedVersion () {
+                return SDL_Linked_Version ();
+            };
+
         private:
             /**
              * Initializes the SDL system.

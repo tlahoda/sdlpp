@@ -67,7 +67,7 @@ namespace sdl {
              * Initializes the SDL system.
              */
             Sdl () {
-                if (SDL_Init (0) != 0) 
+                if (SDL_Init (0) == -1) 
                     throw std::runtime_error (SDL_GetError ());
             };
 

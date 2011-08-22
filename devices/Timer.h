@@ -98,7 +98,7 @@ namespace devices {
              * @return SDL_TimerID, The id of the added timer.
              */
             SDL_TimerID add (unsigned int interval, Callback callback, void* param) {
-                if (!sdl::subsystem::Timer::isOpen ()) sdl::subsystem::Timer::instance ();
+                sdl::subsystem::Timer::instance ();
                 return SDL_AddTimer (interval, callback, param);
             };
 

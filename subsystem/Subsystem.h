@@ -84,11 +84,8 @@ namespace subsystem {
              * @return Subsystem&, A reference to this Subsystem.
              */
             Subsystem& init () {
-                if (!isOpen ()) {
-                    Sdl::instance ();
-                    SDL_InitSubSystem (T);
-                    if (!isOpen ()) throw runtime_error (Base::name () + " subsystem failed to initialize.");
-                }
+                if (SDL_InitSubSystem (T) == -1)
+                    throw runtime_error (Base::name () + " subsystem failed to initialize.");
                 return *this;
             };
 
@@ -98,7 +95,7 @@ namespace subsystem {
              * @return Subsystem&, A reference to this Subsystem.
              */
             Subsystem& quit () {
-                if (isOpen ()) SDL_QuitSubSystem (T);
+                SDL_QuitSubSystem (T);
                 return *this;
             };
 

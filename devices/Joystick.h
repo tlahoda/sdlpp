@@ -183,7 +183,7 @@ namespace devices {
              * @return SDL_Joystick*, The joystick's data structure.
              */
             SDL_Joystick* open (int index) {
-                if (!subsystem::Joystick::isOpen ()) subsystem::Joystick::instance ();
+                subsystem::Joystick::instance ();
 
                 if (SDL_JoystickOpened (index)) throw std::runtime_error ("");
 

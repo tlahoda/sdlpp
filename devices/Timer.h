@@ -24,7 +24,7 @@
 
 #include <SDL.h>
 
-#include "sdlpp/subsystem/Timer.h"
+#include "sdlpp/subsystem/Subsystem.h"
 
 namespace sdl {
 namespace devices {
@@ -58,19 +58,19 @@ namespace devices {
             };
 
             /**
+             * Destroy the Timer.
+             */
+            ~Timer () { 
+                SDL_RemoveTimer (id_);
+            };
+
+        private:
+            /**
              * Copy constructs a Timer.
              *
              * @param const Timer& rhs, The Timer to copy.
              */
-            Timer (const Timer& rhs) : id_ (rhs.id_) {
-            };
-
-            /**
-             * Destroy the Timer.
-             */
-            ~Timer () { 
-                SDL_RemoveTimer (id_) 
-            };
+            Timer (const Timer& rhs);
 
             /**
              * The assignment operator
@@ -79,15 +79,8 @@ namespace devices {
              *
              * @return Timer&, A reference to this Timer.
              */
-            Timer& operator= (const Timer& rhs) {
-                if (this!= &rhs) {
-                    SDL_RemoveTimer (id_);
-                    id_ = rhs.id_;
-                }
-                return *this;
-            };
+            Timer& operator= (const Timer& rhs);
 
-        private:
             /**
              * Adds a timer which will call Callback are the specified number of milliseconds has elapsed.
              *
@@ -102,7 +95,6 @@ namespace devices {
                 return SDL_AddTimer (interval, callback, param);
             };
 
-        private:
             /**
              * The id of the timer.
              */

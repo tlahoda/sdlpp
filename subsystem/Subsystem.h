@@ -29,6 +29,8 @@
 
 namespace sdl {
 namespace subsystem {
+    using namespace std;
+
     /**
      * @struct Subsystem, Represents a SDL subsystem.
      *
@@ -85,7 +87,7 @@ namespace subsystem {
                 if (!isOpen ()) {
                     Sdl::instance ();
                     SDL_InitSubSystem (T);
-                    if (!isOpen ()) throw std::runtime_error (Base::name () + " subsystem failed to initialize.");
+                    if (!isOpen ()) throw runtime_error (Base::name () + " subsystem failed to initialize.");
                 }
                 return *this;
             };
@@ -135,9 +137,9 @@ namespace subsystem {
             /**
              * Returns the name of the Subsystem.
              *
-             * @return const std::string, The name of the Subsystem.
+             * @return const string, The name of the Subsystem.
              */
-            static const std::string name () { return "Audio"; };
+            static const string name () { return "Audio"; };
     }; //AudioBase
 
     /**
@@ -161,9 +163,9 @@ namespace subsystem {
             /**
              * Returns the name of the Subsystem.
              *
-             * @return const std::string, The name of the Subsystem.
+             * @return const string, The name of the Subsystem.
              */
-            static const std::string name () { return "Cd-Rom"; };
+            static const string name () { return "Cd-Rom"; };
     }; //CdRomBase
 
     /**
@@ -180,9 +182,9 @@ namespace subsystem {
             /**
              * Returns the name of the Subsystem.
              *
-             * @return const std::string, The name of the Subsystem.
+             * @return const string, The name of the Subsystem.
              */
-            static const std::string name () { return "Everything"; };
+            static const string name () { return "Everything"; };
     }; //EverythingBase
 
     /**
@@ -199,9 +201,9 @@ namespace subsystem {
             /**
              * Returns the name of the Subsystem.
              *
-             * @return const std::string, The name of the Subsystem.
+             * @return const string, The name of the Subsystem.
              */
-            static const std::string name () { return "EventThread"; };
+            static const string name () { return "EventThread"; };
     }; //EventThreadBase
 
     /**
@@ -252,9 +254,9 @@ namespace subsystem {
             /**
              * Returns the name of the Subsystem.
              *
-             * @return const std::string, The name of the Subsystem.
+             * @return const string, The name of the Subsystem.
              */
-            static const std::string name () { return "Joystick"; };
+            static const string name () { return "Joystick"; };
     }; //JoystickBase
 
     /**
@@ -273,7 +275,7 @@ namespace subsystem {
              *
              * @return const std::string, The name of the Subsystem.
              */
-            static const std::string name () { return "NoParachute"; };
+            static const string name () { return "NoParachute"; };
     }; //NoParachuteBase
 
     /**
@@ -305,9 +307,9 @@ namespace subsystem {
             /**
              * Returns the name of the Subsystem.
              *
-             * @return const std::string, The name of the Subsystem.
+             * @return const string, The name of the Subsystem.
              */
-            static const std::string name () { return "Timer"; };
+            static const string name () { return "Timer"; };
     }; //TimerBase
 
     /**
@@ -321,11 +323,6 @@ namespace subsystem {
      */
     struct VideoBase {
         /**
-         * Constructs a VideoBase.
-         */
-        VideoBase () {};
-
-        /**
          * Swaps the OpenGL frame buffers if double-buffering is supported.
          *
          * @return void.
@@ -336,9 +333,9 @@ namespace subsystem {
             /**
              * Returns the name of the Subsystem.
              *
-             * @return const std::string, The name of the Subsystem.
+             * @return const string, The name of the Subsystem.
              */
-            static const std::string name () { return "Video"; };
+            static const string name () { return "Video"; };
     }; //VideoBase
 
     /**

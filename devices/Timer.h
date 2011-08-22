@@ -20,7 +20,9 @@
 #ifndef SDL_DEVICES_TIMER_H
 #define SDL_DEVICES_TIMER_H
 
+#include <stdexcept>
 #include <string>
+#include <iostream>
 
 #include <SDL.h>
 
@@ -28,6 +30,7 @@
 
 namespace sdl {
 namespace devices {
+    using namespace std;
     using namespace misc;
 
     /**
@@ -61,7 +64,9 @@ namespace devices {
              * Destroy the Timer.
              */
             ~Timer () { 
-                SDL_RemoveTimer (id_);
+                //log error if unable to remove timer.
+                if (SDL_RemoveTimer (id_) == SDL_FALSE)
+                    cout << "Failed to remove timer " << id_ << endl;
             };
 
         private:
@@ -91,8 +96,11 @@ namespace devices {
              * @return SDL_TimerID, The id of the added timer.
              */
             SDL_TimerID add (unsigned int interval, Callback callback, void* param) {
-                sdl::subsystem::Timer::instance ();
-                return SDL_AddTimer (interval, callback, param);
+                subsystem::Timer::instance ();
+                SDL_TimerID id = SDL_AddTimer (interval, callback, param);
+                if (id == NULL)
+                    throw runtime_error ("Failed to add timer.");
+                return id;
             };
 
             /**

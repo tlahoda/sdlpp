@@ -20,6 +20,8 @@
 #ifndef SDL_DEVICES_CURSOR_H
 #define SDL_DEVICES_CURSOR_H
 
+#include <stdexcept>
+
 #include <SDL.h>
 
 #include "sdlpp/misc/Rect.h"
@@ -27,6 +29,7 @@
 
 namespace sdl {
 namespace devices {
+    using namespace std;
     using namespace misc;
 
     /**
@@ -34,7 +37,10 @@ namespace devices {
      */
     class Cursor {
         public:
-            Cursor () cursor_ (SDL_GetCursor ()) {};
+            Cursor () : cursor_ (SDL_GetCursor ()) {
+                if (cursor_ == NULL)
+                    throw runtime_error ("Unable to get system cursor.");
+            };
 
             /**
              * Constructs a Cursor.
@@ -47,7 +53,10 @@ namespace devices {
             Cursor (Uint8 *data, Uint8 *mask, const Rect& rect, const Coordinate<int>& pos)
                 : cursor_ (SDL_CreateCursor (data, mask, 
                                              rect.width (), rect.height (),
-                                             pos.x (), pos.y ())) {};
+                                             pos.x (), pos.y ())) {
+                if (cursor_ == NULL)
+                    throw runtime_error ("Failed to create the Cursor.");
+            };
 
             /**
              * Destroys a Cursor.
@@ -61,7 +70,7 @@ namespace devices {
              *
              * @return void.
              */
-            void move (const Coordinate<short>& pos) { SDL_Warp (pos.x (), pos.y ()); };
+            void move (const Coordinate<short>& pos) { SDL_WarpMouse (pos.x (), pos.y ()); };
 
             /**
              * Shows the Cursor.
@@ -82,7 +91,7 @@ namespace devices {
              *
              * @return bool, True is Cursor is visible, false otherwise.
              */
-            bool isVisible () { return SDL_ShowCursor (SDL_QUERY) == SDL_ENABLED; };
+            bool isVisible () { return SDL_ShowCursor (SDL_QUERY) == SDL_ENABLE; };
 
             /**
              * Toggles the visibility of the Cursor.
@@ -99,6 +108,13 @@ namespace devices {
              * @return void.
              */
             void activate () { SDL_SetCursor (cursor_); };
+
+            /**
+             * Force the cursor to redraw.
+             *
+             * @return void.
+             */
+            void redraw () { SDL_SetCursor (NULL); }; 
 
         private:
             /**

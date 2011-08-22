@@ -99,7 +99,7 @@ namespace audio {
             };
 
             /**
-             * Starts audio playback..
+             * Starts audio playback.
              *
              * @return Audio&, A reference to this Audio.
              */

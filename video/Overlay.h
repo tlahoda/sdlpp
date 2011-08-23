@@ -25,15 +25,6 @@
 #include "sdlpp/misc/Rect.h"
 #include "sdlpp/video/Surface.h"
 
-/*typedef struct{
-  Uint32 format;          //Overlay format
-  int w, h;               //Width and height of overlay
-  int planes;             //Number of planes in the overlay. Usually either 1 or 3
-  Uint16 *pitches;        //An array of pitches, one for each plane. Pitch is the length of a row in bytes.
-  Uint8 **pixels;         //An array of pointers to the data of each plane. The overlay should be locked before these pointers are used.
-  Uint32 hw_overlay:1;    //This will be set to 1 if the overlay is hardware accelerated.
-} SDL_Overlay;*/
-
 namespace sdl {
 namespace video {
     using namespace misc;
@@ -51,33 +42,26 @@ namespace video {
              * @param const surface& display, The Surface on which to display the Overlay.
              */
             Overlay (const Rect& rect, Uint32 format, const Surface& display)
-              : overlay_ (SDL_CreateYUVOverlay (rect.width (), rect.height (), format, display.to_c ())) {
-            };
+              : overlay_ (SDL_CreateYUVOverlay (rect.width (), rect.height (), format, display.to_c ())) {};
 
             /**
              * Destroys the Overlay.
              */
-            ~Overlay () {
-                SDL_FreeYUVOverlay (overlay_);
-            };
+            ~Overlay () { SDL_FreeYUVOverlay (overlay_); };
 
             /**
              * Locks the Overlay.
              *
              * @return bool, True if the Overlay was locked, false otherwise.
              */
-            bool lock () {
-                return (SDL_LockYUVOverlay (overlay_) == 0);
-            };
+            bool lock () { return SDL_LockYUVOverlay (overlay_) == 0; };
             
             /**
              * Unlocks the Overlay.
              *
              * @return void.
              */
-            void unlock () {
-                SDL_UnlockYUVOverlay (overlay_);
-            };
+            void unlock () { SDL_UnlockYUVOverlay (overlay_); };
 
             /**
              * Displays the Overlay.
@@ -86,9 +70,7 @@ namespace video {
              *
              * @return bool, True if successful, false otherwise.
              */
-            bool display (Rect& dstRect) {
-                return (SDL_DisplayYUVOverlay (overlay_, *dstRect) == 0);
-            };
+            bool display (Rect& dstRect) { return SDL_DisplayYUVOverlay (overlay_, *dstRect) == 0; };
 
         private:
             /**

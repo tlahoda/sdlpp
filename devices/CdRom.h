@@ -35,7 +35,7 @@ namespace devices {
          *
          * @param int drive, The id of the cd drive.
          */
-        CdRom (int drive) : cd_ (SDL_CD_Open (drive)) {};
+        CdRom (int drive) : cd_ (SDL_CDOpen (drive)) {};
 
         /**
          * Closes the cd drive.
@@ -47,7 +47,7 @@ namespace devices {
          *
          * @return string, The system dependent human readable name of the cd drive.
          */
-        string name () { return SDL_CDName (cd_.id); };
+        string name () { return SDL_CDName (cd_->id); };
 
         /**
          * Returns the status of the cd drive.
@@ -118,7 +118,7 @@ namespace devices {
          *
          * @return SDL_CD*, The SDL_CD structure.
          */
-        SDL_CD* get () { return cd_; } const;
+        SDL_CD* get () const { return cd_; };
 
         /**
          * Gets the underlying SDL_CD structure.

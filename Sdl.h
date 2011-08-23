@@ -58,9 +58,7 @@ namespace sdl {
              *
              * @return const SDL_version*, The SDL_version structure.
              */
-            const SDL_version* linkedVersion () {
-                return SDL_Linked_Version ();
-            };
+            const SDL_version* linkedVersion () { return SDL_Linked_Version (); };
 
         private:
             /**
@@ -81,9 +79,7 @@ namespace sdl {
             /**
              * Destroys the SDL system.
              */
-            ~Sdl () {
-                SDL_Quit ();
-            };
+            ~Sdl () { SDL_Quit (); };
             
             /**
              *

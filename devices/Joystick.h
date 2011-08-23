@@ -22,17 +22,12 @@
 
 #include <string>
 #include <stdexcept>
-
-#include <boost/static_assert.hpp>
-#include <boost/type_traits.hpp>
+#include <utility>
 
 #include <SDL.h>
 
-#include "sdlpp/subsystem/Joystick.h"
-#include "sdlpp/devices/Axis.h"
-#include "sdlpp/devices/JoystickButton.h"
-#include "sdlpp/devices/Hat.h"
-#include "sdlpp/devices/Trackball.h"
+#include "sdlpp/subsystem/Subsystem.h"
+#include "sdlpp/event/Components.h"
 
 namespace sdl {
 namespace devices {
@@ -72,7 +67,7 @@ namespace devices {
              *
              * @return int, The index of the joystick.
              */
-            int index () { return index_; };
+            int index () { return SDL_JoystickIndex (joystick_); };
             
             /**
              * Gets the number of joystick axes.
@@ -103,59 +98,44 @@ namespace devices {
             int numTrackballs () { return SDL_JoystickNumBalls (joystick_); };
 
             /**
-             * Returns the state of the given joystick axis.
+             * Returns the position of the given joystick axis.
              *
-             * @param Axis& axis, The axis for which to retrieve the state.
+             * @param int axis, The axis.
              *
-             * @return Joystick&, A reference to this Joystick.
+             * @return short, The position.
              */
-            template<class Axis>
-            Joystick& axisState (Axis& axis) {
-                BOOST_STATIC_ASSERT ((boost::is_same<Axis, devices::Axis<Axis::value> >::value));
-                axis.state = SDL_JoystickGetAxis (joystick_, Axis::value);
-                return *this;
-            };
+            short axisPosition (int axis) { return SDL_JoystickGetAxis (joystick_, axis); };
             
             /**
-             * Returns the state of the given joystick button.
+             * Determines if the button is pressed.
              *
-             * @param Button& button, The button for which to retrieve the state.
+             * @param int button, The button.
              *
-             * @return Joystick&, A reference to this Joystick.
+             * @return bool, True if the button is pressed, false otherwise.
              */
-            template<class Button>
-            Joystick& buttonState (Button& button) {
-                BOOST_STATIC_ASSERT ((boost::is_same<Button, devices::JoystickButton<Button::value> >::value));
-                button.pressed = SDL_JoystickGetButton (joystick_, Button::value);
-                return *this;
-            };
+            bool isPressed (int button) { return SDL_JoystickGetButton (joystick_, button) == 1; };
 
             /**
              * Returns the state of the given joystick hat.
              *
-             * @param Hat& hat, The hat for which to retrieve the state.
+             * @param int hat, The hat.
              *
-             * @return Joystick&, A reference to this Joystick.
+             * @return char, The state.
              */
-            template<class Hat>
-            Joystick& hatState (Hat& hat) {
-                BOOST_STATIC_ASSERT ((boost::is_same<Hat, devices::Hat<Hat::value> >::value));
-                hat.state = SDL_JoystickGetHat (joystick_, Hat::value);
-                return *this;
-            };
+            char hatState (int hat) { return SDL_JoystickGetHat (joystick_, hat); };
 
             /**
-             * Returns the state of the given joystick trackball.
+             * Returns the relative motion of the given joystick trackball.
              *
-             * @param Trackball& trackball, The trackball for which to retrieve the state.
+             * @param int trackball, The trackball.
              *
-             * @return Joystick&, A reference to this Joystick.
+             * @return pair<int, int>, The relative motion.
              */
-            template<class Trackball>
-            Joystick& trackballState (Trackball& trackball) {
-                BOOST_STATIC_ASSERT ((boost::is_same<Trackball, devices::Trackball<Trackball::value> >::value));
-                SDL_JoystickGetBall (joystick_, Trackball::value, trackball.deltaX, trackball.deltaY);
-                return *this;
+            pair<int, int> trackballMotion (int trackball) {
+                pair<int, int> res = make_pair (0, 0);
+                if (SDL_JoystickGetBall (joystick_, trackball, &res.first, &res.second) == -1)
+                    throw runtime_error ("Unable to determine trackball motion");
+                return res;
             };
 
         private:

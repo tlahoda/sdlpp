@@ -82,10 +82,12 @@ namespace video {
             /**
              * Displays the Overlay.
              *
+             * @param Rect& rect, The rectangle onto which to blit.
+             *
              * @return bool, True if successful, false otherwise.
              */
-            bool display () {
-                return (SDL_DisplayYUVOverlay (overlay_, SDL_Rect *dstrect) == 0);
+            bool display (Rect& dstRect) {
+                return (SDL_DisplayYUVOverlay (overlay_, *dstRect) == 0);
             };
 
         private:

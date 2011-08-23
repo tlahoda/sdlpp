@@ -1,5 +1,5 @@
 /**
- * /file Wav.h, Contains the Wav class.
+ * @file Wav.h, Contains the Wav class.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -21,17 +21,18 @@
 #define SDL_AUDIO_WAV_H
 
 #include <string>
-#include <stexcpt>
+#include <stdexcept>
 
 #include <SDL.h>
 
 namespace sdl {
 namespace audio {
+    using namespace std;
+
     /**
      * @class Wav, Represents a wav file.
      */
     class Wav {
-        using namesapce std;
         public:
             /**
              * Opens the specified a wav file.
@@ -44,8 +45,6 @@ namespace audio {
                 audioLen_ (0),
                 spec_ () {
                 SDL_LoadWAV (name_.c_str (), &spec_, &audioBuf_, &audioLen_);
-                if (spec_ == 0)
-                    throw runtime_error ("");
             };
 
             /**
@@ -90,12 +89,12 @@ namespace audio {
             /**
              * The audio buffer.
              */
-            char* audioBuf_;
+            unsigned char* audioBuf_;
 
             /**
              * The length of the audio buffer.
              */
-            int audioLen_;
+            unsigned int audioLen_;
 
             /**
              * The SDL_AudioSpec structure.

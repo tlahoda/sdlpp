@@ -42,11 +42,11 @@ namespace devices {
         /**
          * Gets the current keyboard state.
          *
-         * @return pair<char*, int>, A pair containing an array of the current keyboard state and its length.
+         * @return pair<unsignedchar*, int>, A pair containing an array of the current keyboard state and its length.
          */
-        static pair<char*, int> keyState () {
+        static pair<unsigned char*, int> keyState () {
             int numKeys;
-            char* keys = SDL_GetKeyState (&numKeys);
+            unsigned char* keys = SDL_GetKeyState (&numKeys);
             return make_pair (keys, numKeys);
         };
 

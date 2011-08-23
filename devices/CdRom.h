@@ -20,9 +20,12 @@
 #ifndef SDL_DEVICES_CDROM_H
 #define SDL_DEVICES_CDROM_H
 
+#include <stdexcept>
 #include <string>
 
 #include <SDL.h>
+
+#include "sdlpp/subsystem/Subsystem.h"
 
 namespace sdl {
 namespace devices {
@@ -35,7 +38,7 @@ namespace devices {
          *
          * @param int drive, The id of the cd drive.
          */
-        CdRom (int drive) : cd_ (SDL_CDOpen (drive)) {};
+        CdRom (int drive) : cd_ (open (drive)) {};
 
         /**
          * Closes the cd drive.
@@ -128,6 +131,23 @@ namespace devices {
         SDL_CD* get () { return cd_; };
 
         private:
+            /**
+             * Opens the specified cd drive.
+             *
+             * @param int drive, The id of the cd drive.
+             *
+             * @return SDL_CD*, The SDL_CD structure.
+             */
+            SDL_CD* open (int drive) {
+                if (drive > subsystem::CdRom::instance ().numDrives () - 1)
+                    throw runtime_error ("Invalid drive id.");
+
+                SDL_CD* cd = SDL_CDOpen (drive);
+                if (cd == NULL)
+                    throw runtime_error ("Failed to open cd drive.");
+                return cd;
+            };
+
             /**
              * The SDL_CD structure.
              */

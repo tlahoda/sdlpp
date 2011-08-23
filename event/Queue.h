@@ -32,7 +32,8 @@ namespace event {
     class Queue {
         public:
             /**
-             * The type of the event filter function
+             * @typedef int (*EventFilter) (const SDL_Event* event),
+             *          The type of the event filter function
              *
              * @param const SDL_Event* event, The event to filter.
              *

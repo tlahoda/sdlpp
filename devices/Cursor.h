@@ -39,6 +39,8 @@ namespace devices {
         public:
             /**
              * Constructs a Cursor using the system's cursor.
+             *
+             * @throw runtime_error, Throws a runtime_error if unable to get the system cursor.
              */
             Cursor () : cursor_ (SDL_GetCursor ()) {
                 if (cursor_ == NULL)
@@ -52,6 +54,8 @@ namespace devices {
              * @param unsigned char* mask, The mask for each Cursor pixel.
              * @param const Rect& rect, A rectangle containing the height and width of the Cursor.
              * @param const Coordinate<int>& pos, The position of the upper-left corner of the Cursor.
+             *
+             * @throw runtime_error, Throws a runtime_error if unable to create cursor.
              */
             Cursor (unsigned char* data, unsigned char* mask, const Rect& rect, const Coordinate<int>& pos)
                 : cursor_ (SDL_CreateCursor (data, mask, 

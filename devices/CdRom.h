@@ -137,6 +137,8 @@ namespace devices {
              * @param int drive, The id of the cd drive.
              *
              * @return SDL_CD*, The SDL_CD structure.
+             *
+             * @throw runtime_error, Throws a runtime_error if index is invalid or if it failed to open the cd drive.
              */
             SDL_CD* open (int drive) {
                 if (drive > subsystem::CdRom::instance ().numDrives () - 1)

@@ -130,6 +130,8 @@ namespace devices {
              * @param int trackball, The trackball.
              *
              * @return pair<int, int>, The relative motion.
+             *
+             * @throw runtime_error, Throws a runtime_error if unable to determine trackball motion.
              */
             pair<int, int> trackballMotion (int trackball) {
                 pair<int, int> res = make_pair (0, 0);
@@ -161,6 +163,8 @@ namespace devices {
              * @param int index, The index of the joystick to open.
              *
              * @return SDL_Joystick*, The joystick's data structure.
+             *
+             * @throw runtime_error, Throws a runtime_error if index is invalid or unable to open joystick.
              */
             SDL_Joystick* open (int index) {
                 if (index > subsystem::Joystick::instance ().numJoysticks () - 1)

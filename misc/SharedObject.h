@@ -35,6 +35,8 @@ namespace misc {
          * Loads a shared object from a file.
          *
          * @param const string& fileName, The file from which to load the shared object.
+         *
+         * @throw runtime_error, Throws a runtime_error if unable to load shared object.
          */
         SharedObject (const string& fileName) : handle_ (SDL_LoadObject (fileName.c_str ())), fileName_ (fileName) {
             if (handle_ == NULL)
@@ -52,6 +54,8 @@ namespace misc {
          * @param const string& name, The function's name.
          *
          * @return void*, The pointer to the function on success, NULL otherwise.
+         *
+         * @throw runtime_error, Throws a runtime_error if unable to load function.
          */
         void* loadFunction (const string& name) {
             void* func = SDL_LoadFunction (handle_, name.c_str ());

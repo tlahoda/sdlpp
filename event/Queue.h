@@ -114,6 +114,8 @@ namespace event {
              * Removes an event from the front of the Queue.
              *
              * @return SDL_Event, The event at the front of the queue.
+             *
+             * @throw runtime_error, Throws a runtime_error if no events in queue.
              */
             SDL_Event pop () {
                 SDL_Event event;
@@ -144,6 +146,8 @@ namespace event {
              * Waits on an event to become available in the Queue.
              *
              * @return SDL_Event, The event returned at the end of the wait.
+             *
+             * @throw runtime_error, Throws a runtime_error if failed waiting.
              */
             SDL_Event wait () {
                 SDL_Event event;

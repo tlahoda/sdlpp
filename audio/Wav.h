@@ -38,6 +38,8 @@ namespace audio {
              * Opens the specified a wav file.
              *
              * @param const string& fileName, The name of the wav file.
+             *
+             * @throw runtime_error, Throws a runtime_error if the wav could not be loaded.
              */
             Wav (const string& fileName)
               : name_ (fileName),

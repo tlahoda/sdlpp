@@ -44,6 +44,8 @@ namespace audio {
              * @param unsigned char silence, The audio buffer silence value.
              * @param unsigned short samples, The audio buffer size in samples.
              * @param unsigned int size, The audio buffer size in bytes.
+             *
+             * @throw runtime_error, Throws a runtime_error if the audio could not be opened.
              */
             Audio (int freq, unsigned short format, unsigned char channels, unsigned char silence, unsigned short samples, unsigned int size)
               : obtained_ () {

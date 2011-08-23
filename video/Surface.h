@@ -42,6 +42,8 @@ namespace video {
         public:
             /**
              * Constructs a Surface from the current display surface.
+             *
+             * @throw runtime_error, Throws a runtime_error if unable to get current system display.
              */
             Surface () : surface_ (SDL_GetVideoSurface (), &SDL_FreeSurface) {
                 if (surface_ == NULL)
@@ -52,6 +54,8 @@ namespace video {
              * Constructs a Surface from a SDL_Surface structure.
              *
              * @param SDL_Surface*, The SDL_Surface structure.
+             *
+             * @throw runtime_error, Throws a runtime_error if surface is NULL.
              */
             Surface (SDL_Surface* surface) : surface_ (surface, &SDL_FreeSurface) {
                 if (surface_ == NULL)
@@ -62,6 +66,8 @@ namespace video {
              * Constructs a Surface from a file.
              *
              * @param const string& fileName, The name of the file.
+             *
+             * @throw runtime_error, Throws a runtime_error if unable to load bitmap.
              */
             Surface (const string& fileName) : surface_ (SDL_LoadBMP (fileName.c_str ()), &SDL_FreeSurface) {
                 if (surface_ == NULL)
@@ -75,6 +81,8 @@ namespace video {
              * @param int width, The width.
              * @param int bpp, The bits per pixel.
              * @param unsigned int flags, The surface flags.
+             *
+             * @throw runtime_error, Throws a runtime_error if unable to set video mode.
              */
             Surface (int height, int width, int bpp, unsigned int flags)
               : surface_ (SDL_SetVideoMode (height, width, bpp, flags)) {
@@ -89,6 +97,8 @@ namespace video {
              * @param const Rect& rect, A rectangle with the height and width.
              * @param int bpp, The number of bits per pixel.
              * @param const Color& mask, The color mask.
+             *
+             * @throw runtime_error, Throws a runtime_error if unable to create RGB surface.
              */
             Surface (Uint32 flags, const Rect& rect, int bpp, const Color& mask)
               : surface_ (SDL_CreateRGBSurface (flags, rect.width (), rect.height (), bpp, 
@@ -106,6 +116,8 @@ namespace video {
              * @param int bpp, The number of bits per pixel.
              * @param int pitch, The size of the scanline in bytes, width in pixels * bytes per pixel.
              * @param const Color& mask, The color mask.
+             *
+             * @throw runtime_error, Throws a runtime_error if unable to create RGB surface.
              */
             Surface (void *pixels, const Rect& rect, int bpp, int pitch, const Color& mask)
               : surface_ (SDL_CreateRGBSurfaceFrom (pixels, rect.width (), rect.height (), bpp, pitch, 
@@ -148,6 +160,8 @@ namespace video {
              * @param const Rect& dstRect, The destination rectangle.
              *
              * @return Surface@, A reference to this Surface.
+             *
+             * @throw runtime_error, Throws a runtime_error if unable to blit.
              */
             Surface& blit (Surface& surface, const Rect& srcRect, const Rect& dstRect) {
                 SDL_Rect src;

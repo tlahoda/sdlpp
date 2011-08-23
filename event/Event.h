@@ -67,6 +67,8 @@ namespace event {
          * Constructs an event from a SDL_Event structure.
          *
          * @param const SDL_Event* event, The SDL_Event structure.
+         *
+         * @throw runtime_error, Throws a runtime_error if the event type in incorrect.
          */
         explicit Event (const SDL_Event* event = 0) : Base (event) {
             if (event != 0)

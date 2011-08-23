@@ -133,6 +133,8 @@ namespace video {
              * Gets the window manager specific information.
              *
              * @return SDL_SysWMinfo, The information.
+             *
+             * @throw runtime_error, Throws a runtime_error if unimplemented or failed.
              */
             /*SDL_SysWMinfo info () {
                 SDL_SysWMinfo i;

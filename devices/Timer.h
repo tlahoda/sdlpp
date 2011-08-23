@@ -94,6 +94,8 @@ namespace devices {
              * @param void* param, The callback's parameters.
              *
              * @return SDL_TimerID, The id of the added timer.
+             *
+             * @throw runtime_error, Throws a runtime_error if unable to add timer.
              */
             SDL_TimerID add (unsigned int interval, Callback callback, void* param) {
                 subsystem::Timer::instance ();

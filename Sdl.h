@@ -63,6 +63,8 @@ namespace sdl {
         private:
             /**
              * Initializes the SDL system.
+             *
+             * @throw runtime_error, Throws a runtime_error if SDL could not be initialized.
              */
             Sdl () {
                 if (SDL_Init (0) == -1) 

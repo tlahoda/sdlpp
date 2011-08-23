@@ -82,6 +82,8 @@ namespace subsystem {
              * Initializes the Subsystem.
              *
              * @return Subsystem&, A reference to this Subsystem.
+             *
+             * @throw runtime_error, Throws a runtime_error if unable to initialize subsystem.
              */
             Subsystem& init () {
                 if (SDL_InitSubSystem (T) == -1)

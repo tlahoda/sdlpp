@@ -26,8 +26,6 @@
 
 namespace sdl {
 namespace misc {
-    using namespace boost;
-
     /**
      * @struct is_base_of_all, Recursively determines if Base is the base of all of the Ts.
      *
@@ -62,7 +60,7 @@ namespace misc {
         /**
          * The value of the recursive check.
          */
-        const static bool value = is_base_of<Base, T>::value && is_base_of_all<Base, Ts...>::value;
+        const static bool value = boost::is_base_of<Base, T>::value && is_base_of_all<Base, Ts...>::value;
     }; //is_base_of_all
 }; //misc
 }; //sdl

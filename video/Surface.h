@@ -41,12 +41,20 @@ namespace video {
     class Surface {
         public:
             /**
+             * Constructs a Surface from the current display surface.
+             */
+            Surface () : surface_ (SDL_GetVideoSurface ()) {
+                if (surface_ == NULL)
+                    throw runtime_error (SDL_GetError ());
+            };
+
+            /**
              * Constructs a Surface from a SDL_Surface structure.
              *
              * @param SDL_Surface*, The SDL_Surface structure.
              */
             Surface (SDL_Surface* surface) : surface_ (surface, &SDL_FreeSurface) {
-                if (surface_ == 0)
+                if (surface_ == NULL)
                     throw runtime_error (SDL_GetError ());
             };
 
@@ -56,7 +64,7 @@ namespace video {
              * @param const string& fileName, The name of the file.
              */
             Surface (const string& fileName) : surface_ (SDL_LoadBMP (fileName.c_str ()), &SDL_FreeSurface) {
-                if (surface_ == 0)
+                if (surface_ == NULL)
                     throw runtime_error (SDL_GetError ());
             };
 
@@ -72,7 +80,7 @@ namespace video {
               : surface_ (SDL_CreateRGBSurface (flags, rect.width (), rect.height (), bpp, 
                                                 mask.red (), mask.green (), mask.blue (), mask.alpha ()), 
                                                 &SDL_FreeSurface) {
-                if (surface_ == 0)
+                if (surface_ == NULL)
                     throw runtime_error (SDL_GetError ());
             };
 
@@ -89,7 +97,7 @@ namespace video {
               : surface_ (SDL_CreateRGBSurfaceFrom (pixels, rect.width (), rect.height (), bpp, pitch, 
                                                     mask.red (), mask.green (), mask.blue (), mask.alpha ()), 
                                                     &SDL_FreeSurface) {
-                if (surface_ == 0)
+                if (surface_ == NULL)
                     throw runtime_error (SDL_GetError ());
             };
 
@@ -138,7 +146,7 @@ namespace video {
                 dst.h = dstRect.height ();
                 dst.x = dstRect.x ();
                 dst.y = dstRect.y ();
-                if (SDL_BlitSurface (surface.to_c (), &src, surface_.get (), &dst))
+                if (SDL_BlitSurface (surface.to_c (), &src, surface_.get (), &dst) == -1)
                     throw runtime_error (SDL_GetError ());
                 return *this;
             };
@@ -148,45 +156,35 @@ namespace video {
              * 
              * @return int, The height.
              */
-            int height () { 
-                return surface_->h; 
-            };
+            int height () { return surface_->h; };
 
             /**
              * Returns the width.
              *
              * @return int, The width.
              */
-            int width () { 
-                return surface_->w; 
-            };
+            int width () { return surface_->w; };
 
             /**
              * Returns the number of bits per pixel.
              *
              * @return int, The number of bits per pixel.
              */
-            int bpp () { 
-                return surface_->format->BitsPerPixel; 
-            };
+            int bpp () { return surface_->format->BitsPerPixel; };
 
             /**
              * Locks the Surface.
              *
              * @return bool, True if successful, false otherwise.
              */
-            bool lock () {
-                return  (SDL_LockSurface (surface_.get ()) == 0);
-            };
+            bool lock () { return SDL_LockSurface (surface_.get ()) == 0; };
 
             /**
              * Unlock the Surface.
              *
              * @return void.
              */
-            void unlock () {
-                SDL_UnlockSurface (surface_.get ());
-            };
+            void unlock () { SDL_UnlockSurface (surface_.get ()); };
 
             /**
              * Save the Surface to the named file.
@@ -195,18 +193,14 @@ namespace video {
              *
              * @return bool, True if successful, false otherwise.
              */
-            bool save (const string& fileName) {
-                return (SDL_SaveBMP (surface_.get (), fileName.c_str ()) == 0);
-            };
+            bool save (const string& fileName) { return SDL_SaveBMP (surface_.get (), fileName.c_str ()) == 0; };
              
             /**
              * Exposes the underlying SDL_Surface structure.
              *
              * @return SDL_Surface* const, The SDL_Surface structure.
              */
-            SDL_Surface* const to_c () const {
-                return surface_.get ();
-            };
+            SDL_Surface* const to_c () const { return surface_.get (); };
 
         private:
             /**

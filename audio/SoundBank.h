@@ -22,7 +22,7 @@
 
 #include <vector>
 
-#include "sdlpp/Wav.h"
+#include "sdlpp/audio/Wav.h"
 
 namespace sdl {
 namespace audio {

@@ -43,7 +43,7 @@ namespace video {
             /**
              * Constructs a Surface from the current display surface.
              */
-            Surface () : surface_ (SDL_GetVideoSurface ()) {
+            Surface () : surface_ (SDL_GetVideoSurface (), &SDL_FreeSurface) {
                 if (surface_ == NULL)
                     throw runtime_error (SDL_GetError ());
             };

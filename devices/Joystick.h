@@ -53,7 +53,7 @@ namespace devices {
             /**
              * Destroy a Joystick.
              */
-            ~Joystick () { if (joystick_) SDL_JoystickClose (joystick_); };
+            ~Joystick () { SDL_JoystickClose (joystick_); };
 
             /**
              * Gets the implementation dependent name of the joystick.
@@ -77,7 +77,7 @@ namespace devices {
             int numAxes () { return SDL_JoystickNumAxes (joystick_); };
 
             /**
-             * Gets the number og joystick buttons.
+             * Gets the number of joystick buttons.
              *
              * return int, The number of joystick buttons.
              */
@@ -163,12 +163,12 @@ namespace devices {
              * @return SDL_Joystick*, The joystick's data structure.
              */
             SDL_Joystick* open (int index) {
-                subsystem::Joystick::instance ();
-
-                if (SDL_JoystickOpened (index)) throw std::runtime_error ("");
+                if (index > subsystem::Joystick::instance ().numJoysticks () - 1)
+                    throw runtime_error ("Invalid joystick index.");
 
                 SDL_Joystick* joystick = SDL_JoystickOpen (index);
-                if (!joystick) throw std::bad_alloc ();
+                if (joystick == NULL) 
+                    throw runtime_error ("Failed to open joystick.");
                 return joystick;
             };
 

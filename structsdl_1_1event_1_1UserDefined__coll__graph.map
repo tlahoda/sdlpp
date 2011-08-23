@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; User, SDL_USEREVENT, Codes...\&gt;, UserBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="5,307,541,410"/>
+<area shape="rect" id="node4" href="$structsdl_1_1event_1_1UserBase.html" title="{sdl::event::UserBase\n||+ UserBase()\l+ get()\l+ get()\l}" alt="" coords="201,139,345,259"/>
+<area shape="rect" id="node6" href="$structsdl_1_1event_1_1EventBase.html" title="{sdl::event::EventBase\n|# event_\l|+ EventBase()\l}" alt="" coords="199,5,348,91"/>
+</map>

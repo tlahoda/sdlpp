@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>SDL++: Main Page</title>
+<title>SDL++: video/Icon.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,10 +35,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li id="searchli">
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -57,6 +57,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+    </ul>
+  </div>
 </div>
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -68,18 +73,53 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-  initNavTree('index.html','');
+  initNavTree('Icon_8h.html','');
 </script>
 <div id="doc-content">
 <div class="header">
   <div class="headertitle">
-<h1>SDL++ Documentation</h1>  </div>
+<h1>video/Icon.h</h1>  </div>
 </div>
 <div class="contents">
-</div>
+<a href="Icon_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00020"></a>00020 <span class="preprocessor">#ifndef SDL_VIDEO_ICON_H</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define SDL_VIDEO_ICON_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="keyword">namespace </span>sdl {
+<a name="l00026"></a><a class="code" href="namespacesdl_1_1video.html">00026</a> <span class="keyword">namespace </span>video {
+<a name="l00027"></a>00027     <span class="keyword">using namespace </span>std;
+<a name="l00028"></a>00028 
+<a name="l00032"></a><a class="code" href="classsdl_1_1video_1_1Icon.html">00032</a>     <span class="keyword">class </span><a class="code" href="classsdl_1_1video_1_1Icon.html">Icon</a> {
+<a name="l00033"></a>00033         <span class="keyword">public</span>:
+<a name="l00039"></a><a class="code" href="classsdl_1_1video_1_1Icon.html#ab4fef7d0381f9ca531cdbe24c2194c29">00039</a>             <a class="code" href="classsdl_1_1video_1_1Icon.html#ab4fef7d0381f9ca531cdbe24c2194c29">Icon</a> (<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name) : name_ (name) {};
+<a name="l00040"></a>00040 
+<a name="l00044"></a><a class="code" href="classsdl_1_1video_1_1Icon.html#a25bde98c7daf314b74e5447a0e92ed5b">00044</a>             <a class="code" href="classsdl_1_1video_1_1Icon.html#a25bde98c7daf314b74e5447a0e92ed5b">~Icon</a> () {};
+<a name="l00045"></a>00045 
+<a name="l00051"></a><a class="code" href="classsdl_1_1video_1_1Icon.html#a30a4badac24a20e3ff29ed6dea4f0ce1">00051</a>             <span class="keywordtype">string</span> <a class="code" href="classsdl_1_1video_1_1Icon.html#a30a4badac24a20e3ff29ed6dea4f0ce1">name</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> name_; };
+<a name="l00052"></a>00052 
+<a name="l00060"></a><a class="code" href="classsdl_1_1video_1_1Icon.html#a47fea4efb9c345fc694838e139caab55">00060</a>             <a class="code" href="classsdl_1_1video_1_1Icon.html">Icon</a>&amp; <a class="code" href="classsdl_1_1video_1_1Icon.html#a47fea4efb9c345fc694838e139caab55">name</a> (<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name) {
+<a name="l00061"></a>00061                 name_ = name;
+<a name="l00062"></a>00062                 <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+<a name="l00063"></a>00063             };
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065         <span class="keyword">private</span>:
+<a name="l00066"></a>00066             <span class="comment">/*</span>
+<a name="l00067"></a>00067 <span class="comment">             * The name of the icon.</span>
+<a name="l00068"></a>00068 <span class="comment">             */</span>
+<a name="l00069"></a>00069             <span class="keywordtype">string</span> name_;
+<a name="l00070"></a>00070     }; <span class="comment">//Icon</span>
+<a name="l00071"></a>00071 }; <span class="comment">//video</span>
+<a name="l00072"></a>00072 }; <span class="comment">//sdl</span>
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074 <span class="preprocessor">#endif //SDL_VIDEO_ICON_H</span>
+<a name="l00075"></a>00075 <span class="preprocessor"></span>
+</pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
+      <li class="navelem"><a class="el" href="Icon_8h.html">Icon.h</a>      </li>
       <li class="footer">Generated on Tue Aug 23 2011 15:57:36 for SDL++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>

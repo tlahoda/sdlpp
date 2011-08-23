@@ -1,0 +1,35 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$structsdl_1_1event_1_1ActiveBase.html" title="{sdl::event::ActiveBase\n||+ ActiveBase()\l+ get()\l+ get()\l}" alt="" coords="2065,139,2220,259"/>
+<area shape="rect" id="node5" href="$structsdl_1_1event_1_1ExposeBase.html" title="{sdl::event::ExposeBase\n||+ ExposeBase()\l+ get()\l+ get()\l}" alt="" coords="2244,139,2404,259"/>
+<area shape="rect" id="node7" href="$structsdl_1_1event_1_1JoystickAxisBase.html" title="{sdl::event::JoystickAxisBase\n||+ JoystickAxisBase()\l+ get()\l+ get()\l}" alt="" coords="2428,139,2620,259"/>
+<area shape="rect" id="node13" href="$structsdl_1_1event_1_1JoystickButtonBase.html" title="{sdl::event::JoystickButtonBase\n||+ JoystickButtonBase()\l+ get()\l+ get()\l}" alt="" coords="2644,139,2847,259"/>
+<area shape="rect" id="node23" href="$structsdl_1_1event_1_1JoystickHatBase.html" title="{sdl::event::JoystickHatBase\n||+ JoystickHatBase()\l+ get()\l+ get()\l}" alt="" coords="2871,139,3057,259"/>
+<area shape="rect" id="node29" href="$structsdl_1_1event_1_1JoystickTrackballBase.html" title="{sdl::event::JoystickTrackballBase\n||+ JoystickTrackballBase()\l+ get()\l+ get()\l}" alt="" coords="3081,139,3300,259"/>
+<area shape="rect" id="node35" href="$structsdl_1_1event_1_1KeyBase.html" title="{sdl::event::KeyBase\n||+ KeyBase()\l+ get()\l+ get()\l}" alt="" coords="3324,139,3463,259"/>
+<area shape="rect" id="node45" href="$structsdl_1_1event_1_1MouseButtonBase.html" title="{sdl::event::MouseButtonBase\n||+ MouseButtonBase()\l+ get()\l+ get()\l}" alt="" coords="3487,139,3681,259"/>
+<area shape="rect" id="node55" href="$structsdl_1_1event_1_1MouseMotionBase.html" title="{sdl::event::MouseMotionBase\n||+ MouseMotionBase()\l+ get()\l+ get()\l}" alt="" coords="3705,139,3900,259"/>
+<area shape="rect" id="node57" href="$structsdl_1_1event_1_1QuitBase.html" title="{sdl::event::QuitBase\n||+ QuitBase()\l+ get()\l+ get()\l}" alt="" coords="3924,139,4065,259"/>
+<area shape="rect" id="node59" href="$structsdl_1_1event_1_1ResizeBase.html" title="{sdl::event::ResizeBase\n||+ ResizeBase()\l+ get()\l+ get()\l}" alt="" coords="4089,139,4247,259"/>
+<area shape="rect" id="node61" href="$structsdl_1_1event_1_1UserBase.html" title="{sdl::event::UserBase\n||+ UserBase()\l+ get()\l+ get()\l}" alt="" coords="4271,139,4415,259"/>
+<area shape="rect" id="node67" href="$structsdl_1_1event_1_1WindowManagerBase.html" title="{sdl::event::WindowManagerBase\n||+ WindowManagerBase()\l+ get()\l+ get()\l}" alt="" coords="4439,139,4652,259"/>
+<area shape="rect" id="node9" href="$structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; Axis, SDL_JOYAXISMOTION, Axes...\&gt;, JoystickAxisBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="5,307,605,410"/>
+<area shape="rect" id="node11" href="$structsdl_1_1event_1_1JoystickAxisMotion.html" title="{sdl::event::JoystickAxisMotion\&lt; Axes \&gt;\n||+ JoystickAxisMotion()\l}" alt="" coords="179,459,432,544"/>
+<area shape="rect" id="node15" href="$structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; JoystickButton, SDL_JOYBUTTONDOWN, Buttons...\&gt;, JoystickButtonBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="629,307,1331,410"/>
+<area shape="rect" id="node19" href="$structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; JoystickButton, SDL_JOYBUTTONUP, Buttons...\&gt;, JoystickButtonBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="1355,307,2032,410"/>
+<area shape="rect" id="node17" href="$structsdl_1_1event_1_1JoystickButtonPress.html" title="{sdl::event::JoystickButtonPress\&lt; Buttons \&gt;\n||+ JoystickButtonPress()\l}" alt="" coords="841,459,1119,544"/>
+<area shape="rect" id="node21" href="$structsdl_1_1event_1_1JoystickButtonRelease.html" title="{sdl::event::JoystickButtonRelease\&lt; Buttons \&gt;\n||+ JoystickButtonRelease()\l}" alt="" coords="1548,459,1839,544"/>
+<area shape="rect" id="node25" href="$structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; Hat, SDL_JOYHATMOTION, Hats...\&gt;, JoystickHatBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="2056,307,2640,410"/>
+<area shape="rect" id="node27" href="$structsdl_1_1event_1_1JoystickHatMotion.html" title="{sdl::event::JoystickHatMotion\&lt; Hats \&gt;\n||+ JoystickHatMotion()\l}" alt="" coords="2224,459,2472,544"/>
+<area shape="rect" id="node31" href="$structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; Trackball, SDL_JOYBALLMOTION, Balls...\&gt;, JoystickTrackballBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="2664,307,3317,410"/>
+<area shape="rect" id="node33" href="$structsdl_1_1event_1_1JoystickTrackballMotion.html" title="{sdl::event::JoystickTrackballMotion\&lt; Balls \&gt;\n||+ JoystickTrackballMotion()\l}" alt="" coords="2851,459,3131,544"/>
+<area shape="rect" id="node37" href="$structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; Key, SDL_KEYDOWN, Keys...\&gt;, KeyBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="3341,307,3848,410"/>
+<area shape="rect" id="node41" href="$structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; Key, SDL_KEYUP, Keys...\&gt;, KeyBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="3872,307,4355,410"/>
+<area shape="rect" id="node39" href="$structsdl_1_1event_1_1KeyPress.html" title="{sdl::event::KeyPress\&lt; Keys \&gt;\n||+ KeyPress()\l}" alt="" coords="3496,459,3693,544"/>
+<area shape="rect" id="node43" href="$structsdl_1_1event_1_1KeyRelease.html" title="{sdl::event::KeyRelease\&lt; Keys \&gt;\n||+ KeyRelease()\l}" alt="" coords="4008,459,4219,544"/>
+<area shape="rect" id="node47" href="$structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; MouseButton, SDL_MOUSEBUTTONDOWN, Buttons...\&gt;, MouseButtonBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="4379,307,5085,410"/>
+<area shape="rect" id="node51" href="$structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; MouseButton, SDL_MOUSEBUTTONUP, Buttons...\&gt;, MouseButtonBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="5109,307,5792,410"/>
+<area shape="rect" id="node49" href="$structsdl_1_1event_1_1MouseButtonPress.html" title="{sdl::event::MouseButtonPress\&lt; Buttons \&gt;\n||+ MouseButtonPress()\l}" alt="" coords="4599,459,4865,544"/>
+<area shape="rect" id="node53" href="$structsdl_1_1event_1_1MouseButtonRelease.html" title="{sdl::event::MouseButtonRelease\&lt; Buttons \&gt;\n||+ MouseButtonRelease()\l}" alt="" coords="5311,459,5591,544"/>
+<area shape="rect" id="node63" href="$structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; User, SDL_USEREVENT, Codes...\&gt;, UserBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="5816,307,6352,410"/>
+<area shape="rect" id="node65" href="$structsdl_1_1event_1_1UserDefined.html" title="{sdl::event::UserDefined\&lt; Codes \&gt;\n||+ UserDefined()\l}" alt="" coords="5973,459,6195,544"/>
+</map>

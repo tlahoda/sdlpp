@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node5" href="$structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; Hat, SDL_JOYHATMOTION, Hats...\&gt;, JoystickHatBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="5,307,589,410"/>
+<area shape="rect" id="node2" href="$structsdl_1_1event_1_1EventBase.html" title="{sdl::event::EventBase\n|# event_\l|+ EventBase()\l}" alt="" coords="223,5,372,91"/>
+<area shape="rect" id="node7" href="$structsdl_1_1event_1_1JoystickHatMotion.html" title="{sdl::event::JoystickHatMotion\&lt; Hats \&gt;\n||+ JoystickHatMotion()\l}" alt="" coords="173,459,421,544"/>
+</map>

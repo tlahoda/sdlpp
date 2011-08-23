@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node5" href="$structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; Key, SDL_KEYDOWN, Keys...\&gt;, KeyBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="5,307,512,410"/>
+<area shape="rect" id="node9" href="$structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; Key, SDL_KEYUP, Keys...\&gt;, KeyBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="536,307,1019,410"/>
+<area shape="rect" id="node2" href="$structsdl_1_1event_1_1EventBase.html" title="{sdl::event::EventBase\n|# event_\l|+ EventBase()\l}" alt="" coords="443,5,592,91"/>
+<area shape="rect" id="node7" href="$structsdl_1_1event_1_1KeyPress.html" title="{sdl::event::KeyPress\&lt; Keys \&gt;\n||+ KeyPress()\l}" alt="" coords="160,459,357,544"/>
+<area shape="rect" id="node11" href="$structsdl_1_1event_1_1KeyRelease.html" title="{sdl::event::KeyRelease\&lt; Keys \&gt;\n||+ KeyRelease()\l}" alt="" coords="672,459,883,544"/>
+</map>

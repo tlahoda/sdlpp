@@ -74,7 +74,7 @@ namespace event {
             Handler& handler_;
     }; //Adder
 
-    /*
+    /**
      * @class Dispatcher, Dispatches events to Listeners.
      */
     class Dispatcher {

@@ -44,43 +44,15 @@ namespace audio {
                 audioBuf_ (0),
                 audioLen_ (0),
                 spec_ () {
-                SDL_LoadWAV (name_.c_str (), &spec_, &audioBuf_, &audioLen_);
+                if (SDL_LoadWAV (name_.c_str (), &spec_, &audioBuf_, &audioLen_) == NULL)
+                    throw runtime_error (SDL_GetError ());
             };
-
-            /**
-             * Copy constructs a wav file.
-             *
-             * @param const Wav& rhs, The wav file to copy.
-             */
-            Wav (const Wav& rhs)
-              : name_ (rhs.name_),
-                audioBuf_ (rhs.audioBuf_),
-                audioLen_ (rhs.audioLen_),
-                spec_ (rhs.spec_) {};
 
             /**
              * Destroys a wav file.
              */
             ~Wav () { SDL_FreeWAV (audioBuf_); };
 
-            /**
-             * The assignment operator.
-             *
-             * @param const Wav& rhs, The Wav from which to assign.
-             *
-             * @return Wav&, A reference to this Wav.
-             */
-            Wav& operator= (const Wav& rhs) { 
-                if (this != &rhs) {
-                    name_ = rhs.name_;
-                    audioBuf_ = rhs.audioBuf_;
-                    audioLen_ = rhs.audioLen_;
-                    spec_ = rhs.spec_;
-                }
-                return *this; 
-            };
-
-        public:
             /**
              * The name of the wav file.
              */
@@ -100,6 +72,23 @@ namespace audio {
              * The SDL_AudioSpec structure.
              */
             SDL_AudioSpec spec_;
+
+        private:
+            /**
+             * Copy constructs a wav file.
+             *
+             * @param const Wav& rhs, The wav file to copy.
+             */
+            Wav (const Wav& rhs);
+
+            /**
+             * The assignment operator.
+             *
+             * @param const Wav& rhs, The Wav from which to assign.
+             *
+             * @return Wav&, A reference to this Wav.
+             */
+            Wav& operator= (const Wav& rhs);
     }; //Wav
 }; //audio
 }; //sdl

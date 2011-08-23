@@ -96,41 +96,41 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00031"></a>00031 
 <a name="l00035"></a><a class="code" href="classsdl_1_1audio_1_1Wav.html">00035</a>     <span class="keyword">class </span><a class="code" href="classsdl_1_1audio_1_1Wav.html">Wav</a> {
 <a name="l00036"></a>00036         <span class="keyword">public</span>:
-<a name="l00042"></a><a class="code" href="classsdl_1_1audio_1_1Wav.html#a93c2c8819dc0b00eb5591cacef7298d5">00042</a>             <a class="code" href="classsdl_1_1audio_1_1Wav.html">Wav</a> (<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fileName)
-<a name="l00043"></a>00043               : name_ (fileName),
-<a name="l00044"></a>00044                 audioBuf_ (0),
-<a name="l00045"></a>00045                 audioLen_ (0),
-<a name="l00046"></a>00046                 spec_ () {
-<a name="l00047"></a>00047                 <span class="keywordflow">if</span> (SDL_LoadWAV (name_.c_str (), &amp;spec_, &amp;audioBuf_, &amp;audioLen_) == NULL)
-<a name="l00048"></a>00048                     <span class="keywordflow">throw</span> runtime_error (SDL_GetError ());
-<a name="l00049"></a>00049             };
-<a name="l00050"></a>00050 
-<a name="l00054"></a><a class="code" href="classsdl_1_1audio_1_1Wav.html#a7c6c3098765fa3d1feb168b305dfd89e">00054</a>             <a class="code" href="classsdl_1_1audio_1_1Wav.html#a7c6c3098765fa3d1feb168b305dfd89e">~Wav</a> () { SDL_FreeWAV (audioBuf_); };
-<a name="l00055"></a>00055 
-<a name="l00059"></a>00059             std::string name_;
-<a name="l00060"></a>00060 
-<a name="l00064"></a><a class="code" href="classsdl_1_1audio_1_1Wav.html#aaba8f325ae7e707f68145128f7f61edd">00064</a>             <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* <a class="code" href="classsdl_1_1audio_1_1Wav.html#aaba8f325ae7e707f68145128f7f61edd">audioBuf_</a>;
-<a name="l00065"></a>00065 
-<a name="l00069"></a><a class="code" href="classsdl_1_1audio_1_1Wav.html#a52743795e5ae9d0bc66ce9446793935c">00069</a>             <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classsdl_1_1audio_1_1Wav.html#a52743795e5ae9d0bc66ce9446793935c">audioLen_</a>;
-<a name="l00070"></a>00070 
-<a name="l00074"></a><a class="code" href="classsdl_1_1audio_1_1Wav.html#a75b1a2ed174016809b1e2c67b6310510">00074</a>             SDL_AudioSpec <a class="code" href="classsdl_1_1audio_1_1Wav.html#a75b1a2ed174016809b1e2c67b6310510">spec_</a>;
-<a name="l00075"></a>00075 
-<a name="l00076"></a>00076         <span class="keyword">private</span>:
-<a name="l00082"></a>00082             <a class="code" href="classsdl_1_1audio_1_1Wav.html">Wav</a> (<span class="keyword">const</span> <a class="code" href="classsdl_1_1audio_1_1Wav.html">Wav</a>&amp; rhs);
-<a name="l00083"></a>00083 
-<a name="l00091"></a>00091             <a class="code" href="classsdl_1_1audio_1_1Wav.html">Wav</a>&amp; operator= (<span class="keyword">const</span> <a class="code" href="classsdl_1_1audio_1_1Wav.html">Wav</a>&amp; rhs);
-<a name="l00092"></a>00092     }; <span class="comment">//Wav</span>
-<a name="l00093"></a>00093 }; <span class="comment">//audio</span>
-<a name="l00094"></a>00094 }; <span class="comment">//sdl</span>
-<a name="l00095"></a>00095 
-<a name="l00096"></a>00096 <span class="preprocessor">#endif //SDL_AUDIO_WAV_H</span>
-<a name="l00097"></a>00097 <span class="preprocessor"></span>
+<a name="l00044"></a><a class="code" href="classsdl_1_1audio_1_1Wav.html#a93c2c8819dc0b00eb5591cacef7298d5">00044</a>             <a class="code" href="classsdl_1_1audio_1_1Wav.html">Wav</a> (<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fileName)
+<a name="l00045"></a>00045               : name_ (fileName),
+<a name="l00046"></a>00046                 audioBuf_ (0),
+<a name="l00047"></a>00047                 audioLen_ (0),
+<a name="l00048"></a>00048                 spec_ () {
+<a name="l00049"></a>00049                 <span class="keywordflow">if</span> (SDL_LoadWAV (name_.c_str (), &amp;spec_, &amp;audioBuf_, &amp;audioLen_) == NULL)
+<a name="l00050"></a>00050                     <span class="keywordflow">throw</span> runtime_error (SDL_GetError ());
+<a name="l00051"></a>00051             };
+<a name="l00052"></a>00052 
+<a name="l00056"></a><a class="code" href="classsdl_1_1audio_1_1Wav.html#a7c6c3098765fa3d1feb168b305dfd89e">00056</a>             <a class="code" href="classsdl_1_1audio_1_1Wav.html#a7c6c3098765fa3d1feb168b305dfd89e">~Wav</a> () { SDL_FreeWAV (audioBuf_); };
+<a name="l00057"></a>00057 
+<a name="l00061"></a>00061             std::string name_;
+<a name="l00062"></a>00062 
+<a name="l00066"></a><a class="code" href="classsdl_1_1audio_1_1Wav.html#aaba8f325ae7e707f68145128f7f61edd">00066</a>             <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* <a class="code" href="classsdl_1_1audio_1_1Wav.html#aaba8f325ae7e707f68145128f7f61edd">audioBuf_</a>;
+<a name="l00067"></a>00067 
+<a name="l00071"></a><a class="code" href="classsdl_1_1audio_1_1Wav.html#a52743795e5ae9d0bc66ce9446793935c">00071</a>             <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classsdl_1_1audio_1_1Wav.html#a52743795e5ae9d0bc66ce9446793935c">audioLen_</a>;
+<a name="l00072"></a>00072 
+<a name="l00076"></a><a class="code" href="classsdl_1_1audio_1_1Wav.html#a75b1a2ed174016809b1e2c67b6310510">00076</a>             SDL_AudioSpec <a class="code" href="classsdl_1_1audio_1_1Wav.html#a75b1a2ed174016809b1e2c67b6310510">spec_</a>;
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078         <span class="keyword">private</span>:
+<a name="l00084"></a>00084             <a class="code" href="classsdl_1_1audio_1_1Wav.html">Wav</a> (<span class="keyword">const</span> <a class="code" href="classsdl_1_1audio_1_1Wav.html">Wav</a>&amp; rhs);
+<a name="l00085"></a>00085 
+<a name="l00093"></a>00093             <a class="code" href="classsdl_1_1audio_1_1Wav.html">Wav</a>&amp; operator= (<span class="keyword">const</span> <a class="code" href="classsdl_1_1audio_1_1Wav.html">Wav</a>&amp; rhs);
+<a name="l00094"></a>00094     }; <span class="comment">//Wav</span>
+<a name="l00095"></a>00095 }; <span class="comment">//audio</span>
+<a name="l00096"></a>00096 }; <span class="comment">//sdl</span>
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098 <span class="preprocessor">#endif //SDL_AUDIO_WAV_H</span>
+<a name="l00099"></a>00099 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="Wav_8h.html">Wav.h</a>      </li>
-      <li class="footer">Generated on Tue Aug 23 2011 16:07:40 for SDL++ by&#160;
+      <li class="footer">Generated on Tue Aug 23 2011 16:25:33 for SDL++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>

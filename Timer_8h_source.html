@@ -117,27 +117,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00079"></a>00079 
 <a name="l00087"></a>00087             <a class="code" href="classsdl_1_1devices_1_1Timer.html">Timer</a>&amp; operator= (<span class="keyword">const</span> <a class="code" href="classsdl_1_1devices_1_1Timer.html">Timer</a>&amp; rhs);
 <a name="l00088"></a>00088 
-<a name="l00098"></a>00098             SDL_TimerID add (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> interval, Callback callback, <span class="keywordtype">void</span>* param) {
-<a name="l00099"></a>00099                 <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a4c7c1bb55df7a01df11e816016ab5fab">subsystem::Timer::instance</a> ();
-<a name="l00100"></a>00100                 SDL_TimerID <span class="keywordtype">id</span> = SDL_AddTimer (interval, callback, param);
-<a name="l00101"></a>00101                 <span class="keywordflow">if</span> (<span class="keywordtype">id</span> == NULL)
-<a name="l00102"></a>00102                     <span class="keywordflow">throw</span> runtime_error (<span class="stringliteral">&quot;Failed to add timer.&quot;</span>);
-<a name="l00103"></a>00103                 <span class="keywordflow">return</span> id;
-<a name="l00104"></a>00104             };
-<a name="l00105"></a>00105 
-<a name="l00109"></a>00109             SDL_TimerID id_;
-<a name="l00110"></a>00110     }; <span class="comment">//Timer</span>
-<a name="l00111"></a>00111 }; <span class="comment">//devices</span>
-<a name="l00112"></a>00112 }; <span class="comment">//sdl</span>
-<a name="l00113"></a>00113 
-<a name="l00114"></a>00114 <span class="preprocessor">#endif //SDL_DEVICES_TIMER_H</span>
-<a name="l00115"></a>00115 <span class="preprocessor"></span>
+<a name="l00100"></a>00100             SDL_TimerID add (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> interval, Callback callback, <span class="keywordtype">void</span>* param) {
+<a name="l00101"></a>00101                 <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a4c7c1bb55df7a01df11e816016ab5fab">subsystem::Timer::instance</a> ();
+<a name="l00102"></a>00102                 SDL_TimerID <span class="keywordtype">id</span> = SDL_AddTimer (interval, callback, param);
+<a name="l00103"></a>00103                 <span class="keywordflow">if</span> (<span class="keywordtype">id</span> == NULL)
+<a name="l00104"></a>00104                     <span class="keywordflow">throw</span> runtime_error (<span class="stringliteral">&quot;Failed to add timer.&quot;</span>);
+<a name="l00105"></a>00105                 <span class="keywordflow">return</span> id;
+<a name="l00106"></a>00106             };
+<a name="l00107"></a>00107 
+<a name="l00111"></a>00111             SDL_TimerID id_;
+<a name="l00112"></a>00112     }; <span class="comment">//Timer</span>
+<a name="l00113"></a>00113 }; <span class="comment">//devices</span>
+<a name="l00114"></a>00114 }; <span class="comment">//sdl</span>
+<a name="l00115"></a>00115 
+<a name="l00116"></a>00116 <span class="preprocessor">#endif //SDL_DEVICES_TIMER_H</span>
+<a name="l00117"></a>00117 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="Timer_8h.html">Timer.h</a>      </li>
-      <li class="footer">Generated on Tue Aug 23 2011 16:07:40 for SDL++ by&#160;
+      <li class="footer">Generated on Tue Aug 23 2011 16:25:33 for SDL++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>

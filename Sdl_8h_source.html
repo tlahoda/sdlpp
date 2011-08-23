@@ -108,27 +108,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00061"></a><a class="code" href="classsdl_1_1Sdl.html#a857b9dd5feb3c2391c35ad1beda81973">00061</a>             <span class="keyword">const</span> SDL_version* <a class="code" href="classsdl_1_1Sdl.html#a857b9dd5feb3c2391c35ad1beda81973">linkedVersion</a> () { <span class="keywordflow">return</span> SDL_Linked_Version (); };
 <a name="l00062"></a>00062 
 <a name="l00063"></a>00063         <span class="keyword">private</span>:
-<a name="l00067"></a>00067             <a class="code" href="classsdl_1_1Sdl.html">Sdl</a> () {
-<a name="l00068"></a>00068                 <span class="keywordflow">if</span> (SDL_Init (0) == -1) 
-<a name="l00069"></a>00069                     <span class="keywordflow">throw</span> std::runtime_error (SDL_GetError ());
-<a name="l00070"></a>00070             };
-<a name="l00071"></a>00071 
-<a name="l00077"></a>00077             Sdl (<span class="keyword">const</span> Sdl&amp; rhs);
-<a name="l00078"></a>00078             
-<a name="l00082"></a>00082             ~Sdl () { SDL_Quit (); };
-<a name="l00083"></a>00083             
-<a name="l00091"></a>00091             Sdl&amp; operator= (<span class="keyword">const</span> Sdl&amp; rhs);
-<a name="l00092"></a>00092     }; <span class="comment">//Sdl</span>
-<a name="l00093"></a>00093 }; <span class="comment">//sdl</span>
-<a name="l00094"></a>00094 
-<a name="l00095"></a>00095 <span class="preprocessor">#endif //SDL_SDL_H</span>
-<a name="l00096"></a>00096 <span class="preprocessor"></span>
+<a name="l00069"></a>00069             <a class="code" href="classsdl_1_1Sdl.html">Sdl</a> () {
+<a name="l00070"></a>00070                 <span class="keywordflow">if</span> (SDL_Init (0) == -1) 
+<a name="l00071"></a>00071                     <span class="keywordflow">throw</span> std::runtime_error (SDL_GetError ());
+<a name="l00072"></a>00072             };
+<a name="l00073"></a>00073 
+<a name="l00079"></a>00079             Sdl (<span class="keyword">const</span> Sdl&amp; rhs);
+<a name="l00080"></a>00080             
+<a name="l00084"></a>00084             ~Sdl () { SDL_Quit (); };
+<a name="l00085"></a>00085             
+<a name="l00093"></a>00093             Sdl&amp; operator= (<span class="keyword">const</span> Sdl&amp; rhs);
+<a name="l00094"></a>00094     }; <span class="comment">//Sdl</span>
+<a name="l00095"></a>00095 }; <span class="comment">//sdl</span>
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097 <span class="preprocessor">#endif //SDL_SDL_H</span>
+<a name="l00098"></a>00098 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="Sdl_8h.html">Sdl.h</a>      </li>
-      <li class="footer">Generated on Tue Aug 23 2011 16:07:40 for SDL++ by&#160;
+      <li class="footer">Generated on Tue Aug 23 2011 16:25:33 for SDL++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>

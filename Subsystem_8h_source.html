@@ -117,113 +117,113 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00078"></a>00078             };
 <a name="l00079"></a>00079  
 <a name="l00080"></a>00080         <span class="keyword">protected</span>:
-<a name="l00086"></a><a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a1bf6a93f0b6e0a8f830cf26df0b750e8">00086</a>             <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem</a>&amp; <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a1bf6a93f0b6e0a8f830cf26df0b750e8">init</a> () {
-<a name="l00087"></a>00087                 <span class="keywordflow">if</span> (SDL_InitSubSystem (T) == -1)
-<a name="l00088"></a>00088                     <span class="keywordflow">throw</span> runtime_error (Base::name () + <span class="stringliteral">&quot; subsystem failed to initialize.&quot;</span>);
-<a name="l00089"></a>00089                 <span class="keywordflow">return</span> *<span class="keyword">this</span>;
-<a name="l00090"></a>00090             };
-<a name="l00091"></a>00091 
-<a name="l00097"></a><a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a5a00a885b1d97392821be6f26c813dd2">00097</a>             <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem</a>&amp; <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a5a00a885b1d97392821be6f26c813dd2">quit</a> () {
-<a name="l00098"></a>00098                 SDL_QuitSubSystem (T);
-<a name="l00099"></a>00099                 <span class="keywordflow">return</span> *<span class="keyword">this</span>;
-<a name="l00100"></a>00100             };
-<a name="l00101"></a>00101 
-<a name="l00105"></a><a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a8c77bad76c510e5b81158f32405ad3dd">00105</a>             <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a8c77bad76c510e5b81158f32405ad3dd">Subsystem</a> () : Base () { init (); };
-<a name="l00106"></a>00106 
-<a name="l00112"></a><a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a0ad513a1e758668b9af4368bb8053b13">00112</a>             <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a0ad513a1e758668b9af4368bb8053b13">Subsystem</a> (<span class="keyword">const</span> <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem</a>&amp; rhs) {};
-<a name="l00113"></a>00113 
-<a name="l00117"></a><a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a3e7e5f4bde4a63be4dae0a3fc5a37b1d">00117</a>             <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a3e7e5f4bde4a63be4dae0a3fc5a37b1d">~Subsystem</a> () { quit (); };
-<a name="l00118"></a>00118 
-<a name="l00126"></a><a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a22fb216beb1368bd02126f8454f43a64">00126</a>             <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem</a>&amp; operator= (<span class="keyword">const</span> <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem</a>&amp; rhs) {};
-<a name="l00127"></a>00127     }; <span class="comment">//Subsystem</span>
-<a name="l00128"></a>00128 
-<a name="l00132"></a><a class="code" href="structsdl_1_1subsystem_1_1AudioBase.html">00132</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1subsystem_1_1AudioBase.html">AudioBase</a> {
-<a name="l00133"></a>00133         <span class="keyword">protected</span>:
-<a name="l00139"></a><a class="code" href="structsdl_1_1subsystem_1_1AudioBase.html#a50a0833e0dbe66b0d67493738420e1a0">00139</a>             <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="structsdl_1_1subsystem_1_1AudioBase.html#a50a0833e0dbe66b0d67493738420e1a0">name</a> () { <span class="keywordflow">return</span> <span class="stringliteral">&quot;Audio&quot;</span>; };
-<a name="l00140"></a>00140     }; <span class="comment">//AudioBase</span>
-<a name="l00141"></a>00141 
-<a name="l00146"></a><a class="code" href="namespacesdl_1_1subsystem.html#a0c9ff5befb17e79218562f8e4d66ae9d">00146</a>     <span class="keyword">typedef</span> <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem&lt;SDL_INIT_AUDIO, AudioBase&gt;</a> <a class="code" href="namespacesdl_1_1subsystem.html#a0c9ff5befb17e79218562f8e4d66ae9d">Audio</a>;
-<a name="l00147"></a>00147 
-<a name="l00151"></a><a class="code" href="structsdl_1_1subsystem_1_1CdRomBase.html">00151</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1subsystem_1_1CdRomBase.html">CdRomBase</a> {
-<a name="l00157"></a><a class="code" href="structsdl_1_1subsystem_1_1CdRomBase.html#a320a9f5b2d52556b41e926fa21e3e7d2">00157</a>         <span class="keywordtype">int</span> <a class="code" href="structsdl_1_1subsystem_1_1CdRomBase.html#a320a9f5b2d52556b41e926fa21e3e7d2">numDrives</a> () { <span class="keywordflow">return</span> SDL_CDNumDrives (); };
-<a name="l00158"></a>00158 
-<a name="l00159"></a>00159         <span class="keyword">protected</span>:
-<a name="l00165"></a><a class="code" href="structsdl_1_1subsystem_1_1CdRomBase.html#aa23d845480f520f6437d3c57e49b68c8">00165</a>             <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="structsdl_1_1subsystem_1_1CdRomBase.html#aa23d845480f520f6437d3c57e49b68c8">name</a> () { <span class="keywordflow">return</span> <span class="stringliteral">&quot;Cd-Rom&quot;</span>; };
-<a name="l00166"></a>00166     }; <span class="comment">//CdRomBase</span>
-<a name="l00167"></a>00167 
-<a name="l00172"></a><a class="code" href="namespacesdl_1_1subsystem.html#ae73b68fac07e22f5bbc7d9f063626dd5">00172</a>     <span class="keyword">typedef</span> <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem&lt;SDL_INIT_CDROM, CdRomBase&gt;</a> <a class="code" href="namespacesdl_1_1subsystem.html#ae73b68fac07e22f5bbc7d9f063626dd5">CdRom</a>;
-<a name="l00173"></a>00173 
-<a name="l00177"></a><a class="code" href="structsdl_1_1subsystem_1_1EverythingBase.html">00177</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1subsystem_1_1EverythingBase.html">EverythingBase</a> {
-<a name="l00178"></a>00178         <span class="keyword">protected</span>:
-<a name="l00184"></a><a class="code" href="structsdl_1_1subsystem_1_1EverythingBase.html#a9b6b43c8e8309b3b61c259b5852116d0">00184</a>             <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="structsdl_1_1subsystem_1_1EverythingBase.html#a9b6b43c8e8309b3b61c259b5852116d0">name</a> () { <span class="keywordflow">return</span> <span class="stringliteral">&quot;Everything&quot;</span>; };
-<a name="l00185"></a>00185     }; <span class="comment">//EverythingBase</span>
-<a name="l00186"></a>00186 
-<a name="l00191"></a><a class="code" href="namespacesdl_1_1subsystem.html#a8982307b146a1b75416c0869c292400d">00191</a>     <span class="keyword">typedef</span> <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem&lt;SDL_INIT_EVERYTHING, EverythingBase&gt;</a> <a class="code" href="namespacesdl_1_1subsystem.html#a8982307b146a1b75416c0869c292400d">Everything</a>;
-<a name="l00192"></a>00192 
-<a name="l00196"></a><a class="code" href="structsdl_1_1subsystem_1_1EventThreadBase.html">00196</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1subsystem_1_1EventThreadBase.html">EventThreadBase</a> {
-<a name="l00197"></a>00197         <span class="keyword">protected</span>:
-<a name="l00203"></a><a class="code" href="structsdl_1_1subsystem_1_1EventThreadBase.html#a3aa56a9aa116726fa1a58d13eaa9e19b">00203</a>             <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="structsdl_1_1subsystem_1_1EventThreadBase.html#a3aa56a9aa116726fa1a58d13eaa9e19b">name</a> () { <span class="keywordflow">return</span> <span class="stringliteral">&quot;EventThread&quot;</span>; };
-<a name="l00204"></a>00204     }; <span class="comment">//EventThreadBase</span>
-<a name="l00205"></a>00205 
-<a name="l00210"></a><a class="code" href="namespacesdl_1_1subsystem.html#a567e0add1fe169888caf690406f997f4">00210</a>     <span class="keyword">typedef</span> <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem&lt;SDL_INIT_EVENTTHREAD, EventThreadBase&gt;</a> <a class="code" href="namespacesdl_1_1subsystem.html#a567e0add1fe169888caf690406f997f4">EventThread</a>;
-<a name="l00211"></a>00211 
-<a name="l00215"></a><a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html">00215</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html">JoystickBase</a> {
-<a name="l00219"></a><a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html#aab81941592786ffa445f251822f0a88e">00219</a>         <span class="keywordtype">void</span> <a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html#aab81941592786ffa445f251822f0a88e">update</a> () { SDL_JoystickUpdate (); };
-<a name="l00220"></a>00220 
-<a name="l00224"></a><a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html#a507d820ed2e9b74857fa26a54777e086">00224</a>         <span class="keywordtype">int</span> <a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html#a507d820ed2e9b74857fa26a54777e086">numJoysticks</a> () { <span class="keywordflow">return</span> SDL_NumJoysticks (); };
-<a name="l00225"></a>00225 
-<a name="l00232"></a><a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html#a4135ec74669468ba21cb913fb9df90c7">00232</a>         <span class="keywordtype">bool</span> <a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html#a4135ec74669468ba21cb913fb9df90c7">enableEvents</a> () { <span class="keywordflow">return</span> SDL_JoystickEventState (SDL_ENABLE) == SDL_ENABLE; };
-<a name="l00233"></a>00233 
-<a name="l00240"></a><a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html#a206b056877534317b91fd76ad81f41a3">00240</a>         <span class="keywordtype">bool</span> <a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html#a206b056877534317b91fd76ad81f41a3">disableEvents</a> () { <span class="keywordflow">return</span> SDL_JoystickEventState (SDL_IGNORE) == SDL_IGNORE; };
-<a name="l00241"></a>00241 
-<a name="l00248"></a><a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html#acbd2e3f6593a16f954ac23910b594cfe">00248</a>         <span class="keywordtype">bool</span> <a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html#acbd2e3f6593a16f954ac23910b594cfe">areEventsEnabled</a> () { <span class="keywordflow">return</span> SDL_JoystickEventState (SDL_QUERY) == SDL_ENABLE; };
-<a name="l00249"></a>00249 
-<a name="l00250"></a>00250         <span class="keyword">protected</span>:
-<a name="l00256"></a><a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html#ade012872b7558e377fc4573171d8be05">00256</a>             <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html#ade012872b7558e377fc4573171d8be05">name</a> () { <span class="keywordflow">return</span> <span class="stringliteral">&quot;Joystick&quot;</span>; };
-<a name="l00257"></a>00257     }; <span class="comment">//JoystickBase</span>
-<a name="l00258"></a>00258 
-<a name="l00263"></a><a class="code" href="namespacesdl_1_1subsystem.html#a6643fd7a1ab78eba0c9101150f046ffb">00263</a>     <span class="keyword">typedef</span> <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem&lt;SDL_INIT_JOYSTICK, JoystickBase&gt;</a> <a class="code" href="namespacesdl_1_1subsystem.html#a6643fd7a1ab78eba0c9101150f046ffb">Joystick</a>;
-<a name="l00264"></a>00264 
-<a name="l00268"></a><a class="code" href="structsdl_1_1subsystem_1_1NoParachuteBase.html">00268</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1subsystem_1_1NoParachuteBase.html">NoParachuteBase</a> {
-<a name="l00269"></a>00269         <span class="keyword">protected</span>:
-<a name="l00275"></a><a class="code" href="structsdl_1_1subsystem_1_1NoParachuteBase.html#a61c225e1d18bcea9cb0542ef273631d5">00275</a>             <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="structsdl_1_1subsystem_1_1NoParachuteBase.html#a61c225e1d18bcea9cb0542ef273631d5">name</a> () { <span class="keywordflow">return</span> <span class="stringliteral">&quot;NoParachute&quot;</span>; };
-<a name="l00276"></a>00276     }; <span class="comment">//NoParachuteBase</span>
-<a name="l00277"></a>00277 
-<a name="l00282"></a><a class="code" href="namespacesdl_1_1subsystem.html#aa492001a7efd13cf26312635b40df4cd">00282</a>     <span class="keyword">typedef</span> <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem&lt;SDL_INIT_NOPARACHUTE, NoParachuteBase&gt;</a> <a class="code" href="namespacesdl_1_1subsystem.html#aa492001a7efd13cf26312635b40df4cd">NoParachute</a>;
-<a name="l00283"></a>00283 
-<a name="l00287"></a><a class="code" href="structsdl_1_1subsystem_1_1TimerBase.html">00287</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1subsystem_1_1TimerBase.html">TimerBase</a> {
-<a name="l00291"></a><a class="code" href="structsdl_1_1subsystem_1_1TimerBase.html#a03fdb845f23c68dbb0767074dfdebac2">00291</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="structsdl_1_1subsystem_1_1TimerBase.html#a03fdb845f23c68dbb0767074dfdebac2">ticks</a> () { <span class="keywordflow">return</span> SDL_GetTicks (); };
-<a name="l00292"></a>00292 
-<a name="l00298"></a><a class="code" href="structsdl_1_1subsystem_1_1TimerBase.html#a0cd229d5eb427678342d686f16044381">00298</a>         <a class="code" href="structsdl_1_1subsystem_1_1TimerBase.html">TimerBase</a>&amp; <a class="code" href="structsdl_1_1subsystem_1_1TimerBase.html#a0cd229d5eb427678342d686f16044381">delay</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> interval) {
-<a name="l00299"></a>00299             SDL_Delay (interval);
-<a name="l00300"></a>00300             <span class="keywordflow">return</span> *<span class="keyword">this</span>;
-<a name="l00301"></a>00301         };
-<a name="l00302"></a>00302         
-<a name="l00303"></a>00303         <span class="keyword">protected</span>:
-<a name="l00309"></a><a class="code" href="structsdl_1_1subsystem_1_1TimerBase.html#a7ef3f5a2da90f7fc98f7383efb66b154">00309</a>             <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="structsdl_1_1subsystem_1_1TimerBase.html#a7ef3f5a2da90f7fc98f7383efb66b154">name</a> () { <span class="keywordflow">return</span> <span class="stringliteral">&quot;Timer&quot;</span>; };
-<a name="l00310"></a>00310     }; <span class="comment">//TimerBase</span>
-<a name="l00311"></a>00311 
-<a name="l00316"></a><a class="code" href="namespacesdl_1_1subsystem.html#af5bd2e5a33775cde8f4ada5606b84ae8">00316</a>     <span class="keyword">typedef</span> <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem&lt;SDL_INIT_TIMER, TimerBase&gt;</a> <a class="code" href="namespacesdl_1_1subsystem.html#af5bd2e5a33775cde8f4ada5606b84ae8">Timer</a>;
-<a name="l00317"></a>00317 
-<a name="l00321"></a><a class="code" href="structsdl_1_1subsystem_1_1VideoBase.html">00321</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1subsystem_1_1VideoBase.html">VideoBase</a> {
-<a name="l00327"></a><a class="code" href="structsdl_1_1subsystem_1_1VideoBase.html#a2ba5370e62babdbbc985c34e24a63277">00327</a>         <span class="keywordtype">void</span> <a class="code" href="structsdl_1_1subsystem_1_1VideoBase.html#a2ba5370e62babdbbc985c34e24a63277">swapBuffers</a> () { SDL_GL_SwapBuffers (); };
-<a name="l00328"></a>00328 
-<a name="l00329"></a>00329         <span class="keyword">protected</span>:
-<a name="l00335"></a><a class="code" href="structsdl_1_1subsystem_1_1VideoBase.html#a25a957e86abdb99d193fc7c3bea77b25">00335</a>             <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="structsdl_1_1subsystem_1_1VideoBase.html#a25a957e86abdb99d193fc7c3bea77b25">name</a> () { <span class="keywordflow">return</span> <span class="stringliteral">&quot;Video&quot;</span>; };
-<a name="l00336"></a>00336     }; <span class="comment">//VideoBase</span>
-<a name="l00337"></a>00337 
-<a name="l00342"></a><a class="code" href="namespacesdl_1_1subsystem.html#aba9803352bc06a648c53d3f2d1b03f98">00342</a>     <span class="keyword">typedef</span> <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem&lt;SDL_INIT_VIDEO, VideoBase&gt;</a> <a class="code" href="namespacesdl_1_1subsystem.html#aba9803352bc06a648c53d3f2d1b03f98">Video</a>;
-<a name="l00343"></a>00343 }; <span class="comment">//subsystem</span>
-<a name="l00344"></a>00344 }; <span class="comment">//sdl</span>
-<a name="l00345"></a>00345 
-<a name="l00346"></a>00346 <span class="preprocessor">#endif //SDL_SUBSYSTEM_SUBSYSTEM_H</span>
-<a name="l00347"></a>00347 <span class="preprocessor"></span>
+<a name="l00088"></a><a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a1bf6a93f0b6e0a8f830cf26df0b750e8">00088</a>             <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem</a>&amp; <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a1bf6a93f0b6e0a8f830cf26df0b750e8">init</a> () {
+<a name="l00089"></a>00089                 <span class="keywordflow">if</span> (SDL_InitSubSystem (T) == -1)
+<a name="l00090"></a>00090                     <span class="keywordflow">throw</span> runtime_error (Base::name () + <span class="stringliteral">&quot; subsystem failed to initialize.&quot;</span>);
+<a name="l00091"></a>00091                 <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+<a name="l00092"></a>00092             };
+<a name="l00093"></a>00093 
+<a name="l00099"></a><a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a5a00a885b1d97392821be6f26c813dd2">00099</a>             <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem</a>&amp; <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a5a00a885b1d97392821be6f26c813dd2">quit</a> () {
+<a name="l00100"></a>00100                 SDL_QuitSubSystem (T);
+<a name="l00101"></a>00101                 <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+<a name="l00102"></a>00102             };
+<a name="l00103"></a>00103 
+<a name="l00107"></a><a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a8c77bad76c510e5b81158f32405ad3dd">00107</a>             <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a8c77bad76c510e5b81158f32405ad3dd">Subsystem</a> () : Base () { init (); };
+<a name="l00108"></a>00108 
+<a name="l00114"></a><a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a0ad513a1e758668b9af4368bb8053b13">00114</a>             <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a0ad513a1e758668b9af4368bb8053b13">Subsystem</a> (<span class="keyword">const</span> <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem</a>&amp; rhs) {};
+<a name="l00115"></a>00115 
+<a name="l00119"></a><a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a3e7e5f4bde4a63be4dae0a3fc5a37b1d">00119</a>             <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a3e7e5f4bde4a63be4dae0a3fc5a37b1d">~Subsystem</a> () { quit (); };
+<a name="l00120"></a>00120 
+<a name="l00128"></a><a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a22fb216beb1368bd02126f8454f43a64">00128</a>             <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem</a>&amp; operator= (<span class="keyword">const</span> <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem</a>&amp; rhs) {};
+<a name="l00129"></a>00129     }; <span class="comment">//Subsystem</span>
+<a name="l00130"></a>00130 
+<a name="l00134"></a><a class="code" href="structsdl_1_1subsystem_1_1AudioBase.html">00134</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1subsystem_1_1AudioBase.html">AudioBase</a> {
+<a name="l00135"></a>00135         <span class="keyword">protected</span>:
+<a name="l00141"></a><a class="code" href="structsdl_1_1subsystem_1_1AudioBase.html#a50a0833e0dbe66b0d67493738420e1a0">00141</a>             <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="structsdl_1_1subsystem_1_1AudioBase.html#a50a0833e0dbe66b0d67493738420e1a0">name</a> () { <span class="keywordflow">return</span> <span class="stringliteral">&quot;Audio&quot;</span>; };
+<a name="l00142"></a>00142     }; <span class="comment">//AudioBase</span>
+<a name="l00143"></a>00143 
+<a name="l00148"></a><a class="code" href="namespacesdl_1_1subsystem.html#a0c9ff5befb17e79218562f8e4d66ae9d">00148</a>     <span class="keyword">typedef</span> <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem&lt;SDL_INIT_AUDIO, AudioBase&gt;</a> <a class="code" href="namespacesdl_1_1subsystem.html#a0c9ff5befb17e79218562f8e4d66ae9d">Audio</a>;
+<a name="l00149"></a>00149 
+<a name="l00153"></a><a class="code" href="structsdl_1_1subsystem_1_1CdRomBase.html">00153</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1subsystem_1_1CdRomBase.html">CdRomBase</a> {
+<a name="l00159"></a><a class="code" href="structsdl_1_1subsystem_1_1CdRomBase.html#a320a9f5b2d52556b41e926fa21e3e7d2">00159</a>         <span class="keywordtype">int</span> <a class="code" href="structsdl_1_1subsystem_1_1CdRomBase.html#a320a9f5b2d52556b41e926fa21e3e7d2">numDrives</a> () { <span class="keywordflow">return</span> SDL_CDNumDrives (); };
+<a name="l00160"></a>00160 
+<a name="l00161"></a>00161         <span class="keyword">protected</span>:
+<a name="l00167"></a><a class="code" href="structsdl_1_1subsystem_1_1CdRomBase.html#aa23d845480f520f6437d3c57e49b68c8">00167</a>             <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="structsdl_1_1subsystem_1_1CdRomBase.html#aa23d845480f520f6437d3c57e49b68c8">name</a> () { <span class="keywordflow">return</span> <span class="stringliteral">&quot;Cd-Rom&quot;</span>; };
+<a name="l00168"></a>00168     }; <span class="comment">//CdRomBase</span>
+<a name="l00169"></a>00169 
+<a name="l00174"></a><a class="code" href="namespacesdl_1_1subsystem.html#ae73b68fac07e22f5bbc7d9f063626dd5">00174</a>     <span class="keyword">typedef</span> <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem&lt;SDL_INIT_CDROM, CdRomBase&gt;</a> <a class="code" href="namespacesdl_1_1subsystem.html#ae73b68fac07e22f5bbc7d9f063626dd5">CdRom</a>;
+<a name="l00175"></a>00175 
+<a name="l00179"></a><a class="code" href="structsdl_1_1subsystem_1_1EverythingBase.html">00179</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1subsystem_1_1EverythingBase.html">EverythingBase</a> {
+<a name="l00180"></a>00180         <span class="keyword">protected</span>:
+<a name="l00186"></a><a class="code" href="structsdl_1_1subsystem_1_1EverythingBase.html#a9b6b43c8e8309b3b61c259b5852116d0">00186</a>             <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="structsdl_1_1subsystem_1_1EverythingBase.html#a9b6b43c8e8309b3b61c259b5852116d0">name</a> () { <span class="keywordflow">return</span> <span class="stringliteral">&quot;Everything&quot;</span>; };
+<a name="l00187"></a>00187     }; <span class="comment">//EverythingBase</span>
+<a name="l00188"></a>00188 
+<a name="l00193"></a><a class="code" href="namespacesdl_1_1subsystem.html#a8982307b146a1b75416c0869c292400d">00193</a>     <span class="keyword">typedef</span> <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem&lt;SDL_INIT_EVERYTHING, EverythingBase&gt;</a> <a class="code" href="namespacesdl_1_1subsystem.html#a8982307b146a1b75416c0869c292400d">Everything</a>;
+<a name="l00194"></a>00194 
+<a name="l00198"></a><a class="code" href="structsdl_1_1subsystem_1_1EventThreadBase.html">00198</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1subsystem_1_1EventThreadBase.html">EventThreadBase</a> {
+<a name="l00199"></a>00199         <span class="keyword">protected</span>:
+<a name="l00205"></a><a class="code" href="structsdl_1_1subsystem_1_1EventThreadBase.html#a3aa56a9aa116726fa1a58d13eaa9e19b">00205</a>             <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="structsdl_1_1subsystem_1_1EventThreadBase.html#a3aa56a9aa116726fa1a58d13eaa9e19b">name</a> () { <span class="keywordflow">return</span> <span class="stringliteral">&quot;EventThread&quot;</span>; };
+<a name="l00206"></a>00206     }; <span class="comment">//EventThreadBase</span>
+<a name="l00207"></a>00207 
+<a name="l00212"></a><a class="code" href="namespacesdl_1_1subsystem.html#a567e0add1fe169888caf690406f997f4">00212</a>     <span class="keyword">typedef</span> <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem&lt;SDL_INIT_EVENTTHREAD, EventThreadBase&gt;</a> <a class="code" href="namespacesdl_1_1subsystem.html#a567e0add1fe169888caf690406f997f4">EventThread</a>;
+<a name="l00213"></a>00213 
+<a name="l00217"></a><a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html">00217</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html">JoystickBase</a> {
+<a name="l00221"></a><a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html#aab81941592786ffa445f251822f0a88e">00221</a>         <span class="keywordtype">void</span> <a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html#aab81941592786ffa445f251822f0a88e">update</a> () { SDL_JoystickUpdate (); };
+<a name="l00222"></a>00222 
+<a name="l00226"></a><a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html#a507d820ed2e9b74857fa26a54777e086">00226</a>         <span class="keywordtype">int</span> <a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html#a507d820ed2e9b74857fa26a54777e086">numJoysticks</a> () { <span class="keywordflow">return</span> SDL_NumJoysticks (); };
+<a name="l00227"></a>00227 
+<a name="l00234"></a><a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html#a4135ec74669468ba21cb913fb9df90c7">00234</a>         <span class="keywordtype">bool</span> <a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html#a4135ec74669468ba21cb913fb9df90c7">enableEvents</a> () { <span class="keywordflow">return</span> SDL_JoystickEventState (SDL_ENABLE) == SDL_ENABLE; };
+<a name="l00235"></a>00235 
+<a name="l00242"></a><a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html#a206b056877534317b91fd76ad81f41a3">00242</a>         <span class="keywordtype">bool</span> <a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html#a206b056877534317b91fd76ad81f41a3">disableEvents</a> () { <span class="keywordflow">return</span> SDL_JoystickEventState (SDL_IGNORE) == SDL_IGNORE; };
+<a name="l00243"></a>00243 
+<a name="l00250"></a><a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html#acbd2e3f6593a16f954ac23910b594cfe">00250</a>         <span class="keywordtype">bool</span> <a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html#acbd2e3f6593a16f954ac23910b594cfe">areEventsEnabled</a> () { <span class="keywordflow">return</span> SDL_JoystickEventState (SDL_QUERY) == SDL_ENABLE; };
+<a name="l00251"></a>00251 
+<a name="l00252"></a>00252         <span class="keyword">protected</span>:
+<a name="l00258"></a><a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html#ade012872b7558e377fc4573171d8be05">00258</a>             <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="structsdl_1_1subsystem_1_1JoystickBase.html#ade012872b7558e377fc4573171d8be05">name</a> () { <span class="keywordflow">return</span> <span class="stringliteral">&quot;Joystick&quot;</span>; };
+<a name="l00259"></a>00259     }; <span class="comment">//JoystickBase</span>
+<a name="l00260"></a>00260 
+<a name="l00265"></a><a class="code" href="namespacesdl_1_1subsystem.html#a6643fd7a1ab78eba0c9101150f046ffb">00265</a>     <span class="keyword">typedef</span> <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem&lt;SDL_INIT_JOYSTICK, JoystickBase&gt;</a> <a class="code" href="namespacesdl_1_1subsystem.html#a6643fd7a1ab78eba0c9101150f046ffb">Joystick</a>;
+<a name="l00266"></a>00266 
+<a name="l00270"></a><a class="code" href="structsdl_1_1subsystem_1_1NoParachuteBase.html">00270</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1subsystem_1_1NoParachuteBase.html">NoParachuteBase</a> {
+<a name="l00271"></a>00271         <span class="keyword">protected</span>:
+<a name="l00277"></a><a class="code" href="structsdl_1_1subsystem_1_1NoParachuteBase.html#a61c225e1d18bcea9cb0542ef273631d5">00277</a>             <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="structsdl_1_1subsystem_1_1NoParachuteBase.html#a61c225e1d18bcea9cb0542ef273631d5">name</a> () { <span class="keywordflow">return</span> <span class="stringliteral">&quot;NoParachute&quot;</span>; };
+<a name="l00278"></a>00278     }; <span class="comment">//NoParachuteBase</span>
+<a name="l00279"></a>00279 
+<a name="l00284"></a><a class="code" href="namespacesdl_1_1subsystem.html#aa492001a7efd13cf26312635b40df4cd">00284</a>     <span class="keyword">typedef</span> <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem&lt;SDL_INIT_NOPARACHUTE, NoParachuteBase&gt;</a> <a class="code" href="namespacesdl_1_1subsystem.html#aa492001a7efd13cf26312635b40df4cd">NoParachute</a>;
+<a name="l00285"></a>00285 
+<a name="l00289"></a><a class="code" href="structsdl_1_1subsystem_1_1TimerBase.html">00289</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1subsystem_1_1TimerBase.html">TimerBase</a> {
+<a name="l00293"></a><a class="code" href="structsdl_1_1subsystem_1_1TimerBase.html#a03fdb845f23c68dbb0767074dfdebac2">00293</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="structsdl_1_1subsystem_1_1TimerBase.html#a03fdb845f23c68dbb0767074dfdebac2">ticks</a> () { <span class="keywordflow">return</span> SDL_GetTicks (); };
+<a name="l00294"></a>00294 
+<a name="l00300"></a><a class="code" href="structsdl_1_1subsystem_1_1TimerBase.html#a0cd229d5eb427678342d686f16044381">00300</a>         <a class="code" href="structsdl_1_1subsystem_1_1TimerBase.html">TimerBase</a>&amp; <a class="code" href="structsdl_1_1subsystem_1_1TimerBase.html#a0cd229d5eb427678342d686f16044381">delay</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> interval) {
+<a name="l00301"></a>00301             SDL_Delay (interval);
+<a name="l00302"></a>00302             <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+<a name="l00303"></a>00303         };
+<a name="l00304"></a>00304         
+<a name="l00305"></a>00305         <span class="keyword">protected</span>:
+<a name="l00311"></a><a class="code" href="structsdl_1_1subsystem_1_1TimerBase.html#a7ef3f5a2da90f7fc98f7383efb66b154">00311</a>             <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="structsdl_1_1subsystem_1_1TimerBase.html#a7ef3f5a2da90f7fc98f7383efb66b154">name</a> () { <span class="keywordflow">return</span> <span class="stringliteral">&quot;Timer&quot;</span>; };
+<a name="l00312"></a>00312     }; <span class="comment">//TimerBase</span>
+<a name="l00313"></a>00313 
+<a name="l00318"></a><a class="code" href="namespacesdl_1_1subsystem.html#af5bd2e5a33775cde8f4ada5606b84ae8">00318</a>     <span class="keyword">typedef</span> <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem&lt;SDL_INIT_TIMER, TimerBase&gt;</a> <a class="code" href="namespacesdl_1_1subsystem.html#af5bd2e5a33775cde8f4ada5606b84ae8">Timer</a>;
+<a name="l00319"></a>00319 
+<a name="l00323"></a><a class="code" href="structsdl_1_1subsystem_1_1VideoBase.html">00323</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1subsystem_1_1VideoBase.html">VideoBase</a> {
+<a name="l00329"></a><a class="code" href="structsdl_1_1subsystem_1_1VideoBase.html#a2ba5370e62babdbbc985c34e24a63277">00329</a>         <span class="keywordtype">void</span> <a class="code" href="structsdl_1_1subsystem_1_1VideoBase.html#a2ba5370e62babdbbc985c34e24a63277">swapBuffers</a> () { SDL_GL_SwapBuffers (); };
+<a name="l00330"></a>00330 
+<a name="l00331"></a>00331         <span class="keyword">protected</span>:
+<a name="l00337"></a><a class="code" href="structsdl_1_1subsystem_1_1VideoBase.html#a25a957e86abdb99d193fc7c3bea77b25">00337</a>             <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="structsdl_1_1subsystem_1_1VideoBase.html#a25a957e86abdb99d193fc7c3bea77b25">name</a> () { <span class="keywordflow">return</span> <span class="stringliteral">&quot;Video&quot;</span>; };
+<a name="l00338"></a>00338     }; <span class="comment">//VideoBase</span>
+<a name="l00339"></a>00339 
+<a name="l00344"></a><a class="code" href="namespacesdl_1_1subsystem.html#aba9803352bc06a648c53d3f2d1b03f98">00344</a>     <span class="keyword">typedef</span> <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html">Subsystem&lt;SDL_INIT_VIDEO, VideoBase&gt;</a> <a class="code" href="namespacesdl_1_1subsystem.html#aba9803352bc06a648c53d3f2d1b03f98">Video</a>;
+<a name="l00345"></a>00345 }; <span class="comment">//subsystem</span>
+<a name="l00346"></a>00346 }; <span class="comment">//sdl</span>
+<a name="l00347"></a>00347 
+<a name="l00348"></a>00348 <span class="preprocessor">#endif //SDL_SUBSYSTEM_SUBSYSTEM_H</span>
+<a name="l00349"></a>00349 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="Subsystem_8h.html">Subsystem.h</a>      </li>
-      <li class="footer">Generated on Tue Aug 23 2011 16:07:40 for SDL++ by&#160;
+      <li class="footer">Generated on Tue Aug 23 2011 16:25:33 for SDL++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>

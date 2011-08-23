@@ -99,58 +99,58 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00034"></a>00034 
 <a name="l00038"></a><a class="code" href="classsdl_1_1devices_1_1Cursor.html">00038</a>     <span class="keyword">class </span><a class="code" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a> {
 <a name="l00039"></a>00039         <span class="keyword">public</span>:
-<a name="l00043"></a><a class="code" href="classsdl_1_1devices_1_1Cursor.html#ada589fc25ff85d88582bb978be40ef8b">00043</a>             <a class="code" href="classsdl_1_1devices_1_1Cursor.html#ada589fc25ff85d88582bb978be40ef8b">Cursor</a> () : cursor_ (SDL_GetCursor ()) {
-<a name="l00044"></a>00044                 <span class="keywordflow">if</span> (cursor_ == NULL)
-<a name="l00045"></a>00045                     <span class="keywordflow">throw</span> runtime_error (<span class="stringliteral">&quot;Unable to get system cursor.&quot;</span>);
-<a name="l00046"></a>00046             };
-<a name="l00047"></a>00047 
-<a name="l00056"></a><a class="code" href="classsdl_1_1devices_1_1Cursor.html#a04bf1ad27cfa546dab8c0e91885e1aa3">00056</a>             <a class="code" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* data, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* mask, <span class="keyword">const</span> <a class="code" href="classsdl_1_1misc_1_1Rect.html">Rect</a>&amp; rect, <span class="keyword">const</span> <a class="code" href="structsdl_1_1misc_1_1Coordinate.html">Coordinate&lt;int&gt;</a>&amp; pos)
-<a name="l00057"></a>00057                 : cursor_ (SDL_CreateCursor (data, mask, 
-<a name="l00058"></a>00058                                              rect.width (), rect.height (),
-<a name="l00059"></a>00059                                              pos.x (), pos.y ())) {
-<a name="l00060"></a>00060                 <span class="keywordflow">if</span> (cursor_ == NULL)
-<a name="l00061"></a>00061                     <span class="keywordflow">throw</span> runtime_error (<span class="stringliteral">&quot;Failed to create the Cursor.&quot;</span>);
-<a name="l00062"></a>00062             };
-<a name="l00063"></a>00063 
-<a name="l00067"></a><a class="code" href="classsdl_1_1devices_1_1Cursor.html#ac128d9d02bc69b6c406408f82a9354f2">00067</a>             <a class="code" href="classsdl_1_1devices_1_1Cursor.html#ac128d9d02bc69b6c406408f82a9354f2">~Cursor</a> () { SDL_FreeCursor (cursor_); };
-<a name="l00068"></a>00068 
-<a name="l00076"></a><a class="code" href="classsdl_1_1devices_1_1Cursor.html#a5b023392bd424ba31f11a58fe74237e6">00076</a>             <span class="keywordtype">void</span> <a class="code" href="classsdl_1_1devices_1_1Cursor.html#a5b023392bd424ba31f11a58fe74237e6">move</a> (<span class="keyword">const</span> <a class="code" href="structsdl_1_1misc_1_1Coordinate.html">Coordinate&lt;short&gt;</a>&amp; pos) { SDL_WarpMouse (pos.<a class="code" href="structsdl_1_1misc_1_1Coordinate.html#ae2ef27acf920866de8a6be24e52d92ea">x</a> (), pos.<a class="code" href="structsdl_1_1misc_1_1Coordinate.html#a6aa11421b539c020b86977c15cb52eee">y</a> ()); };
-<a name="l00077"></a>00077 
-<a name="l00083"></a><a class="code" href="classsdl_1_1devices_1_1Cursor.html#a8a4eb4a9ca55fb0840b9d26514b881b4">00083</a>             <span class="keywordtype">bool</span> <a class="code" href="classsdl_1_1devices_1_1Cursor.html#a8a4eb4a9ca55fb0840b9d26514b881b4">show</a> () { <span class="keywordflow">return</span> SDL_ShowCursor (SDL_ENABLE) == SDL_ENABLE; };
-<a name="l00084"></a>00084 
-<a name="l00090"></a><a class="code" href="classsdl_1_1devices_1_1Cursor.html#ad1c76547db57d1236bd45dd4b37946e5">00090</a>             <span class="keywordtype">bool</span> <a class="code" href="classsdl_1_1devices_1_1Cursor.html#ad1c76547db57d1236bd45dd4b37946e5">hide</a> () { <span class="keywordflow">return</span> SDL_ShowCursor (SDL_DISABLE) == SDL_DISABLE; };
-<a name="l00091"></a>00091 
-<a name="l00097"></a><a class="code" href="classsdl_1_1devices_1_1Cursor.html#af42335c411ebc806cdfe7ce0c30da6a6">00097</a>             <span class="keywordtype">bool</span> <a class="code" href="classsdl_1_1devices_1_1Cursor.html#af42335c411ebc806cdfe7ce0c30da6a6">isVisible</a> () { <span class="keywordflow">return</span> SDL_ShowCursor (SDL_QUERY) == SDL_ENABLE; };
-<a name="l00098"></a>00098 
-<a name="l00104"></a><a class="code" href="classsdl_1_1devices_1_1Cursor.html#ae1f30e712766a284df235c531606c2b4">00104</a>             <span class="keywordtype">bool</span> <a class="code" href="classsdl_1_1devices_1_1Cursor.html#ae1f30e712766a284df235c531606c2b4">toggle</a> () {
-<a name="l00105"></a>00105                 <span class="keywordflow">return</span> isVisible () ? SDL_ShowCursor (SDL_DISABLE) == SDL_DISABLE : SDL_ShowCursor (SDL_ENABLE) == SDL_ENABLE;
-<a name="l00106"></a>00106             };
-<a name="l00107"></a>00107 
-<a name="l00113"></a><a class="code" href="classsdl_1_1devices_1_1Cursor.html#a89af1719cfed0004909cc54ae238ac4e">00113</a>             <span class="keywordtype">void</span> <a class="code" href="classsdl_1_1devices_1_1Cursor.html#a89af1719cfed0004909cc54ae238ac4e">activate</a> () { SDL_SetCursor (cursor_); };
-<a name="l00114"></a>00114 
-<a name="l00120"></a><a class="code" href="classsdl_1_1devices_1_1Cursor.html#a1ec84dc88bb86060d176adefc70e5bc2">00120</a>             <span class="keywordtype">void</span> <a class="code" href="classsdl_1_1devices_1_1Cursor.html#a1ec84dc88bb86060d176adefc70e5bc2">redraw</a> () { SDL_SetCursor (NULL); }; 
-<a name="l00121"></a>00121 
-<a name="l00122"></a>00122         <span class="keyword">private</span>:
-<a name="l00128"></a>00128             <a class="code" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a> (<span class="keyword">const</span> <a class="code" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>&amp; rhs);
-<a name="l00129"></a>00129 
-<a name="l00137"></a>00137             <a class="code" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>&amp; operator= (<span class="keyword">const</span> <a class="code" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>&amp; rhs);
-<a name="l00138"></a>00138 
-<a name="l00139"></a>00139             <span class="comment">/*</span>
-<a name="l00140"></a>00140 <span class="comment">             * The system pointer.</span>
-<a name="l00141"></a>00141 <span class="comment">             */</span>
-<a name="l00142"></a>00142             SDL_Cursor* cursor_;
-<a name="l00143"></a>00143     }; <span class="comment">//Cursor</span>
-<a name="l00144"></a>00144 }; <span class="comment">//devices</span>
-<a name="l00145"></a>00145 }; <span class="comment">//sdl</span>
-<a name="l00146"></a>00146 
-<a name="l00147"></a>00147 <span class="preprocessor">#endif //SDL_DEVICES_CURSOR_H</span>
-<a name="l00148"></a>00148 <span class="preprocessor"></span>
+<a name="l00045"></a><a class="code" href="classsdl_1_1devices_1_1Cursor.html#ada589fc25ff85d88582bb978be40ef8b">00045</a>             <a class="code" href="classsdl_1_1devices_1_1Cursor.html#ada589fc25ff85d88582bb978be40ef8b">Cursor</a> () : cursor_ (SDL_GetCursor ()) {
+<a name="l00046"></a>00046                 <span class="keywordflow">if</span> (cursor_ == NULL)
+<a name="l00047"></a>00047                     <span class="keywordflow">throw</span> runtime_error (<span class="stringliteral">&quot;Unable to get system cursor.&quot;</span>);
+<a name="l00048"></a>00048             };
+<a name="l00049"></a>00049 
+<a name="l00060"></a><a class="code" href="classsdl_1_1devices_1_1Cursor.html#a04bf1ad27cfa546dab8c0e91885e1aa3">00060</a>             <a class="code" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* data, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* mask, <span class="keyword">const</span> <a class="code" href="classsdl_1_1misc_1_1Rect.html">Rect</a>&amp; rect, <span class="keyword">const</span> <a class="code" href="structsdl_1_1misc_1_1Coordinate.html">Coordinate&lt;int&gt;</a>&amp; pos)
+<a name="l00061"></a>00061                 : cursor_ (SDL_CreateCursor (data, mask, 
+<a name="l00062"></a>00062                                              rect.width (), rect.height (),
+<a name="l00063"></a>00063                                              pos.x (), pos.y ())) {
+<a name="l00064"></a>00064                 <span class="keywordflow">if</span> (cursor_ == NULL)
+<a name="l00065"></a>00065                     <span class="keywordflow">throw</span> runtime_error (<span class="stringliteral">&quot;Failed to create the Cursor.&quot;</span>);
+<a name="l00066"></a>00066             };
+<a name="l00067"></a>00067 
+<a name="l00071"></a><a class="code" href="classsdl_1_1devices_1_1Cursor.html#ac128d9d02bc69b6c406408f82a9354f2">00071</a>             <a class="code" href="classsdl_1_1devices_1_1Cursor.html#ac128d9d02bc69b6c406408f82a9354f2">~Cursor</a> () { SDL_FreeCursor (cursor_); };
+<a name="l00072"></a>00072 
+<a name="l00080"></a><a class="code" href="classsdl_1_1devices_1_1Cursor.html#a5b023392bd424ba31f11a58fe74237e6">00080</a>             <span class="keywordtype">void</span> <a class="code" href="classsdl_1_1devices_1_1Cursor.html#a5b023392bd424ba31f11a58fe74237e6">move</a> (<span class="keyword">const</span> <a class="code" href="structsdl_1_1misc_1_1Coordinate.html">Coordinate&lt;short&gt;</a>&amp; pos) { SDL_WarpMouse (pos.<a class="code" href="structsdl_1_1misc_1_1Coordinate.html#ae2ef27acf920866de8a6be24e52d92ea">x</a> (), pos.<a class="code" href="structsdl_1_1misc_1_1Coordinate.html#a6aa11421b539c020b86977c15cb52eee">y</a> ()); };
+<a name="l00081"></a>00081 
+<a name="l00087"></a><a class="code" href="classsdl_1_1devices_1_1Cursor.html#a8a4eb4a9ca55fb0840b9d26514b881b4">00087</a>             <span class="keywordtype">bool</span> <a class="code" href="classsdl_1_1devices_1_1Cursor.html#a8a4eb4a9ca55fb0840b9d26514b881b4">show</a> () { <span class="keywordflow">return</span> SDL_ShowCursor (SDL_ENABLE) == SDL_ENABLE; };
+<a name="l00088"></a>00088 
+<a name="l00094"></a><a class="code" href="classsdl_1_1devices_1_1Cursor.html#ad1c76547db57d1236bd45dd4b37946e5">00094</a>             <span class="keywordtype">bool</span> <a class="code" href="classsdl_1_1devices_1_1Cursor.html#ad1c76547db57d1236bd45dd4b37946e5">hide</a> () { <span class="keywordflow">return</span> SDL_ShowCursor (SDL_DISABLE) == SDL_DISABLE; };
+<a name="l00095"></a>00095 
+<a name="l00101"></a><a class="code" href="classsdl_1_1devices_1_1Cursor.html#af42335c411ebc806cdfe7ce0c30da6a6">00101</a>             <span class="keywordtype">bool</span> <a class="code" href="classsdl_1_1devices_1_1Cursor.html#af42335c411ebc806cdfe7ce0c30da6a6">isVisible</a> () { <span class="keywordflow">return</span> SDL_ShowCursor (SDL_QUERY) == SDL_ENABLE; };
+<a name="l00102"></a>00102 
+<a name="l00108"></a><a class="code" href="classsdl_1_1devices_1_1Cursor.html#ae1f30e712766a284df235c531606c2b4">00108</a>             <span class="keywordtype">bool</span> <a class="code" href="classsdl_1_1devices_1_1Cursor.html#ae1f30e712766a284df235c531606c2b4">toggle</a> () {
+<a name="l00109"></a>00109                 <span class="keywordflow">return</span> isVisible () ? SDL_ShowCursor (SDL_DISABLE) == SDL_DISABLE : SDL_ShowCursor (SDL_ENABLE) == SDL_ENABLE;
+<a name="l00110"></a>00110             };
+<a name="l00111"></a>00111 
+<a name="l00117"></a><a class="code" href="classsdl_1_1devices_1_1Cursor.html#a89af1719cfed0004909cc54ae238ac4e">00117</a>             <span class="keywordtype">void</span> <a class="code" href="classsdl_1_1devices_1_1Cursor.html#a89af1719cfed0004909cc54ae238ac4e">activate</a> () { SDL_SetCursor (cursor_); };
+<a name="l00118"></a>00118 
+<a name="l00124"></a><a class="code" href="classsdl_1_1devices_1_1Cursor.html#a1ec84dc88bb86060d176adefc70e5bc2">00124</a>             <span class="keywordtype">void</span> <a class="code" href="classsdl_1_1devices_1_1Cursor.html#a1ec84dc88bb86060d176adefc70e5bc2">redraw</a> () { SDL_SetCursor (NULL); }; 
+<a name="l00125"></a>00125 
+<a name="l00126"></a>00126         <span class="keyword">private</span>:
+<a name="l00132"></a>00132             <a class="code" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a> (<span class="keyword">const</span> <a class="code" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>&amp; rhs);
+<a name="l00133"></a>00133 
+<a name="l00141"></a>00141             <a class="code" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>&amp; operator= (<span class="keyword">const</span> <a class="code" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>&amp; rhs);
+<a name="l00142"></a>00142 
+<a name="l00143"></a>00143             <span class="comment">/*</span>
+<a name="l00144"></a>00144 <span class="comment">             * The system pointer.</span>
+<a name="l00145"></a>00145 <span class="comment">             */</span>
+<a name="l00146"></a>00146             SDL_Cursor* cursor_;
+<a name="l00147"></a>00147     }; <span class="comment">//Cursor</span>
+<a name="l00148"></a>00148 }; <span class="comment">//devices</span>
+<a name="l00149"></a>00149 }; <span class="comment">//sdl</span>
+<a name="l00150"></a>00150 
+<a name="l00151"></a>00151 <span class="preprocessor">#endif //SDL_DEVICES_CURSOR_H</span>
+<a name="l00152"></a>00152 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="Cursor_8h.html">Cursor.h</a>      </li>
-      <li class="footer">Generated on Tue Aug 23 2011 16:07:40 for SDL++ by&#160;
+      <li class="footer">Generated on Tue Aug 23 2011 16:25:33 for SDL++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>

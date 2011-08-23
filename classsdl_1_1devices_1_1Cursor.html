@@ -122,9 +122,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Constructs a <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a> using the system's cursor. </p>
+<p>Constructs a <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a> using the system's cursor.</p>
+<dl><dt><b>Exceptions:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">runtime_error,Throws</td><td>a runtime_error if unable to get the system cursor. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00043">43</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
+<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00045">45</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
 
 </div>
 </div>
@@ -170,12 +176,18 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">unsigned</td><td>char* data, The color of each <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a> pixel. </td></tr>
     <tr><td class="paramname">unsigned</td><td>char* mask, The mask for each <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a> pixel. </td></tr>
     <tr><td class="paramname">const</td><td>Rect&amp; rect, A rectangle containing the height and width of the <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>. </td></tr>
-    <tr><td class="paramname">const</td><td>Coordinate&lt;int&gt;&amp; pos, The position of the upper-left corner of the <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>. </td></tr>
+    <tr><td class="paramname">const</td><td>Coordinate&lt;int&gt;&amp; pos, The position of the upper-left corner of the <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Exceptions:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">runtime_error,Throws</td><td>a runtime_error if unable to create cursor. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00056">56</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
+<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00060">60</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
 
 </div>
 </div>
@@ -194,7 +206,7 @@ Public Member Functions</h2></td></tr>
 <div class="memdoc">
 <p>Destroys a <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>. </p>
 
-<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00067">67</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
+<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00071">71</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
 
 </div>
 </div>
@@ -215,7 +227,7 @@ Public Member Functions</h2></td></tr>
 <p>Activates the <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void. </dd></dl>
 
-<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00113">113</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
+<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00117">117</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
 
 </div>
 </div>
@@ -235,7 +247,7 @@ Public Member Functions</h2></td></tr>
 <p>Hides the <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool, True if successful, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00090">90</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
+<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00094">94</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
 
 </div>
 </div>
@@ -255,7 +267,7 @@ Public Member Functions</h2></td></tr>
 <p>Determines if the <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a> if visible or not.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool, True is <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a> is visible, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00097">97</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
+<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00101">101</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
 
 </div>
 </div>
@@ -282,7 +294,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void. </dd></dl>
 
-<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00076">76</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
+<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00080">80</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
 
 </div>
 </div>
@@ -302,7 +314,7 @@ Public Member Functions</h2></td></tr>
 <p>Force the cursor to redraw.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void. </dd></dl>
 
-<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00120">120</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
+<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00124">124</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
 
 </div>
 </div>
@@ -322,7 +334,7 @@ Public Member Functions</h2></td></tr>
 <p>Shows the <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool, True if successful, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00083">83</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
+<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00087">87</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
 
 </div>
 </div>
@@ -342,7 +354,7 @@ Public Member Functions</h2></td></tr>
 <p>Toggles the visibility of the <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool, True if successful, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00104">104</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
+<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00108">108</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
 
 </div>
 </div>
@@ -356,7 +368,7 @@ Public Member Functions</h2></td></tr>
       <li class="navelem"><a class="el" href="namespacesdl.html">sdl</a>      </li>
       <li class="navelem"><a class="el" href="namespacesdl_1_1devices.html">devices</a>      </li>
       <li class="navelem"><a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>      </li>
-      <li class="footer">Generated on Tue Aug 23 2011 16:07:40 for SDL++ by&#160;
+      <li class="footer">Generated on Tue Aug 23 2011 16:25:33 for SDL++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>

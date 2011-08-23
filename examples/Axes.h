@@ -25,7 +25,7 @@
 namespace sdl {
 namespace examples {
     /**
-     * @class Aces, Represents axes.
+     * @class Axes, Represents axes.
      */
     class Axes {
         public:

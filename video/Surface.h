@@ -71,6 +71,20 @@ namespace video {
             /**
              * Constructs a Surface.
              *
+             * @param int height, The height.
+             * @param int width, The width.
+             * @param int bpp, The bits per pixel.
+             * @param unsigned int flags, The surface flags.
+             */
+            Surface (int height, int width, int bpp, unsigned int flags)
+              : surface_ (SDL_SetVideoMode (height, width, bpp, flags)) {
+                if (surface_ == NULL)
+                    throw runtime_error (SDL_GetError ());
+            };
+
+            /**
+             * Constructs a Surface.
+             *
              * @param Uint32 flags, The SDL Surface flags.
              * @param const Rect& rect, A rectangle with the height and width.
              * @param int bpp, The number of bits per pixel.

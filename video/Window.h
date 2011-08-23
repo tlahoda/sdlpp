@@ -20,10 +20,12 @@
 #ifndef SDL_VIDEO_WINDOW_H
 #define SDL_VIDEO_WINDOW_H
 
-#include <stexcpt>
+#include <stdexcept>
 #include <string>
 
 #include <SDL.h>
+//Error being caused by #include <SDL_syswm.h>
+//#include <SDL_syswm.h>
 
 #include "sdlpp/Sdl.h"
 #include "sdlpp/video/Surface.h"
@@ -126,21 +128,22 @@ namespace video {
              */
             bool fullScreen (const Surface& surface) { return SDL_WM_ToggleFullScreen (surface.to_c ()); };
 
+            //Error being caused by #include <SDL_syswm.h>
             /**
              * Gets the window manager specific information.
              *
              * @return SDL_SysWMinfo, The information.
              */
-            SDL_SysWMinfo info () {
+            /*SDL_SysWMinfo info () {
                 SDL_SysWMinfo i;
-                Sdl::instance ().compileVersion (&i.version);
+                i.version = Sdl::instance ().compileVersion ();
                 int res = SDL_GetWMInfo (&i);
                 if (res == 0)
                     throw runtime_error ("unimplemented");
                 else if (res == -1)
                     throw runtime_error ("failed");
                 return i;
-            };
+            };*/
 
         private:
             /**

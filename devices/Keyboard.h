@@ -64,7 +64,7 @@ namespace devices {
          *
          * @return void.
          */
-        static void setModState (SDLMod state) { return SDL_SetModState (state); };
+        static void setModState (SDLMod state) { SDL_SetModState (state); };
 
         /**
          * Enables key repeating.

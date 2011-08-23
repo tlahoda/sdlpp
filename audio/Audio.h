@@ -25,10 +25,9 @@
 
 #include <SDL.h>
 
-#include "sdlpp/subsystem/Audio.h"
-#include "sdlpp/subsystem/Audio.h"
-#include "sdlpp/Wav.h"
-#include "sdlpp/SoundBank.h"
+#include "sdlpp/subsystem/Subsystem.h"
+#include "sdlpp/audio/Wav.h"
+#include "sdlpp/audio/SoundBank.h"
 
 namespace sdl {
 namespace audio {
@@ -57,7 +56,7 @@ namespace audio {
                 //desired->silence = silence;
                 desired->samples = samples;
                 //desired->size = size;
-                desired->callback = mix;
+                //desired->callback = mix;
                 desired->userdata = 0;
 
                 SDL_AudioSpec* obtained = new SDL_AudioSpec ();

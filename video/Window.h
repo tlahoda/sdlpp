@@ -96,7 +96,7 @@ namespace video {
              *
              * @return bool, True if successful, false otherwise.
              */
-            bool minimize () { return SDL_WM_IconifyWindow (); };
+            bool minimize () { return SDL_WM_IconifyWindow () != 0; };
 
             /**
              * Grabs the mouse and keyboard input.
@@ -126,7 +126,7 @@ namespace video {
              *
              * @return bool, True if successful, false otherwise.
              */
-            bool fullScreen (const Surface& surface) { return SDL_WM_ToggleFullScreen (surface.to_c ()); };
+            bool fullScreen (const Surface& surface) { return SDL_WM_ToggleFullScreen (surface.to_c ()) == 1; };
 
             //Error being caused by #include <SDL_syswm.h>
             /**

@@ -106,7 +106,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="Audio_8h_source.html#l00036">36</a> of file <a class="el" href="Audio_8h_source.html">Audio.h</a>.</p>
+<p>Definition at line <a class="el" href="Audio_8h_source.html#l00038">38</a> of file <a class="el" href="Audio_8h_source.html">Audio.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aa27fd8a3f5bfade781f28fa1b13fd0ed"></a><!-- doxytag: member="sdl::audio::Audio::Audio" ref="aa27fd8a3f5bfade781f28fa1b13fd0ed" args="(int freq, unsigned short format, unsigned char channels, unsigned char silence, unsigned short samples, unsigned int size)" -->
 <div class="memitem">
@@ -159,23 +159,23 @@ Public Member Functions</h2></td></tr>
 <p>Opens the audio system.</p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">int</td><td>freq, The audio frequenct in samples per second. </td></tr>
-    <tr><td class="paramname">unsigned</td><td>short format, The audio data format. </td></tr>
-    <tr><td class="paramname">unsigned</td><td>char channels, The number of audio channels. </td></tr>
-    <tr><td class="paramname">unsigned</td><td>char silence, The audio buffer silence value. </td></tr>
-    <tr><td class="paramname">unsigned</td><td>short samples, The audio buffer size in samples. </td></tr>
-    <tr><td class="paramname">unsigned</td><td>int size, The audio buffer size in bytes.</td></tr>
+    <tr><td class="paramname">freq</td><td>The audio frequenct in samples per second. </td></tr>
+    <tr><td class="paramname">format</td><td>The audio data format. </td></tr>
+    <tr><td class="paramname">channels</td><td>The number of audio channels. </td></tr>
+    <tr><td class="paramname">silence</td><td>The audio buffer silence value. </td></tr>
+    <tr><td class="paramname">samples</td><td>The audio buffer size in samples. </td></tr>
+    <tr><td class="paramname">size</td><td>The audio buffer size in bytes.</td></tr>
   </table>
   </dd>
 </dl>
 <dl><dt><b>Exceptions:</b></dt><dd>
   <table class="exception">
-    <tr><td class="paramname">runtime_error,Throws</td><td>a runtime_error if the audio could not be opened. </td></tr>
+    <tr><td class="paramname">runtime_error</td><td>Throws a runtime_error if the audio could not be opened. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Audio_8h_source.html#l00050">50</a> of file <a class="el" href="Audio_8h_source.html">Audio.h</a>.</p>
+<p>Definition at line <a class="el" href="Audio_8h_source.html#l00052">52</a> of file <a class="el" href="Audio_8h_source.html">Audio.h</a>.</p>
 
 </div>
 </div>
@@ -194,7 +194,7 @@ Public Member Functions</h2></td></tr>
 <div class="memdoc">
 <p>Closes the audio system. </p>
 
-<p>Definition at line <a class="el" href="Audio_8h_source.html#l00070">70</a> of file <a class="el" href="Audio_8h_source.html">Audio.h</a>.</p>
+<p>Definition at line <a class="el" href="Audio_8h_source.html#l00072">72</a> of file <a class="el" href="Audio_8h_source.html">Audio.h</a>.</p>
 
 </div>
 </div>
@@ -213,9 +213,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Determines if the audio playback is paused.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>bool, True if paused, false otherwise. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if paused, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="Audio_8h_source.html#l00084">84</a> of file <a class="el" href="Audio_8h_source.html">Audio.h</a>.</p>
+<p>Definition at line <a class="el" href="Audio_8h_source.html#l00086">86</a> of file <a class="el" href="Audio_8h_source.html">Audio.h</a>.</p>
 
 </div>
 </div>
@@ -233,9 +233,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Determines if the audio playback is playing.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>bool, True if playing, false otherwise. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if playing, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="Audio_8h_source.html#l00077">77</a> of file <a class="el" href="Audio_8h_source.html">Audio.h</a>.</p>
+<p>Definition at line <a class="el" href="Audio_8h_source.html#l00079">79</a> of file <a class="el" href="Audio_8h_source.html">Audio.h</a>.</p>
 
 </div>
 </div>
@@ -253,9 +253,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Determines if the audio playback is stopped.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>bool, True if stopped, false otherwise. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if stopped, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="Audio_8h_source.html#l00091">91</a> of file <a class="el" href="Audio_8h_source.html">Audio.h</a>.</p>
+<p>Definition at line <a class="el" href="Audio_8h_source.html#l00093">93</a> of file <a class="el" href="Audio_8h_source.html">Audio.h</a>.</p>
 
 </div>
 </div>
@@ -273,9 +273,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Locks an <a class="el" href="classsdl_1_1audio_1_1Audio.html">Audio</a>.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classsdl_1_1audio_1_1Audio.html">Audio</a>&amp;, A reference to this <a class="el" href="classsdl_1_1audio_1_1Audio.html">Audio</a>. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A reference to this <a class="el" href="classsdl_1_1audio_1_1Audio.html">Audio</a>. </dd></dl>
 
-<p>Definition at line <a class="el" href="Audio_8h_source.html#l00142">142</a> of file <a class="el" href="Audio_8h_source.html">Audio.h</a>.</p>
+<p>Definition at line <a class="el" href="Audio_8h_source.html#l00144">144</a> of file <a class="el" href="Audio_8h_source.html">Audio.h</a>.</p>
 
 </div>
 </div>
@@ -293,9 +293,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Pauses <a class="el" href="classsdl_1_1audio_1_1Audio.html">Audio</a> playback.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>bool, True is successful, false otherwise. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True is successful, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="Audio_8h_source.html#l00132">132</a> of file <a class="el" href="Audio_8h_source.html">Audio.h</a>.</p>
+<p>Definition at line <a class="el" href="Audio_8h_source.html#l00134">134</a> of file <a class="el" href="Audio_8h_source.html">Audio.h</a>.</p>
 
 </div>
 </div>
@@ -313,9 +313,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Starts audio playback.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>bool, True is successful, false otherwise. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if successful, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="Audio_8h_source.html#l00098">98</a> of file <a class="el" href="Audio_8h_source.html">Audio.h</a>.</p>
+<p>Definition at line <a class="el" href="Audio_8h_source.html#l00100">100</a> of file <a class="el" href="Audio_8h_source.html">Audio.h</a>.</p>
 
 </div>
 </div>
@@ -333,16 +333,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Plays a <a class="el" href="classsdl_1_1audio_1_1Wav.html">Wav</a>.</p>
+<p>Plays a <a class="el" href="classsdl_1_1audio_1_1Wav.html" title="Represents a wav file.">Wav</a>.</p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">Wav&amp;</td><td>wav, The <a class="el" href="classsdl_1_1audio_1_1Wav.html">Wav</a> to play.</td></tr>
+    <tr><td class="paramname">wav</td><td>The <a class="el" href="classsdl_1_1audio_1_1Wav.html" title="Represents a wav file.">Wav</a> to play.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classsdl_1_1audio_1_1Audio.html">Audio</a>&amp;, A reference to this <a class="el" href="classsdl_1_1audio_1_1Audio.html">Audio</a>. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A reference to this <a class="el" href="classsdl_1_1audio_1_1Audio.html">Audio</a>. </dd></dl>
 
-<p>Definition at line <a class="el" href="Audio_8h_source.html#l00110">110</a> of file <a class="el" href="Audio_8h_source.html">Audio.h</a>.</p>
+<p>Definition at line <a class="el" href="Audio_8h_source.html#l00112">112</a> of file <a class="el" href="Audio_8h_source.html">Audio.h</a>.</p>
 
 </div>
 </div>
@@ -360,9 +360,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Unlocks an <a class="el" href="classsdl_1_1audio_1_1Audio.html">Audio</a>.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classsdl_1_1audio_1_1Audio.html">Audio</a>&amp;, A reference to this <a class="el" href="classsdl_1_1audio_1_1Audio.html">Audio</a>. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A reference to this <a class="el" href="classsdl_1_1audio_1_1Audio.html">Audio</a>. </dd></dl>
 
-<p>Definition at line <a class="el" href="Audio_8h_source.html#l00152">152</a> of file <a class="el" href="Audio_8h_source.html">Audio.h</a>.</p>
+<p>Definition at line <a class="el" href="Audio_8h_source.html#l00154">154</a> of file <a class="el" href="Audio_8h_source.html">Audio.h</a>.</p>
 
 </div>
 </div>
@@ -376,7 +376,7 @@ Public Member Functions</h2></td></tr>
       <li class="navelem"><a class="el" href="namespacesdl.html">sdl</a>      </li>
       <li class="navelem"><a class="el" href="namespacesdl_1_1audio.html">audio</a>      </li>
       <li class="navelem"><a class="el" href="classsdl_1_1audio_1_1Audio.html">Audio</a>      </li>
-      <li class="footer">Generated on Tue Aug 23 2011 16:25:33 for SDL++ by&#160;
+      <li class="footer">Generated on Tue Aug 23 2011 22:49:41 for SDL++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>

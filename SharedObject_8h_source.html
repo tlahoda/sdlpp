@@ -82,51 +82,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <a href="SharedObject_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
-<a name="l00020"></a>00020 <span class="preprocessor">#ifndef SDL_MISC_SHAREDOBJECT_H</span>
-<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define SDL_MISC_SHAREDOBJECT_H</span>
-<a name="l00022"></a>00022 <span class="preprocessor"></span>
-<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;stdexcept&gt;</span>
-<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;string&gt;</span>
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;SDL_loadso.h&gt;</span>
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028 <span class="keyword">namespace </span>sdl {
-<a name="l00029"></a>00029 <span class="keyword">namespace </span>misc {
-<a name="l00033"></a><a class="code" href="structsdl_1_1misc_1_1SharedObject.html">00033</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1misc_1_1SharedObject.html">SharedObject</a> {
-<a name="l00041"></a><a class="code" href="structsdl_1_1misc_1_1SharedObject.html#a8b6e86948695bc525f4606a97524ee07">00041</a>         <a class="code" href="structsdl_1_1misc_1_1SharedObject.html#a8b6e86948695bc525f4606a97524ee07">SharedObject</a> (<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fileName) : handle_ (SDL_LoadObject (fileName.c_str ())), fileName_ (fileName) {
-<a name="l00042"></a>00042             <span class="keywordflow">if</span> (handle_ == NULL)
-<a name="l00043"></a>00043                 <span class="keywordflow">throw</span> runtime_error (<span class="stringliteral">&quot;Failed to load shared object &quot;</span> + fileName);
-<a name="l00044"></a>00044         };
-<a name="l00045"></a>00045 
-<a name="l00049"></a><a class="code" href="structsdl_1_1misc_1_1SharedObject.html#ac80f9a51ff940a536eb4a26c58c78f2c">00049</a>         <a class="code" href="structsdl_1_1misc_1_1SharedObject.html#ac80f9a51ff940a536eb4a26c58c78f2c">~SharedObject</a> () { SDL_UnloadObject (handle_); };
-<a name="l00050"></a>00050 
-<a name="l00060"></a><a class="code" href="structsdl_1_1misc_1_1SharedObject.html#a632d9f819f7ac444f4d51cf47f8319c9">00060</a>         <span class="keywordtype">void</span>* <a class="code" href="structsdl_1_1misc_1_1SharedObject.html#a632d9f819f7ac444f4d51cf47f8319c9">loadFunction</a> (<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name) {
-<a name="l00061"></a>00061             <span class="keywordtype">void</span>* func = SDL_LoadFunction (handle_, name.c_str ());
-<a name="l00062"></a>00062             <span class="keywordflow">if</span> (func == NULL)
-<a name="l00063"></a>00063                 <span class="keywordflow">throw</span> runtime_error (<span class="stringliteral">&quot;Failed to load function &quot;</span> + name + <span class="stringliteral">&quot; from shared object &quot;</span> + fileName_);
-<a name="l00064"></a>00064             <span class="keywordflow">return</span> func;
-<a name="l00065"></a>00065         };
-<a name="l00066"></a>00066 
-<a name="l00067"></a>00067         <span class="keyword">private</span>:
-<a name="l00073"></a>00073             <a class="code" href="structsdl_1_1misc_1_1SharedObject.html#a8b6e86948695bc525f4606a97524ee07">SharedObject</a> (<span class="keyword">const</span> <a class="code" href="structsdl_1_1misc_1_1SharedObject.html">SharedObject</a>&amp; rhs);
-<a name="l00074"></a>00074 
-<a name="l00082"></a>00082             <a class="code" href="structsdl_1_1misc_1_1SharedObject.html">SharedObject</a>&amp; operator= (<span class="keyword">const</span> <a class="code" href="structsdl_1_1misc_1_1SharedObject.html">SharedObject</a>&amp; rhs);
-<a name="l00083"></a>00083 
-<a name="l00087"></a>00087             <span class="keywordtype">void</span>* handle_;
-<a name="l00088"></a>00088 
-<a name="l00092"></a>00092             <span class="keywordtype">string</span> fileName_;
-<a name="l00093"></a>00093     }; <span class="comment">//SharedObject</span>
-<a name="l00094"></a>00094 }; <span class="comment">//misc</span>
-<a name="l00095"></a>00095 }; <span class="comment">//sdl</span>
-<a name="l00096"></a>00096 
-<a name="l00097"></a>00097 <span class="preprocessor">#endif //SDL_MISC_SHAREDOBJECT_H</span>
-<a name="l00098"></a>00098 <span class="preprocessor"></span>
+<a name="l00021"></a>00021 <span class="preprocessor">#ifndef SDL_MISC_SHAREDOBJECT_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define SDL_MISC_SHAREDOBJECT_H</span>
+<a name="l00023"></a>00023 <span class="preprocessor"></span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;stdexcept&gt;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;SDL_loadso.h&gt;</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="keyword">namespace </span>sdl {
+<a name="l00030"></a>00030 <span class="keyword">namespace </span>misc {
+<a name="l00035"></a><a class="code" href="structsdl_1_1misc_1_1SharedObject.html">00035</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1misc_1_1SharedObject.html" title="Represents a shared object.">SharedObject</a> {
+<a name="l00043"></a><a class="code" href="structsdl_1_1misc_1_1SharedObject.html#a8b6e86948695bc525f4606a97524ee07">00043</a>         <a class="code" href="structsdl_1_1misc_1_1SharedObject.html#a8b6e86948695bc525f4606a97524ee07">SharedObject</a> (<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fileName) : handle_ (SDL_LoadObject (fileName.c_str ())), fileName_ (fileName) {
+<a name="l00044"></a>00044             <span class="keywordflow">if</span> (handle_ == NULL)
+<a name="l00045"></a>00045                 <span class="keywordflow">throw</span> runtime_error (<span class="stringliteral">&quot;Failed to load shared object &quot;</span> + fileName);
+<a name="l00046"></a>00046         };
+<a name="l00047"></a>00047 
+<a name="l00051"></a><a class="code" href="structsdl_1_1misc_1_1SharedObject.html#ac80f9a51ff940a536eb4a26c58c78f2c">00051</a>         <a class="code" href="structsdl_1_1misc_1_1SharedObject.html#ac80f9a51ff940a536eb4a26c58c78f2c">~SharedObject</a> () { SDL_UnloadObject (handle_); };
+<a name="l00052"></a>00052 
+<a name="l00062"></a><a class="code" href="structsdl_1_1misc_1_1SharedObject.html#a632d9f819f7ac444f4d51cf47f8319c9">00062</a>         <span class="keywordtype">void</span>* <a class="code" href="structsdl_1_1misc_1_1SharedObject.html#a632d9f819f7ac444f4d51cf47f8319c9">loadFunction</a> (<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name) {
+<a name="l00063"></a>00063             <span class="keywordtype">void</span>* func = SDL_LoadFunction (handle_, name.c_str ());
+<a name="l00064"></a>00064             <span class="keywordflow">if</span> (func == NULL)
+<a name="l00065"></a>00065                 <span class="keywordflow">throw</span> runtime_error (<span class="stringliteral">&quot;Failed to load function &quot;</span> + name + <span class="stringliteral">&quot; from shared object &quot;</span> + fileName_);
+<a name="l00066"></a>00066             <span class="keywordflow">return</span> func;
+<a name="l00067"></a>00067         };
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069         <span class="keyword">private</span>:
+<a name="l00075"></a>00075             <a class="code" href="structsdl_1_1misc_1_1SharedObject.html#a8b6e86948695bc525f4606a97524ee07">SharedObject</a> (<span class="keyword">const</span> <a class="code" href="structsdl_1_1misc_1_1SharedObject.html" title="Represents a shared object.">SharedObject</a>&amp; rhs);
+<a name="l00076"></a>00076 
+<a name="l00084"></a>00084             <a class="code" href="structsdl_1_1misc_1_1SharedObject.html" title="Represents a shared object.">SharedObject</a>&amp; operator= (<span class="keyword">const</span> <a class="code" href="structsdl_1_1misc_1_1SharedObject.html" title="Represents a shared object.">SharedObject</a>&amp; rhs);
+<a name="l00085"></a>00085 
+<a name="l00089"></a>00089             <span class="keywordtype">void</span>* handle_;
+<a name="l00090"></a>00090 
+<a name="l00094"></a>00094             <span class="keywordtype">string</span> fileName_;
+<a name="l00095"></a>00095     }; <span class="comment">//SharedObject</span>
+<a name="l00096"></a>00096 }; <span class="comment">//misc</span>
+<a name="l00097"></a>00097 }; <span class="comment">//sdl</span>
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099 <span class="preprocessor">#endif //SDL_MISC_SHAREDOBJECT_H</span>
+<a name="l00100"></a>00100 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="SharedObject_8h.html">SharedObject.h</a>      </li>
-      <li class="footer">Generated on Tue Aug 23 2011 16:25:33 for SDL++ by&#160;
+      <li class="footer">Generated on Tue Aug 23 2011 22:49:41 for SDL++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>

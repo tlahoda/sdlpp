@@ -82,58 +82,58 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <a href="MouseEvents_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
-<a name="l00020"></a>00020 <span class="preprocessor">#ifndef SDL_EVENT_MOUSEEVENTS_H</span>
-<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define SDL_EVENT_MOUSEEVENTS_H</span>
-<a name="l00022"></a>00022 <span class="preprocessor"></span>
-<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;SDL.h&gt;</span>
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;sdlpp/event/Components.h&quot;</span>
-<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;sdlpp/event/MultiComparator.h&quot;</span>
-<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;sdlpp/event/SimpleComparator.h&quot;</span>
-<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;sdlpp/event/Event.h&quot;</span>
-<a name="l00029"></a>00029 
-<a name="l00030"></a>00030 <span class="keyword">namespace </span>sdl {
-<a name="l00031"></a>00031 <span class="keyword">namespace </span>event {
-<a name="l00032"></a>00032     <span class="keyword">using namespace </span>misc;
-<a name="l00033"></a>00033 
-<a name="l00037"></a><a class="code" href="structsdl_1_1event_1_1MouseMotionBase.html">00037</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1event_1_1MouseMotionBase.html">MouseMotionBase</a> : <span class="keyword">public</span> <a class="code" href="structsdl_1_1event_1_1EventBase.html">EventBase</a> {
-<a name="l00043"></a><a class="code" href="structsdl_1_1event_1_1MouseMotionBase.html#ac88bd63dd94212fec590d78a83edb801">00043</a>         <a class="code" href="structsdl_1_1event_1_1MouseMotionBase.html#ac88bd63dd94212fec590d78a83edb801">MouseMotionBase</a> (<span class="keyword">const</span> SDL_Event* event) : <a class="code" href="structsdl_1_1event_1_1EventBase.html">EventBase</a> (event) {};
-<a name="l00044"></a>00044 
-<a name="l00050"></a><a class="code" href="structsdl_1_1event_1_1MouseMotionBase.html#a8ed92a81601bf8499af3811fc6dc4cdf">00050</a>         <span class="keyword">const</span> SDL_MouseMotionEvent&amp; <span class="keyword">get</span> () <span class="keyword">const</span> { <span class="keywordflow">return</span> event_-&gt;motion; }; 
-<a name="l00051"></a>00051 
-<a name="l00057"></a><a class="code" href="structsdl_1_1event_1_1MouseMotionBase.html#a2814bbb925a2c830f71cedc1c55a05de">00057</a>         <span class="keyword">const</span> SDL_MouseMotionEvent&amp; <span class="keyword">get</span> () { <span class="keywordflow">return</span> event_-&gt;motion; };
-<a name="l00058"></a>00058     }; <span class="comment">//MouseMotion</span>
-<a name="l00059"></a>00059     
-<a name="l00064"></a><a class="code" href="namespacesdl_1_1event.html#a0b94da3a1d0a162060f2129118d169bf">00064</a>     <span class="keyword">typedef</span> <a class="code" href="structsdl_1_1event_1_1Event.html">Event&lt;SimpleComparator&lt;SDL_MOUSEMOTION&gt;</a>, <a class="code" href="structsdl_1_1event_1_1MouseMotionBase.html">MouseMotionBase</a>&gt; <a class="code" href="namespacesdl_1_1event.html#a0b94da3a1d0a162060f2129118d169bf">MouseMotion</a>;
-<a name="l00065"></a>00065 
-<a name="l00069"></a><a class="code" href="structsdl_1_1event_1_1MouseButtonBase.html">00069</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1event_1_1MouseButtonBase.html">MouseButtonBase</a> : <span class="keyword">public</span> <a class="code" href="structsdl_1_1event_1_1EventBase.html">EventBase</a> {
-<a name="l00075"></a><a class="code" href="structsdl_1_1event_1_1MouseButtonBase.html#a0fad6b1a78aa167fbb50f96ca7f55868">00075</a>         <a class="code" href="structsdl_1_1event_1_1MouseButtonBase.html#a0fad6b1a78aa167fbb50f96ca7f55868">MouseButtonBase</a> (<span class="keyword">const</span> SDL_Event* event) : <a class="code" href="structsdl_1_1event_1_1EventBase.html">EventBase</a> (event) {};
-<a name="l00076"></a>00076 
-<a name="l00082"></a><a class="code" href="structsdl_1_1event_1_1MouseButtonBase.html#a81ee9ecb12029db2ec1817950c94e07a">00082</a>         <span class="keyword">const</span> SDL_MouseButtonEvent&amp; <span class="keyword">get</span> () <span class="keyword">const</span> { <span class="keywordflow">return</span> event_-&gt;button; };
-<a name="l00083"></a>00083 
-<a name="l00089"></a><a class="code" href="structsdl_1_1event_1_1MouseButtonBase.html#a2bc712868faa4ab52c2ddd099f6d25e5">00089</a>         <span class="keyword">const</span> SDL_MouseButtonEvent&amp; <span class="keyword">get</span> () { <span class="keywordflow">return</span> event_-&gt;button; };
-<a name="l00090"></a>00090     }; <span class="comment">//MouseButtonBase</span>
-<a name="l00091"></a>00091 
-<a name="l00097"></a>00097     <span class="keyword">template</span>&lt;<span class="keywordtype">int</span>... Buttons&gt;
-<a name="l00098"></a><a class="code" href="structsdl_1_1event_1_1MouseButtonPress.html">00098</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1event_1_1MouseButtonPress.html">MouseButtonPress</a> : <span class="keyword">public</span> <a class="code" href="structsdl_1_1event_1_1Event.html">Event</a>&lt;MultiComparator&lt;MouseButton, SDL_MOUSEBUTTONDOWN, Buttons...&gt;, MouseButtonBase&gt; {
-<a name="l00104"></a><a class="code" href="structsdl_1_1event_1_1MouseButtonPress.html#a5614eab168715444eebc3a570126542c">00104</a>         <span class="keyword">explicit</span> <a class="code" href="structsdl_1_1event_1_1MouseButtonPress.html#a5614eab168715444eebc3a570126542c">MouseButtonPress</a> (<span class="keyword">const</span> SDL_Event* event = 0) : <a class="code" href="structsdl_1_1event_1_1Event.html">Event</a>&lt;<a class="code" href="structsdl_1_1event_1_1MultiComparator.html">MultiComparator</a>&lt;<a class="code" href="structsdl_1_1event_1_1MouseButton.html">MouseButton</a>, SDL_MOUSEBUTTONDOWN, Buttons...&gt;, <a class="code" href="structsdl_1_1event_1_1MouseButtonBase.html">MouseButtonBase</a>&gt; (event) {};
-<a name="l00105"></a>00105     }; <span class="comment">//MouseButtonPress</span>
-<a name="l00106"></a>00106 
-<a name="l00112"></a>00112     <span class="keyword">template</span>&lt;<span class="keywordtype">int</span>... Buttons&gt;
-<a name="l00113"></a><a class="code" href="structsdl_1_1event_1_1MouseButtonRelease.html">00113</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1event_1_1MouseButtonRelease.html">MouseButtonRelease</a> : <span class="keyword">public</span> <a class="code" href="structsdl_1_1event_1_1Event.html">Event</a>&lt;MultiComparator&lt;MouseButton, SDL_MOUSEBUTTONUP, Buttons...&gt;, MouseButtonBase&gt; {
-<a name="l00119"></a><a class="code" href="structsdl_1_1event_1_1MouseButtonRelease.html#acc7a66b5434651ce8380a6406676c91a">00119</a>         <span class="keyword">explicit</span> <a class="code" href="structsdl_1_1event_1_1MouseButtonRelease.html#acc7a66b5434651ce8380a6406676c91a">MouseButtonRelease</a> (<span class="keyword">const</span> SDL_Event* event = 0) : <a class="code" href="structsdl_1_1event_1_1Event.html">Event</a>&lt;<a class="code" href="structsdl_1_1event_1_1MultiComparator.html">MultiComparator</a>&lt;<a class="code" href="structsdl_1_1event_1_1MouseButton.html">MouseButton</a>, SDL_MOUSEBUTTONUP, Buttons...&gt;, <a class="code" href="structsdl_1_1event_1_1MouseButtonBase.html">MouseButtonBase</a>&gt; (event) {};
-<a name="l00120"></a>00120     }; <span class="comment">//MouseButtonRelease</span>
-<a name="l00121"></a>00121 }; <span class="comment">//event</span>
-<a name="l00122"></a>00122 }; <span class="comment">//sdl</span>
-<a name="l00123"></a>00123 
-<a name="l00124"></a>00124 <span class="preprocessor">#endif //SDL_EVENT_MOUSEEVENTS_H</span>
-<a name="l00125"></a>00125 <span class="preprocessor"></span>
+<a name="l00021"></a>00021 <span class="preprocessor">#ifndef SDL_EVENT_MOUSEEVENTS_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define SDL_EVENT_MOUSEEVENTS_H</span>
+<a name="l00023"></a>00023 <span class="preprocessor"></span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;SDL.h&gt;</span>
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;sdlpp/event/Components.h&quot;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;sdlpp/event/MultiComparator.h&quot;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;sdlpp/event/SimpleComparator.h&quot;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;sdlpp/event/Event.h&quot;</span>
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 <span class="keyword">namespace </span>sdl {
+<a name="l00032"></a>00032 <span class="keyword">namespace </span>event {
+<a name="l00033"></a>00033     <span class="keyword">using namespace </span>misc;
+<a name="l00034"></a>00034 
+<a name="l00039"></a><a class="code" href="structsdl_1_1event_1_1MouseMotionBase.html">00039</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1event_1_1MouseMotionBase.html" title="Base for mouse motion events that exposes the SDL_MouseMotionEvent structure.">MouseMotionBase</a> : <span class="keyword">public</span> <a class="code" href="structsdl_1_1event_1_1EventBase.html" title="Base for events that holds a SDL_Event structure.">EventBase</a> {
+<a name="l00045"></a><a class="code" href="structsdl_1_1event_1_1MouseMotionBase.html#ac88bd63dd94212fec590d78a83edb801">00045</a>         <a class="code" href="structsdl_1_1event_1_1MouseMotionBase.html#ac88bd63dd94212fec590d78a83edb801">MouseMotionBase</a> (<span class="keyword">const</span> SDL_Event* event) : <a class="code" href="structsdl_1_1event_1_1EventBase.html" title="Base for events that holds a SDL_Event structure.">EventBase</a> (event) {};
+<a name="l00046"></a>00046 
+<a name="l00052"></a><a class="code" href="structsdl_1_1event_1_1MouseMotionBase.html#a8ed92a81601bf8499af3811fc6dc4cdf">00052</a>         <span class="keyword">const</span> SDL_MouseMotionEvent&amp; <span class="keyword">get</span> () <span class="keyword">const</span> { <span class="keywordflow">return</span> event_-&gt;motion; }; 
+<a name="l00053"></a>00053 
+<a name="l00059"></a><a class="code" href="structsdl_1_1event_1_1MouseMotionBase.html#a2814bbb925a2c830f71cedc1c55a05de">00059</a>         <span class="keyword">const</span> SDL_MouseMotionEvent&amp; <span class="keyword">get</span> () { <span class="keywordflow">return</span> event_-&gt;motion; };
+<a name="l00060"></a>00060     }; <span class="comment">//MouseMotion</span>
+<a name="l00061"></a>00061     
+<a name="l00066"></a><a class="code" href="namespacesdl_1_1event.html#a0b94da3a1d0a162060f2129118d169bf">00066</a>     <span class="keyword">typedef</span> <a class="code" href="structsdl_1_1event_1_1Event.html" title="Represents an event.">Event&lt;SimpleComparator&lt;SDL_MOUSEMOTION&gt;</a>, <a class="code" href="structsdl_1_1event_1_1MouseMotionBase.html" title="Base for mouse motion events that exposes the SDL_MouseMotionEvent structure.">MouseMotionBase</a>&gt; <a class="code" href="namespacesdl_1_1event.html#a0b94da3a1d0a162060f2129118d169bf" title="Represents a mouse motion event.">MouseMotion</a>;
+<a name="l00067"></a>00067 
+<a name="l00072"></a><a class="code" href="structsdl_1_1event_1_1MouseButtonBase.html">00072</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1event_1_1MouseButtonBase.html" title="Base for mouse button events that exposes the SDL_MouseButtonEvent structure.">MouseButtonBase</a> : <span class="keyword">public</span> <a class="code" href="structsdl_1_1event_1_1EventBase.html" title="Base for events that holds a SDL_Event structure.">EventBase</a> {
+<a name="l00078"></a><a class="code" href="structsdl_1_1event_1_1MouseButtonBase.html#a0fad6b1a78aa167fbb50f96ca7f55868">00078</a>         <a class="code" href="structsdl_1_1event_1_1MouseButtonBase.html#a0fad6b1a78aa167fbb50f96ca7f55868">MouseButtonBase</a> (<span class="keyword">const</span> SDL_Event* event) : <a class="code" href="structsdl_1_1event_1_1EventBase.html" title="Base for events that holds a SDL_Event structure.">EventBase</a> (event) {};
+<a name="l00079"></a>00079 
+<a name="l00085"></a><a class="code" href="structsdl_1_1event_1_1MouseButtonBase.html#a81ee9ecb12029db2ec1817950c94e07a">00085</a>         <span class="keyword">const</span> SDL_MouseButtonEvent&amp; <span class="keyword">get</span> () <span class="keyword">const</span> { <span class="keywordflow">return</span> event_-&gt;button; };
+<a name="l00086"></a>00086 
+<a name="l00092"></a><a class="code" href="structsdl_1_1event_1_1MouseButtonBase.html#a2bc712868faa4ab52c2ddd099f6d25e5">00092</a>         <span class="keyword">const</span> SDL_MouseButtonEvent&amp; <span class="keyword">get</span> () { <span class="keywordflow">return</span> event_-&gt;button; };
+<a name="l00093"></a>00093     }; <span class="comment">//MouseButtonBase</span>
+<a name="l00094"></a>00094 
+<a name="l00100"></a>00100     <span class="keyword">template</span>&lt;<span class="keywordtype">int</span>... Buttons&gt;
+<a name="l00101"></a><a class="code" href="structsdl_1_1event_1_1MouseButtonPress.html">00101</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1event_1_1MouseButtonPress.html">MouseButtonPress</a> : <span class="keyword">public</span> <a class="code" href="structsdl_1_1event_1_1Event.html" title="Represents an event.">Event</a>&lt;MultiComparator&lt;MouseButton, SDL_MOUSEBUTTONDOWN, Buttons...&gt;, MouseButtonBase&gt; {
+<a name="l00107"></a><a class="code" href="structsdl_1_1event_1_1MouseButtonPress.html#a5614eab168715444eebc3a570126542c">00107</a>         <span class="keyword">explicit</span> <a class="code" href="structsdl_1_1event_1_1MouseButtonPress.html#a5614eab168715444eebc3a570126542c">MouseButtonPress</a> (<span class="keyword">const</span> SDL_Event* event = 0) : <a class="code" href="structsdl_1_1event_1_1Event.html" title="Represents an event.">Event</a>&lt;<a class="code" href="structsdl_1_1event_1_1MultiComparator.html" title="Recurse through the Device list checking to see if the SDL_Event structure is correct for any of them...">MultiComparator</a>&lt;<a class="code" href="structsdl_1_1event_1_1MouseButton.html" title="Represents a mouse button.">MouseButton</a>, SDL_MOUSEBUTTONDOWN, Buttons...&gt;, <a class="code" href="structsdl_1_1event_1_1MouseButtonBase.html" title="Base for mouse button events that exposes the SDL_MouseButtonEvent structure.">MouseButtonBase</a>&gt; (event) {};
+<a name="l00108"></a>00108     }; <span class="comment">//MouseButtonPress</span>
+<a name="l00109"></a>00109 
+<a name="l00115"></a>00115     <span class="keyword">template</span>&lt;<span class="keywordtype">int</span>... Buttons&gt;
+<a name="l00116"></a><a class="code" href="structsdl_1_1event_1_1MouseButtonRelease.html">00116</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1event_1_1MouseButtonRelease.html">MouseButtonRelease</a> : <span class="keyword">public</span> <a class="code" href="structsdl_1_1event_1_1Event.html" title="Represents an event.">Event</a>&lt;MultiComparator&lt;MouseButton, SDL_MOUSEBUTTONUP, Buttons...&gt;, MouseButtonBase&gt; {
+<a name="l00122"></a><a class="code" href="structsdl_1_1event_1_1MouseButtonRelease.html#acc7a66b5434651ce8380a6406676c91a">00122</a>         <span class="keyword">explicit</span> <a class="code" href="structsdl_1_1event_1_1MouseButtonRelease.html#acc7a66b5434651ce8380a6406676c91a">MouseButtonRelease</a> (<span class="keyword">const</span> SDL_Event* event = 0) : <a class="code" href="structsdl_1_1event_1_1Event.html" title="Represents an event.">Event</a>&lt;<a class="code" href="structsdl_1_1event_1_1MultiComparator.html" title="Recurse through the Device list checking to see if the SDL_Event structure is correct for any of them...">MultiComparator</a>&lt;<a class="code" href="structsdl_1_1event_1_1MouseButton.html" title="Represents a mouse button.">MouseButton</a>, SDL_MOUSEBUTTONUP, Buttons...&gt;, <a class="code" href="structsdl_1_1event_1_1MouseButtonBase.html" title="Base for mouse button events that exposes the SDL_MouseButtonEvent structure.">MouseButtonBase</a>&gt; (event) {};
+<a name="l00123"></a>00123     }; <span class="comment">//MouseButtonRelease</span>
+<a name="l00124"></a>00124 }; <span class="comment">//event</span>
+<a name="l00125"></a>00125 }; <span class="comment">//sdl</span>
+<a name="l00126"></a>00126 
+<a name="l00127"></a>00127 <span class="preprocessor">#endif //SDL_EVENT_MOUSEEVENTS_H</span>
+<a name="l00128"></a>00128 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="MouseEvents_8h.html">MouseEvents.h</a>      </li>
-      <li class="footer">Generated on Tue Aug 23 2011 16:25:33 for SDL++ by&#160;
+      <li class="footer">Generated on Tue Aug 23 2011 22:49:41 for SDL++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>

@@ -87,13 +87,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="sdl::event::basic_Listener" -->
+<p>Base <a class="el" href="classsdl_1_1event_1_1Listener.html" title="Listens for and handles an event.">Listener</a> class.  
+<a href="#_details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Listener_8h_source.html">Listener.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for sdl::event::basic_Listener:</div>
 <div class="dyncontent">
 <div class="center"><img src="classsdl_1_1event_1_1basic__Listener__inherit__graph.png" border="0" usemap="#sdl_1_1event_1_1basic__Listener_inherit__map" alt="Inheritance graph"/></div>
 <map name="sdl_1_1event_1_1basic__Listener_inherit__map" id="sdl_1_1event_1_1basic__Listener_inherit__map">
-<area shape="rect" id="node3" href="classsdl_1_1event_1_1Listener.html" title="{sdl::event::Listener\&lt; EventType, Handler \&gt;\n|&#45; h_\l&#45; func_\l|+ operator==()\l+ Listener()\l+ ~Listener()\l+ operator()()\l}" alt="" coords="5,173,277,328"/></map>
+<area shape="rect" id="node3" href="classsdl_1_1event_1_1Listener.html" title="Listens for and handles an event." alt="" coords="5,173,277,328"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="classsdl_1_1event_1_1basic__Listener-members.html">List of all members.</a></p>
@@ -105,9 +108,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsdl_1_1event_1_1basic__Listener.html#af0fb227abfd5023b9c472b9bb62f7a09">operator()</a> (const SDL_Event *event)=0</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>class. </p>
+<div class="textblock"><p>Base <a class="el" href="classsdl_1_1event_1_1Listener.html" title="Listens for and handles an event.">Listener</a> class. </p>
 
-<p>Definition at line <a class="el" href="Listener_8h_source.html#l00030">30</a> of file <a class="el" href="Listener_8h_source.html">Listener.h</a>.</p>
+<p>Definition at line <a class="el" href="Listener_8h_source.html#l00032">32</a> of file <a class="el" href="Listener_8h_source.html">Listener.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ae5540d12c03d8f28460b9ebcbffb10cc"></a><!-- doxytag: member="sdl::event::basic_Listener::~basic_Listener" ref="ae5540d12c03d8f28460b9ebcbffb10cc" args="()" -->
 <div class="memitem">
@@ -122,9 +125,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Destroys the <a class="el" href="classsdl_1_1event_1_1basic__Listener.html">basic_Listener</a>. </p>
+<p>Destroys the <a class="el" href="classsdl_1_1event_1_1basic__Listener.html" title="Base Listener class.">basic_Listener</a>. </p>
 
-<p>Definition at line <a class="el" href="Listener_8h_source.html#l00035">35</a> of file <a class="el" href="Listener_8h_source.html">Listener.h</a>.</p>
+<p>Definition at line <a class="el" href="Listener_8h_source.html#l00037">37</a> of file <a class="el" href="Listener_8h_source.html">Listener.h</a>.</p>
 
 </div>
 </div>
@@ -146,11 +149,10 @@ Public Member Functions</h2></td></tr>
 <p>Handles an event.</p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">const</td><td>SDL_Event* event, The event to handle.</td></tr>
+    <tr><td class="paramname">event</td><td>The event to handle. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>void. </dd></dl>
 
 <p>Implemented in <a class="el" href="classsdl_1_1event_1_1Listener.html#aaf6b8bb0a71bed7e7995669e3ed089b8">sdl::event::Listener&lt; EventType, Handler &gt;</a>.</p>
 
@@ -170,18 +172,18 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Determines if a <a class="el" href="classsdl_1_1event_1_1basic__Listener.html">basic_Listener</a> equates to a SDL_Event.</p>
+<p>Determines if a <a class="el" href="classsdl_1_1event_1_1basic__Listener.html" title="Base Listener class.">basic_Listener</a> equates to a SDL_Event.</p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">const</td><td>SDL_Event* event, The SDL_Event to check.</td></tr>
+    <tr><td class="paramname">event</td><td>The SDL_Event to check.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>bool, True if the SDL_Event equates to the <a class="el" href="classsdl_1_1event_1_1basic__Listener.html">basic_Listener</a>, false otherwise. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if the SDL_Event equates to the <a class="el" href="classsdl_1_1event_1_1basic__Listener.html" title="Base Listener class.">basic_Listener</a>, false otherwise. </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classsdl_1_1event_1_1Listener.html#ac13edee2b29feb31f4eb8f49c8cf4992">sdl::event::Listener&lt; EventType, Handler &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="Listener_8h_source.html#l00045">45</a> of file <a class="el" href="Listener_8h_source.html">Listener.h</a>.</p>
+<p>Definition at line <a class="el" href="Listener_8h_source.html#l00047">47</a> of file <a class="el" href="Listener_8h_source.html">Listener.h</a>.</p>
 
 </div>
 </div>
@@ -195,7 +197,7 @@ Public Member Functions</h2></td></tr>
       <li class="navelem"><a class="el" href="namespacesdl.html">sdl</a>      </li>
       <li class="navelem"><a class="el" href="namespacesdl_1_1event.html">event</a>      </li>
       <li class="navelem"><a class="el" href="classsdl_1_1event_1_1basic__Listener.html">basic_Listener</a>      </li>
-      <li class="footer">Generated on Tue Aug 23 2011 16:25:33 for SDL++ by&#160;
+      <li class="footer">Generated on Tue Aug 23 2011 22:49:41 for SDL++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>

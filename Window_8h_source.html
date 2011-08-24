@@ -82,90 +82,90 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <a href="Window_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
-<a name="l00020"></a>00020 <span class="preprocessor">#ifndef SDL_VIDEO_WINDOW_H</span>
-<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define SDL_VIDEO_WINDOW_H</span>
-<a name="l00022"></a>00022 <span class="preprocessor"></span>
-<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;stdexcept&gt;</span>
-<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;string&gt;</span>
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;SDL.h&gt;</span>
-<a name="l00027"></a>00027 <span class="comment">//Error being caused by #include &lt;SDL_syswm.h&gt;</span>
-<a name="l00028"></a>00028 <span class="comment">//#include &lt;SDL_syswm.h&gt;</span>
-<a name="l00029"></a>00029 
-<a name="l00030"></a>00030 <span class="preprocessor">#include &quot;sdlpp/Sdl.h&quot;</span>
-<a name="l00031"></a>00031 <span class="preprocessor">#include &quot;sdlpp/video/Surface.h&quot;</span>
-<a name="l00032"></a>00032 <span class="preprocessor">#include &quot;sdlpp/video/Icon.h&quot;</span>
-<a name="l00033"></a>00033 
-<a name="l00034"></a>00034 <span class="keyword">namespace </span>sdl {
-<a name="l00035"></a>00035 <span class="keyword">namespace </span>video {
-<a name="l00036"></a>00036     <span class="keyword">using namespace </span>std;
-<a name="l00037"></a>00037  
-<a name="l00041"></a><a class="code" href="classsdl_1_1video_1_1Window.html">00041</a>     <span class="keyword">class </span><a class="code" href="classsdl_1_1video_1_1Window.html">Window</a> {
-<a name="l00042"></a>00042         <span class="keyword">public</span>:
-<a name="l00046"></a><a class="code" href="classsdl_1_1video_1_1Window.html#ab8acf3fad35f76fa10b49ed03045b10b">00046</a>             <a class="code" href="classsdl_1_1video_1_1Window.html">Window</a> (<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; caption, <span class="keyword">const</span> <a class="code" href="classsdl_1_1video_1_1Icon.html">Icon</a>&amp; icon)
-<a name="l00047"></a>00047               : caption_ (caption), icon_ (icon) {};
-<a name="l00048"></a>00048 
-<a name="l00052"></a><a class="code" href="classsdl_1_1video_1_1Window.html#af1eb4f03bbaf2424c04581bc424bb068">00052</a>             <a class="code" href="classsdl_1_1video_1_1Window.html#af1eb4f03bbaf2424c04581bc424bb068">~Window</a> () {};
-<a name="l00053"></a>00053 
-<a name="l00059"></a><a class="code" href="classsdl_1_1video_1_1Window.html#a58725c232f6c607e3b7ada147f0ba59b">00059</a>             <span class="keywordtype">string</span> <a class="code" href="classsdl_1_1video_1_1Window.html#a58725c232f6c607e3b7ada147f0ba59b">caption</a> () { <span class="keywordflow">return</span> caption_; };
-<a name="l00060"></a>00060             
-<a name="l00068"></a><a class="code" href="classsdl_1_1video_1_1Window.html#a305295f159b2d4178e6ec39df7ae6cb4">00068</a>             <a class="code" href="classsdl_1_1video_1_1Window.html">Window</a>&amp; <a class="code" href="classsdl_1_1video_1_1Window.html#a305295f159b2d4178e6ec39df7ae6cb4">caption</a> (<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; caption) {
-<a name="l00069"></a>00069                 caption_ = caption;
-<a name="l00070"></a>00070                 SDL_WM_SetCaption (caption.c_str (), icon_.name ().c_str ());
-<a name="l00071"></a>00071                 <span class="keywordflow">return</span> *<span class="keyword">this</span>;
-<a name="l00072"></a>00072             };
-<a name="l00073"></a>00073 
-<a name="l00079"></a><a class="code" href="classsdl_1_1video_1_1Window.html#ac71d061cd439d82ffe41bfdea28cf1c2">00079</a>             <a class="code" href="classsdl_1_1video_1_1Icon.html">Icon</a>&amp; <a class="code" href="classsdl_1_1video_1_1Window.html#ac71d061cd439d82ffe41bfdea28cf1c2">icon</a> () { <span class="keywordflow">return</span> icon_; };
-<a name="l00080"></a>00080             
-<a name="l00088"></a><a class="code" href="classsdl_1_1video_1_1Window.html#a1f731ab62c283fc359e940d5103602a5">00088</a>             <a class="code" href="classsdl_1_1video_1_1Window.html">Window</a>&amp; <a class="code" href="classsdl_1_1video_1_1Window.html#a1f731ab62c283fc359e940d5103602a5">icon</a> (<span class="keyword">const</span> <a class="code" href="classsdl_1_1video_1_1Icon.html">Icon</a>&amp; icon) {
-<a name="l00089"></a>00089                 icon_ = icon;
-<a name="l00090"></a>00090                 SDL_WM_SetCaption (caption_.c_str (), icon_.name ().c_str ());
-<a name="l00091"></a>00091                 <span class="keywordflow">return</span> *<span class="keyword">this</span>;
-<a name="l00092"></a>00092             };
-<a name="l00093"></a>00093             
-<a name="l00099"></a><a class="code" href="classsdl_1_1video_1_1Window.html#a1d2802bc5340b1abeedc2315783c0e26">00099</a>             <span class="keywordtype">bool</span> <a class="code" href="classsdl_1_1video_1_1Window.html#a1d2802bc5340b1abeedc2315783c0e26">minimize</a> () { <span class="keywordflow">return</span> SDL_WM_IconifyWindow () != 0; };
-<a name="l00100"></a>00100 
-<a name="l00106"></a><a class="code" href="classsdl_1_1video_1_1Window.html#a658ae3229b93bacd30290262b334b4af">00106</a>             <span class="keywordtype">bool</span> <a class="code" href="classsdl_1_1video_1_1Window.html#a658ae3229b93bacd30290262b334b4af">grabInput</a> () { <span class="keywordflow">return</span> SDL_WM_GrabInput (SDL_GRAB_ON) == SDL_GRAB_ON; };
-<a name="l00107"></a>00107 
-<a name="l00113"></a><a class="code" href="classsdl_1_1video_1_1Window.html#aada9e9f4cccd0243a0b149e948ccfd50">00113</a>             <span class="keywordtype">bool</span> <a class="code" href="classsdl_1_1video_1_1Window.html#aada9e9f4cccd0243a0b149e948ccfd50">releaseInput</a> () { <span class="keywordflow">return</span> SDL_WM_GrabInput (SDL_GRAB_OFF) == SDL_GRAB_OFF; };
-<a name="l00114"></a>00114 
-<a name="l00120"></a><a class="code" href="classsdl_1_1video_1_1Window.html#abb8f8a99395c8dc37fdaad44b6265d00">00120</a>             <span class="keywordtype">bool</span> <a class="code" href="classsdl_1_1video_1_1Window.html#abb8f8a99395c8dc37fdaad44b6265d00">inputGrabbed</a> () { <span class="keywordflow">return</span> SDL_WM_GrabInput (SDL_GRAB_QUERY) == SDL_GRAB_ON; };
-<a name="l00121"></a>00121 
-<a name="l00129"></a><a class="code" href="classsdl_1_1video_1_1Window.html#a8a872d3d8fed4f31bb33df56c310b051">00129</a>             <span class="keywordtype">bool</span> <a class="code" href="classsdl_1_1video_1_1Window.html#a8a872d3d8fed4f31bb33df56c310b051">fullScreen</a> (<span class="keyword">const</span> <a class="code" href="classsdl_1_1video_1_1Surface.html">Surface</a>&amp; surface) { <span class="keywordflow">return</span> SDL_WM_ToggleFullScreen (surface.<a class="code" href="classsdl_1_1video_1_1Surface.html#a2b15d2d590ffd3dfb7645cfb4d280192">to_c</a> ()) == 1; };
-<a name="l00130"></a>00130 
-<a name="l00131"></a>00131             <span class="comment">//Error being caused by #include &lt;SDL_syswm.h&gt;</span>
-<a name="l00139"></a>00139 <span class="comment"></span>            <span class="comment">/*SDL_SysWMinfo info () {</span>
-<a name="l00140"></a>00140 <span class="comment">                SDL_SysWMinfo i;</span>
-<a name="l00141"></a>00141 <span class="comment">                i.version = Sdl::instance ().compileVersion ();</span>
-<a name="l00142"></a>00142 <span class="comment">                int res = SDL_GetWMInfo (&amp;i);</span>
-<a name="l00143"></a>00143 <span class="comment">                if (res == 0)</span>
-<a name="l00144"></a>00144 <span class="comment">                    throw runtime_error (&quot;unimplemented&quot;);</span>
-<a name="l00145"></a>00145 <span class="comment">                else if (res == -1)</span>
-<a name="l00146"></a>00146 <span class="comment">                    throw runtime_error (&quot;failed&quot;);</span>
-<a name="l00147"></a>00147 <span class="comment">                return i;</span>
-<a name="l00148"></a>00148 <span class="comment">            };*/</span>
-<a name="l00149"></a>00149 
-<a name="l00150"></a>00150         <span class="keyword">private</span>:
-<a name="l00156"></a>00156             <a class="code" href="classsdl_1_1video_1_1Window.html">Window</a> (<span class="keyword">const</span> <a class="code" href="classsdl_1_1video_1_1Window.html">Window</a>&amp; rhs);
-<a name="l00157"></a>00157 
-<a name="l00165"></a>00165             <a class="code" href="classsdl_1_1video_1_1Window.html">Window</a>&amp; operator= (<span class="keyword">const</span> <a class="code" href="classsdl_1_1video_1_1Window.html">Window</a>&amp; rhs);
-<a name="l00166"></a>00166 
-<a name="l00167"></a>00167         <span class="keyword">private</span>:
-<a name="l00171"></a>00171             <span class="keywordtype">string</span> caption_;
-<a name="l00172"></a>00172 
-<a name="l00176"></a>00176             <a class="code" href="classsdl_1_1video_1_1Icon.html">Icon</a> icon_;
-<a name="l00177"></a>00177     }; <span class="comment">//Window</span>
-<a name="l00178"></a>00178 }; <span class="comment">//video</span>
-<a name="l00179"></a>00179 }; <span class="comment">//sdl</span>
-<a name="l00180"></a>00180 
-<a name="l00181"></a>00181 <span class="preprocessor">#endif //SDL_VIDEO_WINDOW_H</span>
-<a name="l00182"></a>00182 <span class="preprocessor"></span>
+<a name="l00021"></a>00021 <span class="preprocessor">#ifndef SDL_VIDEO_WINDOW_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define SDL_VIDEO_WINDOW_H</span>
+<a name="l00023"></a>00023 <span class="preprocessor"></span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;stdexcept&gt;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;SDL.h&gt;</span>
+<a name="l00028"></a>00028 <span class="comment">//Error being caused by #include &lt;SDL_syswm.h&gt;</span>
+<a name="l00029"></a>00029 <span class="comment">//#include &lt;SDL_syswm.h&gt;</span>
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 <span class="preprocessor">#include &quot;sdlpp/Sdl.h&quot;</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &quot;sdlpp/video/Surface.h&quot;</span>
+<a name="l00033"></a>00033 <span class="preprocessor">#include &quot;sdlpp/video/Icon.h&quot;</span>
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035 <span class="keyword">namespace </span>sdl {
+<a name="l00036"></a>00036 <span class="keyword">namespace </span>video {
+<a name="l00037"></a>00037     <span class="keyword">using namespace </span>std;
+<a name="l00038"></a>00038  
+<a name="l00043"></a><a class="code" href="classsdl_1_1video_1_1Window.html">00043</a>     <span class="keyword">class </span><a class="code" href="classsdl_1_1video_1_1Window.html" title="Represents an SDL window.">Window</a> {
+<a name="l00044"></a>00044         <span class="keyword">public</span>:
+<a name="l00048"></a><a class="code" href="classsdl_1_1video_1_1Window.html#ab8acf3fad35f76fa10b49ed03045b10b">00048</a>             <a class="code" href="classsdl_1_1video_1_1Window.html" title="Represents an SDL window.">Window</a> (<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; caption, <span class="keyword">const</span> <a class="code" href="classsdl_1_1video_1_1Icon.html" title="Represents an icon.">Icon</a>&amp; icon)
+<a name="l00049"></a>00049               : caption_ (caption), icon_ (icon) {};
+<a name="l00050"></a>00050 
+<a name="l00054"></a><a class="code" href="classsdl_1_1video_1_1Window.html#af1eb4f03bbaf2424c04581bc424bb068">00054</a>             <a class="code" href="classsdl_1_1video_1_1Window.html#af1eb4f03bbaf2424c04581bc424bb068">~Window</a> () {};
+<a name="l00055"></a>00055 
+<a name="l00061"></a><a class="code" href="classsdl_1_1video_1_1Window.html#a58725c232f6c607e3b7ada147f0ba59b">00061</a>             <span class="keywordtype">string</span> <a class="code" href="classsdl_1_1video_1_1Window.html#a58725c232f6c607e3b7ada147f0ba59b">caption</a> () { <span class="keywordflow">return</span> caption_; };
+<a name="l00062"></a>00062             
+<a name="l00070"></a><a class="code" href="classsdl_1_1video_1_1Window.html#a305295f159b2d4178e6ec39df7ae6cb4">00070</a>             <a class="code" href="classsdl_1_1video_1_1Window.html" title="Represents an SDL window.">Window</a>&amp; <a class="code" href="classsdl_1_1video_1_1Window.html#a305295f159b2d4178e6ec39df7ae6cb4">caption</a> (<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; caption) {
+<a name="l00071"></a>00071                 caption_ = caption;
+<a name="l00072"></a>00072                 SDL_WM_SetCaption (caption.c_str (), icon_.name ().c_str ());
+<a name="l00073"></a>00073                 <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+<a name="l00074"></a>00074             };
+<a name="l00075"></a>00075 
+<a name="l00081"></a><a class="code" href="classsdl_1_1video_1_1Window.html#ac71d061cd439d82ffe41bfdea28cf1c2">00081</a>             <a class="code" href="classsdl_1_1video_1_1Icon.html" title="Represents an icon.">Icon</a>&amp; <a class="code" href="classsdl_1_1video_1_1Window.html#ac71d061cd439d82ffe41bfdea28cf1c2">icon</a> () { <span class="keywordflow">return</span> icon_; };
+<a name="l00082"></a>00082             
+<a name="l00090"></a><a class="code" href="classsdl_1_1video_1_1Window.html#a1f731ab62c283fc359e940d5103602a5">00090</a>             <a class="code" href="classsdl_1_1video_1_1Window.html" title="Represents an SDL window.">Window</a>&amp; <a class="code" href="classsdl_1_1video_1_1Window.html#a1f731ab62c283fc359e940d5103602a5">icon</a> (<span class="keyword">const</span> <a class="code" href="classsdl_1_1video_1_1Icon.html" title="Represents an icon.">Icon</a>&amp; icon) {
+<a name="l00091"></a>00091                 icon_ = icon;
+<a name="l00092"></a>00092                 SDL_WM_SetCaption (caption_.c_str (), icon_.name ().c_str ());
+<a name="l00093"></a>00093                 <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+<a name="l00094"></a>00094             };
+<a name="l00095"></a>00095             
+<a name="l00101"></a><a class="code" href="classsdl_1_1video_1_1Window.html#a1d2802bc5340b1abeedc2315783c0e26">00101</a>             <span class="keywordtype">bool</span> <a class="code" href="classsdl_1_1video_1_1Window.html#a1d2802bc5340b1abeedc2315783c0e26">minimize</a> () { <span class="keywordflow">return</span> SDL_WM_IconifyWindow () != 0; };
+<a name="l00102"></a>00102 
+<a name="l00108"></a><a class="code" href="classsdl_1_1video_1_1Window.html#a658ae3229b93bacd30290262b334b4af">00108</a>             <span class="keywordtype">bool</span> <a class="code" href="classsdl_1_1video_1_1Window.html#a658ae3229b93bacd30290262b334b4af">grabInput</a> () { <span class="keywordflow">return</span> SDL_WM_GrabInput (SDL_GRAB_ON) == SDL_GRAB_ON; };
+<a name="l00109"></a>00109 
+<a name="l00115"></a><a class="code" href="classsdl_1_1video_1_1Window.html#aada9e9f4cccd0243a0b149e948ccfd50">00115</a>             <span class="keywordtype">bool</span> <a class="code" href="classsdl_1_1video_1_1Window.html#aada9e9f4cccd0243a0b149e948ccfd50">releaseInput</a> () { <span class="keywordflow">return</span> SDL_WM_GrabInput (SDL_GRAB_OFF) == SDL_GRAB_OFF; };
+<a name="l00116"></a>00116 
+<a name="l00122"></a><a class="code" href="classsdl_1_1video_1_1Window.html#abb8f8a99395c8dc37fdaad44b6265d00">00122</a>             <span class="keywordtype">bool</span> <a class="code" href="classsdl_1_1video_1_1Window.html#abb8f8a99395c8dc37fdaad44b6265d00">inputGrabbed</a> () { <span class="keywordflow">return</span> SDL_WM_GrabInput (SDL_GRAB_QUERY) == SDL_GRAB_ON; };
+<a name="l00123"></a>00123 
+<a name="l00131"></a><a class="code" href="classsdl_1_1video_1_1Window.html#a8a872d3d8fed4f31bb33df56c310b051">00131</a>             <span class="keywordtype">bool</span> <a class="code" href="classsdl_1_1video_1_1Window.html#a8a872d3d8fed4f31bb33df56c310b051">fullScreen</a> (<span class="keyword">const</span> <a class="code" href="classsdl_1_1video_1_1Surface.html" title="Represents a surface.">Surface</a>&amp; surface) { <span class="keywordflow">return</span> SDL_WM_ToggleFullScreen (surface.<a class="code" href="classsdl_1_1video_1_1Surface.html#a2b15d2d590ffd3dfb7645cfb4d280192">to_c</a> ()) == 1; };
+<a name="l00132"></a>00132 
+<a name="l00133"></a>00133             <span class="comment">//Error being caused by #include &lt;SDL_syswm.h&gt;</span>
+<a name="l00141"></a>00141 <span class="comment"></span>            <span class="comment">/*SDL_SysWMinfo info () {</span>
+<a name="l00142"></a>00142 <span class="comment">                SDL_SysWMinfo i;</span>
+<a name="l00143"></a>00143 <span class="comment">                i.version = Sdl::instance ().compileVersion ();</span>
+<a name="l00144"></a>00144 <span class="comment">                int res = SDL_GetWMInfo (&amp;i);</span>
+<a name="l00145"></a>00145 <span class="comment">                if (res == 0)</span>
+<a name="l00146"></a>00146 <span class="comment">                    throw runtime_error (&quot;unimplemented&quot;);</span>
+<a name="l00147"></a>00147 <span class="comment">                else if (res == -1)</span>
+<a name="l00148"></a>00148 <span class="comment">                    throw runtime_error (&quot;failed&quot;);</span>
+<a name="l00149"></a>00149 <span class="comment">                return i;</span>
+<a name="l00150"></a>00150 <span class="comment">            };*/</span>
+<a name="l00151"></a>00151 
+<a name="l00152"></a>00152         <span class="keyword">private</span>:
+<a name="l00158"></a>00158             <a class="code" href="classsdl_1_1video_1_1Window.html" title="Represents an SDL window.">Window</a> (<span class="keyword">const</span> <a class="code" href="classsdl_1_1video_1_1Window.html" title="Represents an SDL window.">Window</a>&amp; rhs);
+<a name="l00159"></a>00159 
+<a name="l00167"></a>00167             <a class="code" href="classsdl_1_1video_1_1Window.html" title="Represents an SDL window.">Window</a>&amp; operator= (<span class="keyword">const</span> <a class="code" href="classsdl_1_1video_1_1Window.html" title="Represents an SDL window.">Window</a>&amp; rhs);
+<a name="l00168"></a>00168 
+<a name="l00169"></a>00169         <span class="keyword">private</span>:
+<a name="l00173"></a>00173             <span class="keywordtype">string</span> caption_;
+<a name="l00174"></a>00174 
+<a name="l00178"></a>00178             <a class="code" href="classsdl_1_1video_1_1Icon.html" title="Represents an icon.">Icon</a> icon_;
+<a name="l00179"></a>00179     }; <span class="comment">//Window</span>
+<a name="l00180"></a>00180 }; <span class="comment">//video</span>
+<a name="l00181"></a>00181 }; <span class="comment">//sdl</span>
+<a name="l00182"></a>00182 
+<a name="l00183"></a>00183 <span class="preprocessor">#endif //SDL_VIDEO_WINDOW_H</span>
+<a name="l00184"></a>00184 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="Window_8h.html">Window.h</a>      </li>
-      <li class="footer">Generated on Tue Aug 23 2011 16:25:33 for SDL++ by&#160;
+      <li class="footer">Generated on Tue Aug 23 2011 22:49:41 for SDL++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>

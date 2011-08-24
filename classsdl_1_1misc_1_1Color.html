@@ -87,6 +87,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="sdl::misc::Color" -->
+<p>Represents an RGBA color.  
+<a href="#_details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Color_8h_source.html">Color.h</a>&gt;</code></p>
 
 <p><a href="classsdl_1_1misc_1_1Color-members.html">List of all members.</a></p>
@@ -106,9 +109,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsdl_1_1misc_1_1Color.html">Color</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsdl_1_1misc_1_1Color.html#a9d086221750cd5c86176dbc645f60b44">alpha</a> (unsigned char a)</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>RGBA color. </p>
+<div class="textblock"><p>Represents an RGBA color. </p>
 
-<p>Definition at line <a class="el" href="Color_8h_source.html#l00032">32</a> of file <a class="el" href="Color_8h_source.html">Color.h</a>.</p>
+<p>Definition at line <a class="el" href="Color_8h_source.html#l00034">34</a> of file <a class="el" href="Color_8h_source.html">Color.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a5c96bea428e7285d40762a23b6d8361f"></a><!-- doxytag: member="sdl::misc::Color::Color" ref="a5c96bea428e7285d40762a23b6d8361f" args="(SDL_Color *c)" -->
 <div class="memitem">
@@ -124,15 +127,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Constructs a <a class="el" href="classsdl_1_1misc_1_1Color.html">Color</a> from a SDL_Color structure.</p>
+<p>Constructs a <a class="el" href="classsdl_1_1misc_1_1Color.html" title="Represents an RGBA color.">Color</a> from a SDL_Color structure.</p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">SDL_Color*</td><td>c, The SDL_Color structure. </td></tr>
+    <tr><td class="paramname">c</td><td>The SDL_Color structure. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Color_8h_source.html#l00039">39</a> of file <a class="el" href="Color_8h_source.html">Color.h</a>.</p>
+<p>Definition at line <a class="el" href="Color_8h_source.html#l00041">41</a> of file <a class="el" href="Color_8h_source.html">Color.h</a>.</p>
 
 </div>
 </div>
@@ -172,18 +175,18 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Constructs a <a class="el" href="classsdl_1_1misc_1_1Color.html">Color</a>.</p>
+<p>Constructs a <a class="el" href="classsdl_1_1misc_1_1Color.html" title="Represents an RGBA color.">Color</a>.</p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">unsigned</td><td>char red, The red intensity. </td></tr>
-    <tr><td class="paramname">unsigned</td><td>char green, The green intensity. </td></tr>
-    <tr><td class="paramname">unsigned</td><td>char blue, The blue intensity. </td></tr>
-    <tr><td class="paramname">unsigned</td><td>char alpha, The alpha intensity. </td></tr>
+    <tr><td class="paramname">red,The</td><td>red intensity. </td></tr>
+    <tr><td class="paramname">green,The</td><td>green intensity. </td></tr>
+    <tr><td class="paramname">blue,The</td><td>blue intensity. </td></tr>
+    <tr><td class="paramname">alpha,The</td><td>alpha intensity. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Color_8h_source.html#l00049">49</a> of file <a class="el" href="Color_8h_source.html">Color.h</a>.</p>
+<p>Definition at line <a class="el" href="Color_8h_source.html#l00051">51</a> of file <a class="el" href="Color_8h_source.html">Color.h</a>.</p>
 
 </div>
 </div>
@@ -202,9 +205,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Returns the alpha intensity.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>unsigned char, The alpha intensity. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The alpha intensity. </dd></dl>
 
-<p>Definition at line <a class="el" href="Color_8h_source.html#l00134">134</a> of file <a class="el" href="Color_8h_source.html">Color.h</a>.</p>
+<p>Definition at line <a class="el" href="Color_8h_source.html#l00136">136</a> of file <a class="el" href="Color_8h_source.html">Color.h</a>.</p>
 
 </div>
 </div>
@@ -223,9 +226,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Sets the alpha intensity.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classsdl_1_1misc_1_1Color.html">Color</a>&amp;, A reference to this <a class="el" href="classsdl_1_1misc_1_1Color.html">Color</a>. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A reference to this <a class="el" href="classsdl_1_1misc_1_1Color.html" title="Represents an RGBA color.">Color</a>. </dd></dl>
 
-<p>Definition at line <a class="el" href="Color_8h_source.html#l00143">143</a> of file <a class="el" href="Color_8h_source.html">Color.h</a>.</p>
+<p>Definition at line <a class="el" href="Color_8h_source.html#l00145">145</a> of file <a class="el" href="Color_8h_source.html">Color.h</a>.</p>
 
 </div>
 </div>
@@ -243,9 +246,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Returns the blue intensity.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>unsigned char, The blue intensity. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The blue intensity. </dd></dl>
 
-<p>Definition at line <a class="el" href="Color_8h_source.html#l00113">113</a> of file <a class="el" href="Color_8h_source.html">Color.h</a>.</p>
+<p>Definition at line <a class="el" href="Color_8h_source.html#l00115">115</a> of file <a class="el" href="Color_8h_source.html">Color.h</a>.</p>
 
 </div>
 </div>
@@ -266,13 +269,13 @@ Public Member Functions</h2></td></tr>
 <p>Sets the blue intensity.</p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">unsigned</td><td>char b, The blue intensity.</td></tr>
+    <tr><td class="paramname">The</td><td>blue intensity.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classsdl_1_1misc_1_1Color.html">Color</a>&amp;, A reference to this <a class="el" href="classsdl_1_1misc_1_1Color.html">Color</a>. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A reference to this <a class="el" href="classsdl_1_1misc_1_1Color.html" title="Represents an RGBA color.">Color</a>. </dd></dl>
 
-<p>Definition at line <a class="el" href="Color_8h_source.html#l00124">124</a> of file <a class="el" href="Color_8h_source.html">Color.h</a>.</p>
+<p>Definition at line <a class="el" href="Color_8h_source.html#l00126">126</a> of file <a class="el" href="Color_8h_source.html">Color.h</a>.</p>
 
 </div>
 </div>
@@ -293,13 +296,13 @@ Public Member Functions</h2></td></tr>
 <p>Sets the green intensity.</p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">unsigned</td><td>char g, The green intensity.</td></tr>
+    <tr><td class="paramname">g</td><td>The green intensity.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classsdl_1_1misc_1_1Color.html">Color</a>&amp;, A reference to this <a class="el" href="classsdl_1_1misc_1_1Color.html">Color</a>. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A reference to this <a class="el" href="classsdl_1_1misc_1_1Color.html" title="Represents an RGBA color.">Color</a>. </dd></dl>
 
-<p>Definition at line <a class="el" href="Color_8h_source.html#l00103">103</a> of file <a class="el" href="Color_8h_source.html">Color.h</a>.</p>
+<p>Definition at line <a class="el" href="Color_8h_source.html#l00105">105</a> of file <a class="el" href="Color_8h_source.html">Color.h</a>.</p>
 
 </div>
 </div>
@@ -317,9 +320,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Returns the green intensity.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>unsigned char, The green intensity. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The green intensity. </dd></dl>
 
-<p>Definition at line <a class="el" href="Color_8h_source.html#l00092">92</a> of file <a class="el" href="Color_8h_source.html">Color.h</a>.</p>
+<p>Definition at line <a class="el" href="Color_8h_source.html#l00094">94</a> of file <a class="el" href="Color_8h_source.html">Color.h</a>.</p>
 
 </div>
 </div>
@@ -337,7 +340,7 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Color_8h_source.html#l00062">62</a> of file <a class="el" href="Color_8h_source.html">Color.h</a>.</p>
+<p>Definition at line <a class="el" href="Color_8h_source.html#l00064">64</a> of file <a class="el" href="Color_8h_source.html">Color.h</a>.</p>
 
 </div>
 </div>
@@ -358,13 +361,13 @@ Public Member Functions</h2></td></tr>
 <p>Sets the red intensity.</p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">unsigned</td><td>char r, The red intensity.</td></tr>
+    <tr><td class="paramname">r</td><td>The red intensity.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classsdl_1_1misc_1_1Color.html">Color</a>&amp;, A reference to this <a class="el" href="classsdl_1_1misc_1_1Color.html">Color</a>. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A reference to this <a class="el" href="classsdl_1_1misc_1_1Color.html" title="Represents an RGBA color.">Color</a>. </dd></dl>
 
-<p>Definition at line <a class="el" href="Color_8h_source.html#l00082">82</a> of file <a class="el" href="Color_8h_source.html">Color.h</a>.</p>
+<p>Definition at line <a class="el" href="Color_8h_source.html#l00084">84</a> of file <a class="el" href="Color_8h_source.html">Color.h</a>.</p>
 
 </div>
 </div>
@@ -382,9 +385,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Returns the red intensity.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>unsigned char, The red intensity. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The red intensity. </dd></dl>
 
-<p>Definition at line <a class="el" href="Color_8h_source.html#l00071">71</a> of file <a class="el" href="Color_8h_source.html">Color.h</a>.</p>
+<p>Definition at line <a class="el" href="Color_8h_source.html#l00073">73</a> of file <a class="el" href="Color_8h_source.html">Color.h</a>.</p>
 
 </div>
 </div>
@@ -398,7 +401,7 @@ Public Member Functions</h2></td></tr>
       <li class="navelem"><a class="el" href="namespacesdl.html">sdl</a>      </li>
       <li class="navelem"><a class="el" href="namespacesdl_1_1misc.html">misc</a>      </li>
       <li class="navelem"><a class="el" href="classsdl_1_1misc_1_1Color.html">Color</a>      </li>
-      <li class="footer">Generated on Tue Aug 23 2011 16:25:33 for SDL++ by&#160;
+      <li class="footer">Generated on Tue Aug 23 2011 22:49:41 for SDL++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>

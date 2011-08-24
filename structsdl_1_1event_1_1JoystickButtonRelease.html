@@ -87,20 +87,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="sdl::event::JoystickButtonRelease" --><!-- doxytag: inherits="Event&lt; MultiComparator&lt; JoystickButton, SDL_JOYBUTTONUP, Buttons...&gt;, JoystickButtonBase &gt;" -->
+<p>Represents a joystick button release event.  
+<a href="#_details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="JoystickEvents_8h_source.html">JoystickEvents.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for sdl::event::JoystickButtonRelease&lt; Buttons &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsdl_1_1event_1_1JoystickButtonRelease__inherit__graph.png" border="0" usemap="#sdl_1_1event_1_1JoystickButtonRelease_3_01Buttons_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="sdl_1_1event_1_1JoystickButtonRelease_3_01Buttons_01_4_inherit__map" id="sdl_1_1event_1_1JoystickButtonRelease_3_01Buttons_01_4_inherit__map">
-<area shape="rect" id="node2" href="structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; JoystickButton, SDL_JOYBUTTONUP, Buttons...\&gt;, JoystickButtonBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="5,307,683,410"/><area shape="rect" id="node4" href="structsdl_1_1event_1_1JoystickButtonBase.html" title="{sdl::event::JoystickButtonBase\n||+ JoystickButtonBase()\l+ get()\l+ get()\l}" alt="" coords="243,139,445,259"/><area shape="rect" id="node6" href="structsdl_1_1event_1_1EventBase.html" title="{sdl::event::EventBase\n|# event_\l|+ EventBase()\l}" alt="" coords="269,5,419,91"/></map>
+<area shape="rect" id="node2" href="structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; JoystickButton, SDL_JOYBUTTONUP, Buttons...\&gt;, JoystickButtonBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="5,307,683,410"/><area shape="rect" id="node4" href="structsdl_1_1event_1_1JoystickButtonBase.html" title="Base for joystick button events that exposes the SDL_JoyButtonEvent structure." alt="" coords="243,139,445,259"/><area shape="rect" id="node6" href="structsdl_1_1event_1_1EventBase.html" title="Base for events that holds a SDL_Event structure." alt="" coords="269,5,419,91"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for sdl::event::JoystickButtonRelease&lt; Buttons &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsdl_1_1event_1_1JoystickButtonRelease__coll__graph.png" border="0" usemap="#sdl_1_1event_1_1JoystickButtonRelease_3_01Buttons_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="sdl_1_1event_1_1JoystickButtonRelease_3_01Buttons_01_4_coll__map" id="sdl_1_1event_1_1JoystickButtonRelease_3_01Buttons_01_4_coll__map">
-<area shape="rect" id="node2" href="structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; JoystickButton, SDL_JOYBUTTONUP, Buttons...\&gt;, JoystickButtonBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="5,307,683,410"/><area shape="rect" id="node4" href="structsdl_1_1event_1_1JoystickButtonBase.html" title="{sdl::event::JoystickButtonBase\n||+ JoystickButtonBase()\l+ get()\l+ get()\l}" alt="" coords="243,139,445,259"/><area shape="rect" id="node6" href="structsdl_1_1event_1_1EventBase.html" title="{sdl::event::EventBase\n|# event_\l|+ EventBase()\l}" alt="" coords="269,5,419,91"/></map>
+<area shape="rect" id="node2" href="structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; JoystickButton, SDL_JOYBUTTONUP, Buttons...\&gt;, JoystickButtonBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="5,307,683,410"/><area shape="rect" id="node4" href="structsdl_1_1event_1_1JoystickButtonBase.html" title="Base for joystick button events that exposes the SDL_JoyButtonEvent structure." alt="" coords="243,139,445,259"/><area shape="rect" id="node6" href="structsdl_1_1event_1_1EventBase.html" title="Base for events that holds a SDL_Event structure." alt="" coords="269,5,419,91"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="structsdl_1_1event_1_1JoystickButtonRelease-members.html">List of all members.</a></p>
@@ -113,15 +116,15 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><h3>template&lt;int... Buttons&gt;<br/>
  struct sdl::event::JoystickButtonRelease&lt; Buttons &gt;</h3>
 
-<p>joystick button release event.</p>
+<p>Represents a joystick button release event. </p>
 <dl><dt><b>Template Parameters:</b></dt><dd>
   <table class="">
-    <tr><td class="paramname">Buttons,The</td><td>Buttons that compose this joystick button release event. </td></tr>
+    <tr><td class="paramname">Buttons</td><td>The Buttons that compose this joystick button release event. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="JoystickEvents_8h_source.html#l00203">203</a> of file <a class="el" href="JoystickEvents_8h_source.html">JoystickEvents.h</a>.</p>
+<p>Definition at line <a class="el" href="JoystickEvents_8h_source.html#l00213">213</a> of file <a class="el" href="JoystickEvents_8h_source.html">JoystickEvents.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a734032f0db80d02d0b7205808ff30c7e"></a><!-- doxytag: member="sdl::event::JoystickButtonRelease::JoystickButtonRelease" ref="a734032f0db80d02d0b7205808ff30c7e" args="(const SDL_Event *event=0)" -->
 <div class="memitem">
@@ -139,15 +142,15 @@ template&lt;int... Buttons&gt; </div>
       </table>
 </div>
 <div class="memdoc">
-<p>Constructs a <a class="el" href="structsdl_1_1event_1_1JoystickButtonRelease.html">JoystickButtonRelease</a> from a SDL_Event structure.</p>
+<p>Constructs a <a class="el" href="structsdl_1_1event_1_1JoystickButtonRelease.html" title="Represents a joystick button release event.">JoystickButtonRelease</a> from a SDL_Event structure.</p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">const</td><td>SDL_Event* event, The SDL_Event structure. </td></tr>
+    <tr><td class="paramname">event</td><td>The SDL_Event structure. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="JoystickEvents_8h_source.html#l00209">209</a> of file <a class="el" href="JoystickEvents_8h_source.html">JoystickEvents.h</a>.</p>
+<p>Definition at line <a class="el" href="JoystickEvents_8h_source.html#l00219">219</a> of file <a class="el" href="JoystickEvents_8h_source.html">JoystickEvents.h</a>.</p>
 
 </div>
 </div>
@@ -161,7 +164,7 @@ template&lt;int... Buttons&gt; </div>
       <li class="navelem"><a class="el" href="namespacesdl.html">sdl</a>      </li>
       <li class="navelem"><a class="el" href="namespacesdl_1_1event.html">event</a>      </li>
       <li class="navelem"><a class="el" href="structsdl_1_1event_1_1JoystickButtonRelease.html">JoystickButtonRelease</a>      </li>
-      <li class="footer">Generated on Tue Aug 23 2011 16:25:33 for SDL++ by&#160;
+      <li class="footer">Generated on Tue Aug 23 2011 22:49:41 for SDL++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>

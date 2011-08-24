@@ -1,7 +1,7 @@
 <map id="G" name="G">
 <area shape="rect" id="node5" href="$structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; MouseButton, SDL_MOUSEBUTTONDOWN, Buttons...\&gt;, MouseButtonBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="5,307,712,410"/>
 <area shape="rect" id="node9" href="$structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; MouseButton, SDL_MOUSEBUTTONUP, Buttons...\&gt;, MouseButtonBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="736,307,1419,410"/>
-<area shape="rect" id="node2" href="$structsdl_1_1event_1_1EventBase.html" title="{sdl::event::EventBase\n|# event_\l|+ EventBase()\l}" alt="" coords="643,5,792,91"/>
+<area shape="rect" id="node2" href="$structsdl_1_1event_1_1EventBase.html" title="Base for events that holds a SDL_Event structure." alt="" coords="643,5,792,91"/>
 <area shape="rect" id="node7" href="$structsdl_1_1event_1_1MouseButtonPress.html" title="{sdl::event::MouseButtonPress\&lt; Buttons \&gt;\n||+ MouseButtonPress()\l}" alt="" coords="225,459,492,544"/>
 <area shape="rect" id="node11" href="$structsdl_1_1event_1_1MouseButtonRelease.html" title="{sdl::event::MouseButtonRelease\&lt; Buttons \&gt;\n||+ MouseButtonRelease()\l}" alt="" coords="937,459,1217,544"/>
 </map>

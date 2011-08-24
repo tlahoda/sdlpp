@@ -1,5 +1,5 @@
 <map id="G" name="G">
 <area shape="rect" id="node2" href="$structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; MouseButton, SDL_MOUSEBUTTONUP, Buttons...\&gt;, MouseButtonBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="5,307,688,410"/>
-<area shape="rect" id="node4" href="$structsdl_1_1event_1_1MouseButtonBase.html" title="{sdl::event::MouseButtonBase\n||+ MouseButtonBase()\l+ get()\l+ get()\l}" alt="" coords="249,139,444,259"/>
-<area shape="rect" id="node6" href="$structsdl_1_1event_1_1EventBase.html" title="{sdl::event::EventBase\n|# event_\l|+ EventBase()\l}" alt="" coords="272,5,421,91"/>
+<area shape="rect" id="node4" href="$structsdl_1_1event_1_1MouseButtonBase.html" title="Base for mouse button events that exposes the SDL_MouseButtonEvent structure." alt="" coords="249,139,444,259"/>
+<area shape="rect" id="node6" href="$structsdl_1_1event_1_1EventBase.html" title="Base for events that holds a SDL_Event structure." alt="" coords="272,5,421,91"/>
 </map>

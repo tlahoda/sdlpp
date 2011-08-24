@@ -87,6 +87,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="sdl::misc::Rect" -->
+<p>Represents a rectangle.  
+<a href="#_details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Rect_8h_source.html">Rect.h</a>&gt;</code></p>
 
 <p><a href="classsdl_1_1misc_1_1Rect-members.html">List of all members.</a></p>
@@ -101,9 +104,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsdl_1_1misc_1_1Rect.html#a80506f11c365886017b9f18763541194">y</a> () const </td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>rectangle. </p>
+<div class="textblock"><p>Represents a rectangle. </p>
 
-<p>Definition at line <a class="el" href="Rect_8h_source.html#l00032">32</a> of file <a class="el" href="Rect_8h_source.html">Rect.h</a>.</p>
+<p>Definition at line <a class="el" href="Rect_8h_source.html#l00034">34</a> of file <a class="el" href="Rect_8h_source.html">Rect.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aad587f81bc8d9f2266df1606cccbb9c5"></a><!-- doxytag: member="sdl::misc::Rect::Rect" ref="aad587f81bc8d9f2266df1606cccbb9c5" args="(unsigned int height, unsigned int width, short x, short y)" -->
 <div class="memitem">
@@ -141,18 +144,18 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Constructs a <a class="el" href="classsdl_1_1misc_1_1Rect.html">Rect</a>.</p>
+<p>Constructs a <a class="el" href="classsdl_1_1misc_1_1Rect.html" title="Represents a rectangle.">Rect</a>.</p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">unsigned</td><td>int height, The height. </td></tr>
-    <tr><td class="paramname">unsigned</td><td>int width, The width. </td></tr>
-    <tr><td class="paramname">short</td><td>x, The x offset. </td></tr>
-    <tr><td class="paramname">short</td><td>y, The y offset. </td></tr>
+    <tr><td class="paramname">height</td><td>The height. </td></tr>
+    <tr><td class="paramname">width</td><td>The width. </td></tr>
+    <tr><td class="paramname">x</td><td>The x offset. </td></tr>
+    <tr><td class="paramname">y</td><td>The y offset. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Rect_8h_source.html#l00042">42</a> of file <a class="el" href="Rect_8h_source.html">Rect.h</a>.</p>
+<p>Definition at line <a class="el" href="Rect_8h_source.html#l00044">44</a> of file <a class="el" href="Rect_8h_source.html">Rect.h</a>.</p>
 
 </div>
 </div>
@@ -171,9 +174,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Returns the height.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>int, The height. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The height. </dd></dl>
 
-<p>Definition at line <a class="el" href="Rect_8h_source.html#l00061">61</a> of file <a class="el" href="Rect_8h_source.html">Rect.h</a>.</p>
+<p>Definition at line <a class="el" href="Rect_8h_source.html#l00063">63</a> of file <a class="el" href="Rect_8h_source.html">Rect.h</a>.</p>
 
 </div>
 </div>
@@ -191,9 +194,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Returns the underlying SDL_Rect*.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>SDL_Rect*, The SDL_Rect structure. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The SDL_Rect structure. </dd></dl>
 
-<p>Definition at line <a class="el" href="Rect_8h_source.html#l00054">54</a> of file <a class="el" href="Rect_8h_source.html">Rect.h</a>.</p>
+<p>Definition at line <a class="el" href="Rect_8h_source.html#l00056">56</a> of file <a class="el" href="Rect_8h_source.html">Rect.h</a>.</p>
 
 </div>
 </div>
@@ -211,9 +214,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Returns the width.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>int, The width. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The width. </dd></dl>
 
-<p>Definition at line <a class="el" href="Rect_8h_source.html#l00068">68</a> of file <a class="el" href="Rect_8h_source.html">Rect.h</a>.</p>
+<p>Definition at line <a class="el" href="Rect_8h_source.html#l00070">70</a> of file <a class="el" href="Rect_8h_source.html">Rect.h</a>.</p>
 
 </div>
 </div>
@@ -230,10 +233,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Return the x offset.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>int, The x offset. </dd></dl>
+<p>Returns the x offset.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The x offset. </dd></dl>
 
-<p>Definition at line <a class="el" href="Rect_8h_source.html#l00075">75</a> of file <a class="el" href="Rect_8h_source.html">Rect.h</a>.</p>
+<p>Definition at line <a class="el" href="Rect_8h_source.html#l00077">77</a> of file <a class="el" href="Rect_8h_source.html">Rect.h</a>.</p>
 
 </div>
 </div>
@@ -251,9 +254,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Returns the y offset.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>int, The y offset. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The y offset. </dd></dl>
 
-<p>Definition at line <a class="el" href="Rect_8h_source.html#l00082">82</a> of file <a class="el" href="Rect_8h_source.html">Rect.h</a>.</p>
+<p>Definition at line <a class="el" href="Rect_8h_source.html#l00084">84</a> of file <a class="el" href="Rect_8h_source.html">Rect.h</a>.</p>
 
 </div>
 </div>
@@ -267,7 +270,7 @@ Public Member Functions</h2></td></tr>
       <li class="navelem"><a class="el" href="namespacesdl.html">sdl</a>      </li>
       <li class="navelem"><a class="el" href="namespacesdl_1_1misc.html">misc</a>      </li>
       <li class="navelem"><a class="el" href="classsdl_1_1misc_1_1Rect.html">Rect</a>      </li>
-      <li class="footer">Generated on Tue Aug 23 2011 16:25:33 for SDL++ by&#160;
+      <li class="footer">Generated on Tue Aug 23 2011 22:49:41 for SDL++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>

@@ -1,5 +1,5 @@
 <map id="G" name="G">
 <area shape="rect" id="node2" href="$structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; JoystickButton, SDL_JOYBUTTONUP, Buttons...\&gt;, JoystickButtonBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="5,307,683,410"/>
-<area shape="rect" id="node4" href="$structsdl_1_1event_1_1JoystickButtonBase.html" title="{sdl::event::JoystickButtonBase\n||+ JoystickButtonBase()\l+ get()\l+ get()\l}" alt="" coords="243,139,445,259"/>
-<area shape="rect" id="node6" href="$structsdl_1_1event_1_1EventBase.html" title="{sdl::event::EventBase\n|# event_\l|+ EventBase()\l}" alt="" coords="269,5,419,91"/>
+<area shape="rect" id="node4" href="$structsdl_1_1event_1_1JoystickButtonBase.html" title="Base for joystick button events that exposes the SDL_JoyButtonEvent structure." alt="" coords="243,139,445,259"/>
+<area shape="rect" id="node6" href="$structsdl_1_1event_1_1EventBase.html" title="Base for events that holds a SDL_Event structure." alt="" coords="269,5,419,91"/>
 </map>

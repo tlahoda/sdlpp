@@ -82,53 +82,53 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <a href="Sdl_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
-<a name="l00020"></a>00020 <span class="preprocessor">#ifndef SDL_SDL_H</span>
-<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define SDL_SDL_H</span>
-<a name="l00022"></a>00022 <span class="preprocessor"></span>
-<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;stdexcept&gt;</span>
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;SDL.h&gt;</span>
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027 <span class="keyword">namespace </span>sdl {
-<a name="l00028"></a>00028     <span class="keyword">using namespace </span>std;
-<a name="l00029"></a>00029 
-<a name="l00033"></a><a class="code" href="classsdl_1_1Sdl.html">00033</a>     <span class="keyword">class </span><a class="code" href="classsdl_1_1Sdl.html">Sdl</a> {
-<a name="l00034"></a>00034         <span class="keyword">public</span>:
-<a name="l00040"></a><a class="code" href="classsdl_1_1Sdl.html#ab1e9df67683c28569db86d4a6fede2cf">00040</a>             <span class="keyword">static</span> <a class="code" href="classsdl_1_1Sdl.html">Sdl</a>&amp; <a class="code" href="classsdl_1_1Sdl.html#ab1e9df67683c28569db86d4a6fede2cf">instance</a> () {
-<a name="l00041"></a>00041                 <span class="keyword">static</span> <a class="code" href="classsdl_1_1Sdl.html">Sdl</a> instance_;
-<a name="l00042"></a>00042                 <span class="keywordflow">return</span> instance_;
-<a name="l00043"></a>00043             };
-<a name="l00044"></a>00044 
-<a name="l00050"></a><a class="code" href="classsdl_1_1Sdl.html#a81728dc51967addf83e04836053cec04">00050</a>             SDL_version <a class="code" href="classsdl_1_1Sdl.html#a81728dc51967addf83e04836053cec04">compileVersion</a> () {
-<a name="l00051"></a>00051                 SDL_version version;
-<a name="l00052"></a>00052                 SDL_VERSION (&amp;version);
-<a name="l00053"></a>00053                 <span class="keywordflow">return</span> version;
-<a name="l00054"></a>00054             };
-<a name="l00055"></a>00055 
-<a name="l00061"></a><a class="code" href="classsdl_1_1Sdl.html#a857b9dd5feb3c2391c35ad1beda81973">00061</a>             <span class="keyword">const</span> SDL_version* <a class="code" href="classsdl_1_1Sdl.html#a857b9dd5feb3c2391c35ad1beda81973">linkedVersion</a> () { <span class="keywordflow">return</span> SDL_Linked_Version (); };
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063         <span class="keyword">private</span>:
-<a name="l00069"></a>00069             <a class="code" href="classsdl_1_1Sdl.html">Sdl</a> () {
-<a name="l00070"></a>00070                 <span class="keywordflow">if</span> (SDL_Init (0) == -1) 
-<a name="l00071"></a>00071                     <span class="keywordflow">throw</span> std::runtime_error (SDL_GetError ());
-<a name="l00072"></a>00072             };
-<a name="l00073"></a>00073 
-<a name="l00079"></a>00079             Sdl (<span class="keyword">const</span> Sdl&amp; rhs);
-<a name="l00080"></a>00080             
-<a name="l00084"></a>00084             ~Sdl () { SDL_Quit (); };
-<a name="l00085"></a>00085             
-<a name="l00093"></a>00093             Sdl&amp; operator= (<span class="keyword">const</span> Sdl&amp; rhs);
-<a name="l00094"></a>00094     }; <span class="comment">//Sdl</span>
-<a name="l00095"></a>00095 }; <span class="comment">//sdl</span>
-<a name="l00096"></a>00096 
-<a name="l00097"></a>00097 <span class="preprocessor">#endif //SDL_SDL_H</span>
-<a name="l00098"></a>00098 <span class="preprocessor"></span>
+<a name="l00021"></a>00021 <span class="preprocessor">#ifndef SDL_SDL_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define SDL_SDL_H</span>
+<a name="l00023"></a>00023 <span class="preprocessor"></span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;stdexcept&gt;</span>
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;SDL.h&gt;</span>
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 <span class="keyword">namespace </span>sdl {
+<a name="l00029"></a>00029     <span class="keyword">using namespace </span>std;
+<a name="l00030"></a>00030 
+<a name="l00034"></a><a class="code" href="classsdl_1_1Sdl.html">00034</a>     <span class="keyword">class </span><a class="code" href="classsdl_1_1Sdl.html">Sdl</a> {
+<a name="l00035"></a>00035         <span class="keyword">public</span>:
+<a name="l00041"></a><a class="code" href="classsdl_1_1Sdl.html#ab1e9df67683c28569db86d4a6fede2cf">00041</a>             <span class="keyword">static</span> <a class="code" href="classsdl_1_1Sdl.html">Sdl</a>&amp; <a class="code" href="classsdl_1_1Sdl.html#ab1e9df67683c28569db86d4a6fede2cf">instance</a> () {
+<a name="l00042"></a>00042                 <span class="keyword">static</span> <a class="code" href="classsdl_1_1Sdl.html">Sdl</a> instance_;
+<a name="l00043"></a>00043                 <span class="keywordflow">return</span> instance_;
+<a name="l00044"></a>00044             };
+<a name="l00045"></a>00045 
+<a name="l00051"></a><a class="code" href="classsdl_1_1Sdl.html#a81728dc51967addf83e04836053cec04">00051</a>             SDL_version <a class="code" href="classsdl_1_1Sdl.html#a81728dc51967addf83e04836053cec04">compileVersion</a> () {
+<a name="l00052"></a>00052                 SDL_version version;
+<a name="l00053"></a>00053                 SDL_VERSION (&amp;version);
+<a name="l00054"></a>00054                 <span class="keywordflow">return</span> version;
+<a name="l00055"></a>00055             };
+<a name="l00056"></a>00056 
+<a name="l00062"></a><a class="code" href="classsdl_1_1Sdl.html#a857b9dd5feb3c2391c35ad1beda81973">00062</a>             <span class="keyword">const</span> SDL_version* <a class="code" href="classsdl_1_1Sdl.html#a857b9dd5feb3c2391c35ad1beda81973">linkedVersion</a> () { <span class="keywordflow">return</span> SDL_Linked_Version (); };
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064         <span class="keyword">private</span>:
+<a name="l00070"></a>00070             <a class="code" href="classsdl_1_1Sdl.html">Sdl</a> () {
+<a name="l00071"></a>00071                 <span class="keywordflow">if</span> (SDL_Init (0) == -1) 
+<a name="l00072"></a>00072                     <span class="keywordflow">throw</span> std::runtime_error (SDL_GetError ());
+<a name="l00073"></a>00073             };
+<a name="l00074"></a>00074 
+<a name="l00080"></a>00080             Sdl (<span class="keyword">const</span> Sdl&amp; rhs);
+<a name="l00081"></a>00081             
+<a name="l00085"></a>00085             ~Sdl () { SDL_Quit (); };
+<a name="l00086"></a>00086             
+<a name="l00094"></a>00094             Sdl&amp; operator= (<span class="keyword">const</span> Sdl&amp; rhs);
+<a name="l00095"></a>00095     }; <span class="comment">//Sdl</span>
+<a name="l00096"></a>00096 }; <span class="comment">//sdl</span>
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098 <span class="preprocessor">#endif //SDL_SDL_H</span>
+<a name="l00099"></a>00099 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="Sdl_8h.html">Sdl.h</a>      </li>
-      <li class="footer">Generated on Tue Aug 23 2011 16:25:33 for SDL++ by&#160;
+      <li class="footer">Generated on Tue Aug 23 2011 22:49:41 for SDL++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>

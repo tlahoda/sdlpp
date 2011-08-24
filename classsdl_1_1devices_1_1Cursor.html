@@ -87,6 +87,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="sdl::devices::Cursor" -->
+<p>Represents the system pointer.  
+<a href="#_details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Cursor_8h_source.html">Cursor.h</a>&gt;</code></p>
 
 <p><a href="classsdl_1_1devices_1_1Cursor-members.html">List of all members.</a></p>
@@ -105,9 +108,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsdl_1_1devices_1_1Cursor.html#a1ec84dc88bb86060d176adefc70e5bc2">redraw</a> ()</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>class <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>, Represents the system pointer. </p>
+<div class="textblock"><p>Represents the system pointer. </p>
 
-<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00038">38</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
+<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00040">40</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ada589fc25ff85d88582bb978be40ef8b"></a><!-- doxytag: member="sdl::devices::Cursor::Cursor" ref="ada589fc25ff85d88582bb978be40ef8b" args="()" -->
 <div class="memitem">
@@ -122,15 +125,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Constructs a <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a> using the system's cursor.</p>
+<p>Constructs a <a class="el" href="classsdl_1_1devices_1_1Cursor.html" title="Represents the system pointer.">Cursor</a> using the system's cursor.</p>
 <dl><dt><b>Exceptions:</b></dt><dd>
   <table class="exception">
-    <tr><td class="paramname">runtime_error,Throws</td><td>a runtime_error if unable to get the system cursor. </td></tr>
+    <tr><td class="paramname">runtime_error</td><td>Throws a runtime_error if unable to get the system cursor. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00045">45</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
+<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00047">47</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
 
 </div>
 </div>
@@ -170,13 +173,13 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Constructs a <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>.</p>
+<p>Constructs a <a class="el" href="classsdl_1_1devices_1_1Cursor.html" title="Represents the system pointer.">Cursor</a>.</p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">unsigned</td><td>char* data, The color of each <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a> pixel. </td></tr>
-    <tr><td class="paramname">unsigned</td><td>char* mask, The mask for each <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a> pixel. </td></tr>
-    <tr><td class="paramname">const</td><td>Rect&amp; rect, A rectangle containing the height and width of the <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>. </td></tr>
-    <tr><td class="paramname">const</td><td>Coordinate&lt;int&gt;&amp; pos, The position of the upper-left corner of the <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>.</td></tr>
+    <tr><td class="paramname">data</td><td>The color of each <a class="el" href="classsdl_1_1devices_1_1Cursor.html" title="Represents the system pointer.">Cursor</a> pixel. </td></tr>
+    <tr><td class="paramname">mask</td><td>The mask for each <a class="el" href="classsdl_1_1devices_1_1Cursor.html" title="Represents the system pointer.">Cursor</a> pixel. </td></tr>
+    <tr><td class="paramname">rect</td><td>A rectangle containing the height and width of the <a class="el" href="classsdl_1_1devices_1_1Cursor.html" title="Represents the system pointer.">Cursor</a>. </td></tr>
+    <tr><td class="paramname">pos</td><td>The position of the upper-left corner of the <a class="el" href="classsdl_1_1devices_1_1Cursor.html" title="Represents the system pointer.">Cursor</a>.</td></tr>
   </table>
   </dd>
 </dl>
@@ -187,7 +190,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00060">60</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
+<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00062">62</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
 
 </div>
 </div>
@@ -204,9 +207,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Destroys a <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>. </p>
+<p>Destroys a <a class="el" href="classsdl_1_1devices_1_1Cursor.html" title="Represents the system pointer.">Cursor</a>. </p>
 
-<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00071">71</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
+<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00073">73</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
 
 </div>
 </div>
@@ -224,8 +227,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Activates the <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>void. </dd></dl>
+<p>Activates the <a class="el" href="classsdl_1_1devices_1_1Cursor.html" title="Represents the system pointer.">Cursor</a>. </p>
 
 <p>Definition at line <a class="el" href="Cursor_8h_source.html#l00117">117</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
 
@@ -244,10 +246,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Hides the <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>bool, True if successful, false otherwise. </dd></dl>
+<p>Hides the <a class="el" href="classsdl_1_1devices_1_1Cursor.html" title="Represents the system pointer.">Cursor</a>.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if successful, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00094">94</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
+<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00096">96</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
 
 </div>
 </div>
@@ -264,10 +266,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Determines if the <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a> if visible or not.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>bool, True is <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a> is visible, false otherwise. </dd></dl>
+<p>Determines if the <a class="el" href="classsdl_1_1devices_1_1Cursor.html" title="Represents the system pointer.">Cursor</a> if visible or not.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True is <a class="el" href="classsdl_1_1devices_1_1Cursor.html" title="Represents the system pointer.">Cursor</a> is visible, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00101">101</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
+<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00103">103</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
 
 </div>
 </div>
@@ -285,16 +287,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Moves the <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a> to the specified position.</p>
+<p>Moves the <a class="el" href="classsdl_1_1devices_1_1Cursor.html" title="Represents the system pointer.">Cursor</a> to the specified position.</p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">const</td><td>Coordinate&lt;short&gt;&amp; pos, The position to which to move the upper-left corner of the <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>.</td></tr>
+    <tr><td class="paramname">pos</td><td>The position to which to move the upper-left corner of the <a class="el" href="classsdl_1_1devices_1_1Cursor.html" title="Represents the system pointer.">Cursor</a>.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void. </dd></dl>
 
-<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00080">80</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
+<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00082">82</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
 
 </div>
 </div>
@@ -311,10 +313,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Force the cursor to redraw.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>void. </dd></dl>
+<p>Force the cursor to redraw. </p>
 
-<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00124">124</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
+<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00122">122</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
 
 </div>
 </div>
@@ -331,10 +332,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Shows the <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>bool, True if successful, false otherwise. </dd></dl>
+<p>Shows the <a class="el" href="classsdl_1_1devices_1_1Cursor.html" title="Represents the system pointer.">Cursor</a>.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if successful, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00087">87</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
+<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00089">89</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
 
 </div>
 </div>
@@ -351,10 +352,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Toggles the visibility of the <a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>bool, True if successful, false otherwise. </dd></dl>
+<p>Toggles the visibility of the <a class="el" href="classsdl_1_1devices_1_1Cursor.html" title="Represents the system pointer.">Cursor</a>.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if successful, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00108">108</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
+<p>Definition at line <a class="el" href="Cursor_8h_source.html#l00110">110</a> of file <a class="el" href="Cursor_8h_source.html">Cursor.h</a>.</p>
 
 </div>
 </div>
@@ -368,7 +369,7 @@ Public Member Functions</h2></td></tr>
       <li class="navelem"><a class="el" href="namespacesdl.html">sdl</a>      </li>
       <li class="navelem"><a class="el" href="namespacesdl_1_1devices.html">devices</a>      </li>
       <li class="navelem"><a class="el" href="classsdl_1_1devices_1_1Cursor.html">Cursor</a>      </li>
-      <li class="footer">Generated on Tue Aug 23 2011 16:25:33 for SDL++ by&#160;
+      <li class="footer">Generated on Tue Aug 23 2011 22:49:41 for SDL++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>

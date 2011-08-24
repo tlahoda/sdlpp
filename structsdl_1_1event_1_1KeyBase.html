@@ -87,20 +87,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="sdl::event::KeyBase" --><!-- doxytag: inherits="sdl::event::EventBase" -->
+<p>Base for keyboard events that exposes the SDL_KeyboardEvent structure.  
+<a href="#_details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="KeyboardEvents_8h_source.html">KeyboardEvents.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for sdl::event::KeyBase:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsdl_1_1event_1_1KeyBase__inherit__graph.png" border="0" usemap="#sdl_1_1event_1_1KeyBase_inherit__map" alt="Inheritance graph"/></div>
 <map name="sdl_1_1event_1_1KeyBase_inherit__map" id="sdl_1_1event_1_1KeyBase_inherit__map">
-<area shape="rect" id="node5" href="structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; Key, SDL_KEYDOWN, Keys...\&gt;, KeyBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="5,307,512,410"/><area shape="rect" id="node9" href="structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; Key, SDL_KEYUP, Keys...\&gt;, KeyBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="536,307,1019,410"/><area shape="rect" id="node2" href="structsdl_1_1event_1_1EventBase.html" title="{sdl::event::EventBase\n|# event_\l|+ EventBase()\l}" alt="" coords="443,5,592,91"/><area shape="rect" id="node7" href="structsdl_1_1event_1_1KeyPress.html" title="{sdl::event::KeyPress\&lt; Keys \&gt;\n||+ KeyPress()\l}" alt="" coords="160,459,357,544"/><area shape="rect" id="node11" href="structsdl_1_1event_1_1KeyRelease.html" title="{sdl::event::KeyRelease\&lt; Keys \&gt;\n||+ KeyRelease()\l}" alt="" coords="672,459,883,544"/></map>
+<area shape="rect" id="node5" href="structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; Key, SDL_KEYDOWN, Keys...\&gt;, KeyBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="5,307,512,410"/><area shape="rect" id="node9" href="structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; Key, SDL_KEYUP, Keys...\&gt;, KeyBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="536,307,1019,410"/><area shape="rect" id="node2" href="structsdl_1_1event_1_1EventBase.html" title="Base for events that holds a SDL_Event structure." alt="" coords="443,5,592,91"/><area shape="rect" id="node7" href="structsdl_1_1event_1_1KeyPress.html" title="Represents a key press event." alt="" coords="160,459,357,544"/><area shape="rect" id="node11" href="structsdl_1_1event_1_1KeyRelease.html" title="Represents a key release event." alt="" coords="672,459,883,544"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for sdl::event::KeyBase:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsdl_1_1event_1_1KeyBase__coll__graph.png" border="0" usemap="#sdl_1_1event_1_1KeyBase_coll__map" alt="Collaboration graph"/></div>
 <map name="sdl_1_1event_1_1KeyBase_coll__map" id="sdl_1_1event_1_1KeyBase_coll__map">
-<area shape="rect" id="node2" href="structsdl_1_1event_1_1EventBase.html" title="{sdl::event::EventBase\n|# event_\l|+ EventBase()\l}" alt="" coords="5,5,155,91"/></map>
+<area shape="rect" id="node2" href="structsdl_1_1event_1_1EventBase.html" title="Base for events that holds a SDL_Event structure." alt="" coords="5,5,155,91"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="structsdl_1_1event_1_1KeyBase-members.html">List of all members.</a></p>
@@ -112,9 +115,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const SDL_KeyboardEvent &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsdl_1_1event_1_1KeyBase.html#a109ba3cd5f8147df5c92b4f423537127">get</a> ()</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>keyboard events that exposes the SDL_KeyboardEvent structure. </p>
+<div class="textblock"><p>Base for keyboard events that exposes the SDL_KeyboardEvent structure. </p>
 
-<p>Definition at line <a class="el" href="KeyboardEvents_8h_source.html#l00037">37</a> of file <a class="el" href="KeyboardEvents_8h_source.html">KeyboardEvents.h</a>.</p>
+<p>Definition at line <a class="el" href="KeyboardEvents_8h_source.html#l00039">39</a> of file <a class="el" href="KeyboardEvents_8h_source.html">KeyboardEvents.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a36cf48cfd7bab3587c67ac7361e0af2a"></a><!-- doxytag: member="sdl::event::KeyBase::KeyBase" ref="a36cf48cfd7bab3587c67ac7361e0af2a" args="(const SDL_Event *event)" -->
 <div class="memitem">
@@ -130,15 +133,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Constructs an <a class="el" href="structsdl_1_1event_1_1KeyBase.html">KeyBase</a> from a SDL_Event structure.</p>
+<p>Constructs an <a class="el" href="structsdl_1_1event_1_1KeyBase.html" title="Base for keyboard events that exposes the SDL_KeyboardEvent structure.">KeyBase</a> from a SDL_Event structure.</p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">const</td><td>SDL_Event* event, The SDL_Event structure. </td></tr>
+    <tr><td class="paramname">event</td><td>The SDL_Event structure. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="KeyboardEvents_8h_source.html#l00043">43</a> of file <a class="el" href="KeyboardEvents_8h_source.html">KeyboardEvents.h</a>.</p>
+<p>Definition at line <a class="el" href="KeyboardEvents_8h_source.html#l00045">45</a> of file <a class="el" href="KeyboardEvents_8h_source.html">KeyboardEvents.h</a>.</p>
 
 </div>
 </div>
@@ -157,9 +160,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Exposes the SDL_KeyboardEvent structure.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>const SDL_KeyboardEvent&amp;, The SDL_KeyboardEvent structure. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The SDL_KeyboardEvent structure. </dd></dl>
 
-<p>Definition at line <a class="el" href="KeyboardEvents_8h_source.html#l00050">50</a> of file <a class="el" href="KeyboardEvents_8h_source.html">KeyboardEvents.h</a>.</p>
+<p>Definition at line <a class="el" href="KeyboardEvents_8h_source.html#l00052">52</a> of file <a class="el" href="KeyboardEvents_8h_source.html">KeyboardEvents.h</a>.</p>
 
 </div>
 </div>
@@ -177,9 +180,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Exposes the SDL_KeyboardEvent structure.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>const SDL_KeyboardEvent&amp;, The SDL_KeyboardEvent structure. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The SDL_KeyboardEvent structure. </dd></dl>
 
-<p>Definition at line <a class="el" href="KeyboardEvents_8h_source.html#l00057">57</a> of file <a class="el" href="KeyboardEvents_8h_source.html">KeyboardEvents.h</a>.</p>
+<p>Definition at line <a class="el" href="KeyboardEvents_8h_source.html#l00059">59</a> of file <a class="el" href="KeyboardEvents_8h_source.html">KeyboardEvents.h</a>.</p>
 
 </div>
 </div>
@@ -193,7 +196,7 @@ Public Member Functions</h2></td></tr>
       <li class="navelem"><a class="el" href="namespacesdl.html">sdl</a>      </li>
       <li class="navelem"><a class="el" href="namespacesdl_1_1event.html">event</a>      </li>
       <li class="navelem"><a class="el" href="structsdl_1_1event_1_1KeyBase.html">KeyBase</a>      </li>
-      <li class="footer">Generated on Tue Aug 23 2011 16:25:33 for SDL++ by&#160;
+      <li class="footer">Generated on Tue Aug 23 2011 22:49:41 for SDL++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>

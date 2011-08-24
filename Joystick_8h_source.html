@@ -82,86 +82,86 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <a href="Joystick_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
-<a name="l00020"></a>00020 <span class="preprocessor">#ifndef SDL_DEVICES_JOYSTICK_H</span>
-<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define SDL_DEVICES_JOYSTICK_H</span>
-<a name="l00022"></a>00022 <span class="preprocessor"></span>
-<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;string&gt;</span>
-<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;stdexcept&gt;</span>
-<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;utility&gt;</span>
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;SDL.h&gt;</span>
-<a name="l00028"></a>00028 
-<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;sdlpp/subsystem/Subsystem.h&quot;</span>
-<a name="l00030"></a>00030 <span class="preprocessor">#include &quot;sdlpp/event/Components.h&quot;</span>
-<a name="l00031"></a>00031 
-<a name="l00032"></a>00032 <span class="keyword">namespace </span>sdl {
-<a name="l00033"></a>00033 <span class="keyword">namespace </span>devices {
-<a name="l00034"></a>00034   <span class="keyword">using namespace </span>misc;
-<a name="l00035"></a>00035 
-<a name="l00039"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html">00039</a>     <span class="keyword">class </span><a class="code" href="classsdl_1_1devices_1_1Joystick.html">Joystick</a> {
-<a name="l00040"></a>00040         <span class="keyword">public</span>:
-<a name="l00046"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html#a77f85c21747b6c61abf2f276de47dddd">00046</a>             <a class="code" href="classsdl_1_1devices_1_1Joystick.html#a77f85c21747b6c61abf2f276de47dddd">Joystick</a> (<span class="keywordtype">int</span> index) : joystick_ (open (index)) {
-<a name="l00047"></a>00047                 SDL_PumpEvents ();
-<a name="l00048"></a>00048                 SDL_Event* joyEvents = <span class="keyword">new</span> SDL_Event[18];
-<a name="l00049"></a>00049                 SDL_PeepEvents (joyEvents, 18, SDL_GETEVENT, SDL_EVENTMASK (SDL_JOYAXISMOTION) | SDL_EVENTMASK (SDL_JOYBUTTONUP) | SDL_EVENTMASK (SDL_JOYBUTTONDOWN));
-<a name="l00050"></a>00050                 <span class="keyword">delete</span>[] joyEvents;
-<a name="l00051"></a>00051             };
-<a name="l00052"></a>00052 
-<a name="l00056"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html#ae224356e20148e65fff44314aab17839">00056</a>             <a class="code" href="classsdl_1_1devices_1_1Joystick.html#ae224356e20148e65fff44314aab17839">~Joystick</a> () { SDL_JoystickClose (joystick_); };
-<a name="l00057"></a>00057 
-<a name="l00063"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html#a58e305072a3672be4a90290338f8211a">00063</a>             std::string <a class="code" href="classsdl_1_1devices_1_1Joystick.html#a58e305072a3672be4a90290338f8211a">name</a> () { <span class="keywordflow">return</span> SDL_JoystickName (SDL_JoystickIndex (joystick_)); };
-<a name="l00064"></a>00064 
-<a name="l00070"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html#a581710a8b35ff7e16b7d56fce7a01933">00070</a>             <span class="keywordtype">int</span> <a class="code" href="classsdl_1_1devices_1_1Joystick.html#a581710a8b35ff7e16b7d56fce7a01933">index</a> () { <span class="keywordflow">return</span> SDL_JoystickIndex (joystick_); };
-<a name="l00071"></a>00071             
-<a name="l00077"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html#a1d8195b5cab4153cfa9db1ef432f5897">00077</a>             <span class="keywordtype">int</span> <a class="code" href="classsdl_1_1devices_1_1Joystick.html#a1d8195b5cab4153cfa9db1ef432f5897">numAxes</a> () { <span class="keywordflow">return</span> SDL_JoystickNumAxes (joystick_); };
-<a name="l00078"></a>00078 
-<a name="l00084"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html#a98c4a3816db500776c50ce6f118457a5">00084</a>             <span class="keywordtype">int</span> <a class="code" href="classsdl_1_1devices_1_1Joystick.html#a98c4a3816db500776c50ce6f118457a5">numButtons</a> () { <span class="keywordflow">return</span> SDL_JoystickNumButtons (joystick_); };
-<a name="l00085"></a>00085             
-<a name="l00091"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html#a28af3e1a11184c5b9e0fb12771213ba5">00091</a>             <span class="keywordtype">int</span> <a class="code" href="classsdl_1_1devices_1_1Joystick.html#a28af3e1a11184c5b9e0fb12771213ba5">numHats</a> () { <span class="keywordflow">return</span> SDL_JoystickNumHats (joystick_); };
-<a name="l00092"></a>00092             
-<a name="l00098"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html#ae4f9ed390628424fa92d1b42a4ade287">00098</a>             <span class="keywordtype">int</span> <a class="code" href="classsdl_1_1devices_1_1Joystick.html#ae4f9ed390628424fa92d1b42a4ade287">numTrackballs</a> () { <span class="keywordflow">return</span> SDL_JoystickNumBalls (joystick_); };
-<a name="l00099"></a>00099 
-<a name="l00107"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html#a6c2824b410cfdad16a2a639378b7c5cb">00107</a>             <span class="keywordtype">short</span> <a class="code" href="classsdl_1_1devices_1_1Joystick.html#a6c2824b410cfdad16a2a639378b7c5cb">axisPosition</a> (<span class="keywordtype">int</span> axis) { <span class="keywordflow">return</span> SDL_JoystickGetAxis (joystick_, axis); };
-<a name="l00108"></a>00108             
-<a name="l00116"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html#ad078a8175db1acd22584e752aee419ee">00116</a>             <span class="keywordtype">bool</span> <a class="code" href="classsdl_1_1devices_1_1Joystick.html#ad078a8175db1acd22584e752aee419ee">isPressed</a> (<span class="keywordtype">int</span> button) { <span class="keywordflow">return</span> SDL_JoystickGetButton (joystick_, button) == 1; };
-<a name="l00117"></a>00117 
-<a name="l00125"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html#ad7d8a7230f183ded13b296c1176aacc5">00125</a>             <span class="keywordtype">char</span> <a class="code" href="classsdl_1_1devices_1_1Joystick.html#ad7d8a7230f183ded13b296c1176aacc5">hatState</a> (<span class="keywordtype">int</span> hat) { <span class="keywordflow">return</span> SDL_JoystickGetHat (joystick_, hat); };
-<a name="l00126"></a>00126 
-<a name="l00136"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html#a143d3649c11b7e821922bece346c91d8">00136</a>             pair&lt;int, int&gt; <a class="code" href="classsdl_1_1devices_1_1Joystick.html#a143d3649c11b7e821922bece346c91d8">trackballMotion</a> (<span class="keywordtype">int</span> trackball) {
-<a name="l00137"></a>00137                 pair&lt;int, int&gt; res = make_pair (0, 0);
-<a name="l00138"></a>00138                 <span class="keywordflow">if</span> (SDL_JoystickGetBall (joystick_, trackball, &amp;res.first, &amp;res.second) == -1)
-<a name="l00139"></a>00139                     <span class="keywordflow">throw</span> runtime_error (<span class="stringliteral">&quot;Unable to determine trackball motion&quot;</span>);
-<a name="l00140"></a>00140                 <span class="keywordflow">return</span> res;
-<a name="l00141"></a>00141             };
-<a name="l00142"></a>00142 
-<a name="l00143"></a>00143         <span class="keyword">private</span>:
-<a name="l00149"></a>00149             <a class="code" href="namespacesdl_1_1subsystem.html#a6643fd7a1ab78eba0c9101150f046ffb">Joystick</a> (<span class="keyword">const</span> <a class="code" href="classsdl_1_1devices_1_1Joystick.html">Joystick</a>&amp; rhs);
-<a name="l00150"></a>00150 
-<a name="l00158"></a>00158             <a class="code" href="classsdl_1_1devices_1_1Joystick.html">Joystick</a>&amp; operator= (<span class="keyword">const</span> <a class="code" href="classsdl_1_1devices_1_1Joystick.html">Joystick</a>&amp; rhs);
-<a name="l00159"></a>00159 
-<a name="l00169"></a>00169             SDL_Joystick* open (<span class="keywordtype">int</span> index) {
-<a name="l00170"></a>00170                 <span class="keywordflow">if</span> (index &gt; <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a4c7c1bb55df7a01df11e816016ab5fab">subsystem::Joystick::instance</a> ().numJoysticks () - 1)
-<a name="l00171"></a>00171                     <span class="keywordflow">throw</span> runtime_error (<span class="stringliteral">&quot;Invalid joystick index.&quot;</span>);
-<a name="l00172"></a>00172 
-<a name="l00173"></a>00173                 SDL_Joystick* joystick = SDL_JoystickOpen (index);
-<a name="l00174"></a>00174                 <span class="keywordflow">if</span> (joystick == NULL) 
-<a name="l00175"></a>00175                     <span class="keywordflow">throw</span> runtime_error (<span class="stringliteral">&quot;Failed to open joystick.&quot;</span>);
-<a name="l00176"></a>00176                 <span class="keywordflow">return</span> joystick;
-<a name="l00177"></a>00177             };
-<a name="l00178"></a>00178 
-<a name="l00182"></a>00182             SDL_Joystick* joystick_;
-<a name="l00183"></a>00183     }; <span class="comment">//Joystick</span>
-<a name="l00184"></a>00184 }; <span class="comment">//devices</span>
-<a name="l00185"></a>00185 }; <span class="comment">//sdl</span>
-<a name="l00186"></a>00186 
-<a name="l00187"></a>00187 <span class="preprocessor">#endif //SDL_DEVICES_JOYSTICK_H</span>
-<a name="l00188"></a>00188 <span class="preprocessor"></span>
+<a name="l00021"></a>00021 <span class="preprocessor">#ifndef SDL_DEVICES_JOYSTICK_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define SDL_DEVICES_JOYSTICK_H</span>
+<a name="l00023"></a>00023 <span class="preprocessor"></span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;stdexcept&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;utility&gt;</span>
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;SDL.h&gt;</span>
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 <span class="preprocessor">#include &quot;sdlpp/subsystem/Subsystem.h&quot;</span>
+<a name="l00031"></a>00031 <span class="preprocessor">#include &quot;sdlpp/event/Components.h&quot;</span>
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033 <span class="keyword">namespace </span>sdl {
+<a name="l00034"></a>00034 <span class="keyword">namespace </span>devices {
+<a name="l00035"></a>00035   <span class="keyword">using namespace </span>misc;
+<a name="l00036"></a>00036 
+<a name="l00041"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html">00041</a>     <span class="keyword">class </span><a class="code" href="classsdl_1_1devices_1_1Joystick.html" title="Represents a joystick.">Joystick</a> {
+<a name="l00042"></a>00042         <span class="keyword">public</span>:
+<a name="l00048"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html#a77f85c21747b6c61abf2f276de47dddd">00048</a>             <a class="code" href="classsdl_1_1devices_1_1Joystick.html#a77f85c21747b6c61abf2f276de47dddd">Joystick</a> (<span class="keywordtype">int</span> index) : joystick_ (open (index)) {
+<a name="l00049"></a>00049                 SDL_PumpEvents ();
+<a name="l00050"></a>00050                 SDL_Event* joyEvents = <span class="keyword">new</span> SDL_Event[18];
+<a name="l00051"></a>00051                 SDL_PeepEvents (joyEvents, 18, SDL_GETEVENT, SDL_EVENTMASK (SDL_JOYAXISMOTION) | SDL_EVENTMASK (SDL_JOYBUTTONUP) | SDL_EVENTMASK (SDL_JOYBUTTONDOWN));
+<a name="l00052"></a>00052                 <span class="keyword">delete</span>[] joyEvents;
+<a name="l00053"></a>00053             };
+<a name="l00054"></a>00054 
+<a name="l00058"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html#ae224356e20148e65fff44314aab17839">00058</a>             <a class="code" href="classsdl_1_1devices_1_1Joystick.html#ae224356e20148e65fff44314aab17839">~Joystick</a> () { SDL_JoystickClose (joystick_); };
+<a name="l00059"></a>00059 
+<a name="l00065"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html#a58e305072a3672be4a90290338f8211a">00065</a>             std::string <a class="code" href="classsdl_1_1devices_1_1Joystick.html#a58e305072a3672be4a90290338f8211a">name</a> () { <span class="keywordflow">return</span> SDL_JoystickName (SDL_JoystickIndex (joystick_)); };
+<a name="l00066"></a>00066 
+<a name="l00072"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html#a581710a8b35ff7e16b7d56fce7a01933">00072</a>             <span class="keywordtype">int</span> <a class="code" href="classsdl_1_1devices_1_1Joystick.html#a581710a8b35ff7e16b7d56fce7a01933">index</a> () { <span class="keywordflow">return</span> SDL_JoystickIndex (joystick_); };
+<a name="l00073"></a>00073             
+<a name="l00079"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html#a1d8195b5cab4153cfa9db1ef432f5897">00079</a>             <span class="keywordtype">int</span> <a class="code" href="classsdl_1_1devices_1_1Joystick.html#a1d8195b5cab4153cfa9db1ef432f5897">numAxes</a> () { <span class="keywordflow">return</span> SDL_JoystickNumAxes (joystick_); };
+<a name="l00080"></a>00080 
+<a name="l00086"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html#a98c4a3816db500776c50ce6f118457a5">00086</a>             <span class="keywordtype">int</span> <a class="code" href="classsdl_1_1devices_1_1Joystick.html#a98c4a3816db500776c50ce6f118457a5">numButtons</a> () { <span class="keywordflow">return</span> SDL_JoystickNumButtons (joystick_); };
+<a name="l00087"></a>00087             
+<a name="l00093"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html#a28af3e1a11184c5b9e0fb12771213ba5">00093</a>             <span class="keywordtype">int</span> <a class="code" href="classsdl_1_1devices_1_1Joystick.html#a28af3e1a11184c5b9e0fb12771213ba5">numHats</a> () { <span class="keywordflow">return</span> SDL_JoystickNumHats (joystick_); };
+<a name="l00094"></a>00094             
+<a name="l00100"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html#ae4f9ed390628424fa92d1b42a4ade287">00100</a>             <span class="keywordtype">int</span> <a class="code" href="classsdl_1_1devices_1_1Joystick.html#ae4f9ed390628424fa92d1b42a4ade287">numTrackballs</a> () { <span class="keywordflow">return</span> SDL_JoystickNumBalls (joystick_); };
+<a name="l00101"></a>00101 
+<a name="l00109"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html#a6c2824b410cfdad16a2a639378b7c5cb">00109</a>             <span class="keywordtype">short</span> <a class="code" href="classsdl_1_1devices_1_1Joystick.html#a6c2824b410cfdad16a2a639378b7c5cb">axisPosition</a> (<span class="keywordtype">int</span> axis) { <span class="keywordflow">return</span> SDL_JoystickGetAxis (joystick_, axis); };
+<a name="l00110"></a>00110             
+<a name="l00118"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html#ad078a8175db1acd22584e752aee419ee">00118</a>             <span class="keywordtype">bool</span> <a class="code" href="classsdl_1_1devices_1_1Joystick.html#ad078a8175db1acd22584e752aee419ee">isPressed</a> (<span class="keywordtype">int</span> button) { <span class="keywordflow">return</span> SDL_JoystickGetButton (joystick_, button) == 1; };
+<a name="l00119"></a>00119 
+<a name="l00127"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html#ad7d8a7230f183ded13b296c1176aacc5">00127</a>             <span class="keywordtype">char</span> <a class="code" href="classsdl_1_1devices_1_1Joystick.html#ad7d8a7230f183ded13b296c1176aacc5">hatState</a> (<span class="keywordtype">int</span> hat) { <span class="keywordflow">return</span> SDL_JoystickGetHat (joystick_, hat); };
+<a name="l00128"></a>00128 
+<a name="l00138"></a><a class="code" href="classsdl_1_1devices_1_1Joystick.html#a143d3649c11b7e821922bece346c91d8">00138</a>             pair&lt;int, int&gt; <a class="code" href="classsdl_1_1devices_1_1Joystick.html#a143d3649c11b7e821922bece346c91d8">trackballMotion</a> (<span class="keywordtype">int</span> trackball) {
+<a name="l00139"></a>00139                 pair&lt;int, int&gt; res = make_pair (0, 0);
+<a name="l00140"></a>00140                 <span class="keywordflow">if</span> (SDL_JoystickGetBall (joystick_, trackball, &amp;res.first, &amp;res.second) == -1)
+<a name="l00141"></a>00141                     <span class="keywordflow">throw</span> runtime_error (<span class="stringliteral">&quot;Unable to determine trackball motion&quot;</span>);
+<a name="l00142"></a>00142                 <span class="keywordflow">return</span> res;
+<a name="l00143"></a>00143             };
+<a name="l00144"></a>00144 
+<a name="l00145"></a>00145         <span class="keyword">private</span>:
+<a name="l00151"></a>00151             <a class="code" href="namespacesdl_1_1subsystem.html#a6643fd7a1ab78eba0c9101150f046ffb" title="Represents the joystick subsystem.">Joystick</a> (<span class="keyword">const</span> <a class="code" href="classsdl_1_1devices_1_1Joystick.html" title="Represents a joystick.">Joystick</a>&amp; rhs);
+<a name="l00152"></a>00152 
+<a name="l00160"></a>00160             <a class="code" href="classsdl_1_1devices_1_1Joystick.html" title="Represents a joystick.">Joystick</a>&amp; operator= (<span class="keyword">const</span> <a class="code" href="classsdl_1_1devices_1_1Joystick.html" title="Represents a joystick.">Joystick</a>&amp; rhs);
+<a name="l00161"></a>00161 
+<a name="l00171"></a>00171             SDL_Joystick* open (<span class="keywordtype">int</span> index) {
+<a name="l00172"></a>00172                 <span class="keywordflow">if</span> (index &gt; <a class="code" href="classsdl_1_1subsystem_1_1Subsystem.html#a4c7c1bb55df7a01df11e816016ab5fab">subsystem::Joystick::instance</a> ().numJoysticks () - 1)
+<a name="l00173"></a>00173                     <span class="keywordflow">throw</span> runtime_error (<span class="stringliteral">&quot;Invalid joystick index.&quot;</span>);
+<a name="l00174"></a>00174 
+<a name="l00175"></a>00175                 SDL_Joystick* joystick = SDL_JoystickOpen (index);
+<a name="l00176"></a>00176                 <span class="keywordflow">if</span> (joystick == NULL) 
+<a name="l00177"></a>00177                     <span class="keywordflow">throw</span> runtime_error (<span class="stringliteral">&quot;Failed to open joystick.&quot;</span>);
+<a name="l00178"></a>00178                 <span class="keywordflow">return</span> joystick;
+<a name="l00179"></a>00179             };
+<a name="l00180"></a>00180 
+<a name="l00184"></a>00184             SDL_Joystick* joystick_;
+<a name="l00185"></a>00185     }; <span class="comment">//Joystick</span>
+<a name="l00186"></a>00186 }; <span class="comment">//devices</span>
+<a name="l00187"></a>00187 }; <span class="comment">//sdl</span>
+<a name="l00188"></a>00188 
+<a name="l00189"></a>00189 <span class="preprocessor">#endif //SDL_DEVICES_JOYSTICK_H</span>
+<a name="l00190"></a>00190 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="Joystick_8h.html">Joystick.h</a>      </li>
-      <li class="footer">Generated on Tue Aug 23 2011 16:25:33 for SDL++ by&#160;
+      <li class="footer">Generated on Tue Aug 23 2011 22:49:41 for SDL++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>

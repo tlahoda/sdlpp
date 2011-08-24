@@ -82,49 +82,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <a href="Components_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
-<a name="l00020"></a>00020 <span class="preprocessor">#ifndef SDL_EVENT_COMPONENTS_H</span>
-<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define SDL_EVENT_COMPONENTS_H</span>
-<a name="l00022"></a>00022 <span class="preprocessor"></span>
-<a name="l00023"></a>00023 <span class="keyword">namespace </span>sdl {
-<a name="l00024"></a><a class="code" href="namespacesdl_1_1event.html">00024</a> <span class="keyword">namespace </span>event {
-<a name="l00028"></a><a class="code" href="structsdl_1_1event_1_1Axis.html">00028</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1event_1_1Axis.html">Axis</a> {
-<a name="l00036"></a><a class="code" href="structsdl_1_1event_1_1Axis.html#a96adf08bb6e81426275719d43a5e31b1">00036</a>         <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="structsdl_1_1event_1_1Axis.html#a96adf08bb6e81426275719d43a5e31b1">which</a> (<span class="keyword">const</span> SDL_Event* event) { <span class="keywordflow">return</span> <span class="keyword">event</span>-&gt;jaxis.axis; };
-<a name="l00037"></a>00037     };<span class="comment">//Axis</span>
-<a name="l00038"></a>00038 
-<a name="l00042"></a><a class="code" href="structsdl_1_1event_1_1Hat.html">00042</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1event_1_1Hat.html">Hat</a> {
-<a name="l00050"></a><a class="code" href="structsdl_1_1event_1_1Hat.html#a37e818e8671615cbda234bf862abf81c">00050</a>         <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="structsdl_1_1event_1_1Hat.html#a37e818e8671615cbda234bf862abf81c">which</a> (<span class="keyword">const</span> SDL_Event* event) { <span class="keywordflow">return</span> <span class="keyword">event</span>-&gt;jhat.hat; };
-<a name="l00051"></a>00051     }; <span class="comment">//Hat</span>
-<a name="l00052"></a>00052     
-<a name="l00056"></a><a class="code" href="structsdl_1_1event_1_1JoystickButton.html">00056</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1event_1_1JoystickButton.html">JoystickButton</a> {
-<a name="l00064"></a><a class="code" href="structsdl_1_1event_1_1JoystickButton.html#aecd492afd76e598e5904256870f7ba01">00064</a>         <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="structsdl_1_1event_1_1JoystickButton.html#aecd492afd76e598e5904256870f7ba01">which</a> (<span class="keyword">const</span> SDL_Event* event) { <span class="keywordflow">return</span> <span class="keyword">event</span>-&gt;jbutton.button; };
-<a name="l00065"></a>00065     }; <span class="comment">//Button</span>
-<a name="l00066"></a>00066 
-<a name="l00070"></a><a class="code" href="structsdl_1_1event_1_1Key.html">00070</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1event_1_1Key.html">Key</a> {
-<a name="l00078"></a><a class="code" href="structsdl_1_1event_1_1Key.html#a192f7c5110a86d46cb5f39edacb896f8">00078</a>         <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="structsdl_1_1event_1_1Key.html#a192f7c5110a86d46cb5f39edacb896f8">which</a> (<span class="keyword">const</span> SDL_Event* event) { <span class="keywordflow">return</span> <span class="keyword">event</span>-&gt;key.keysym.sym; };
-<a name="l00079"></a>00079     }; <span class="comment">//Key</span>
-<a name="l00080"></a>00080 
-<a name="l00084"></a><a class="code" href="structsdl_1_1event_1_1MouseButton.html">00084</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1event_1_1MouseButton.html">MouseButton</a> {
-<a name="l00092"></a><a class="code" href="structsdl_1_1event_1_1MouseButton.html#ad6be8adc9bdbb8645aea89bd11501247">00092</a>         <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="structsdl_1_1event_1_1MouseButton.html#ad6be8adc9bdbb8645aea89bd11501247">which</a> (<span class="keyword">const</span> SDL_Event* event) { <span class="keywordflow">return</span> <span class="keyword">event</span>-&gt;button.button; };
-<a name="l00093"></a>00093     }; <span class="comment">//Button</span>
-<a name="l00094"></a>00094 
-<a name="l00098"></a><a class="code" href="structsdl_1_1event_1_1Trackball.html">00098</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1event_1_1Trackball.html">Trackball</a> {
-<a name="l00106"></a><a class="code" href="structsdl_1_1event_1_1Trackball.html#a7bad98284dd422b555e9f79d5f31d16c">00106</a>         <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="structsdl_1_1event_1_1Trackball.html#a7bad98284dd422b555e9f79d5f31d16c">which</a> (<span class="keyword">const</span> SDL_Event* event) { <span class="keywordflow">return</span> <span class="keyword">event</span>-&gt;jball.ball; };
-<a name="l00107"></a>00107     }; <span class="comment">//Trackball</span>
-<a name="l00108"></a>00108 
-<a name="l00112"></a><a class="code" href="structsdl_1_1event_1_1User.html">00112</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1event_1_1User.html">User</a> {
-<a name="l00120"></a><a class="code" href="structsdl_1_1event_1_1User.html#a9d537f25fc6382f507e799ec6f9ffd42">00120</a>         <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="structsdl_1_1event_1_1User.html#a9d537f25fc6382f507e799ec6f9ffd42">which</a> (<span class="keyword">const</span> SDL_Event* event) { <span class="keywordflow">return</span> <span class="keyword">event</span>-&gt;user.code; };
-<a name="l00121"></a>00121     }; <span class="comment">//User</span>
-<a name="l00122"></a>00122 }; <span class="comment">//event</span>
-<a name="l00123"></a>00123 }; <span class="comment">//sdl</span>
-<a name="l00124"></a>00124 
-<a name="l00125"></a>00125 <span class="preprocessor">#endif //SDL_EVENT_COMPONENTS_H</span>
-<a name="l00126"></a>00126 <span class="preprocessor"></span>
+<a name="l00021"></a>00021 <span class="preprocessor">#ifndef SDL_EVENT_COMPONENTS_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define SDL_EVENT_COMPONENTS_H</span>
+<a name="l00023"></a>00023 <span class="preprocessor"></span>
+<a name="l00024"></a>00024 <span class="keyword">namespace </span>sdl {
+<a name="l00025"></a><a class="code" href="namespacesdl_1_1event.html">00025</a> <span class="keyword">namespace </span>event {
+<a name="l00030"></a><a class="code" href="structsdl_1_1event_1_1Axis.html">00030</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1event_1_1Axis.html" title="Represents a joystick axis.">Axis</a> {
+<a name="l00038"></a><a class="code" href="structsdl_1_1event_1_1Axis.html#a96adf08bb6e81426275719d43a5e31b1">00038</a>         <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="structsdl_1_1event_1_1Axis.html#a96adf08bb6e81426275719d43a5e31b1">which</a> (<span class="keyword">const</span> SDL_Event* event) { <span class="keywordflow">return</span> <span class="keyword">event</span>-&gt;jaxis.axis; };
+<a name="l00039"></a>00039     };<span class="comment">//Axis</span>
+<a name="l00040"></a>00040 
+<a name="l00045"></a><a class="code" href="structsdl_1_1event_1_1Hat.html">00045</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1event_1_1Hat.html" title="Represents a joystick hat.">Hat</a> {
+<a name="l00053"></a><a class="code" href="structsdl_1_1event_1_1Hat.html#a37e818e8671615cbda234bf862abf81c">00053</a>         <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="structsdl_1_1event_1_1Hat.html#a37e818e8671615cbda234bf862abf81c">which</a> (<span class="keyword">const</span> SDL_Event* event) { <span class="keywordflow">return</span> <span class="keyword">event</span>-&gt;jhat.hat; };
+<a name="l00054"></a>00054     }; <span class="comment">//Hat</span>
+<a name="l00055"></a>00055     
+<a name="l00060"></a><a class="code" href="structsdl_1_1event_1_1JoystickButton.html">00060</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1event_1_1JoystickButton.html" title="Represents a joystick button.">JoystickButton</a> {
+<a name="l00068"></a><a class="code" href="structsdl_1_1event_1_1JoystickButton.html#aecd492afd76e598e5904256870f7ba01">00068</a>         <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="structsdl_1_1event_1_1JoystickButton.html#aecd492afd76e598e5904256870f7ba01">which</a> (<span class="keyword">const</span> SDL_Event* event) { <span class="keywordflow">return</span> <span class="keyword">event</span>-&gt;jbutton.button; };
+<a name="l00069"></a>00069     }; <span class="comment">//Button</span>
+<a name="l00070"></a>00070 
+<a name="l00075"></a><a class="code" href="structsdl_1_1event_1_1Key.html">00075</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1event_1_1Key.html" title="Represents a key.">Key</a> {
+<a name="l00083"></a><a class="code" href="structsdl_1_1event_1_1Key.html#a192f7c5110a86d46cb5f39edacb896f8">00083</a>         <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="structsdl_1_1event_1_1Key.html#a192f7c5110a86d46cb5f39edacb896f8">which</a> (<span class="keyword">const</span> SDL_Event* event) { <span class="keywordflow">return</span> <span class="keyword">event</span>-&gt;key.keysym.sym; };
+<a name="l00084"></a>00084     }; <span class="comment">//Key</span>
+<a name="l00085"></a>00085 
+<a name="l00090"></a><a class="code" href="structsdl_1_1event_1_1MouseButton.html">00090</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1event_1_1MouseButton.html" title="Represents a mouse button.">MouseButton</a> {
+<a name="l00098"></a><a class="code" href="structsdl_1_1event_1_1MouseButton.html#ad6be8adc9bdbb8645aea89bd11501247">00098</a>         <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="structsdl_1_1event_1_1MouseButton.html#ad6be8adc9bdbb8645aea89bd11501247">which</a> (<span class="keyword">const</span> SDL_Event* event) { <span class="keywordflow">return</span> <span class="keyword">event</span>-&gt;button.button; };
+<a name="l00099"></a>00099     }; <span class="comment">//Button</span>
+<a name="l00100"></a>00100 
+<a name="l00105"></a><a class="code" href="structsdl_1_1event_1_1Trackball.html">00105</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1event_1_1Trackball.html" title="Represents a joystick trackball.">Trackball</a> {
+<a name="l00113"></a><a class="code" href="structsdl_1_1event_1_1Trackball.html#a7bad98284dd422b555e9f79d5f31d16c">00113</a>         <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="structsdl_1_1event_1_1Trackball.html#a7bad98284dd422b555e9f79d5f31d16c">which</a> (<span class="keyword">const</span> SDL_Event* event) { <span class="keywordflow">return</span> <span class="keyword">event</span>-&gt;jball.ball; };
+<a name="l00114"></a>00114     }; <span class="comment">//Trackball</span>
+<a name="l00115"></a>00115 
+<a name="l00120"></a><a class="code" href="structsdl_1_1event_1_1User.html">00120</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1event_1_1User.html" title="Represents a key.">User</a> {
+<a name="l00128"></a><a class="code" href="structsdl_1_1event_1_1User.html#a9d537f25fc6382f507e799ec6f9ffd42">00128</a>         <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="structsdl_1_1event_1_1User.html#a9d537f25fc6382f507e799ec6f9ffd42">which</a> (<span class="keyword">const</span> SDL_Event* event) { <span class="keywordflow">return</span> <span class="keyword">event</span>-&gt;user.code; };
+<a name="l00129"></a>00129     }; <span class="comment">//User</span>
+<a name="l00130"></a>00130 }; <span class="comment">//event</span>
+<a name="l00131"></a>00131 }; <span class="comment">//sdl</span>
+<a name="l00132"></a>00132 
+<a name="l00133"></a>00133 <span class="preprocessor">#endif //SDL_EVENT_COMPONENTS_H</span>
+<a name="l00134"></a>00134 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="Components_8h.html">Components.h</a>      </li>
-      <li class="footer">Generated on Tue Aug 23 2011 16:25:33 for SDL++ by&#160;
+      <li class="footer">Generated on Tue Aug 23 2011 22:49:41 for SDL++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>

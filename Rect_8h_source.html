@@ -82,48 +82,48 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <a href="Rect_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
-<a name="l00020"></a>00020 <span class="preprocessor">#ifndef SDL_MISC_RECT_H</span>
-<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define SDL_MISC_RECT_H</span>
-<a name="l00022"></a>00022 <span class="preprocessor"></span>
-<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;boost/mpl/aux_/config/static_constant.hpp&gt;</span>
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;SDL.h&gt;</span>
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027 <span class="keyword">namespace </span>sdl {
-<a name="l00028"></a>00028 <span class="keyword">namespace </span>misc {
-<a name="l00032"></a><a class="code" href="classsdl_1_1misc_1_1Rect.html">00032</a>     <span class="keyword">class </span><a class="code" href="classsdl_1_1misc_1_1Rect.html">Rect</a> {
-<a name="l00033"></a>00033         <span class="keyword">public</span>:
-<a name="l00042"></a><a class="code" href="classsdl_1_1misc_1_1Rect.html#aad587f81bc8d9f2266df1606cccbb9c5">00042</a>             <a class="code" href="classsdl_1_1misc_1_1Rect.html#aad587f81bc8d9f2266df1606cccbb9c5">Rect</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classsdl_1_1misc_1_1Rect.html#a7c57d9dae1322034d717e8b9b7af57ad">height</a>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classsdl_1_1misc_1_1Rect.html#a4bd4b4b381baaa3756e2d66fa45d05ca">width</a>, <span class="keywordtype">short</span> <a class="code" href="classsdl_1_1misc_1_1Rect.html#aafacc0d5c8cacbbd327c098b52eb94b6">x</a>, <span class="keywordtype">short</span> <a class="code" href="classsdl_1_1misc_1_1Rect.html#a80506f11c365886017b9f18763541194">y</a>) : rect_ () {
-<a name="l00043"></a>00043                 rect_.w = <a class="code" href="classsdl_1_1misc_1_1Rect.html#a4bd4b4b381baaa3756e2d66fa45d05ca">width</a>;
-<a name="l00044"></a>00044                 rect_.h = <a class="code" href="classsdl_1_1misc_1_1Rect.html#a7c57d9dae1322034d717e8b9b7af57ad">height</a>;
-<a name="l00045"></a>00045                 rect_.x = <a class="code" href="classsdl_1_1misc_1_1Rect.html#aafacc0d5c8cacbbd327c098b52eb94b6">x</a>;
-<a name="l00046"></a>00046                 rect_.y = <a class="code" href="classsdl_1_1misc_1_1Rect.html#a80506f11c365886017b9f18763541194">y</a>;
-<a name="l00047"></a>00047             };
-<a name="l00048"></a>00048 
-<a name="l00054"></a><a class="code" href="classsdl_1_1misc_1_1Rect.html#a6c3f3f4b25c2e262f55982c4d073a372">00054</a>             SDL_Rect* <a class="code" href="classsdl_1_1misc_1_1Rect.html#a6c3f3f4b25c2e262f55982c4d073a372">operator* </a>() { <span class="keywordflow">return</span> &amp;rect_; };
-<a name="l00055"></a>00055 
-<a name="l00061"></a><a class="code" href="classsdl_1_1misc_1_1Rect.html#a7c57d9dae1322034d717e8b9b7af57ad">00061</a>             <span class="keywordtype">int</span> <a class="code" href="classsdl_1_1misc_1_1Rect.html#a7c57d9dae1322034d717e8b9b7af57ad">height</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> rect_.h; };
-<a name="l00062"></a>00062             
-<a name="l00068"></a><a class="code" href="classsdl_1_1misc_1_1Rect.html#a4bd4b4b381baaa3756e2d66fa45d05ca">00068</a>             <span class="keywordtype">int</span> <a class="code" href="classsdl_1_1misc_1_1Rect.html#a4bd4b4b381baaa3756e2d66fa45d05ca">width</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> rect_.w; };
-<a name="l00069"></a>00069             
-<a name="l00075"></a><a class="code" href="classsdl_1_1misc_1_1Rect.html#aafacc0d5c8cacbbd327c098b52eb94b6">00075</a>             <span class="keywordtype">int</span> <a class="code" href="classsdl_1_1misc_1_1Rect.html#aafacc0d5c8cacbbd327c098b52eb94b6">x</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> rect_.x; };
-<a name="l00076"></a>00076 
-<a name="l00082"></a><a class="code" href="classsdl_1_1misc_1_1Rect.html#a80506f11c365886017b9f18763541194">00082</a>             <span class="keywordtype">int</span> <a class="code" href="classsdl_1_1misc_1_1Rect.html#a80506f11c365886017b9f18763541194">y</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> rect_.y; };
-<a name="l00083"></a>00083 
-<a name="l00084"></a>00084         <span class="keyword">private</span>:
-<a name="l00088"></a>00088             SDL_Rect rect_;
-<a name="l00089"></a>00089     }; <span class="comment">//Rect</span>
-<a name="l00090"></a>00090 }; <span class="comment">//misc</span>
-<a name="l00091"></a>00091 }; <span class="comment">//sdl</span>
-<a name="l00092"></a>00092 
-<a name="l00093"></a>00093 <span class="preprocessor">#endif //SDL_MISC_RECT_H</span>
-<a name="l00094"></a>00094 <span class="preprocessor"></span>
+<a name="l00021"></a>00021 <span class="preprocessor">#ifndef SDL_MISC_RECT_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define SDL_MISC_RECT_H</span>
+<a name="l00023"></a>00023 <span class="preprocessor"></span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;boost/mpl/aux_/config/static_constant.hpp&gt;</span>
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;SDL.h&gt;</span>
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 <span class="keyword">namespace </span>sdl {
+<a name="l00029"></a>00029 <span class="keyword">namespace </span>misc {
+<a name="l00034"></a><a class="code" href="classsdl_1_1misc_1_1Rect.html">00034</a>     <span class="keyword">class </span><a class="code" href="classsdl_1_1misc_1_1Rect.html" title="Represents a rectangle.">Rect</a> {
+<a name="l00035"></a>00035         <span class="keyword">public</span>:
+<a name="l00044"></a><a class="code" href="classsdl_1_1misc_1_1Rect.html#aad587f81bc8d9f2266df1606cccbb9c5">00044</a>             <a class="code" href="classsdl_1_1misc_1_1Rect.html#aad587f81bc8d9f2266df1606cccbb9c5">Rect</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classsdl_1_1misc_1_1Rect.html#a7c57d9dae1322034d717e8b9b7af57ad">height</a>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classsdl_1_1misc_1_1Rect.html#a4bd4b4b381baaa3756e2d66fa45d05ca">width</a>, <span class="keywordtype">short</span> <a class="code" href="classsdl_1_1misc_1_1Rect.html#aafacc0d5c8cacbbd327c098b52eb94b6">x</a>, <span class="keywordtype">short</span> <a class="code" href="classsdl_1_1misc_1_1Rect.html#a80506f11c365886017b9f18763541194">y</a>) : rect_ () {
+<a name="l00045"></a>00045                 rect_.w = <a class="code" href="classsdl_1_1misc_1_1Rect.html#a4bd4b4b381baaa3756e2d66fa45d05ca">width</a>;
+<a name="l00046"></a>00046                 rect_.h = <a class="code" href="classsdl_1_1misc_1_1Rect.html#a7c57d9dae1322034d717e8b9b7af57ad">height</a>;
+<a name="l00047"></a>00047                 rect_.x = <a class="code" href="classsdl_1_1misc_1_1Rect.html#aafacc0d5c8cacbbd327c098b52eb94b6">x</a>;
+<a name="l00048"></a>00048                 rect_.y = <a class="code" href="classsdl_1_1misc_1_1Rect.html#a80506f11c365886017b9f18763541194">y</a>;
+<a name="l00049"></a>00049             };
+<a name="l00050"></a>00050 
+<a name="l00056"></a><a class="code" href="classsdl_1_1misc_1_1Rect.html#a6c3f3f4b25c2e262f55982c4d073a372">00056</a>             SDL_Rect* <a class="code" href="classsdl_1_1misc_1_1Rect.html#a6c3f3f4b25c2e262f55982c4d073a372">operator* </a>() { <span class="keywordflow">return</span> &amp;rect_; };
+<a name="l00057"></a>00057 
+<a name="l00063"></a><a class="code" href="classsdl_1_1misc_1_1Rect.html#a7c57d9dae1322034d717e8b9b7af57ad">00063</a>             <span class="keywordtype">int</span> <a class="code" href="classsdl_1_1misc_1_1Rect.html#a7c57d9dae1322034d717e8b9b7af57ad">height</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> rect_.h; };
+<a name="l00064"></a>00064             
+<a name="l00070"></a><a class="code" href="classsdl_1_1misc_1_1Rect.html#a4bd4b4b381baaa3756e2d66fa45d05ca">00070</a>             <span class="keywordtype">int</span> <a class="code" href="classsdl_1_1misc_1_1Rect.html#a4bd4b4b381baaa3756e2d66fa45d05ca">width</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> rect_.w; };
+<a name="l00071"></a>00071             
+<a name="l00077"></a><a class="code" href="classsdl_1_1misc_1_1Rect.html#aafacc0d5c8cacbbd327c098b52eb94b6">00077</a>             <span class="keywordtype">int</span> <a class="code" href="classsdl_1_1misc_1_1Rect.html#aafacc0d5c8cacbbd327c098b52eb94b6">x</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> rect_.x; };
+<a name="l00078"></a>00078 
+<a name="l00084"></a><a class="code" href="classsdl_1_1misc_1_1Rect.html#a80506f11c365886017b9f18763541194">00084</a>             <span class="keywordtype">int</span> <a class="code" href="classsdl_1_1misc_1_1Rect.html#a80506f11c365886017b9f18763541194">y</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> rect_.y; };
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086         <span class="keyword">private</span>:
+<a name="l00090"></a>00090             SDL_Rect rect_;
+<a name="l00091"></a>00091     }; <span class="comment">//Rect</span>
+<a name="l00092"></a>00092 }; <span class="comment">//misc</span>
+<a name="l00093"></a>00093 }; <span class="comment">//sdl</span>
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095 <span class="preprocessor">#endif //SDL_MISC_RECT_H</span>
+<a name="l00096"></a>00096 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="Rect_8h.html">Rect.h</a>      </li>
-      <li class="footer">Generated on Tue Aug 23 2011 16:25:33 for SDL++ by&#160;
+      <li class="footer">Generated on Tue Aug 23 2011 22:49:41 for SDL++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>

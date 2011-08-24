@@ -1,4 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$classsdl_1_1event_1_1basic__Listener.html" title="sdl::event::basic_Listener" alt="" coords="5,5,176,35"/>
-<area shape="rect" id="node3" href="$classsdl_1_1event_1_1Listener.html" title="sdl::event::Listener\&lt; EventType, Handler \&gt;" alt="" coords="225,5,497,35"/>
+<area shape="rect" id="node1" href="$classsdl_1_1event_1_1basic__Listener.html" title="Base Listener class." alt="" coords="5,5,176,35"/>
+<area shape="rect" id="node3" href="$classsdl_1_1event_1_1Listener.html" title="Listens for and handles an event." alt="" coords="225,5,497,35"/>
 </map>

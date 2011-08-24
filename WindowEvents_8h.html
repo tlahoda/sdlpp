@@ -100,10 +100,15 @@ Include dependency graph for WindowEvents.h:</div>
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsdl_1_1event_1_1ActiveBase.html">sdl::event::ActiveBase</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Base for an active event that exposes the SDL_ActiveEvent structure.  <a href="structsdl_1_1event_1_1ActiveBase.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsdl_1_1event_1_1ExposeBase.html">sdl::event::ExposeBase</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Base for an expose event that exposes the SDL_ExposeEvent structure.  <a href="structsdl_1_1event_1_1ExposeBase.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsdl_1_1event_1_1QuitBase.html">sdl::event::QuitBase</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Base for a quit event that exposes the SDL_QuitEvent structure.  <a href="structsdl_1_1event_1_1QuitBase.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsdl_1_1event_1_1ResizeBase.html">sdl::event::ResizeBase</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Base for a resize event that exposes the SDL_ResizeEvent structure.  <a href="structsdl_1_1event_1_1ResizeBase.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsdl_1_1event_1_1WindowManagerBase.html">sdl::event::WindowManagerBase</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Base for a window manager event that exposes the SDL_SysWMEvent structure.  <a href="structsdl_1_1event_1_1WindowManagerBase.html#_details">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesdl.html">sdl</a></td></tr>
@@ -114,24 +119,29 @@ Typedefs</h2></td></tr>
 &lt; SimpleComparator<br class="typebreak"/>
 &lt; SDL_ACTIVEEVENT &gt;<br class="typebreak"/>
 , ActiveBase &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesdl_1_1event.html#aab86719526a5c4983089947815d9d0b0">sdl::event::Active</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an application window active event.  <a href="#aab86719526a5c4983089947815d9d0b0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef Event<br class="typebreak"/>
 &lt; SimpleComparator<br class="typebreak"/>
 &lt; SDL_VIDEOEXPOSE &gt;<br class="typebreak"/>
 , ExposeBase &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesdl_1_1event.html#a84eb45b509c1d4abb4feadc49f8cc025">sdl::event::Expose</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an application window expose event.  <a href="#a84eb45b509c1d4abb4feadc49f8cc025"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef Event<br class="typebreak"/>
 &lt; SimpleComparator&lt; SDL_QUIT &gt;<br class="typebreak"/>
 , QuitBase &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesdl_1_1event.html#aec21ffcb54c0ecccf9f430b2b60db755">sdl::event::Quit</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an application quit event.  <a href="#aec21ffcb54c0ecccf9f430b2b60db755"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef Event<br class="typebreak"/>
 &lt; SimpleComparator<br class="typebreak"/>
 &lt; SDL_VIDEORESIZE &gt;<br class="typebreak"/>
 , ResizeBase &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesdl_1_1event.html#a1fe0970c1d22278053c9f521a5ae34c0">sdl::event::Resize</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an application window resize event.  <a href="#a1fe0970c1d22278053c9f521a5ae34c0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef Event<br class="typebreak"/>
 &lt; SimpleComparator<br class="typebreak"/>
 &lt; SDL_SYSWMEVENT &gt;<br class="typebreak"/>
 , WindowManagerBase &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesdl_1_1event.html#a272a97231d27b054dad9213c21792b09">sdl::event::WindowManager</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an undefined window manager event.  <a href="#a272a97231d27b054dad9213c21792b09"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>, Contains various application window event classes.</p>
+<div class="textblock"><p>Contains various application window event classes.</p>
 <p>Copyright (C) 2005 Thomas P. Lahoda</p>
 <p>This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.</p>
 <p>This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</p>
@@ -143,7 +153,7 @@ Typedefs</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="WindowEvents_8h.html">WindowEvents.h</a>      </li>
-      <li class="footer">Generated on Tue Aug 23 2011 16:25:33 for SDL++ by&#160;
+      <li class="footer">Generated on Tue Aug 23 2011 22:49:41 for SDL++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>

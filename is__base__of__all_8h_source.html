@@ -82,38 +82,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <a href="is__base__of__all_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
-<a name="l00020"></a>00020 <span class="preprocessor">#ifndef SDL_MISC_IS_BASE_OF_ALL_H</span>
-<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define SDL_MISC_IS_BASE_OF_ALL_H</span>
-<a name="l00022"></a>00022 <span class="preprocessor"></span>
-<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;SDL.h&gt;</span>
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;boost/type_traits/is_base_of.hpp&gt;</span>
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027 <span class="keyword">namespace </span>sdl {
-<a name="l00028"></a>00028 <span class="keyword">namespace </span>misc {
-<a name="l00035"></a>00035     <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Base, <span class="keyword">typename</span>... Ts&gt;
-<a name="l00036"></a><a class="code" href="structsdl_1_1misc_1_1is__base__of__all.html">00036</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1misc_1_1is__base__of__all.html">is_base_of_all</a> {}; <span class="comment">//is_base_of_all</span>
-<a name="l00037"></a>00037 
-<a name="l00043"></a>00043     <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Base&gt;
-<a name="l00044"></a><a class="code" href="structsdl_1_1misc_1_1is__base__of__all_3_01Base_01_4.html">00044</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1misc_1_1is__base__of__all.html">is_base_of_all</a>&lt;Base&gt; {
-<a name="l00048"></a><a class="code" href="structsdl_1_1misc_1_1is__base__of__all_3_01Base_01_4.html#af2a3871f5bd8870393c2678a94caec10">00048</a>         <span class="keyword">const</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> value = <span class="keyword">true</span>; 
-<a name="l00049"></a>00049     }; <span class="comment">//is_base_of_all</span>
-<a name="l00050"></a>00050 
-<a name="l00058"></a>00058     <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Base, <span class="keyword">typename</span> T, <span class="keyword">typename</span>... Ts&gt;
-<a name="l00059"></a><a class="code" href="structsdl_1_1misc_1_1is__base__of__all_3_01Base_00_01T_00_01Ts_8_8_8_4.html">00059</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1misc_1_1is__base__of__all.html">is_base_of_all</a>&lt;Base, T, Ts...&gt; {
-<a name="l00063"></a><a class="code" href="structsdl_1_1misc_1_1is__base__of__all_3_01Base_00_01T_00_01Ts_8_8_8_4.html#a2eb08826962c2c48a5c1bc457513ac54">00063</a>         <span class="keyword">const</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> value = boost::is_base_of&lt;Base, T&gt;::value &amp;&amp; <a class="code" href="structsdl_1_1misc_1_1is__base__of__all.html">is_base_of_all</a>&lt;Base, Ts...&gt;::value;
-<a name="l00064"></a>00064     }; <span class="comment">//is_base_of_all</span>
-<a name="l00065"></a>00065 }; <span class="comment">//misc</span>
-<a name="l00066"></a>00066 }; <span class="comment">//sdl</span>
-<a name="l00067"></a>00067 
-<a name="l00068"></a>00068 <span class="preprocessor">#endif //SDL_MISC_IS_BASE_OF_ALL_H</span>
-<a name="l00069"></a>00069 <span class="preprocessor"></span>
+<a name="l00021"></a>00021 <span class="preprocessor">#ifndef SDL_MISC_IS_BASE_OF_ALL_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define SDL_MISC_IS_BASE_OF_ALL_H</span>
+<a name="l00023"></a>00023 <span class="preprocessor"></span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;SDL.h&gt;</span>
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;boost/type_traits/is_base_of.hpp&gt;</span>
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 <span class="keyword">namespace </span>sdl {
+<a name="l00029"></a>00029 <span class="keyword">namespace </span>misc {
+<a name="l00037"></a>00037     <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Base, <span class="keyword">typename</span>... Ts&gt;
+<a name="l00038"></a><a class="code" href="structsdl_1_1misc_1_1is__base__of__all.html">00038</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1misc_1_1is__base__of__all.html" title="Recursively determines if Base is the base of all of the Ts.">is_base_of_all</a> {}; <span class="comment">//is_base_of_all</span>
+<a name="l00039"></a>00039 
+<a name="l00046"></a>00046     <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Base&gt;
+<a name="l00047"></a><a class="code" href="structsdl_1_1misc_1_1is__base__of__all_3_01Base_01_4.html">00047</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1misc_1_1is__base__of__all.html" title="Recursively determines if Base is the base of all of the Ts.">is_base_of_all</a>&lt;Base&gt; {
+<a name="l00051"></a><a class="code" href="structsdl_1_1misc_1_1is__base__of__all_3_01Base_01_4.html#af2a3871f5bd8870393c2678a94caec10">00051</a>         <span class="keyword">const</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> value = <span class="keyword">true</span>; 
+<a name="l00052"></a>00052     }; <span class="comment">//is_base_of_all</span>
+<a name="l00053"></a>00053 
+<a name="l00062"></a>00062     <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Base, <span class="keyword">typename</span> T, <span class="keyword">typename</span>... Ts&gt;
+<a name="l00063"></a><a class="code" href="structsdl_1_1misc_1_1is__base__of__all_3_01Base_00_01T_00_01Ts_8_8_8_4.html">00063</a>     <span class="keyword">struct </span><a class="code" href="structsdl_1_1misc_1_1is__base__of__all.html" title="Recursively determines if Base is the base of all of the Ts.">is_base_of_all</a>&lt;Base, T, Ts...&gt; {
+<a name="l00067"></a><a class="code" href="structsdl_1_1misc_1_1is__base__of__all_3_01Base_00_01T_00_01Ts_8_8_8_4.html#a2eb08826962c2c48a5c1bc457513ac54">00067</a>         <span class="keyword">const</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> value = boost::is_base_of&lt;Base, T&gt;::value &amp;&amp; <a class="code" href="structsdl_1_1misc_1_1is__base__of__all.html" title="Recursively determines if Base is the base of all of the Ts.">is_base_of_all</a>&lt;Base, Ts...&gt;::value;
+<a name="l00068"></a>00068     }; <span class="comment">//is_base_of_all</span>
+<a name="l00069"></a>00069 }; <span class="comment">//misc</span>
+<a name="l00070"></a>00070 }; <span class="comment">//sdl</span>
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072 <span class="preprocessor">#endif //SDL_MISC_IS_BASE_OF_ALL_H</span>
+<a name="l00073"></a>00073 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="is__base__of__all_8h.html">is_base_of_all.h</a>      </li>
-      <li class="footer">Generated on Tue Aug 23 2011 16:25:33 for SDL++ by&#160;
+      <li class="footer">Generated on Tue Aug 23 2011 22:49:41 for SDL++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>

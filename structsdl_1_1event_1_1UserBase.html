@@ -87,20 +87,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="sdl::event::UserBase" --><!-- doxytag: inherits="sdl::event::EventBase" -->
+<p>Base for user events that exposes the SDL_UserEvent structure.  
+<a href="#_details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="UserDefined_8h_source.html">UserDefined.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for sdl::event::UserBase:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsdl_1_1event_1_1UserBase__inherit__graph.png" border="0" usemap="#sdl_1_1event_1_1UserBase_inherit__map" alt="Inheritance graph"/></div>
 <map name="sdl_1_1event_1_1UserBase_inherit__map" id="sdl_1_1event_1_1UserBase_inherit__map">
-<area shape="rect" id="node5" href="structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; User, SDL_USEREVENT, Codes...\&gt;, UserBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="5,307,541,410"/><area shape="rect" id="node2" href="structsdl_1_1event_1_1EventBase.html" title="{sdl::event::EventBase\n|# event_\l|+ EventBase()\l}" alt="" coords="199,5,348,91"/><area shape="rect" id="node7" href="structsdl_1_1event_1_1UserDefined.html" title="{sdl::event::UserDefined\&lt; Codes \&gt;\n||+ UserDefined()\l}" alt="" coords="163,459,384,544"/></map>
+<area shape="rect" id="node5" href="structsdl_1_1event_1_1Event.html" title="{sdl::event::Event\&lt; MultiComparator\&lt; User, SDL_USEREVENT, Codes...\&gt;, UserBase \&gt;\n||+ Event()\l+ is()\l}" alt="" coords="5,307,541,410"/><area shape="rect" id="node2" href="structsdl_1_1event_1_1EventBase.html" title="Base for events that holds a SDL_Event structure." alt="" coords="199,5,348,91"/><area shape="rect" id="node7" href="structsdl_1_1event_1_1UserDefined.html" title="Represents a user event." alt="" coords="163,459,384,544"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for sdl::event::UserBase:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsdl_1_1event_1_1UserBase__coll__graph.png" border="0" usemap="#sdl_1_1event_1_1UserBase_coll__map" alt="Collaboration graph"/></div>
 <map name="sdl_1_1event_1_1UserBase_coll__map" id="sdl_1_1event_1_1UserBase_coll__map">
-<area shape="rect" id="node2" href="structsdl_1_1event_1_1EventBase.html" title="{sdl::event::EventBase\n|# event_\l|+ EventBase()\l}" alt="" coords="5,5,155,91"/></map>
+<area shape="rect" id="node2" href="structsdl_1_1event_1_1EventBase.html" title="Base for events that holds a SDL_Event structure." alt="" coords="5,5,155,91"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="structsdl_1_1event_1_1UserBase-members.html">List of all members.</a></p>
@@ -112,9 +115,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const SDL_UserEvent &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsdl_1_1event_1_1UserBase.html#aaabb948665b27b4c0b2f25df27a08cc1">get</a> ()</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>user events that exposes the SDL_UserEvent structure. </p>
+<div class="textblock"><p>Base for user events that exposes the SDL_UserEvent structure. </p>
 
-<p>Definition at line <a class="el" href="UserDefined_8h_source.html#l00034">34</a> of file <a class="el" href="UserDefined_8h_source.html">UserDefined.h</a>.</p>
+<p>Definition at line <a class="el" href="UserDefined_8h_source.html#l00036">36</a> of file <a class="el" href="UserDefined_8h_source.html">UserDefined.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ac6668f57569001fce3c3b7287dd3da27"></a><!-- doxytag: member="sdl::event::UserBase::UserBase" ref="ac6668f57569001fce3c3b7287dd3da27" args="(const SDL_Event *event)" -->
 <div class="memitem">
@@ -130,15 +133,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Constructs a <a class="el" href="structsdl_1_1event_1_1UserBase.html">UserBase</a> from a SDL_Event structure.</p>
+<p>Constructs a <a class="el" href="structsdl_1_1event_1_1UserBase.html" title="Base for user events that exposes the SDL_UserEvent structure.">UserBase</a> from a SDL_Event structure.</p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">const</td><td>SDL_Event* event, The SDL_Event structure. </td></tr>
+    <tr><td class="paramname">event</td><td>The SDL_Event structure. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="UserDefined_8h_source.html#l00040">40</a> of file <a class="el" href="UserDefined_8h_source.html">UserDefined.h</a>.</p>
+<p>Definition at line <a class="el" href="UserDefined_8h_source.html#l00042">42</a> of file <a class="el" href="UserDefined_8h_source.html">UserDefined.h</a>.</p>
 
 </div>
 </div>
@@ -157,9 +160,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Exposes the SDL_UserEvent structure.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>const SDL_UserEvent&amp;, The SDL_UserEvent structure. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The SDL_UserEvent structure. </dd></dl>
 
-<p>Definition at line <a class="el" href="UserDefined_8h_source.html#l00047">47</a> of file <a class="el" href="UserDefined_8h_source.html">UserDefined.h</a>.</p>
+<p>Definition at line <a class="el" href="UserDefined_8h_source.html#l00049">49</a> of file <a class="el" href="UserDefined_8h_source.html">UserDefined.h</a>.</p>
 
 </div>
 </div>
@@ -177,9 +180,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Exposes the SDL_UserEvent structure.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>const SDL_UserEvent&amp;, The SDL_UserEvent structure. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The SDL_UserEvent structure. </dd></dl>
 
-<p>Definition at line <a class="el" href="UserDefined_8h_source.html#l00054">54</a> of file <a class="el" href="UserDefined_8h_source.html">UserDefined.h</a>.</p>
+<p>Definition at line <a class="el" href="UserDefined_8h_source.html#l00056">56</a> of file <a class="el" href="UserDefined_8h_source.html">UserDefined.h</a>.</p>
 
 </div>
 </div>
@@ -193,7 +196,7 @@ Public Member Functions</h2></td></tr>
       <li class="navelem"><a class="el" href="namespacesdl.html">sdl</a>      </li>
       <li class="navelem"><a class="el" href="namespacesdl_1_1event.html">event</a>      </li>
       <li class="navelem"><a class="el" href="structsdl_1_1event_1_1UserBase.html">UserBase</a>      </li>
-      <li class="footer">Generated on Tue Aug 23 2011 16:25:33 for SDL++ by&#160;
+      <li class="footer">Generated on Tue Aug 23 2011 22:49:41 for SDL++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>

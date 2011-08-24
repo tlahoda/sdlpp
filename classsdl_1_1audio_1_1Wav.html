@@ -88,6 +88,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="sdl::audio::Wav" -->
+<p>Represents a wav file.  
+<a href="#_details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Wav_8h_source.html">Wav.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for sdl::audio::Wav:</div>
@@ -111,9 +114,9 @@ Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">SDL_AudioSpec&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsdl_1_1audio_1_1Wav.html#a75b1a2ed174016809b1e2c67b6310510">spec_</a></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>wav file. </p>
+<div class="textblock"><p>Represents a wav file. </p>
 
-<p>Definition at line <a class="el" href="Wav_8h_source.html#l00035">35</a> of file <a class="el" href="Wav_8h_source.html">Wav.h</a>.</p>
+<p>Definition at line <a class="el" href="Wav_8h_source.html#l00037">37</a> of file <a class="el" href="Wav_8h_source.html">Wav.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a93c2c8819dc0b00eb5591cacef7298d5"></a><!-- doxytag: member="sdl::audio::Wav::Wav" ref="a93c2c8819dc0b00eb5591cacef7298d5" args="(const string &amp;fileName)" -->
 <div class="memitem">
@@ -132,18 +135,18 @@ Public Attributes</h2></td></tr>
 <p>Opens the specified a wav file.</p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">const</td><td>string&amp; fileName, The name of the wav file.</td></tr>
+    <tr><td class="paramname">fileName</td><td>The name of the wav file.</td></tr>
   </table>
   </dd>
 </dl>
 <dl><dt><b>Exceptions:</b></dt><dd>
   <table class="exception">
-    <tr><td class="paramname">runtime_error,Throws</td><td>a runtime_error if the wav could not be loaded. </td></tr>
+    <tr><td class="paramname">runtime_error</td><td>Throws a runtime_error if the wav could not be loaded. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Wav_8h_source.html#l00044">44</a> of file <a class="el" href="Wav_8h_source.html">Wav.h</a>.</p>
+<p>Definition at line <a class="el" href="Wav_8h_source.html#l00046">46</a> of file <a class="el" href="Wav_8h_source.html">Wav.h</a>.</p>
 
 </div>
 </div>
@@ -162,7 +165,7 @@ Public Attributes</h2></td></tr>
 <div class="memdoc">
 <p>Destroys a wav file. </p>
 
-<p>Definition at line <a class="el" href="Wav_8h_source.html#l00056">56</a> of file <a class="el" href="Wav_8h_source.html">Wav.h</a>.</p>
+<p>Definition at line <a class="el" href="Wav_8h_source.html#l00058">58</a> of file <a class="el" href="Wav_8h_source.html">Wav.h</a>.</p>
 
 </div>
 </div>
@@ -179,7 +182,7 @@ Public Attributes</h2></td></tr>
 <div class="memdoc">
 <p>The audio buffer. </p>
 
-<p>Definition at line <a class="el" href="Wav_8h_source.html#l00066">66</a> of file <a class="el" href="Wav_8h_source.html">Wav.h</a>.</p>
+<p>Definition at line <a class="el" href="Wav_8h_source.html#l00068">68</a> of file <a class="el" href="Wav_8h_source.html">Wav.h</a>.</p>
 
 </div>
 </div>
@@ -195,7 +198,7 @@ Public Attributes</h2></td></tr>
 <div class="memdoc">
 <p>The length of the audio buffer. </p>
 
-<p>Definition at line <a class="el" href="Wav_8h_source.html#l00071">71</a> of file <a class="el" href="Wav_8h_source.html">Wav.h</a>.</p>
+<p>Definition at line <a class="el" href="Wav_8h_source.html#l00073">73</a> of file <a class="el" href="Wav_8h_source.html">Wav.h</a>.</p>
 
 </div>
 </div>
@@ -211,7 +214,7 @@ Public Attributes</h2></td></tr>
 <div class="memdoc">
 <p>The name of the wav file. </p>
 
-<p>Definition at line <a class="el" href="Wav_8h_source.html#l00056">56</a> of file <a class="el" href="Wav_8h_source.html">Wav.h</a>.</p>
+<p>Definition at line <a class="el" href="Wav_8h_source.html#l00058">58</a> of file <a class="el" href="Wav_8h_source.html">Wav.h</a>.</p>
 
 </div>
 </div>
@@ -227,7 +230,7 @@ Public Attributes</h2></td></tr>
 <div class="memdoc">
 <p>The SDL_AudioSpec structure. </p>
 
-<p>Definition at line <a class="el" href="Wav_8h_source.html#l00076">76</a> of file <a class="el" href="Wav_8h_source.html">Wav.h</a>.</p>
+<p>Definition at line <a class="el" href="Wav_8h_source.html#l00078">78</a> of file <a class="el" href="Wav_8h_source.html">Wav.h</a>.</p>
 
 </div>
 </div>
@@ -241,7 +244,7 @@ Public Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespacesdl.html">sdl</a>      </li>
       <li class="navelem"><a class="el" href="namespacesdl_1_1audio.html">audio</a>      </li>
       <li class="navelem"><a class="el" href="classsdl_1_1audio_1_1Wav.html">Wav</a>      </li>
-      <li class="footer">Generated on Tue Aug 23 2011 16:25:33 for SDL++ by&#160;
+      <li class="footer">Generated on Tue Aug 23 2011 22:49:41 for SDL++ by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>

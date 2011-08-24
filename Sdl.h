@@ -1,5 +1,6 @@
 /**
- * /file Sdl.h, Contains the Sdl class.
+ * @file Sdl.h
+ * Contains the Sdl class.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -35,7 +36,7 @@ namespace sdl {
             /**
              * Returns an instance of the SDL system.
              *
-             * @return Sdl&, A reference to the Sdl instance.
+             * @return A reference to the Sdl instance.
              */
             static Sdl& instance () {
                 static Sdl instance_;
@@ -45,7 +46,7 @@ namespace sdl {
             /**
              * Returns the compile-time version of the SDL library.
              *
-             * @return SDL_version, The SDL_version structure.
+             * @return The SDL_version structure.
              */
             SDL_version compileVersion () {
                 SDL_version version;
@@ -56,7 +57,7 @@ namespace sdl {
             /**
              * Returns the runtime version of the SDL library.
              *
-             * @return const SDL_version*, The SDL_version structure.
+             * @return The SDL_version structure.
              */
             const SDL_version* linkedVersion () { return SDL_Linked_Version (); };
 
@@ -64,7 +65,7 @@ namespace sdl {
             /**
              * Initializes the SDL system.
              *
-             * @throw runtime_error, Throws a runtime_error if SDL could not be initialized.
+             * @throw runtime_error Throws a runtime_error if SDL could not be initialized.
              */
             Sdl () {
                 if (SDL_Init (0) == -1) 
@@ -74,7 +75,7 @@ namespace sdl {
             /**
              * Copy constructs the Sdl.
              *
-             * @param const Sdl& rhs, The Sdl to copy.
+             * @param rhs The Sdl to copy.
              */
             Sdl (const Sdl& rhs);
             
@@ -84,11 +85,11 @@ namespace sdl {
             ~Sdl () { SDL_Quit (); };
             
             /**
+             * The assignment operator.
              *
+             * @param rhs The Sdl from which to assign.
              *
-             * @param const Sdl& rhs, The Sdl from which to assign.
-             *
-             * @return Sdl&, A reference to thsi Sdl.
+             * @return A reference to thsi Sdl.
              */
             Sdl& operator= (const Sdl& rhs);
     }; //Sdl

@@ -1,5 +1,6 @@
 /**
- * @file Timer.h, Contains the Timer class.
+ * @file Timer.h
+ * Contains the Timer class.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -34,27 +35,28 @@ namespace devices {
     using namespace misc;
 
     /**
-     * class Timer, Represents a timer.
+     * class Timer
+     * @brief Represents a timer.
      */
     class Timer {
         public:
             /**
              * @typedef unsigned int (*Callback) (unsigned int interval, void* param),
-             *          The Timer callback declaration.
+             * @brief The Timer callback declaration.
              *
-             * @param unsigned int interval, The number of milliseconds to delay.
-             * @param void* param, The callback's parameters.
+             * @param interval The number of milliseconds to delay.
+             * @param param The callback's parameters.
              *
-             * @return unsigned int, The next Timer interval.
+             * @return The next Timer interval.
              */
             typedef unsigned int (*Callback) (unsigned int interval, void* param);
 
             /**
              * Constructs a Timer.
              *
-             * @param unsigned int interval, The number of milliseconds to delay.
-             * @param Callback callback, The callback to call.
-             * @param void* param, The callback's parameters.
+             * @param interval The number of milliseconds to delay.
+             * @param callback The callback to call.
+             * @param param The callback's parameters.
              */
             Timer (unsigned int interval, Callback callback, void* param) 
               : id_ (add (interval, callback, param)) {
@@ -73,29 +75,29 @@ namespace devices {
             /**
              * Copy constructs a Timer.
              *
-             * @param const Timer& rhs, The Timer to copy.
+             * @param rhs The Timer to copy.
              */
             Timer (const Timer& rhs);
 
             /**
              * The assignment operator
              *
-             * @param const Timer& rhs, The Timer from which to assign.
+             * @param rhs The Timer from which to assign.
              *
-             * @return Timer&, A reference to this Timer.
+             * @return A reference to this Timer.
              */
             Timer& operator= (const Timer& rhs);
 
             /**
              * Adds a timer which will call Callback are the specified number of milliseconds has elapsed.
              *
-             * @param unsigned int interval, The number of milliseconds to delay.
-             * @param Callback callback, The callback to call.
-             * @param void* param, The callback's parameters.
+             * @param interval The number of milliseconds to delay.
+             * @param callback The callback to call.
+             * @param param The callback's parameters.
              *
-             * @return SDL_TimerID, The id of the added timer.
+             * @return The id of the added timer.
              *
-             * @throw runtime_error, Throws a runtime_error if unable to add timer.
+             * @throw runtime_error Throws a runtime_error if unable to add timer.
              */
             SDL_TimerID add (unsigned int interval, Callback callback, void* param) {
                 subsystem::Timer::instance ();

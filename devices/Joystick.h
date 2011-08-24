@@ -1,5 +1,6 @@
 /**
-* @file Joystick.h, Contains the Joystick class.
+ * @file Joystick.h
+ * Contains the Joystick class.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -34,14 +35,15 @@ namespace devices {
   using namespace misc;
 
     /**
-     * @class Joystick, Represents a joystick.
+     * @class Joystick
+     * @brief Represents a joystick.
      */
     class Joystick {
         public:
             /**
              * Constructs a Joystick.
              *
-             * @param int index, The index of the joystick.
+             * @param index The index of the joystick.
              */
             Joystick (int index) : joystick_ (open (index)) {
                 SDL_PumpEvents ();
@@ -58,80 +60,80 @@ namespace devices {
             /**
              * Gets the implementation dependent name of the joystick.
              *
-             * @return std::string, The joystick's name.
+             * @return The joystick's name.
              */
             std::string name () { return SDL_JoystickName (SDL_JoystickIndex (joystick_)); };
 
             /**
              * Returns the index of the joystick.
              *
-             * @return int, The index of the joystick.
+             * @return The index of the joystick.
              */
             int index () { return SDL_JoystickIndex (joystick_); };
             
             /**
              * Gets the number of joystick axes.
              *
-             * return int, The number of joystick axes.
+             * return The number of joystick axes.
              */
             int numAxes () { return SDL_JoystickNumAxes (joystick_); };
 
             /**
              * Gets the number of joystick buttons.
              *
-             * return int, The number of joystick buttons.
+             * return The number of joystick buttons.
              */
             int numButtons () { return SDL_JoystickNumButtons (joystick_); };
             
             /**
              * Gets the number of joystick hats.
              *
-             * return int, The number of joystick hats.
+             * return The number of joystick hats.
              */
             int numHats () { return SDL_JoystickNumHats (joystick_); };
             
             /**
              * Gets the number of joystick trackballs.
              *
-             * return int, The number of joystick trackballs.
+             * return The number of joystick trackballs.
              */
             int numTrackballs () { return SDL_JoystickNumBalls (joystick_); };
 
             /**
              * Returns the position of the given joystick axis.
              *
-             * @param int axis, The axis.
+             * @param axis The axis.
              *
-             * @return short, The position.
+             * @return The position.
              */
             short axisPosition (int axis) { return SDL_JoystickGetAxis (joystick_, axis); };
             
             /**
              * Determines if the button is pressed.
              *
-             * @param int button, The button.
+             * @param button The button.
              *
-             * @return bool, True if the button is pressed, false otherwise.
+             * @return True if the button is pressed, false otherwise.
              */
             bool isPressed (int button) { return SDL_JoystickGetButton (joystick_, button) == 1; };
 
             /**
              * Returns the state of the given joystick hat.
              *
-             * @param int hat, The hat.
+             * @param hat The hat.
              *
-             * @return char, The state.
+             * @return The state.
              */
             char hatState (int hat) { return SDL_JoystickGetHat (joystick_, hat); };
 
             /**
              * Returns the relative motion of the given joystick trackball.
              *
-             * @param int trackball, The trackball.
+             * @param trackball The trackball.
              *
-             * @return pair<int, int>, The relative motion.
+             * @return The relative motion.
              *
-             * @throw runtime_error, Throws a runtime_error if unable to determine trackball motion.
+             * @throw runtime_error Throws a runtime_error if unable to determine trackball motion.
              */
             pair<int, int> trackballMotion (int trackball) {
                 pair<int, int> res = make_pair (0, 0);
@@ -144,27 +146,27 @@ namespace devices {
             /**
              * Copy constructs a Joystick.
              *
-             * @param const Joystick& rhs, The Joystick to copy.
+             * @param rhs The Joystick to copy.
              */
             Joystick (const Joystick& rhs);
 
             /**
              * The assignment operator.
              *
-             * @param const Joystick& rhs, The Joystick from which to assign.
+             * @param rhs The Joystick from which to assign.
              *
-             * @return Joystick&, A reference to this Joystick.
+             * @return A reference to this Joystick.
              */
             Joystick& operator= (const Joystick& rhs);
 
             /**
              * Opens the Joystick.
              *
-             * @param int index, The index of the joystick to open.
+             * @param index The index of the joystick to open.
              *
-             * @return SDL_Joystick*, The joystick's data structure.
+             * @return The joystick's data structure.
              *
-             * @throw runtime_error, Throws a runtime_error if index is invalid or unable to open joystick.
+             * @throw runtime_error Throws a runtime_error if index is invalid or unable to open joystick.
              */
             SDL_Joystick* open (int index) {
                 if (index > subsystem::Joystick::instance ().numJoysticks () - 1)

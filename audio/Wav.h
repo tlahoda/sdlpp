@@ -1,5 +1,6 @@
 /**
- * @file Wav.h, Contains the Wav class.
+ * @file Wav.h
+ * Contains the Wav class.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -30,16 +31,17 @@ namespace audio {
     using namespace std;
 
     /**
-     * @class Wav, Represents a wav file.
+     * @class Wav
+     * @brief Represents a wav file.
      */
     class Wav {
         public:
             /**
              * Opens the specified a wav file.
              *
-             * @param const string& fileName, The name of the wav file.
+             * @param fileName The name of the wav file.
              *
-             * @throw runtime_error, Throws a runtime_error if the wav could not be loaded.
+             * @throw runtime_error Throws a runtime_error if the wav could not be loaded.
              */
             Wav (const string& fileName)
               : name_ (fileName),
@@ -79,16 +81,16 @@ namespace audio {
             /**
              * Copy constructs a wav file.
              *
-             * @param const Wav& rhs, The wav file to copy.
+             * @param rhs The wav file to copy.
              */
             Wav (const Wav& rhs);
 
             /**
              * The assignment operator.
              *
-             * @param const Wav& rhs, The Wav from which to assign.
+             * @param rhs The Wav from which to assign.
              *
-             * @return Wav&, A reference to this Wav.
+             * @return A reference to this Wav.
              */
             Wav& operator= (const Wav& rhs);
     }; //Wav

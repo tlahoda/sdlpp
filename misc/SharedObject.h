@@ -1,5 +1,6 @@
 /**
- * @file SharedObject.h, Contains the SharedObject class.
+ * @file SharedObject.h
+ * Contains the SharedObject class.
  *
  * Copyright (C) 2011 Thomas P. Lahoda
  *
@@ -28,15 +29,16 @@
 namespace sdl {
 namespace misc {
     /**
-     * @struct SharedObject, Represents a shared object.
+     * @struct SharedObject
+     * @brief Represents a shared object.
      */
     struct SharedObject {
         /**
          * Loads a shared object from a file.
          *
-         * @param const string& fileName, The file from which to load the shared object.
+         * @param fileName The file from which to load the shared object.
          *
-         * @throw runtime_error, Throws a runtime_error if unable to load shared object.
+         * @throw runtime_error Throws a runtime_error if unable to load shared object.
          */
         SharedObject (const string& fileName) : handle_ (SDL_LoadObject (fileName.c_str ())), fileName_ (fileName) {
             if (handle_ == NULL)
@@ -51,11 +53,11 @@ namespace misc {
         /**
          * Returns the address of a function in a loaded shared object.
          *
-         * @param const string& name, The function's name.
+         * @param name The function's name.
          *
-         * @return void*, The pointer to the function on success, NULL otherwise.
+         * @return The pointer to the function on success, NULL otherwise.
          *
-         * @throw runtime_error, Throws a runtime_error if unable to load function.
+         * @throw runtime_error Throws a runtime_error if unable to load function.
          */
         void* loadFunction (const string& name) {
             void* func = SDL_LoadFunction (handle_, name.c_str ());
@@ -68,16 +70,16 @@ namespace misc {
             /**
              * Copy constructs a SharedObject.
              *
-             * @param const SharedObject& rhs, The SharedObject to copy.
+             * @param rhs The SharedObject to copy.
              */
             SharedObject (const SharedObject& rhs);
 
             /**
              * The assignment operator.
              *
-             * @param const SharedObject& rhs, The SharedObject from which to assign.
+             * @param rhs The SharedObject from which to assign.
              *
-             * @return SharedObject&, A reference to this SharedObject.
+             * @return A reference to this SharedObject.
              */
             SharedObject& operator= (const SharedObject& rhs);
 

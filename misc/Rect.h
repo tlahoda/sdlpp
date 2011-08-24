@@ -1,5 +1,6 @@
 /**
- * @file Rect.h, Contains the Rect class.
+ * @file Rect.h
+ * Contains the Rect class.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -27,17 +28,18 @@
 namespace sdl {
 namespace misc {
     /**
-     * @class Rect, Represents a rectangle.
+     * @class Rect
+     * @brief Represents a rectangle.
      */
     class Rect {
         public:
             /**
              * Constructs a Rect.
              *
-             * @param unsigned int height, The height.
-             * @param unsigned int width, The width.
-             * @param short x, The x offset.
-             * @param short y, The y offset.
+             * @param height The height.
+             * @param width The width.
+             * @param x The x offset.
+             * @param y The y offset.
              */
             Rect (unsigned int height, unsigned int width, short x, short y) : rect_ () {
                 rect_.w = width;
@@ -49,35 +51,35 @@ namespace misc {
             /**
              * Returns the underlying SDL_Rect*.
              *
-             * @return SDL_Rect*, The SDL_Rect structure.
+             * @return The SDL_Rect structure.
              */
             SDL_Rect* operator* () { return &rect_; };
 
             /**
              * Returns the height.
              *
-             * @return int, The height.
+             * @return The height.
              */
             int height () const { return rect_.h; };
             
             /**
              * Returns the width.
              *
-             * @return int, The width.
+             * @return The width.
              */
             int width () const { return rect_.w; };
             
             /**
-             * Return the x offset.
+             * Returns the x offset.
              *
-             * @return int, The x offset.
+             * @return The x offset.
              */
             int x () const { return rect_.x; };
 
             /**
              * Returns the y offset.
              *
-             * @return int, The y offset.
+             * @return The y offset.
              */
             int y () const { return rect_.y; };
 

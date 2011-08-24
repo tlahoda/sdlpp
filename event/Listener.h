@@ -1,5 +1,6 @@
 /**
- * @file Listener.h, Contains the basic_Listener and the Listener classes.
+ * @file Listener.h
+ * Contains the basic_Listener and the Listener classes.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -25,7 +26,8 @@
 namespace sdl {
 namespace event {
     /**
-     * @class basic_Listener, Base Listener class.
+     * @class basic_Listener
+     * @brief Base Listener class.
      */
     class basic_Listener {
         public:
@@ -38,9 +40,9 @@ namespace event {
             /**
              * Determines if a basic_Listener equates to a SDL_Event.
              *
-             * @param const SDL_Event* event, The SDL_Event to check.
+             * @param event The SDL_Event to check.
              *
-             * @return bool, True if the SDL_Event equates to the basic_Listener, false otherwise.
+             * @return True if the SDL_Event equates to the basic_Listener, false otherwise.
              */
             virtual bool operator== (const SDL_Event* event) { 
                 return false; 
@@ -49,38 +51,35 @@ namespace event {
             /**
              * Handles an event.
              *
-             * @param const SDL_Event* event, The event to handle.
-             *
-             * @return void.
+             * @param event The event to handle.
              */
             virtual void operator() (const SDL_Event* event) = 0;
     }; //basic_Listener
 
     /**
-     * @class Listener, Listens for and handles an event.
+     * @class Listener
+     * @brief Listens for and handles an event.
      *
-     * @tparam EventType, The type of the event for which to listen.
-     * @tparam Handler, The Handler to handle the event.
+     * @tparam EventType The type of the event for which to listen.
+     * @tparam Handler The Handler to handle the event.
      */
     template<class EventType, class Handler>
     class Listener : public basic_Listener {
         public:
             /**
              * @typedef void (Handler::*HandleFunc) (const EventType& event),
-             *          The member function pointer to the Handler's handle function.
+             * @brief The member function pointer to the Handler's handle function.
              *
-             * @param const EventType& event, The event to handle.
-             *
-             * @return void.
+             * @param event The event to handle.
              */
             typedef void (Handler::*HandleFunc) (const EventType& event);
 
             /**
              * Determines if a Listener equates to an SDL_Event.
              *
-             * @param const SDL_Event* event, The SDL_Event to check.
+             * @param event The SDL_Event to check.
              *
-             * @return bool, True if the SDL_Event equates to the Listener, false otherwise.
+             * @return True if the SDL_Event equates to the Listener, false otherwise.
              */
             virtual bool operator== (const SDL_Event* event) { 
                 return EventType::is (event); 
@@ -89,8 +88,8 @@ namespace event {
             /**
              * Constructs a Listener for a Handler's handle function.
              *
-             * @param Handler& h, The Handler to handle the event.
-             * @param HandleFunc func, The Handler's handle function for the event.
+             * @param h The Handler to handle the event.
+             * @param func The Handler's handle function for the event.
              */
             Listener (Handler& h, HandleFunc func)
               : basic_Listener (), h_ (h), func_ (func) {
@@ -105,9 +104,7 @@ namespace event {
             /**
              * Handles an event.
              *
-             * @param const SDL_Event& event, the event to handle.
-             *
-             * @return void.
+             * @param event the event to handle.
              */
             virtual void operator() (const SDL_Event* event) {
               (h_.*func_) (EventType (event));

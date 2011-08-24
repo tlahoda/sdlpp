@@ -1,5 +1,6 @@
 /**
- * @file SimpleComparator.h, Contains the SimpleComparator class.
+ * @file SimpleComparator.h
+ * Contains the SimpleComparator class.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -25,18 +26,19 @@
 namespace sdl {
 namespace event {
     /**
-     * struct SimpleComparator, Determines if the SDL_Event is the correct event.
+     * struct SimpleComparator
+     * @brief Determines if the SDL_Event is the correct event.
      *
-     * @tparam SDL_EVENT_TYPE, The type the SDL_Event should be.
+     * @tparam SDL_EVENT_TYPE The type the SDL_Event should be.
      */
     template<int SDL_EVENT_TYPE>
     struct SimpleComparator {
         /**
          * Determines if the SDL_Event is the correct event.
          *
-         * @param const SDL_Event* event, The SDL_Event structure to check.
+         * @param event The SDL_Event structure to check.
          *
-         * @return bool, True if the SDL_Event is the correct event.
+         * @return True if the SDL_Event is the correct event.
          */
         static bool compare (const SDL_Event* event) { return event->type == SDL_EVENT_TYPE; };
     }; //SimpleComparator

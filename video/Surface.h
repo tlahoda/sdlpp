@@ -1,5 +1,6 @@
 /**
- * @file Surface.h, Contains the Surface class.
+ * @file Surface.h
+ * Contains the Surface class.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -36,14 +37,15 @@ namespace video {
     using namespace misc;
 
     /**
-     * @class Surface, Representsa surface.
+     * @class Surface
+     * @brief Represents a surface.
      */
     class Surface {
         public:
             /**
              * Constructs a Surface from the current display surface.
              *
-             * @throw runtime_error, Throws a runtime_error if unable to get current system display.
+             * @throw runtime_error Throws a runtime_error if unable to get current system display.
              */
             Surface () : surface_ (SDL_GetVideoSurface (), &SDL_FreeSurface) {
                 if (surface_ == NULL)
@@ -53,9 +55,9 @@ namespace video {
             /**
              * Constructs a Surface from a SDL_Surface structure.
              *
-             * @param SDL_Surface*, The SDL_Surface structure.
+             * @param The SDL_Surface structure.
              *
-             * @throw runtime_error, Throws a runtime_error if surface is NULL.
+             * @throw runtime_error Throws a runtime_error if surface is NULL.
              */
             Surface (SDL_Surface* surface) : surface_ (surface, &SDL_FreeSurface) {
                 if (surface_ == NULL)
@@ -65,9 +67,9 @@ namespace video {
             /**
              * Constructs a Surface from a file.
              *
-             * @param const string& fileName, The name of the file.
+             * @param fileName The name of the file.
              *
-             * @throw runtime_error, Throws a runtime_error if unable to load bitmap.
+             * @throw runtime_error Throws a runtime_error if unable to load bitmap.
              */
             Surface (const string& fileName) : surface_ (SDL_LoadBMP (fileName.c_str ()), &SDL_FreeSurface) {
                 if (surface_ == NULL)
@@ -77,12 +79,12 @@ namespace video {
             /**
              * Constructs a Surface.
              *
-             * @param int height, The height.
-             * @param int width, The width.
-             * @param int bpp, The bits per pixel.
-             * @param unsigned int flags, The surface flags.
+             * @param height The height.
+             * @param width The width.
+             * @param bpp The bits per pixel.
+             * @param flags The surface flags.
              *
-             * @throw runtime_error, Throws a runtime_error if unable to set video mode.
+             * @throw runtime_error Throws a runtime_error if unable to set video mode.
              */
             Surface (int height, int width, int bpp, unsigned int flags)
               : surface_ (SDL_SetVideoMode (height, width, bpp, flags)) {
@@ -93,12 +95,12 @@ namespace video {
             /**
              * Constructs a Surface.
              *
-             * @param Uint32 flags, The SDL Surface flags.
-             * @param const Rect& rect, A rectangle with the height and width.
-             * @param int bpp, The number of bits per pixel.
-             * @param const Color& mask, The color mask.
+             * @param flags The SDL Surface flags.
+             * @param rect A rectangle with the height and width.
+             * @param bpp The number of bits per pixel.
+             * @param mask The color mask.
              *
-             * @throw runtime_error, Throws a runtime_error if unable to create RGB surface.
+             * @throw runtime_error Throws a runtime_error if unable to create RGB surface.
              */
             Surface (Uint32 flags, const Rect& rect, int bpp, const Color& mask)
               : surface_ (SDL_CreateRGBSurface (flags, rect.width (), rect.height (), bpp, 
@@ -111,13 +113,13 @@ namespace video {
             /**
              * Constructs a Surface from the provided pixel data.
              *
-             * @param void *pixels, The pixel data.
-             * @param const Rect& rect, A rectangle with the height and width.
-             * @param int bpp, The number of bits per pixel.
-             * @param int pitch, The size of the scanline in bytes, width in pixels * bytes per pixel.
-             * @param const Color& mask, The color mask.
+             * @param pixels The pixel data.
+             * @param rect A rectangle with the height and width.
+             * @param bpp The number of bits per pixel.
+             * @param pitch The size of the scanline in bytes, width in pixels * bytes per pixel.
+             * @param mask The color mask.
              *
-             * @throw runtime_error, Throws a runtime_error if unable to create RGB surface.
+             * @throw runtime_error Throws a runtime_error if unable to create RGB surface.
              */
             Surface (void *pixels, const Rect& rect, int bpp, int pitch, const Color& mask)
               : surface_ (SDL_CreateRGBSurfaceFrom (pixels, rect.width (), rect.height (), bpp, pitch, 
@@ -135,16 +137,16 @@ namespace video {
             /**
              * Copy constructs a Surface.
              *
-             * @param const Suface& rhs, The Surface to copy.
+             * @param rhs The Surface to copy.
              */
             Surface (const Surface& rhs) : surface_ (rhs.surface_) {};
             
             /**
              * The assignment operator.
              *
-             * @param const Surface& rhs, The Surface from which to assign.
+             * @param rhs The Surface from which to assign.
              *
-             * @return Surface&, A reference to this Surface.
+             * @return A reference to this Surface.
              */
             Surface& operator= (const Surface& rhs) {
                 if (this != &rhs) 
@@ -155,13 +157,13 @@ namespace video {
             /**
              * Blits the source rectangle from one Surface onto the destination rectangle of this Surface.
              *
-             * @param Surface& surface, The Surface from which to blit.
-             * @param const Rect& srcRect, The source rectangle.
-             * @param const Rect& dstRect, The destination rectangle.
+             * @param surface The Surface from which to blit.
+             * @param srcRect The source rectangle.
+             * @param dstRect The destination rectangle.
              *
-             * @return Surface@, A reference to this Surface.
+             * @return A reference to this Surface.
              *
-             * @throw runtime_error, Throws a runtime_error if unable to blit.
+             * @throw runtime_error Throws a runtime_error if unable to blit.
              */
             Surface& blit (Surface& surface, const Rect& srcRect, const Rect& dstRect) {
                 SDL_Rect src;
@@ -182,51 +184,49 @@ namespace video {
             /**
              * Returns the height.
              * 
-             * @return int, The height.
+             * @return The height.
              */
             int height () { return surface_->h; };
 
             /**
              * Returns the width.
              *
-             * @return int, The width.
+             * @return The width.
              */
             int width () { return surface_->w; };
 
             /**
              * Returns the number of bits per pixel.
              *
-             * @return int, The number of bits per pixel.
+             * @return The number of bits per pixel.
              */
             int bpp () { return surface_->format->BitsPerPixel; };
 
             /**
              * Locks the Surface.
              *
-             * @return bool, True if successful, false otherwise.
+             * @return True if successful, false otherwise.
              */
             bool lock () { return SDL_LockSurface (surface_.get ()) == 0; };
 
             /**
              * Unlock the Surface.
-             *
-             * @return void.
              */
             void unlock () { SDL_UnlockSurface (surface_.get ()); };
 
             /**
              * Save the Surface to the named file.
              *
-             * @param const string& fileName, The name of the file.
+             * @param fileName The name of the file.
              *
-             * @return bool, True if successful, false otherwise.
+             * @return True if successful, false otherwise.
              */
             bool save (const string& fileName) { return SDL_SaveBMP (surface_.get (), fileName.c_str ()) == 0; };
              
             /**
              * Exposes the underlying SDL_Surface structure.
              *
-             * @return SDL_Surface* const, The SDL_Surface structure.
+             * @return The SDL_Surface structure.
              */
             SDL_Surface* const to_c () const { return surface_.get (); };
 

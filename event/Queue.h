@@ -1,5 +1,6 @@
 /**
- * @file Queue.h, Contains the event Queue class.
+ * @file Queue.h
+ * Contains the event Queue class.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -27,24 +28,25 @@ namespace event {
     using namespace std;
 
     /**
-     * @class Queue, The event queue.
+     * @class Queue
+     * @brief The event queue.
      */
     class Queue {
         public:
             /**
              * @typedef int (*EventFilter) (const SDL_Event* event),
-             *          The type of the event filter function
+             * @brief The type of the event filter function
              *
-             * @param const SDL_Event* event, The event to filter.
+             * @param event The event to filter.
              *
-             * @return int, 1 to add the event to the queue, 0 to drop the event from the queue.
+             * @return 1 to add the event to the queue, 0 to drop the event from the queue.
              */
             typedef int (*EventFilter) (const SDL_Event* event);
 
             /*
              * Provides access to the Queue.
              *
-             * return Queue&, A reference to the Queue.
+             * @return A reference to the Queue.
              */
             static Queue& instance () {
                 static Queue instance_;
@@ -54,68 +56,66 @@ namespace event {
             /**
              * Sets the event filter function.
              *
-             * @param EventFilter filter, The pointer to the event filter function.
-             *
-             * @return void.
+             * @param filter The pointer to the event filter function.
              */
             void SetFilter (EventFilter filter) { SDL_SetEventFilter (filter); };
 
             /**
              * Returns the pointer to the event filter function.
              *
-             * @return EventFilter, The pointer to the event filter function.
+             * @return The pointer to the event filter function.
              */
             EventFilter getFilter () { return SDL_GetEventFilter (); };
 
             /**
              * Returns the processing state of the specified event type.
              *
-             * @param int type, The event type.
+             * @param type The event type.
              *
-             * @return int, The event state.
+             * @return The event state.
              */
             int getEventState (int type) { return SDL_EventState (type, SDL_QUERY); };
 
             /*
              * Ignores a specific event.
              *
-             * @param int type, The type of the event to ignore.
+             * @param type The type of the event to ignore.
              *
-             * @return int, no idea.
+             * @return no idea.
              */
             int ignoreEvent (int type) { return SDL_EventState (type, SDL_IGNORE); };
             
             /**
              * Disables a specific event.
              *
-             * @param int type, The type of the event to disable.
+             * @param type The type of the event to disable.
              *
-             * @return int, no idea.
+             * @return no idea.
              */
             int disableEvent (int type) { return SDL_EventState (type, SDL_DISABLE); };
 
             /**
              * Enables a specific event.
              *
-             * @param int type, The type of the event to enable.
+             * @param type The type of the event to enable.
              *
-             * @return int, no idea.
+             * @return no idea.
              */
             int enableEvent (int type) { return SDL_EventState (type, SDL_ENABLE); };
 
             /*
              * Determines whether or not the Queue is empty.
              *
-             * @return bool, True if the queue is empty, false otherwise.
+             * @return True if the queue is empty, false otherwise.
              */
             bool empty () { return !SDL_PollEvent (0); };
 
             /*
              * Removes an event from the front of the Queue.
              *
-             * @return SDL_Event, The event at the front of the queue.
+             * @return The event at the front of the queue.
              *
-             * @throw runtime_error, Throws a runtime_error if no events in queue.
+             * @throw runtime_error Throws a runtime_error if no events in queue.
              */
             SDL_Event pop () {
                 SDL_Event event;
@@ -126,16 +126,16 @@ namespace event {
             /*
              * Pushes an event onto the back of the Queue.
              *
-             * @param SDL_Event& event, The event to push onto the Queue.
+             * @param event The event to push onto the Queue.
              *
-             * @return bool, True if the event was pushed onto the Queue, false otherwise.
+             * @return True if the event was pushed onto the Queue, false otherwise.
              */
             bool push (SDL_Event& event) { return SDL_PushEvent (&event); };
 
             /*
              * Pumps the Queue.
              *
-             * @return Queue&, A reference to the Queue.
+             * @return A reference to the Queue.
              */
             Queue& pump () {
                 SDL_PumpEvents ();
@@ -145,9 +145,9 @@ namespace event {
             /*
              * Waits on an event to become available in the Queue.
              *
-             * @return SDL_Event, The event returned at the end of the wait.
+             * @return The event returned at the end of the wait.
              *
-             * @throw runtime_error, Throws a runtime_error if failed waiting.
+             * @throw runtime_error Throws a runtime_error if failed waiting.
              */
             SDL_Event wait () {
                 SDL_Event event;
@@ -164,7 +164,7 @@ namespace event {
             /*
              * Copy constructs a Queue.
              *
-             * @param const Queue& rhs, The Queue to copy.
+             * @param rhs The Queue to copy.
              */
             Queue (const Queue& rhs);
 
@@ -176,9 +176,9 @@ namespace event {
             /*
              * The assignment operator.
              *
-             * @param const Queue& rhs, The Queue from which to assign.
+             * @param rhs The Queue from which to assign.
              *
-             * @return Queue&, A reference to this Queue.
+             * @return A reference to this Queue.
              */
             Queue& operator= (const Queue& rhs);
     }; //Queue

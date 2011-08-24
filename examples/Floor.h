@@ -1,5 +1,6 @@
 /**
- * @file Floor.h, Contains the Floor class.
+ * @file Floor.h
+ * Contains the Floor class.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -25,17 +26,18 @@
 namespace sdl {
 namespace examples {
     /**
-     * @class Floor, Represents a floor.
+     * @class Floor
+     * @brief Represents a floor.
      */
     class Floor {
         public:
             /**
              * Constructs a Floor.
              *
-             * @param float xMin, The minimum x..
-             * @param float xMax, The maximum x..
-             * @param float zMin, The minimum y.
-             * @param float zMax, The maximum y.
+             * @param xMin The minimum x..
+             * @param xMax The maximum x..
+             * @param zMin The minimum y.
+             * @param zMax The maximum y.
              */
             Floor (float xMin, float xMax, float zMin, float zMax)
                 : xMin_ (xMin), xMax_ (xMax),
@@ -43,8 +45,6 @@ namespace examples {
 
             /**
              * Renders the Floor.
-             *
-             * @return void.
              */
             virtual void render () const {
                 glMatrixMode (GL_MODELVIEW);

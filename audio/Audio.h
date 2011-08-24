@@ -1,5 +1,6 @@
 /**
- * /file Audio.h, Contains the Audio class.
+ * @file Audio.h
+ * Contains the Audio class.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -31,21 +32,22 @@
 namespace sdl {
 namespace audio {
     /*
-     * @class Audio, Represents the audio system.
+     * @class Audio
+     * @brief Represents the audio system.
      */
     class Audio {
         public:
             /**
              * Opens the audio system.
              *
-             * @param int freq, The audio frequenct in samples per second.
-             * @param unsigned short format, The audio data format.
-             * @param unsigned char channels, The number of audio channels.
-             * @param unsigned char silence, The audio buffer silence value.
-             * @param unsigned short samples, The audio buffer size in samples.
-             * @param unsigned int size, The audio buffer size in bytes.
+             * @param freq The audio frequenct in samples per second.
+             * @param format The audio data format.
+             * @param channels The number of audio channels.
+             * @param silence The audio buffer silence value.
+             * @param samples The audio buffer size in samples.
+             * @param size The audio buffer size in bytes.
              *
-             * @throw runtime_error, Throws a runtime_error if the audio could not be opened.
+             * @throw runtime_error Throws a runtime_error if the audio could not be opened.
              */
             Audio (int freq, unsigned short format, unsigned char channels, unsigned char silence, unsigned short samples, unsigned int size)
               : obtained_ () {
@@ -72,28 +74,28 @@ namespace audio {
             /**
              * Determines if the audio playback is playing.
              *
-             * @return bool, True if playing, false otherwise.
+             * @return True if playing, false otherwise.
              */
             bool isPlaying () { return SDL_GetAudioStatus () == SDL_AUDIO_PLAYING; };
 
             /**
              * Determines if the audio playback is paused.
              *
-             * @return bool, True if paused, false otherwise.
+             * @return True if paused, false otherwise.
              */
             bool isPaused () { return SDL_GetAudioStatus () == SDL_AUDIO_PAUSED; };
 
             /**
              * Determines if the audio playback is stopped.
              *
-             * @return bool, True if stopped, false otherwise.
+             * @return True if stopped, false otherwise.
              */
             bool isStopped () { return SDL_GetAudioStatus () == SDL_AUDIO_STOPPED; };
 
             /**
              * Starts audio playback.
              *
-             * @return bool, True is successful, false otherwise.
+             * @return True if successful, false otherwise.
              */
             bool play () {
                 SDL_PauseAudio (0);
@@ -103,9 +105,9 @@ namespace audio {
             /**
              * Plays a Wav.
              *
-             * @param Wav& wav, The Wav to play.
+             * @param wav The Wav to play.
              *
-             * @return Audio&, A reference to this Audio.
+             * @return A reference to this Audio.
              */
             Audio& play (Wav& wav) {
                 /*SDL_LoadWAV (wav.name_.c_str (), obtained_, &wav.audioBuf_, &wav.audioLen_);
@@ -127,7 +129,7 @@ namespace audio {
             /**
              * Pauses Audio playback.
              *
-             * @return bool, True is successful, false otherwise.
+             * @return True is successful, false otherwise.
              */
             bool pause () {
                 SDL_PauseAudio (1);
@@ -137,7 +139,7 @@ namespace audio {
             /**
              * Locks an Audio.
              *
-             * @return Audio&, A reference to this Audio.
+             * @return A reference to this Audio.
              */
             Audio& lock () {
                 SDL_LockAudio ();
@@ -147,7 +149,7 @@ namespace audio {
             /**
              * Unlocks an Audio.
              *
-             * @return Audio&, A reference to this Audio.
+             * @return A reference to this Audio.
              */
             Audio& unlock () {
                 SDL_UnlockAudio ();
@@ -158,16 +160,16 @@ namespace audio {
             /**
              * Copy constructs an Audio.
              *
-             * @param const Audio& rhs, The Audio to copy.
+             * @param rhs The Audio to copy.
              */
             Audio (const Audio& rhs);
             
             /**
              * The assignment operator
              *
-             * @param const Audio& rhs, The Audio from which to assign.
+             * @param rhs The Audio from which to assign.
              *
-             * @return Audio&, A reference to this Audio.
+             * @return A reference to this Audio.
              */
             Audio& operator= (const Audio& rhs);
 

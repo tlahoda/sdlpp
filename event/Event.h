@@ -1,5 +1,6 @@
 /**
- * @file Event.h, Contains the EventBase and the  Event classes.
+ * @file Event.h
+ * Contains the EventBase and the  Event classes.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -29,13 +30,14 @@ namespace event {
     using namespace misc;
 
     /**
-     * @struct EventBase, Base for events that holds a SDL_Event structure.
+     * @struct EventBase
+     * @brief Base for events that holds a SDL_Event structure.
      */
     struct EventBase {
         /**
          * Constructs an EventBase from a SDL_Event structure.
          *
-         * @param const SDL_Event* event, The SDL_Event structure.
+         * @param event The SDL_Event structure.
          */
         EventBase (const SDL_Event* event) : event_ (event) {};
 
@@ -47,28 +49,29 @@ namespace event {
     }; //EventBase
 
     /**
-     * @struct Event, Represents an event.
+     * @struct Event
+     * @brief Represents an event.
      *
-     * @tparam Comparator, Ensures the correctness of the SDL_Event structure.
-     * @tparam Base, The Base type of the event.
+     * @tparam Comparator Ensures the correctness of the SDL_Event structure.
+     * @tparam Base The Base type of the event.
      */
     template<typename Comparator, typename Base>
     struct Event : public Base {
         /**
          * Determines if the SDL_Event structure is correct for this event.
          *
-         * @param const SDL_Event* event, The SDL_Event structure to check.
+         * @param event The SDL_Event structure to check.
          *
-         * @return bool, True if the SDL_Event structure is correct, false otherwise.
+         * @return True if the SDL_Event structure is correct, false otherwise.
          */
         static bool is (const SDL_Event* event) { return Comparator::compare (event); };
 
         /**
          * Constructs an event from a SDL_Event structure.
          *
-         * @param const SDL_Event* event, The SDL_Event structure.
+         * @param event The SDL_Event structure.
          *
-         * @throw runtime_error, Throws a runtime_error if the event type in incorrect.
+         * @throw runtime_error Throws a runtime_error if the event type in incorrect.
          */
         explicit Event (const SDL_Event* event = 0) : Base (event) {
             if (event != 0)

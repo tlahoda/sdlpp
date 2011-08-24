@@ -1,5 +1,6 @@
 /**
- * @file Components.h, Contains the Axis, Hat, JoystickButton, Key, Mousebutton, Trackball, and User classes.
+ * @file Components.h
+ * Contains the Axis, Hat, JoystickButton, Key, Mousebutton, Trackball, and User classes.
  *
  * Copyright (C) 2011 Thomas P. Lahoda
  *
@@ -23,99 +24,106 @@
 namespace sdl {
 namespace event {
     /**
-     * @struct Axis, Represents a joystick axis.
+     * @struct Axis
+     * @brief Represents a joystick axis.
      */
     struct Axis {
         /**
          * Returns an int that identifies the component from which the event came.
          *
-         * @param const SDL_Event* event, The event from which to get the identity.
+         * @param event The event from which to get the identity.
          *
-         * @return int, The component identity.
+         * @return The component identity.
          */
         static int which (const SDL_Event* event) { return event->jaxis.axis; };
     };//Axis
 
     /**
-     * @struct Hat, Represents a joystick hat.
+     * @struct Hat
+     * @brief Represents a joystick hat.
      */
     struct Hat {
         /**
          * Returns an int that identifies the component from which the event came.
          *
-         * @param const SDL_Event* event, The event from which to get the identity.
+         * @param event The event from which to get the identity.
          *
-         * @return int, The component identity.
+         * @return The component identity.
          */
         static int which (const SDL_Event* event) { return event->jhat.hat; };
     }; //Hat
     
     /**
-     * @struct JoystickButton, Represents a joystick button.
+     * @struct JoystickButton
+     * @brief Represents a joystick button.
      */
     struct JoystickButton {
         /**
          * Returns an int that identifies the component from which the event came.
          *
-         * @param const SDL_Event* event, The event from which to get the identity.
+         * @param event The event from which to get the identity.
          *
-         * @return int, The component identity.
+         * @return The component identity.
          */
         static int which (const SDL_Event* event) { return event->jbutton.button; };
     }; //Button
 
     /**
-     * @struct Key, Represents a key.
+     * @struct Key
+     * @brief Represents a key.
      */
     struct Key {
         /**
          * Returns an int that identifies the component from which the event came.
          *
-         * @param const SDL_Event* event, The event from which to get the identity.
+         * @param event The event from which to get the identity.
          *
-         * @return int, The component identity.
+         * @return The component identity.
          */
         static int which (const SDL_Event* event) { return event->key.keysym.sym; };
     }; //Key
 
     /**
-     * @struct MouseButton, Represents a mouse button.
+     * @struct MouseButton
+     * @brief Represents a mouse button.
      */
     struct MouseButton {
         /**
          * Returns an int that identifies the component from which the event came.
          *
-         * @param const SDL_Event* event, The event from which to get the identity.
+         * @param event The event from which to get the identity.
          *
-         * @return int, The component identity.
+         * @return The component identity.
          */
         static int which (const SDL_Event* event) { return event->button.button; };
     }; //Button
 
     /**
-     * @struct Trackball, Represents a joystick trackball.
+     * @struct Trackball
+     * @brief Represents a joystick trackball.
      */
     struct Trackball {
         /**
          * Returns an int that identifies the component from which the event came.
          *
-         * @param const SDL_Event* event, The event from which to get the identity.
+         * @param event The event from which to get the identity.
          *
-         * @return int, The component identity.
+         * @return The component identity.
          */
         static int which (const SDL_Event* event) { return event->jball.ball; };
     }; //Trackball
 
     /**
-     * @struct User, Represents a key.
+     * @struct User
+     * @brief Represents a key.
      */
     struct User {
         /**
          * Returns an int that identifies the component from which the event came.
          *
-         * @param const SDL_Event* event, The event from which to get the identity.
+         * @param event The event from which to get the identity.
          *
-         * @return int, The component identity.
+         * @return The component identity.
          */
         static int which (const SDL_Event* event) { return event->user.code; };
     }; //User

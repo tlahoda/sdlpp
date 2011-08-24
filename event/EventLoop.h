@@ -1,5 +1,6 @@
 /**
- * @file EventLoop.h, Contains the EventLoop class.
+ * @file EventLoop.h
+ * Contains the EventLoop class.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -27,17 +28,16 @@ namespace sdl {
 namespace event {
     /**
      * @struct EventLoop
+     * @brief Represents an event loop.
      */
     struct EventLoop {
         /**
          * Handles events for the time remaining in the frame.
          *
-         * @tparam Dispatcher, The type of the Dispatcher through which to run events.
+         * @tparam Dispatcher The type of the Dispatcher through which to run events.
          *
-         * @param Dispatcher& dispatcher, The Dispatcher through which to run events.
-         * @param unsigned int frameDelay, The time slice for the frame.
-         *
-         * @return void.
+         * @param dispatcher The Dispatcher through which to run events.
+         * @param frameDelay The time slice for the frame.
          */
         template<class Dispatcher>
         static void run (Dispatcher& dispatcher, unsigned int frameDelay) {

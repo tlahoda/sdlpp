@@ -1,5 +1,6 @@
 /**
- * @file common.h, Contains common functions and values.
+ * @file common.h
+ * Contains common functions and values.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -25,19 +26,19 @@
 namespace sdl {
 namespace examples {
     /**
-     * typedef boost::numeric::ublas::vector<float> Vector,
-     *         The type of a numeric vector.
+     * typedef boost::numeric::ublas::vector<float> Vector
+     * @brief The type of a numeric vector.
      */
     typedef boost::numeric::ublas::vector<float> Vector;
 
     /**
      * Makes a Vector.
      *
-     * @param float x, The x element.
-     * @param float y, The y element.
-     * @param float z, The z element..
+     * @param x The x element.
+     * @param y The y element.
+     * @param z The z element..
      *
-     * @return Vector, The vector.
+     * @return The vector.
      */
     static inline Vector make_Vector (float x, float y, float z) {
         Vector vec (3);

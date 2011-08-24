@@ -1,5 +1,6 @@
 /**
- * @file Dispatcher.h, Contains the Adder and the Dispatcher classes.
+ * @file Dispatcher.h
+ * Contains the Adder and the Dispatcher classes.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -33,29 +34,28 @@ namespace event {
     using namespace boost::mpl;
 
     /**
-     * @struct Adder, Adds a Listener for an event to a collection of Listeners.
+     * @struct Adder
+     * @brief Adds a Listener for an event to a collection of Listeners.
      *
-     * @tparam Listeners, The type of the Listeners to which to add the Listener.
-     * @tparam Handler, The type of the Handler from which to get the Listener's handle function.
+     * @tparam Listeners The type of the Listeners to which to add the Listener.
+     * @tparam Handler The type of the Handler from which to get the Listener's handle function.
      */
     template<class Listeners, class Handler>
     struct Adder {
         /**
          * Constructs an Adder from a Listener and a Handler.
          *
-         * @param Listeners& listeners, the Listeners to which to add the Listener.
-         * @param Handler& handler, the Handler from which to get the Listener's handle function.
+         * @param listeners the Listeners to which to add the Listener.
+         * @param handler the Handler from which to get the Listener's handle function.
          */
         Adder (Listeners& listeners, Handler& handler) : listeners_ (listeners), handler_ (handler) {};
 
         /**
          * Adds a listener for event to the Listeners.
          *
-         * @tparam Event, The type of the event for which to add a Listener.
+         * @tparam Event The type of the event for which to add a Listener.
          *
-         * @param const Event& event, The event for which to add a Listener.
-         *
-         * @returns void.
+         * @param event The event for which to add a Listener.
          */
         template<class Event>
         void operator() (const Event& event) {
@@ -75,7 +75,8 @@ namespace event {
     }; //Adder
 
     /**
-     * @class Dispatcher, Dispatches events to Listeners.
+     * @class Dispatcher
+     * @brief Dispatches events to Listeners.
      */
     class Dispatcher {
         public:
@@ -87,9 +88,9 @@ namespace event {
             /**
              * Constructs a Dispatcher from a Handler.
              *
-             * @tparam Handler, The type of the Handler from which to construct the Dispatcher.
+             * @tparam Handler The type of the Handler from which to construct the Dispatcher.
              *
-             * @param Handler& handler, The handler form which to get the Listener's handle functions.
+             * @param handler The handler form which to get the Listener's handle functions.
              */
             template<class Handler>
             Dispatcher (Handler& handler) : listeners_ () { add (handler); };
@@ -97,11 +98,11 @@ namespace event {
             /**
              * Adds a handler to the Dispatcher.
              *
-             * @tparam Handler, The type of the Handler to add to the dispatcher.
+             * @tparam Handler The type of the Handler to add to the dispatcher.
              *
-             * @param Handler& handler, The Handler to add to the Dispatcher.
+             * @param handler The Handler to add to the Dispatcher.
              *
-             * @returns Dispatcher&, A reference to the Dispatcher.
+             * @returns A reference to the Dispatcher.
              */
             template<class Handler>
             Dispatcher& add (Handler& handler) {
@@ -112,9 +113,7 @@ namespace event {
             /**
              * Dispatches an event.
              *
-             * @param const SDL_Event* event, The event to handle.
-             *
-             * @return void. 
+             * @param event The event to handle.
              */
             void operator() (const SDL_Event* event) {
                 Listeners::iterator cur = std::find (listeners_.begin (), listeners_.end (), event);
@@ -125,21 +124,22 @@ namespace event {
             /**
              * Copy construct a Dispatcher.
              *
-             * @param const dispatcher& rhs, The Dispatcher to copy.
+             * @param rhs The Dispatcher to copy.
              */
             Dispatcher (const Dispatcher& rhs);
 
             /**
              * The assignment operator.
              *
-             * @param const Dispatcher& rhs, the Dispatcher from which to assign.
+             * @param rhs the Dispatcher from which to assign.
              *
-             * @return Dispatcher&, A reference to this Dispatcher.
+             * @return A reference to this Dispatcher.
              */
             Dispatcher& operator= (const Dispatcher& rhs);
 
             /**
-             * @typedef boost::ptr_vector<basic_Listener> Listeners, The type of the listeners.
+             * @typedef boost::ptr_vector<basic_Listener> Listeners
+             * @brief The type of the listeners.
              */
             typedef boost::ptr_vector<basic_Listener> Listeners;
 

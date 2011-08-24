@@ -1,5 +1,6 @@
 /**
- * @file Axes.h, Contains the Axes class.
+ * @file Axes.h
+ * Contains the Axes class.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -25,14 +26,13 @@
 namespace sdl {
 namespace examples {
     /**
-     * @class Axes, Represents axes.
+     * @class Axes
+     * @briefRepresents axes.
      */
     class Axes {
         public:
             /**
              * Renders the Axes.
-             *
-             * @return void.
              */
             virtual void render () const {
                 glMatrixMode (GL_MODELVIEW);

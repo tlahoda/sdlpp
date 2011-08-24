@@ -1,5 +1,6 @@
 /**
- * @file Coordinate.h, Contains the Coordinate class.
+ * @file Coordinate.h
+ * Contains the Coordinate class.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -23,31 +24,32 @@
 namespace sdl {
 namespace misc {
     /**
-     * @struct Coordinate, Represents a 2 dimensional coordinate.
+     * @struct Coordinate
+     * @brief Represents a 2 dimensional coordinate.
      *
-     * @tparam T, The type of the coordinate elements.
+     * @tparam T The type of the coordinate elements.
      */
     template<typename T>
     struct Coordinate {
         /**
          * Constructs a Coordinate from a x and a y.
          *
-         * @param T x, The x coordinate.
-         * @param T y, The y coordinate.
+         * @param x The x coordinate.
+         * @param y The y coordinate.
          */
         Coordinate (T x, T y) : x_ (x), y_ (y) {};
 
         /**
          * Returns the x coordinate.
          *
-         * @return T, The x coordinate.
+         * @return The x coordinate.
          */
         T x () const { return x_; };
 
         /**
          * Returns the y coordinate.
          *
-         * @return T, The y coordinate.
+         * @return The y coordinate.
          */
         T y () const { return y_; };
 

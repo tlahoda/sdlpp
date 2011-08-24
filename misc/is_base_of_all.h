@@ -1,5 +1,6 @@
 /**
- * @file is_base_of_all.h, Contains the is_base_of_all class.
+ * @file is_base_of_all.h
+ * Contains the is_base_of_all class.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -27,18 +28,20 @@
 namespace sdl {
 namespace misc {
     /**
-     * @struct is_base_of_all, Recursively determines if Base is the base of all of the Ts.
+     * @struct is_base_of_all
+     * @brief Recursively determines if Base is the base of all of the Ts.
      *
-     * @tparam Base, The type of the Base to check against.
-     * @tparam Ts, The types to check.
+     * @tparam Base The type of the Base to check against.
+     * @tparam Ts The types to check.
      */
     template<typename Base, typename... Ts>
     struct is_base_of_all {}; //is_base_of_all
 
     /**
-     * @struct is_base_of_all, The recursion's terminal specialization.
+     * @struct is_base_of_all
+     * @brief The recursion's terminal specialization.
      *
-     * @tparam Base, The type of the Base to check against.
+     * @tparam Base The type of the Base to check against.
      */
     template<typename Base>
     struct is_base_of_all<Base> {
@@ -49,11 +52,12 @@ namespace misc {
     }; //is_base_of_all
 
     /**
-     * @struct is_base_of_all, The main specialization the determines if Base is the Base of the Ts.
+     * @struct is_base_of_all
+     * @brief The main specialization the determines if Base is the Base of the Ts.
      *
-     * @tparam Base, The type of the Base to check against.
-     * @tparam T, The type to check.
-     * @tparam Ts, The types to check.
+     * @tparam Base The type of the Base to check against.
+     * @tparam T The type to check.
+     * @tparam Ts The types to check.
      */
     template<typename Base, typename T, typename... Ts>
     struct is_base_of_all<Base, T, Ts...> {

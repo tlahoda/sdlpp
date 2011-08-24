@@ -1,5 +1,6 @@
 /**
- * @file Keyboard.h, Contains the Keyboard class.
+ * @file Keyboard.h
+ * Contains the Keyboard class.
  *
  * Copyright (C) 2011 Thomas P. Lahoda
  *
@@ -27,22 +28,23 @@ namespace devices {
     using namespace std;
 
     /**
-     * @struct Keyboard, Represents a keyboard.
+     * @struct Keyboard
+     * @brief Represents a keyboard.
      */
     struct Keyboard {
         /**
          * Gets the name of the SDL virtual keysym.
          *
-         * @param SDLKey key, The key for which to get the name of the keysym.
+         * @param key The key for which to get the name of the keysym.
          *
-         * @return string, The name of the keysym.
+         * @return The name of the keysym.
          */
         static string getKeyName (SDLKey key) { return SDL_GetKeyName (key); };
 
         /**
          * Gets the current keyboard state.
          *
-         * @return pair<unsignedchar*, int>, A pair containing an array of the current keyboard state and its length.
+         * @return A pair containing an array of the current keyboard state and its length.
          */
         static pair<unsigned char*, int> keyState () {
             int numKeys;
@@ -53,54 +55,48 @@ namespace devices {
         /**
          * Gets the state of the modifier keys.
          *
-         * @return SDLMod, The state of the modifier keys.
+         * @return The state of the modifier keys.
          */
         static SDLMod getModState () {  return SDL_GetModState (); };
 
         /**
          * Sets the state of the modifier keys.
          *
-         * @param SDLMod state, The state to which to set the modifier keys.
-         *
-         * @return void.
+         * @param The state to which to set the modifier keys.
          */
         static void setModState (SDLMod state) { SDL_SetModState (state); };
 
         /**
          * Enables key repeating.
          *
-         * @param int delay, The number of milliseconds the key must be pressed before it starts repeating.
-         * @param int interval, The interval in milliseconds at which to reapeat the keys.
+         * @param dela, The number of milliseconds the key must be pressed before it starts repeating.
+         * @param interval The interval in milliseconds at which to reapeat the keys.
          *
-         * @return bool, True if successful, false otherwise.
+         * @return True if successful, false otherwise.
          */
         static bool enableKeyRepeat (int delay, int interval) { return SDL_EnableKeyRepeat (delay, interval) == 0; };
 
         /**
          * Disables key repeating.
          *
-         * @return bool, True if successful, false otherwise.
+         * @return True if successful, false otherwise.
          */
         static bool disableKeyRepeat () { return SDL_EnableKeyRepeat (0, 0) == 0;};
 
         /**
          * Enables UNICODE translation.
-         *
-         * @return void.
          */
         static void enableUnicode () { SDL_EnableUNICODE (1); };
 
         /**
          * Disables UNICODE translation.
-         *
-         * @return void.
          */
         static void disableUnicode () { SDL_EnableUNICODE (0); };
 
         /**
          * Determines if UNICODE translation is enabled.
          *
-         * @return bool, True if enabled, false otherwise.
+         * @return True if enabled, false otherwise.
          */
         static bool unicodeEnabled () { return SDL_EnableUNICODE (-1) == 1; };
     }; //Keyboard

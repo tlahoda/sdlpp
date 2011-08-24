@@ -1,5 +1,6 @@
 /**
- * @file Overlay.h, Contains the Overlay class.
+ * @file Overlay.h
+ * Contains the Overlay class.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -30,16 +31,17 @@ namespace video {
     using namespace misc;
 
     /**
-     * @class Overlay, .
+     * @class Overlay
+     * @brief Represents an overlay.
      */
     class Overlay {
         public:
             /**
              * Constructs an Overlay.
              *
-             * @param const Rect& rect, A rectangle describing the height and width of the Overlay.
-             * @param Uint32 format, The format of the Overlay.
-             * @param const surface& display, The Surface on which to display the Overlay.
+             * @param rect A rectangle describing the height and width of the Overlay.
+             * @param format The format of the Overlay.
+             * @param display The Surface on which to display the Overlay.
              */
             Overlay (const Rect& rect, Uint32 format, const Surface& display)
               : overlay_ (SDL_CreateYUVOverlay (rect.width (), rect.height (), format, display.to_c ())) {};
@@ -52,23 +54,21 @@ namespace video {
             /**
              * Locks the Overlay.
              *
-             * @return bool, True if the Overlay was locked, false otherwise.
+             * @return True if the Overlay was locked, false otherwise.
              */
             bool lock () { return SDL_LockYUVOverlay (overlay_) == 0; };
             
             /**
              * Unlocks the Overlay.
-             *
-             * @return void.
              */
             void unlock () { SDL_UnlockYUVOverlay (overlay_); };
 
             /**
              * Displays the Overlay.
              *
-             * @param Rect& rect, The rectangle onto which to blit.
+             * @param rect The rectangle onto which to blit.
              *
-             * @return bool, True if successful, false otherwise.
+             * @return True if successful, false otherwise.
              */
             bool display (Rect& dstRect) { return SDL_DisplayYUVOverlay (overlay_, *dstRect) == 0; };
 
@@ -76,16 +76,16 @@ namespace video {
             /**
              * Copy constructs and Overlay.
              *
-             * @param const Overlat& rhs, The Overlay to copy.
+             * @param rhs The Overlay to copy.
              */
             Overlay (const Overlay& rhs);
 
             /**
              * The assignment operator.
              *
-             * @param const Overlay& rhs, The Overlay from which to assign.
+             * @param rhs The Overlay from which to assign.
              *
-             * @return Overlay&, A reference to this Overlay.
+             * @return A reference to this Overlay.
              */
             Overlay& operator= (const Overlay& rhs);
 

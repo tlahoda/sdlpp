@@ -1,5 +1,6 @@
 /**
- * @file KeyboardEvents.h, Contains the keyboard event classes. 
+ * @file KeyboardEvents.h
+ * Contains the keyboard event classes. 
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -32,70 +33,73 @@ namespace event {
     using namespace misc;
 
     /**
-     * @struct KeyBase, Base for keyboard events that exposes the SDL_KeyboardEvent structure.
+     * @struct KeyBase
+     * @brief Base for keyboard events that exposes the SDL_KeyboardEvent structure.
      */
     struct KeyBase : public EventBase {
         /**
          * Constructs an KeyBase from a SDL_Event structure.
          *
-         * @param const SDL_Event* event, The SDL_Event structure.
+         * @param event The SDL_Event structure.
          */
         KeyBase (const SDL_Event* event) : EventBase (event) {};
 
         /**
          * Exposes the SDL_KeyboardEvent structure.
          *
-         * @return const SDL_KeyboardEvent&, The SDL_KeyboardEvent structure.
+         * @return The SDL_KeyboardEvent structure.
          */
         const SDL_KeyboardEvent& get () const { return event_->key; };
 
         /**
          * Exposes the SDL_KeyboardEvent structure.
          *
-         * @return const SDL_KeyboardEvent&, The SDL_KeyboardEvent structure.
+         * @return The SDL_KeyboardEvent structure.
          */
         const SDL_KeyboardEvent& get () { return event_->key; };
     }; //KeyBase
 
     /**
-     * @struct KeyPress, Represents a key press event.
+     * @struct KeyPress
+     * @brief Represents a key press event.
      *
-     * @tparam Keys, The keys that compose this key press event.
+     * @tparam Keys The keys that compose this key press event.
      */
     template<int... Keys>
     struct KeyPress : public Event<MultiComparator<Key, SDL_KEYDOWN, Keys...>, KeyBase> {
         /**
          * Constructs a KeyPress event from a SDL_Event structure.
          *
-         * @param const SDL_Event* event, The SDL_Event structure.
+         * @param event The SDL_Event structure.
          */
         explicit KeyPress (const SDL_Event* event = 0) : Event<MultiComparator<Key, SDL_KEYDOWN, Keys...>, KeyBase> (event) {};
     }; //KeyPress
 
     /**
-     * @typedef Event<SimpleComparator<SDL_KEYDOWN>, KeyBase> AnyKeyPress,
-     *          Represents an any key press.
+     * @typedef Event<SimpleComparator<SDL_KEYDOWN>, KeyBase> AnyKeyPress
+     * @brief Represents an any key press.
      */
     typedef Event<SimpleComparator<SDL_KEYDOWN>, KeyBase> AnyKeyPress;
     
     /**
-     * @struct KeyRelease, Represents a key release event.
+     * @struct KeyRelease
+     * @brief Represents a key release event.
      *
-     * @tparam Keys, The keys that compose this key release event.
+     * @tparam Keys The keys that compose this key release event.
      */
     template<int... Keys>
     struct KeyRelease : public Event<MultiComparator<Key, SDL_KEYUP, Keys...>, KeyBase> {
         /**
          * Constructs a KeyRelease from a SDL_Event structure.
          *
-         * @param const SDL_Event* event, The SDL_Event structure.
+         * @param event The SDL_Event structure.
          */
         explicit KeyRelease (const SDL_Event* event = 0) : Event<MultiComparator<Key, SDL_KEYUP, Keys...>, KeyBase> (event) {};
     }; //KeyRelease
 
     /**
-     * @typedef Event<SimpleComparator<SDL_KEYUP>, KeyBase> AnyKeyRelease,
-     *          Represents an any key release event.
+     * @typedef Event<SimpleComparator<SDL_KEYUP>, KeyBase> AnyKeyRelease
+     * @brief Represents an any key release event.
      */
     typedef Event<SimpleComparator<SDL_KEYUP>, KeyBase> AnyKeyRelease;
 }; //event

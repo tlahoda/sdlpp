@@ -1,5 +1,6 @@
 /**
- * @file Events.h, A convience file to include all events.
+ * @file Events.h
+ * A convience file to include all events.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *

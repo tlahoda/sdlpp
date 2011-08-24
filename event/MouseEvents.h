@@ -1,5 +1,6 @@
 /**
- * @file MouseEvents.h, Contains the mouse events classes.
+ * @file MouseEvents.h
+ * Contains the mouse events classes.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -32,59 +33,61 @@ namespace event {
     using namespace misc;
 
    /**
-     * @struct MouseMotionBase, Base for mouse motion events that exposes the SDL_MouseMotionEvent structure.
+     * @struct MouseMotionBase
+     * @brief Base for mouse motion events that exposes the SDL_MouseMotionEvent structure.
      */
     struct MouseMotionBase : public EventBase {
         /**
          * Constructs a MouseMotionBase from a SDL_Event structure.
          *
-         * @param const SDL_Event* event, The SDL_Event structure.
+         * @param event The SDL_Event structure.
          */
         MouseMotionBase (const SDL_Event* event) : EventBase (event) {};
 
         /**
          * Exposes the SDL_MouseMotionEvent structure.
          *
-         * @return const SDL_MouseMotionEvent&, The SDL_MouseMotionEvent structure.
+         * @return The SDL_MouseMotionEvent structure.
          */
         const SDL_MouseMotionEvent& get () const { return event_->motion; }; 
 
         /**
          * Exposes the SDL_MouseMotionEvent structure.
          *
-         * @return const SDL_MouseMotionEvent&, The SDL_MouseMotionEvent structure.
+         * @return The SDL_MouseMotionEvent structure.
          */
         const SDL_MouseMotionEvent& get () { return event_->motion; };
     }; //MouseMotion
     
     /**
-     * @typedef Event<SimpleComparator<SDL_MOUSEMOTION>, MouseMotionBase> MouseMotion,
-     *          Represents a mouse motion event.
+     * @typedef Event<SimpleComparator<SDL_MOUSEMOTION>, MouseMotionBase> MouseMotion
+     * @brief Represents a mouse motion event.
      */
     typedef Event<SimpleComparator<SDL_MOUSEMOTION>, MouseMotionBase> MouseMotion;
 
     /**
-     * @struct MouseButtonBase, Base for mouse button events that exposes the SDL_MouseButtonEvent structure.
+     * @struct MouseButtonBase
+     * @brief Base for mouse button events that exposes the SDL_MouseButtonEvent structure.
      */
     struct MouseButtonBase : public EventBase {
         /**
          * Constructs a MouseButtonBase from a SDL_Event*.
          *
-         * @param const SDL_Event* event, The SDL_Event structure.
+         * @param event The SDL_Event structure.
          */
         MouseButtonBase (const SDL_Event* event) : EventBase (event) {};
 
         /**
          * Exposes the SDL_MouseButtonEvent structure.
          *
-         * @return const SDL_MouseButtonEvent&, The SDL_MouseButtonEvent structure.
+         * @return The SDL_MouseButtonEvent structure.
          */
         const SDL_MouseButtonEvent& get () const { return event_->button; };
 
         /**
          * Exposes the SDL_MouseButtonEvent structure.
          *
-         * @return const SDL_MouseButtonEvent&, The SDL_MouseButtonEvent structure.
+         * @return The SDL_MouseButtonEvent structure.
          */
         const SDL_MouseButtonEvent& get () { return event_->button; };
     }; //MouseButtonBase
@@ -92,14 +95,14 @@ namespace event {
     /**
      * @struct MouseButtonPress, Represents a mouse button press event.
      *
-     * @tparam Buttons, The buttons that compose this mouse button release event.
+     * @tparam Buttons The buttons that compose this mouse button release event.
      */
     template<int... Buttons>
     struct MouseButtonPress : public Event<MultiComparator<MouseButton, SDL_MOUSEBUTTONDOWN, Buttons...>, MouseButtonBase> {
         /**
          * Constructs a MouseButtonPress from a SDL_Event structure.
          *
-         * @param const SDL_Event* event, The SDL_Event structure.
+         * @param event The SDL_Event structure.
          */
         explicit MouseButtonPress (const SDL_Event* event = 0) : Event<MultiComparator<MouseButton, SDL_MOUSEBUTTONDOWN, Buttons...>, MouseButtonBase> (event) {};
     }; //MouseButtonPress
@@ -107,14 +110,14 @@ namespace event {
     /**
      * @struct MouseButtonRelease, Represents a mouse button release event.
      *
-     * @tparam Buttons, The buttons that compose this mouse button release event.
+     * @tparam Buttons The buttons that compose this mouse button release event.
      */
     template<int... Buttons>
     struct MouseButtonRelease : public Event<MultiComparator<MouseButton, SDL_MOUSEBUTTONUP, Buttons...>, MouseButtonBase> {
         /**
          * Constructs a MouseButtonRelease from a SDL_Event structure.
          *
-         * @param const SDL_Event* event, The SDL_Event structure.
+         * @param event The SDL_Event structure.
          */
         explicit MouseButtonRelease (const SDL_Event* event = 0) : Event<MultiComparator<MouseButton, SDL_MOUSEBUTTONUP, Buttons...>, MouseButtonBase> (event) {};
     }; //MouseButtonRelease

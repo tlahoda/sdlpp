@@ -1,5 +1,6 @@
 /**
- * @file Cursor.h, Contains the Cursor class.
+ * @file Cursor.h
+ * Contains the Cursor class.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -33,14 +34,15 @@ namespace devices {
     using namespace misc;
 
     /**
-     * class Cursor, Represents the system pointer.
+     * @class Cursor
+     * @brief Represents the system pointer.
      */
     class Cursor {
         public:
             /**
              * Constructs a Cursor using the system's cursor.
              *
-             * @throw runtime_error, Throws a runtime_error if unable to get the system cursor.
+             * @throw runtime_error Throws a runtime_error if unable to get the system cursor.
              */
             Cursor () : cursor_ (SDL_GetCursor ()) {
                 if (cursor_ == NULL)
@@ -50,10 +52,10 @@ namespace devices {
             /**
              * Constructs a Cursor.
              *
-             * @param unsigned char* data, The color of each Cursor pixel.
-             * @param unsigned char* mask, The mask for each Cursor pixel.
-             * @param const Rect& rect, A rectangle containing the height and width of the Cursor.
-             * @param const Coordinate<int>& pos, The position of the upper-left corner of the Cursor.
+             * @param data The color of each Cursor pixel.
+             * @param mask The mask for each Cursor pixel.
+             * @param rect A rectangle containing the height and width of the Cursor.
+             * @param pos The position of the upper-left corner of the Cursor.
              *
              * @throw runtime_error, Throws a runtime_error if unable to create cursor.
              */
@@ -73,7 +75,7 @@ namespace devices {
             /**
              * Moves the Cursor to the specified position. 
              *
-             * @param const Coordinate<short>& pos, The position to which to move the upper-left corner of the Cursor.
+             * @param pos The position to which to move the upper-left corner of the Cursor.
              *
              * @return void.
              */
@@ -82,28 +84,28 @@ namespace devices {
             /**
              * Shows the Cursor.
              *
-             * @return bool, True if successful, false otherwise.
+             * @return True if successful, false otherwise.
              */
             bool show () { return SDL_ShowCursor (SDL_ENABLE) == SDL_ENABLE; };
 
             /**
              * Hides the Cursor.
              *
-             * @return bool, True if successful, false otherwise.
+             * @return True if successful, false otherwise.
              */
             bool hide () { return SDL_ShowCursor (SDL_DISABLE) == SDL_DISABLE; };
 
             /**
              * Determines if the Cursor if visible or not.
              *
-             * @return bool, True is Cursor is visible, false otherwise.
+             * @return True is Cursor is visible, false otherwise.
              */
             bool isVisible () { return SDL_ShowCursor (SDL_QUERY) == SDL_ENABLE; };
 
             /**
              * Toggles the visibility of the Cursor.
              *
-             * @return bool, True if successful, false otherwise.
+             * @return True if successful, false otherwise.
              */
             bool toggle () {
                 return isVisible () ? SDL_ShowCursor (SDL_DISABLE) == SDL_DISABLE : SDL_ShowCursor (SDL_ENABLE) == SDL_ENABLE;
@@ -111,15 +113,11 @@ namespace devices {
 
             /**
              * Activates the Cursor.
-             *
-             * @return void.
              */
             void activate () { SDL_SetCursor (cursor_); };
 
             /**
              * Force the cursor to redraw.
-             *
-             * @return void.
              */
             void redraw () { SDL_SetCursor (NULL); }; 
 
@@ -127,16 +125,16 @@ namespace devices {
             /**
              * Copy constructs a Cursor.
              *
-             * @param const Cursor& rhs, The Cursor to copy.
+             * @param rhs The Cursor to copy.
              */
             Cursor (const Cursor& rhs);
 
             /**
              * The assignment operator.
              *
-             * @param const Cursor& rhs, The Cursor from which to assign.
+             * @param rhs The Cursor from which to assign.
              *
-             * @return Cursor&, A reference to this Cursor.
+             * @return A reference to this Cursor.
              */
             Cursor& operator= (const Cursor& rhs);
 

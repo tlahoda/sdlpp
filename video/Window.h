@@ -1,5 +1,6 @@
 /**
- * @file Window.h, Contains the Window class.
+ * @file Window.h
+ * Contains the Window class.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -36,7 +37,8 @@ namespace video {
     using namespace std;
  
     /**
-     * Represents an SDL window.
+     * @class Window
+     * @brief Represents an SDL window.
      */
     class Window {
         public:
@@ -54,16 +56,16 @@ namespace video {
             /**
              * Returns the Window's caption.
              *
-             * @return string, The Window's caption.
+             * @return The Window's caption.
              */
             string caption () { return caption_; };
             
             /**
              * Sets the Window's caption.
              *
-             * @param const string& caption, The Window's new caption.
+             * @param caption The Window's new caption.
              *
-             * @return Window&, A reference to this Window.
+             * @return A reference to this Window.
              */
             Window& caption (const string& caption) {
                 caption_ = caption;
@@ -74,16 +76,16 @@ namespace video {
             /**
              * Returns the window's icon.
              *
-             * @return Icon&, The Window's icon.
+             * @return The Window's icon.
              */
             Icon& icon () { return icon_; };
             
             /**
              * Sets the Window's icon.
              *
-             * @param const Icon& icon, The Window's new icon.
+             * @param icon The Window's new icon.
              *
-             * @return Window&, A reference to this Window.
+             * @return A reference to this Window.
              */
             Window& icon (const Icon& icon) {
                 icon_ = icon;
@@ -94,37 +96,37 @@ namespace video {
             /**
              * Attempts to minimize the window.
              *
-             * @return bool, True if successful, false otherwise.
+             * @return True if successful, false otherwise.
              */
             bool minimize () { return SDL_WM_IconifyWindow () != 0; };
 
             /**
              * Grabs the mouse and keyboard input.
              *
-             * @return bool, True if successful, false otherwise.
+             * @return True if successful, false otherwise.
              */
             bool grabInput () { return SDL_WM_GrabInput (SDL_GRAB_ON) == SDL_GRAB_ON; };
 
             /**
              * Releases the mouse and keyboard.
              *
-             * @return bool, True if successful, false otherwise.
+             * @return True if successful, false otherwise.
              */
             bool releaseInput () { return SDL_WM_GrabInput (SDL_GRAB_OFF) == SDL_GRAB_OFF; };
 
             /**
              * Determines if the input if grabbed.
              *
-             * @return bool, True if grabbed, false otherwise.
+             * @return True if grabbed, false otherwise.
              */
             bool inputGrabbed () { return SDL_WM_GrabInput (SDL_GRAB_QUERY) == SDL_GRAB_ON; };
 
             /**
              * Toggles fullscreen mode.
              *
-             * @param const Surface& surface, The Surface for which to toggle fullscreen mode.
+             * @param surface The Surface for which to toggle fullscreen mode.
              *
-             * @return bool, True if successful, false otherwise.
+             * @return True if successful, false otherwise.
              */
             bool fullScreen (const Surface& surface) { return SDL_WM_ToggleFullScreen (surface.to_c ()) == 1; };
 
@@ -132,9 +134,9 @@ namespace video {
             /**
              * Gets the window manager specific information.
              *
-             * @return SDL_SysWMinfo, The information.
+             * @return The information.
              *
-             * @throw runtime_error, Throws a runtime_error if unimplemented or failed.
+             * @throw runtime_error Throws a runtime_error if unimplemented or failed.
              */
             /*SDL_SysWMinfo info () {
                 SDL_SysWMinfo i;
@@ -151,16 +153,16 @@ namespace video {
             /**
              * Copy constructs a Window.
              *
-             * @param const window& rhs, The Window to copy.
+             * @param rhs The Window to copy.
              */
             Window (const Window& rhs);
 
             /**
              * The assignment operator.
              *
-             * @param const Window& rhs, The Window from which to assign.
+             * @param rhs The Window from which to assign.
              *
-             * @return Window&, A reference to this Window.
+             * @return A reference to this Window.
              */
             Window& operator= (const Window& rhs);
 

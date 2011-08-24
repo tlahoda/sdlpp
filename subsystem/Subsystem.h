@@ -1,5 +1,6 @@
 /**
- * @file Subsystem.h, Contains the subsystem classes.
+ * @file Subsystem.h
+ * Contains the subsystem classes.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -32,10 +33,11 @@ namespace subsystem {
     using namespace std;
 
     /**
-     * @struct Subsystem, Represents a SDL subsystem.
+     * @struct Subsystem
+     * @brief Represents a SDL subsystem.
      *
-     * @tparam T, The SDL subsystem type.
-     * @tparam Base, The Subsystem base class.
+     * @tparam T The SDL subsystem type.
+     * @tparam Base The Subsystem base class.
      */
     template<int T, class Base>
     class Subsystem : public Base {
@@ -43,7 +45,7 @@ namespace subsystem {
             /**
              * Returns a reference to the Subsystem instance.
              *
-             * @return Subsystem&, A reference to the Subsystem.
+             * @return A reference to the Subsystem.
              */
             static Subsystem& instance () {
                 static Subsystem instance_;
@@ -53,14 +55,14 @@ namespace subsystem {
             /**
              * Determines if the Subsystem is open.
              *
-             * @return bool, True if the subsystem is open, false otherwise.
+             * @return True if the subsystem is open, false otherwise.
              */
             static bool isOpen () { return SDL_WasInit (T) == T; };
            
             /**
              * Opens the Subsystem.
              *
-             * @return Subsystem&, A reference to this Subsystem.
+             * @return A reference to this Subsystem.
              */
             Subsystem& open () {
                 init ();
@@ -70,7 +72,7 @@ namespace subsystem {
             /**
              * Closes the Subsystem.
              *
-             * @return Subsystem&, A reference to this Subsystem.
+             * @return A reference to this Subsystem.
              */
             Subsystem& close () {
                 quit ();
@@ -81,9 +83,9 @@ namespace subsystem {
             /**
              * Initializes the Subsystem.
              *
-             * @return Subsystem&, A reference to this Subsystem.
+             * @return A reference to this Subsystem.
              *
-             * @throw runtime_error, Throws a runtime_error if unable to initialize subsystem.
+             * @throw runtime_error Throws a runtime_error if unable to initialize subsystem.
              */
             Subsystem& init () {
                 if (SDL_InitSubSystem (T) == -1)
@@ -94,7 +96,7 @@ namespace subsystem {
             /**
              * Quits the Subsystem.
              *
-             * @return Subsystem&, A reference to this Subsystem.
+             * @return A reference to this Subsystem.
              */
             Subsystem& quit () {
                 SDL_QuitSubSystem (T);
@@ -109,7 +111,7 @@ namespace subsystem {
             /**
              * Copy constructs a Subsystem.
              *
-             * @param const Subsystem& rhs, The Subsystem to copy.
+             * @param rhs The Subsystem to copy.
              */
             Subsystem (const Subsystem& rhs) {};
 
@@ -121,9 +123,9 @@ namespace subsystem {
             /**
              * The assignment operator.
              *
-             * @param const Subsystem& rhs, The Subsystem from which to assign.
+             * @param rhs The Subsystem from which to assign.
              *
-             * @return Subsystem&, A reference to this Subsystem.
+             * @return A reference to this Subsystem.
              */
             Subsystem& operator= (const Subsystem& rhs) {};
     }; //Subsystem
@@ -136,25 +138,26 @@ namespace subsystem {
             /**
              * Returns the name of the Subsystem.
              *
-             * @return const string, The name of the Subsystem.
+             * @return The name of the Subsystem.
              */
             static const string name () { return "Audio"; };
     }; //AudioBase
 
     /**
-     * @typedef Subsystem<SDL_INIT_AUDIO, AudioBase> Audio,
-     *          Represents the audio subsystem.
+     * @typedef Subsystem<SDL_INIT_AUDIO, AudioBase> Audio
+     * @brief Represents the audio subsystem.
      */
     typedef Subsystem<SDL_INIT_AUDIO, AudioBase> Audio;
 
     /**
-     * @struct CdRomBase, Base for the cd-rom subsystem.
+     * @struct CdRomBase
+     * @brief Base for the cd-rom subsystem.
      */
     struct CdRomBase {
         /**
          * The number of cd drives attached to the system.
          *
-         * @return int, The number of cd drives.
+         * @return The number of cd drives.
          */
         int numDrives () { return SDL_CDNumDrives (); };
 
@@ -162,57 +165,60 @@ namespace subsystem {
             /**
              * Returns the name of the Subsystem.
              *
-             * @return const string, The name of the Subsystem.
+             * @return The name of the Subsystem.
              */
             static const string name () { return "Cd-Rom"; };
     }; //CdRomBase
 
     /**
      * @typedef Subsystem<SDL_INIT_CDROM, CdRomBase> CdRom,
-     *          Represents the cd-rom subsystem.
+     * @brief Represents the cd-rom subsystem.
      */
     typedef Subsystem<SDL_INIT_CDROM, CdRomBase> CdRom;
 
     /**
-     * @struct EverythingBase, Base to the everything subsystem.
+     * @struct EverythingBase
+     * @brief Base to the everything subsystem.
      */
     struct EverythingBase {
         protected:
             /**
              * Returns the name of the Subsystem.
              *
-             * @return const string, The name of the Subsystem.
+             * @return The name of the Subsystem.
              */
             static const string name () { return "Everything"; };
     }; //EverythingBase
 
     /**
      * @typedef Subsystem<SDL_INIT_EVERYTHING, EverythingBase> Everything,
-     *          Represents the everything subsystem.
+     * @brief Represents the everything subsystem.
      */
     typedef Subsystem<SDL_INIT_EVERYTHING, EverythingBase> Everything;
 
     /**
-     * @struct EventThreadBase, Base for the event thread subsystem.
+     * @struct EventThreadBase
+     * @brief Base for the event thread subsystem.
      */
     struct EventThreadBase {
         protected:
             /**
              * Returns the name of the Subsystem.
              *
-             * @return const string, The name of the Subsystem.
+             * @return The name of the Subsystem.
              */
             static const string name () { return "EventThread"; };
     }; //EventThreadBase
 
     /**
      * @typedef Subsystem<SDL_INIT_EVENTTHREAD, EventThreadBase> EventThread,
-     *          Represents the event thread subsystem.
+     * @brief Represents the event thread subsystem.
      */
     typedef Subsystem<SDL_INIT_EVENTTHREAD, EventThreadBase> EventThread;
 
     /**
-     * @struct JoystickBase, Base for the joystick subsystem.
+     * @struct JoystickBase
+     * @brief Base for the joystick subsystem.
      */
     struct JoystickBase {
         /**
@@ -229,7 +235,7 @@ namespace subsystem {
          * Enables joystick event polling.
          * Warning: Calling this function may delete all events currently in the queue.
          *
-         * @return bool, True if successful, false otherwise.
+         * @return True if successful, false otherwise.
          */
         bool enableEvents () { return SDL_JoystickEventState (SDL_ENABLE) == SDL_ENABLE; };
 
@@ -237,7 +243,7 @@ namespace subsystem {
          * Disables joystick event polling.
          * Warning: Calling this function may delete all events currently in the queue.
          *
-         * @return bool, True if successful, false otherwise.
+         * @return True if successful, false otherwise.
          */
         bool disableEvents () { return SDL_JoystickEventState (SDL_IGNORE) == SDL_IGNORE; };
 
@@ -245,7 +251,7 @@ namespace subsystem {
          * Determines if joystick event polling is enabled.
          * Warning: Calling this function may delete all events currently in the queue.
          *
-         * @return bool, True if enabled, false otherwise.
+         * @return True if enabled, false otherwise.
          */
         bool areEventsEnabled () { return SDL_JoystickEventState (SDL_QUERY) == SDL_ENABLE; };
 
@@ -253,38 +259,40 @@ namespace subsystem {
             /**
              * Returns the name of the Subsystem.
              *
-             * @return const string, The name of the Subsystem.
+             * @return The name of the Subsystem.
              */
             static const string name () { return "Joystick"; };
     }; //JoystickBase
 
     /**
      * @typedef Subsystem<SDL_INIT_JOYSTICK, JoystickBase> Joystick,
-     *          Represents the joystick subsystem.
+     * @brief Represents the joystick subsystem.
      */
     typedef Subsystem<SDL_INIT_JOYSTICK, JoystickBase> Joystick;
 
     /**
-     * @struct NoParachuteBase, Base for the no parachute subsystem.
+     * @struct NoParachuteBase
+     * @brief Base for the no parachute subsystem.
      */
     struct NoParachuteBase {
         protected:
             /**
              * Returns the name of the Subsystem.
              *
-             * @return const std::string, The name of the Subsystem.
+             * @return The name of the Subsystem.
              */
             static const string name () { return "NoParachute"; };
     }; //NoParachuteBase
 
     /**
      * @typedef Subsystem<SDL_INIT_NOPARACHUTE, NoParachuteBase> NoParachute,
-     *          Represents the no parachute subsystem.
+     * @brief Represents the no parachute subsystem.
      */
     typedef Subsystem<SDL_INIT_NOPARACHUTE, NoParachuteBase> NoParachute;
 
     /**
-     * @struct TimerBase, Base for the timer subsystem.
+     * @struct TimerBase
+     * @brief Base for the timer subsystem.
      */
     struct TimerBase {
         /**
@@ -295,7 +303,7 @@ namespace subsystem {
         /**
          * Waits the specified number of milliseconds.
          *
-         * @param unsigned int interval, The number of milliseconds to wait.
+         * @param The number of milliseconds to wait.
          */
         TimerBase& delay (unsigned int interval) {
             SDL_Delay (interval);
@@ -306,14 +314,14 @@ namespace subsystem {
             /**
              * Returns the name of the Subsystem.
              *
-             * @return const string, The name of the Subsystem.
+             * @return The name of the Subsystem.
              */
             static const string name () { return "Timer"; };
     }; //TimerBase
 
     /**
      * @typedef Subsystem<SDL_INIT_TIMER, TimerBase> Timer,
-     *          Represents the timer subsystem.
+     * @brief Represents the timer subsystem.
      */
     typedef Subsystem<SDL_INIT_TIMER, TimerBase> Timer;
 
@@ -323,8 +331,6 @@ namespace subsystem {
     struct VideoBase {
         /**
          * Swaps the OpenGL frame buffers if double-buffering is supported.
-         *
-         * @return void.
          */
         void swapBuffers () { SDL_GL_SwapBuffers (); };
 
@@ -332,14 +338,14 @@ namespace subsystem {
             /**
              * Returns the name of the Subsystem.
              *
-             * @return const string, The name of the Subsystem.
+             * @return The name of the Subsystem.
              */
             static const string name () { return "Video"; };
     }; //VideoBase
 
     /**
      * @typedef Subsystem<SDL_INIT_VIDEO, VideoBase> Video,
-     *          Represents the video subsystem.
+     * @brief Represents the video subsystem.
      */
     typedef Subsystem<SDL_INIT_VIDEO, VideoBase> Video;
 }; //subsystem

@@ -1,5 +1,6 @@
 /**
- * @file ExampleHandler.h, Contains the ExampleHandler class.
+ * @file ExampleHandler.h
+ * Contains the ExampleHandler class.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -36,7 +37,8 @@ namespace examples {
     using namespace sdl::event;
 
     /**
-     * @class ExampleHandler, Handles events for the example.
+     * @class ExampleHandler
+     * @brief Handles events for the example.
      */
     class ExampleHandler {
         public:
@@ -56,10 +58,10 @@ namespace examples {
             /**
              * Constructs an ExampleHandler.
              *
-             * @param bool& running, Indicates whether or not to keep the program running.
-             * @param Vector& location, The viewing location.
-             * @param float& xRot, The rotation angle around the x axis.
-             * @param float& yRot, The rotation angle around the y axis.
+             * @param running Indicates whether or not to keep the program running.
+             * @param location The viewing location.
+             * @param xRot The rotation angle around the x axis.
+             * @param yRot The rotation angle around the y axis.
              */
             ExampleHandler (bool& running, Vector& location, float& xRot, float& yRot)
               : running_ (running),
@@ -74,9 +76,7 @@ namespace examples {
             /**
              * Handles escape and q key press events.
              *
-             * @param const KeyPress<SDLK_ESCAPE, SDLK_q>& event, The event.
-             *
-             * @return void.
+             * @param event The event.
              */
             void handle (const KeyPress<SDLK_ESCAPE, SDLK_q>& event) {
                 running_ = false;
@@ -85,9 +85,7 @@ namespace examples {
             /**
              * Handles a key press events.
              *
-             * @param const KeyPress<SDLK_a>& event, The event.
-             *
-             * @return void.
+             * @param event The event.
              */
             void handle (const KeyPress<SDLK_a>& event) {
                 float yRotRad = yRot_ / DEG2RAD;
@@ -103,9 +101,7 @@ namespace examples {
             /**
              * Handles d key press events.
              *
-             * @param const KeyPress<SDLK_d>& event, The event.
-             *
-             * @return void.
+             * @param event The event.
              */
             void handle (const KeyPress<SDLK_d>& event) {
                 float yRotRad = yRot_ / DEG2RAD;
@@ -121,9 +117,7 @@ namespace examples {
             /**
              * Handles w key press events.
              *
-             * @param const KeyPress<SDLK_w>& event, The event.
-             *
-             * @return void.
+             * @param event The event.
              */
             void handle (const KeyPress<SDLK_w>& event) {
                 float yRotRad = yRot_ / DEG2RAD;
@@ -141,9 +135,7 @@ namespace examples {
             /**
              * Handles s key press events.
              *
-             * @param const KeyPress<SDLK_s>& event, The event.
-             *
-             * @return void.
+             * @param event The event.
              */
             void handle (const KeyPress<SDLK_s>& event) {
                 float yRotRad = yRot_ / DEG2RAD;
@@ -161,9 +153,7 @@ namespace examples {
             /**
              * Handles r key press events.
              *
-             * @param const KeyPress<SDLK_r>& event, The event.
-             *
-             * @return void.
+             * @param event The event.
              */
             void handle (const KeyPress<SDLK_r>& event) {
                 location_[0] = 0.0f;
@@ -175,34 +165,27 @@ namespace examples {
             };
 
             /**
-             * Handles left mouse button press events.
-             * starts mouse looking
+             * Handles left mouse button press events. Starts mouse looking
              *
-             * @param const MouseButtonPress<SDL_BUTTON_LEFT>& event, The event.
-             *
-             * @return void.
+             * @param event The event.
              */
             void handle (const MouseButtonPress<SDL_BUTTON_LEFT>& event) {
                 mouseLook_ = true;
             };
 
             /**
-             * Handles left mouse button release events.
-             * Stops mouse looking.
+             * Handles left mouse button release events. Stops mouse looking.
              *
-             * @param const MouseButtonRelease<SDL_BUTTON_LEFT>& event, The event.
-             *
-             * @return void.
+             * @param event The event.
              */
             void handle (const MouseButtonRelease<SDL_BUTTON_LEFT>& event) {
                 mouseLook_ = false;
             };
 
             /**
-             * Handles mouse motion events.
-             * Changes where the user is looking.
+             * Handles mouse motion events. Changes where the user is looking.
              *
-             * @param const MouseMotion& event, The event.
+             * @param event The event.
              *
              * @return void.
              */

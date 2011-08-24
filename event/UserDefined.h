@@ -1,5 +1,6 @@
 /**
- * @file UserEvent.h, Contains the user event classes.
+ * @file UserEvent.h
+ * Contains the user event classes.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -29,42 +30,44 @@
 namespace sdl {
 namespace event {
     /**
-     * @struct UserBase, Base for user events that exposes the SDL_UserEvent structure.
+     * @struct UserBase
+     * @brief Base for user events that exposes the SDL_UserEvent structure.
      */
     struct UserBase : public EventBase {
         /**
          * Constructs a UserBase from a SDL_Event structure.
          *
-         * @param const SDL_Event* event, The SDL_Event structure.
+         * @param event The SDL_Event structure.
          */
         UserBase (const SDL_Event* event) : EventBase (event) {};
 
         /**
          * Exposes the SDL_UserEvent structure.
          *
-         * @return const SDL_UserEvent&, The SDL_UserEvent structure.
+         * @return The SDL_UserEvent structure.
          */
         const SDL_UserEvent& get () const { return event_->user; };
     
         /**
          * Exposes the SDL_UserEvent structure.
          *
-         * @return const SDL_UserEvent&, The SDL_UserEvent structure.
+         * @return The SDL_UserEvent structure.
          */
         const SDL_UserEvent& get () { return event_->user; };
     }; //UserBase
 
     /**
-     * @struct UserDefined, Represents a user event.
+     * @struct UserDefined
+     * @brief Represents a user event.
      *
-     * @tparam Code, The specific user event code.
+     * @tparam Code The specific user event code.
      */
     template<int... Codes>
     struct UserDefined : public Event<MultiComparator<User, SDL_USEREVENT, Codes...>, UserBase> {
         /**
          * Constructs a UserDefined from a SDL_Event structure.
          *
-         * @param const SDL_Event* event, The SDL_Event structure.
+         * @param event The SDL_Event structure.
          */
         explicit UserDefined (const SDL_Event* event = 0) : Event<MultiComparator<User, SDL_USEREVENT, Codes...>, UserBase> (event) {};
     }; //UserDefined

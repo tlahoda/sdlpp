@@ -1,5 +1,6 @@
 /**
- * @file Icon.h, Contains the Icon class.
+ * @file Icon.h
+ * Contains the Icon class.
  *
  * Copyright (C) 2005 Thomas P. Lahoda
  *
@@ -27,14 +28,15 @@ namespace video {
     using namespace std;
 
     /**
-     * @class Icon, Represents an icon.
+     * @class Icon
+     * @brief Represents an icon.
      */
     class Icon {
         public:
             /**
              * Constructs an Icon with a name.
              *
-             * @param const string& name, The icon name.
+             * @param name The icon name.
              */
             Icon (const string& name) : name_ (name) {};
 
@@ -46,16 +48,16 @@ namespace video {
             /**
              * Returns the name of the icon.
              *
-             * @return string, The name of the icon.
+             * @return The name of the icon.
              */
             string name () const { return name_; };
 
             /**
              * Set the Icon name.
              *
-             * @param const string& name, The name to give the icon.
+             * @param name The name to give the icon.
              *
-             * @return Icon, A reference to this Icon.
+             * @return A reference to this Icon.
              */
             Icon& name (const string& name) {
                 name_ = name;

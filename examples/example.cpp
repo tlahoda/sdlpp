@@ -26,7 +26,7 @@
 #include "sdlpp/video/Surface.h"
 #include "sdlpp/event/EventLoop.h"
 #include "sdlpp/examples/common.h"
-#include "sdlpp/examples/ViewerHandler.h"
+#include "sdlpp/examples/ExampleHandler.h"
 #include "sdlpp/examples/Axes.h"
 #include "sdlpp/examples/Floor.h"
 
